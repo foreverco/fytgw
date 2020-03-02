@@ -1,15 +1,15 @@
 <template>
     <div id="Software" class="container">
         <div class="row">
-            <div id="left" class="col-md-4 col-xs-12">
+            <div id="left" class="col-md-3 col-xs-12">
                 <ul class="left-container wow bounceInLeft">
-                    <p>软件产品</p>
+                    <p>新闻中心</p>
                     <li v-for="(item,index) in softwareList" :key="index">
                         <router-link :to=item.path>{{item.name}}</router-link>
                     </li>
                 </ul>
             </div>
-            <div id="right" class="col-md-8 col-xs-12  wow bounceInRight">
+            <div id="right" class="col-md-9 col-xs-12  wow bounceInRight">
                 <router-view></router-view>
             </div>
         </div>
@@ -23,12 +23,25 @@ export default {
         return{
             softwareList: [
                 {
-                    path: '/software/smartTown',
-                    name: '智能小镇管理系统'
-                },{
-                    path: '/software/bigData',
-                    name: '大数据管理系统'
-                }
+              name: "企业简介",
+              path: "/software/aboutUs"
+            },
+            {
+              name: "重要公告",
+              path: "/software/bigData"
+            },
+            {
+              name: "行业动态",
+              path: "/software/smartTown"
+            },
+            {
+              name: "专题报道",
+              path: "/software/bigData"
+            },
+             {
+              name: "视频展示",
+              path: "/software/bigData"
+            }
             ]
         }
     },

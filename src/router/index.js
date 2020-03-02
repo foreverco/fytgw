@@ -32,14 +32,14 @@ export default new Router({
           children: [
             {
               path: '/software',
-              redirect: '/software/smartTown'
+              redirect: '/software/aboutUs'
             },
             {
-              path: '/software/smartTown',
-              name: 'software',
-              component: resolve => require(['@/view/Software_smartTown'], resolve),
+              path: '/software/aboutUs',
+              name: 'aboutUs',
+              component: resolve => require(['@/view/us/AboutUs'], resolve),
               meta: {
-                title: '软件产品丨智能小镇管理系统'
+                title: '软件产品丨企业简介'
               }
             },
             {

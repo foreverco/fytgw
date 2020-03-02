@@ -185,7 +185,7 @@ export default {
           children: [
             {
               name: "企业简介",
-              path: "/software/smartTown"
+              path: "/software/aboutUs"
             },
             {
               name: "荣誉历程",
