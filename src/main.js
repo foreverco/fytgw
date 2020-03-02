@@ -15,6 +15,10 @@ Vue.prototype.api = api;
 /* swiper */
 import 'swiper/dist/css/swiper.min.css';
 
+// vue-seamless-scroll列表滚动
+import scroll from 'vue-seamless-scroll'
+Vue.use(scroll)
+
 /* 重置样式 */
 import './assets/css/reset.min.css'
 

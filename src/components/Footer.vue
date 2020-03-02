@@ -3,10 +3,10 @@
     <div class="logo">
       <img src="@/assets/img/logo_white.png" alt="logo图">
     </div>
-    <p class="title">公司企业网站模板</p>
+    <p class="title">江苏富宇通物联视频技术有限公司</p>
     <p class="address_tel_fax">
-      <span>地址：公司地址公司地址公司地址公司地址</span>
-      <span>Tel：888-888-888</span>
+      <span>地址：南京市雨花台区凤展路30号A1幢9楼</span>
+      <span>Tel：025-66088155</span>
       <span>Fax：8888-88888888</span>
     </p>
     <p class="email_wx">

@@ -29,13 +29,15 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
-            大数据管理系统
+            关于我们
             <small>/ Big Data Management System</small>
           </h2>
-          <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
+          <MainScroll :listData='listData'></MainScroll>
+          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>
+          <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
           <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
           <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
-          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>
+          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a> -->
         </div>
       </div>
     </div>
@@ -105,7 +107,7 @@
     <div id="whyChooseUs" class="conatiner-fuild">
       <div class="container">
         <div class="whyChooseUs-title text-center">
-          <p>为什么选择我们的服务</p>
+          <p>我们的文化</p>
           <p>THE REASON TO CHOOSING US</p>
         </div>
         <div class="row">
@@ -114,7 +116,9 @@
             v-for="(item,index) in serverList"
             :key="index"
           >
-            <div
+            <img src="@/assets/img/timg.jpg" alt="">
+            <p class="text-center">{{item.title}}</p>
+            <!-- <div
               class="server-block wow slideInUp"
               onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
@@ -127,7 +131,7 @@
                 onmouseenter="this.style.color='#28f'"
                 onmouseleave="this.style.color='#ccc'"
               ></div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -137,6 +141,7 @@
 <script>
 import Swiper from "swiper";
 import { WOW } from 'wowjs';
+import MainScroll from '../components/scroll/Scroll2'
 export default {
   name: "HomePage",
   data() {
@@ -165,6 +170,16 @@ export default {
           path: "",
           title: '您身边的IT专家4',
           content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+        }
+      ],
+      listData: [
+        {
+        title:'',
+        date:'内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓'
+        },
+         {
+        title:'',
+        date:'内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓'
         }
       ],
       customerList: [
@@ -256,35 +271,39 @@ export default {
       serverList: [
         {
           logo: require("@/assets/img/tel.png"),
-          title: "核心优势1",
+          title: "德诚百年",
           content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
           logo: require("@/assets/img/computer.png"),
-          title: "核心优势2",
+          title: "大医精诚",
           content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
           logo: require("@/assets/img/qq.png"),
-          title: "核心优势3",
+          title: "精益求精",
           content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
           logo: require("@/assets/img/skill.png"),
-          title: "核心优势4",
+          title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
       ]
     };
   },
+  components: {
+    MainScroll
+  },
   mounted() {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
-      effect: 'fade',
+      effect: 'cube',
+      speed: 2000,
       //自动播放
       autoplay: {
-        delay: 3000,
+        delay: 2000,
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
@@ -382,6 +401,7 @@ export default {
   padding: 100px;
   transition: all ease 0.6s;
   box-sizing: border-box;
+  padding-bottom:80px;
 }
 #bigData .bigData-title {
   padding-bottom: 10px;
@@ -624,6 +644,19 @@ export default {
   #whyChooseUs {
     padding: 20px 0;
   }
+}
+/* 我们的文化 */
+.server-wrapper{
+  /* border:1px solid red; */
+}
+.server-wrapper img{
+  width:100%;
+  height:250px;
+}
+.text-center{
+  font-size:25px;
+  font-weight: bold;
+  background: skyblue;
 }
 </style>
 
