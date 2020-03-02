@@ -44,8 +44,8 @@
     <!-- 您身边的IT专家 -->
     <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
-        <h1>您身边的IT专家</h1>
-        <h3>7x24小时提供出色的IT服务</h3>
+        <h1>111</h1>
+        <h3>222</h3>
         <button
           class="btn btn-default btn-sm"
           onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#3f3f3f';"
@@ -150,26 +150,26 @@ export default {
         {
           img: require("@/assets/img/banner1.png"),
           path: "",
-          title: '您身边的IT专家1',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '德诚百年',
+          content: '内蒙古国草园实业科技发展有限公司',
         },
         {
           img: require("@/assets/img/banner2.jpg"),
           path: "",
-          title: '您身边的IT专家2',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '大医精诚',
+          content: '内蒙古国草园实业科技发展有限公司',
         },
         {
           img: require("@/assets/img/banner1.png"),
           path: "",
-          title: '您身边的IT专家3',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '精益求精',
+          content: '内蒙古国草园实业科技发展有限公司',
         },
         {
           img: require("@/assets/img/banner2.jpg"),
           path: "",
-          title: '您身边的IT专家4',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '别具匠心',
+          content: '内蒙古国草园实业科技发展有限公司',
         }
       ],
       listData: [
