@@ -80,6 +80,35 @@
     </div>
 </nav>
 
+<div id="app">
+			<nav id="nav">
+				<div class="nav-item nav-item-logo logo">
+					<img src="http://via.placeholder.com/88x46" >
+				</div>
+				<div v-for="item in bookCatas" class="nav-item">
+					<a v-if="item.url!=''" :href="item.url">{{ item.booktype }}</a>
+					<a v-else href="##">{{ item.booktype }}</a>
+					<ul v-if="item.url==''" class="dropdown">
+						<li v-for="li in item.ul">
+							<a v-if="li.url!=''" :href="li.url">{{ li.bookname }}</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="nav-item nav-item-form">
+					<form action="" method="get">
+						<input type="text" name="search"value="" />
+						<button type="submit">搜索</button>
+					</form>
+				</div>
+			</nav>
+			<button type="button" class="nav-btn" id="nav-btn"><!--按钮-->
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+
   </div>
 </template>
 

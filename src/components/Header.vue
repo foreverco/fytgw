@@ -2,13 +2,13 @@
   <!-- 头部整体盒子 -->
   <div id="header" class="container-fuild">
     <!-- 头部顶部 -->
-    <div class="header-top container-fuild hidden-xs">
+    <!-- <div class="header-top container-fuild hidden-xs">
       <div class="container">
         <div class="server pull-left">
            <img class="img-responsive" src="@/assets/img/logo_hp.png" alt="国草园LOGO">
           <span>国草园集团</span>
           <span class="glyphicon glyphicon-earphone"></span>(025)66088177
-          <span class="glyphicon glyphicon-envelope"></span>fyt_lwm@163.com
+          <span class="glyphicon glyphicon-envelope"></span>liyunkun_11@163.com
           <span class="glyphicon glyphicon-time"></span>7x24小时为您服务
         </div>
         <div class="shejiao pull-right">
@@ -16,12 +16,12 @@
           <span class="glyphicon glyphicon-hand-left"></span>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
       <div class="header-nav-logo">
-        <img src="@/assets/img/logo_black.png">
+        <img src="@/assets/img/logo.jpg">
         <span>国草园集团</span>
       </div>
       <!-- 导航内容 -->
@@ -69,13 +69,23 @@
             :class="index==navIndex?'active':''"
             @click="navClick(index,item.name)"
             data-toggle="collapse"
-            data-target="#menu"
+            data-target="#menuid1"
           >
             <router-link :to="item.path">
               {{item.name}}
+              <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
               <i class="underline"></i>
             </router-link>
-            
+             <ul :id='getmenuId' v-if="item.children.length>0" class="header-nav-m-wrapper collapse">
+            <li 
+              v-for="(i,n) in item.children" 
+              :key="n" 
+              data-toggle="collapse"
+              data-target="#menu"
+               >
+              <router-link :to="i.path">{{i.name}}</router-link>
+            </li>
+          </ul>
           </li>
         </ul>
       </div>
@@ -90,6 +100,7 @@ export default {
   name: "Header",
   data() {
     return {
+      getmenuId: '',
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
       menuName: "首页",
       menuClass: "glyphicon glyphicon-menu-down",
@@ -118,10 +129,6 @@ export default {
             {
               name: "企业风采",
               path: "/software/bigData"
-            },
-             {
-              name: "企业文化",
-              path: "/software/smartTown"
             }
           ]
         },
@@ -130,11 +137,11 @@ export default {
           path: "/service",
           children: [
             {
-              name: "产品展示",
+              name: "原料展示",
               path: "/software/smartTown"
             },
             {
-              name: "研发包装",
+              name: "产品包装",
               path: "/software/bigData"
             },
             {
@@ -155,46 +162,46 @@ export default {
               name: "公司新闻",
               path: "/software/smartTown"
             },
-            {
-              name: "重要公告",
-              path: "/software/bigData"
-            },
-            {
-              name: "行业动态",
-              path: "/software/smartTown"
-            },
-            {
-              name: "专题报道",
-              path: "/software/bigData"
-            },
+            // {
+            //   name: "重要公告",
+            //   path: "/software/bigData"
+            // },
+            // {
+            //   name: "行业动态",
+            //   path: "/software/smartTown"
+            // },
+            // {
+            //   name: "专题报道",
+            //   path: "/software/bigData"
+            // },
              {
               name: "视频展示",
               path: "/software/bigData"
             }
           ]
         },
-        {
-          name: "公司介绍",
-          path: "/companyintroduction",
-          children: []
-        },
-        {
-          name: "工作机会",
-          path: "/jobchance",
-          children: []
-        },
+        // {
+        //   name: "公司介绍",
+        //   path: "/companyintroduction",
+        //   children: []
+        // },
+        // {
+        //   name: "工作机会",
+        //   path: "/jobchance",
+        //   children: []
+        // },
         {
           name: "联系我们",
           path: "/contactus",
           children: [
-            {
-              name: "人力资源",
-              path: "/software/bigData"
-            },
-             {
-              name: "联系我们",
-              path: "/contactus"
-            }
+            // {
+            //   name: "人力资源",
+            //   path: "/software/bigData"
+            // },
+            //  {
+            //   name: "联系我们",
+            //   path: "/contactus"
+            // }
           ]
         }
       ]
@@ -205,8 +212,10 @@ export default {
       this.navIndex = index;
       sessionStorage.setItem('navIndex',index)
       this.menuName = name;
+      this.getmenuId = "menuid" + index
     },
     menuClick() {
+      console.log(123)
       if (this.menuClass == "glyphicon glyphicon-menu-down") {
         this.menuClass = "glyphicon glyphicon-menu-up";
       } else {
@@ -219,7 +228,7 @@ export default {
 <style scoped>
 /* 顶部 */
 #header {
-  background: #f4f4f4;
+  /* background: #f4f4f4; */
   transition: all ease 0.6s;
 }
 #header .header-top {
@@ -248,7 +257,7 @@ export default {
 /* 导航栏logo图片 */
 #header .header-nav .header-nav-logo img {
   width: 95px;
-  height: 45px;
+  height: 95px;
   margin: auto;
 }
 #header .header-nav .header-nav-logo span {
