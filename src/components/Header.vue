@@ -69,19 +69,17 @@
             :class="index==navIndex?'active':''"
             @click="navClick(index,item.name)"
             data-toggle="collapse"
-            data-target="#menuid1"
+            aria-haspopup="true"
           >
             <router-link :to="item.path">
               {{item.name}}
               <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
               <i class="underline"></i>
             </router-link>
-             <ul :id='getmenuId' v-if="item.children.length>0" class="header-nav-m-wrapper collapse">
+             <ul :id='getmenuId' v-if="item.children.length>0" class="header-nav-m-wrapper collapse" data-target="#menu">
             <li 
               v-for="(i,n) in item.children" 
               :key="n" 
-              data-toggle="collapse"
-              data-target="#menu"
                >
               <router-link :to="i.path">{{i.name}}</router-link>
             </li>
