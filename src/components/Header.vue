@@ -69,17 +69,19 @@
             :class="index==navIndex?'active':''"
             @click="navClick(index,item.name)"
             data-toggle="collapse"
-            aria-haspopup="true"
+            data-target="#menuid1"
           >
             <router-link :to="item.path">
               {{item.name}}
               <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
               <i class="underline"></i>
             </router-link>
-             <ul :id='getmenuId' v-if="item.children.length>0" class="header-nav-m-wrapper collapse" data-target="#menu">
+             <ul :id='getmenuId' v-if="item.children.length>0" class="header-nav-m-wrapper1 collapse">
             <li 
               v-for="(i,n) in item.children" 
               :key="n" 
+              data-toggle="collapse"
+              data-target="#menu"
                >
               <router-link :to="i.path">{{i.name}}</router-link>
             </li>
@@ -407,7 +409,7 @@ export default {
   }
   /* 导航栏 每个导航 */
   #header .header-nav-m .header-nav-m-wrapper > li {
-    height: 40px;
+    /* height: 40px; */
     line-height: 40px;
     border-bottom: 1px solid #ccc;
   }
@@ -424,6 +426,22 @@ export default {
     font-size: 10px;
   }
 }
+.header-nav-m-wrapper1{
+  background: #555;
+}
+  /* 导航栏 每个导航 */
+  #header .header-nav-m .header-nav-m-wrapper1 > li {
+    /* height: 40px; */
+    line-height: 35px;
+    border-bottom: 1px solid #ccc;
+  }
+  #header .header-nav-m .header-nav-m-wrapper1 > li > a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 0;
+    position: relative;
+  }
 .pull-left{
   /* border:1px solid red; */
   display:flex;
