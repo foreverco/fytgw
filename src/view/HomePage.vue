@@ -148,28 +148,28 @@ export default {
     return {
       swiperList: [
         {
-          img: require("@/assets/img/banner1.png"),
+          img: require("@/assets/img/banner/banner1.png"),
           path: "",
-          title: '德诚百年',
-          content: '内蒙古国草园实业科技发展有限公司',
+          title: '',
+          content: '',
         },
         {
-          img: require("@/assets/img/banner2.jpg"),
+          img: require("@/assets/img/banner/banner2.png"),
           path: "",
-          title: '大医精诚',
-          content: '内蒙古国草园实业科技发展有限公司',
+          title: '',
+          content: '',
         },
         {
-          img: require("@/assets/img/banner1.png"),
+          img: require("@/assets/img/banner/banner1.png"),
           path: "",
-          title: '精益求精',
-          content: '内蒙古国草园实业科技发展有限公司',
+          title: '',
+          content: '',
         },
         {
-          img: require("@/assets/img/banner2.jpg"),
+          img: require("@/assets/img/banner/banner2.png"),
           path: "",
-          title: '别具匠心',
-          content: '内蒙古国草园实业科技发展有限公司',
+          title: '',
+          content: '',
         }
       ],
       listData: [
@@ -299,7 +299,7 @@ export default {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
-      effect: 'cube',
+      effect: 'coverflow',
       speed: 2000,
       //自动播放
       autoplay: {

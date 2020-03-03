@@ -21,7 +21,7 @@
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
       <div class="header-nav-logo">
-        <img src="@/assets/img/logo.jpg">
+        <img src="@/assets/img/logo.png">
         <span>国草园集团</span>
       </div>
       <!-- 导航内容 -->
@@ -48,11 +48,13 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img class="center-block" src="@/assets/img/logo_black.png" alt="logo">
+        <img src="@/assets/img/logo.png" alt="logo">
+        <span class='logotxt'>国草园集团</span>
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
-        {{menuName}}
+        {{menuName}}<span v-if='sonName' style="font-size:13px;"> - {{sonName}}</span>
+
         <div
           class="header-nav-m-menu-wrapper"
           data-toggle="collapse"
@@ -69,17 +71,18 @@
             :class="index==navIndex?'active':''"
             @click="navClick(index,item.name)"
             data-toggle="collapse"
-            data-target="#menuid1"
+            :data-target="targetId"
           >
             <router-link :to="item.path">
               {{item.name}}
               <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
               <i class="underline"></i>
             </router-link>
-             <ul :id='getmenuId' v-if="item.children.length>0" class="header-nav-m-wrapper1 collapse">
+             <ul :class="'navClass'+index" v-if="item.children.length>0" class="header-nav-m-wrapper1 collapse">
             <li 
               v-for="(i,n) in item.children" 
               :key="n" 
+              @click="getsonName(i.name)"
               data-toggle="collapse"
               data-target="#menu"
                >
@@ -100,9 +103,10 @@ export default {
   name: "Header",
   data() {
     return {
-      getmenuId: '',
+      targetId: '333',
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
       menuName: "首页",
+      sonName: "",
       menuClass: "glyphicon glyphicon-menu-down",
       navList: [
         {
@@ -112,7 +116,8 @@ export default {
         },
         {
           name: "企业文化",
-          path: "/software",
+          path: "",
+          // path: "/software",
           children: [
             {
               name: "企业简介",
@@ -134,7 +139,8 @@ export default {
         },
         {
           name: "产品中心",
-          path: "/service",
+          path: "",
+          // path: "/service",
           children: [
             {
               name: "原料展示",
@@ -156,7 +162,8 @@ export default {
         },
         {
           name: "新闻中心",
-          path: "/newsinformation",
+          path: "",
+          // path: "/newsinformation",
           children: [
             {
               name: "公司新闻",
@@ -211,8 +218,9 @@ export default {
     navClick(index, name) {
       this.navIndex = index;
       sessionStorage.setItem('navIndex',index)
+      this.sonName = ''
       this.menuName = name;
-      this.getmenuId = "menuid" + index
+      this.targetId = ".navClass" + index
     },
     menuClick() {
       console.log(123)
@@ -221,6 +229,10 @@ export default {
       } else {
         this.menuClass = "glyphicon glyphicon-menu-down";
       }
+    },
+    getsonName(name) {
+      this.sonName = name
+      console.log(this.sonName)
     }
   }
 };
@@ -228,7 +240,7 @@ export default {
 <style scoped>
 /* 顶部 */
 #header {
-  /* background: #f4f4f4; */
+  background: #f7f7f7;
   transition: all ease 0.6s;
 }
 #header .header-top {
@@ -365,17 +377,24 @@ export default {
   #header .header-nav-m .header-nav-m-logo {
     height: 80px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   /* 导航栏logo图片 */
   #header .header-nav-m .header-nav-m-logo img {
     width: 95px;
-    height: 45px;
-    position: absolute;
+    height: 95px;
+    /* position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    margin: auto;
+    bottom: 0; */
+    /* margin: auto; */
+  }
+  .logotxt{
+    font-size:25px;
+    font-weight: bold;
   }
   /* 导航栏  菜单容器 */
   #header .header-nav-m .header-nav-m-menu {
