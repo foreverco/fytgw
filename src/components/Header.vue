@@ -69,9 +69,9 @@
             v-for="(item,index) in navList"
             :key="index"
             :class="index==navIndex?'active':''"
-            @click="navClick(index,item.name)"
             data-toggle="collapse"
             :data-target="targetId"
+            @click="navClick(index,item.name)"
           >
             <router-link :to="item.path">
               {{item.name}}
@@ -216,6 +216,7 @@ export default {
   },
   methods: {
     navClick(index, name) {
+      console.log(444)
       this.navIndex = index;
       sessionStorage.setItem('navIndex',index)
       this.sonName = ''
@@ -231,8 +232,11 @@ export default {
       }
     },
     getsonName(name) {
-      this.sonName = name
-      console.log(this.sonName)
+      setTimeout(()=>{
+        this.sonName = name
+        console.log(this.sonName)
+      },500)
+      
     }
   }
 };

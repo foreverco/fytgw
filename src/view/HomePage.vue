@@ -299,7 +299,7 @@ export default {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
-      effect: 'coverflow',
+      effect: 'cube',
       speed: 2000,
       //自动播放
       autoplay: {
