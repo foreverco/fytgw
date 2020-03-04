@@ -112,7 +112,7 @@
         </div>
         <div class="row">
           <div
-            class="col-xs-12 col-sm-6 col-md-3 server-wrapper"
+            class="col-xs-12 col-sm-6 col-md-3 server-wrapper wow zoomIn"
             v-for="(item,index) in serverList"
             :key="index"
           >
@@ -361,9 +361,9 @@ export default {
 }
 
 /* 轮播图 */
-#swiper {
+/* #swiper {
   height: 600px;
-}
+} */
 #swiper .banner-swiper {
   width: 100%;
   height: 100%;
@@ -383,11 +383,11 @@ export default {
   width: 100%;
   height: 100%;
   color: #fff;
-  background: rgba(51, 51, 51, 0.534);
+  /* background: rgba(51, 51, 51, 0.534); */
   text-align: center;
   line-height: 80px;
 }
-#swiper .banner-swiper .swiper-slide-title > h1{
+/* #swiper .banner-swiper .swiper-slide-title > h1{
   font-size: 50px;
   margin-top: 12%;
 }
@@ -395,7 +395,7 @@ export default {
   font-size: 20px;
   margin-top: 1%;
   font-weight: 700;
-}
+} */
 /* 大数据管理系统 */
 #bigData {
   padding: 100px;
@@ -419,7 +419,7 @@ export default {
 /* 您身边的IT专家 */
 #contactUs {
   color: #fff;
-  height: 400px;
+  /* height: 400px; */
   background: url("../assets/img/contact_us_bg.jpg") 0 0 no-repeat;
   background-size: 100% 100%;
   transition: all ease 0.6s;

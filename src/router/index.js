@@ -27,7 +27,7 @@ export default new Router({
           name: 'software',
           component: resolve => require(['@/view/Software'], resolve),
           meta: {
-            title: '软件产品'
+            title: '企业文化'
           },
           children: [
             {
@@ -39,15 +39,31 @@ export default new Router({
               name: 'aboutUs',
               component: resolve => require(['@/view/us/AboutUs'], resolve),
               meta: {
-                title: '软件产品丨企业简介'
+                title: '企业文化丨企业简介'
               }
             },
             {
-              path: '/software/bigData',
+              path: '/software/rongyu',
               name: 'software',
-              component: resolve => require(['@/view/Software_bigData'], resolve),
+              component: resolve => require(['@/view/us/Rongyu'], resolve),
               meta: {
-                title: '软件产品丨大数据管理系统'
+                title: '企业文化丨荣誉历程'
+              }
+            },
+            {
+              path: '/software/jiagou',
+              name: 'software',
+              component: resolve => require(['@/view/us/Jiagou'], resolve),
+              meta: {
+                title: '企业文化丨组织架构'
+              }
+            },
+            {
+              path: '/software/fengcai',
+              name: 'software',
+              component: resolve => require(['@/view/us/Fengcai'], resolve),
+              meta: {
+                title: '企业文化丨企业风采'
               }
             }
           ]

@@ -70,6 +70,7 @@
             :key="index"
             :class="index==navIndex?'active':''"
             data-toggle="collapse"
+            aria-expanded="false"
             :data-target="targetId"
             @click="navClick(index,item.name)"
           >
@@ -82,7 +83,7 @@
             <li 
               v-for="(i,n) in item.children" 
               :key="n" 
-              @click="getsonName(i.name)"
+              @click.stop="getsonName(i.name)"
               data-toggle="collapse"
               data-target="#menu"
                >
@@ -125,15 +126,15 @@ export default {
             },
             {
               name: "荣誉历程",
-              path: "/software/bigData"
+              path: "/software/rongyu"
             },
              {
               name: "组织架构",
-              path: "/software/smartTown"
+              path: "/software/jiagou"
             },
             {
               name: "企业风采",
-              path: "/software/bigData"
+              path: "/software/fengcai"
             }
           ]
         },
@@ -232,11 +233,8 @@ export default {
       }
     },
     getsonName(name) {
-      setTimeout(()=>{
         this.sonName = name
         console.log(this.sonName)
-      },500)
-      
     }
   }
 };
