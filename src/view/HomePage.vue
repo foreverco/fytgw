@@ -21,6 +21,58 @@
         <div class="swiper-button-next"></div>
       </div>
     </div>
+    <!-- 专业的技术 -->
+    <div id='tecnology' class='container-fluid'>
+        <div class='tecnologyList container'>
+            <ul>
+              <li v-for="(item, index) in tecnologyList" :style='{width:tecnologyShow===index?"90%":""}' :key="index" @click="changeTacnology(index)">
+                <p class='tacwow bounceInRight' data-wow-duration="0.2s">{{item.title}}</p>
+                <div class='tacwow bounceInRight' data-wow-duration="1.0s" v-if='tecnologyShow===index'>
+                  <!-- <div class='container'>  -->
+                    <div class='row'>
+                      <div class='hidden-sm hidden-xs col-md-4 tacimg'>
+                        <img src="@/assets/img/home/3-wenhua-logo.png" alt="">
+                      </div>
+                      <div class='col-xs-11 col-md-8 taccon'>
+                        <p>
+                          {{item.con}}
+                        </p>
+                        <div class='button'>
+                          <button>查看更多</button>  
+                        </div>
+                      </div>
+                    </div>
+                  <!-- </div> -->
+                </div>
+              </li>
+              <!-- <li>
+                <p>2222</p>
+                <div>bbbbbbb</div>
+              </li>
+              <li>
+                <p>3333</p>
+                <div>cccccc</div>
+              </li>
+              <li>
+                <p>4444</p>
+                <div>dddddd</div>
+              </li> -->
+            </ul>
+        </div>
+    </div>
+    <!-- 新闻中心 -->
+    <div id='news' class='container-fuild'>
+      <div class='container newscontainer'>
+          <div class='row newstitle'>
+              <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt="">
+          </div>
+          <ul class='row newsNav'>
+            <li>行业动态</li>
+            <li>行业动态</li>
+            <li>行业动态</li>
+          </ul>
+      </div>
+    </div>
     <!-- 大数据管理系统 -->
     <div id="bigData" class="container-fuild">
       <div class="row bigData-container">
@@ -148,28 +200,47 @@ export default {
     return {
       swiperList: [
         {
-          img: require("@/assets/img/banner/banner1.png"),
+          img: require("@/assets/img/home/2-banner.png"),
           path: "",
           title: '',
           content: '',
         },
         {
-          img: require("@/assets/img/banner/banner2.png"),
+          img: require("@/assets/img/home/2-banner.png"),
           path: "",
           title: '',
           content: '',
         },
         {
-          img: require("@/assets/img/banner/banner1.png"),
+          img: require("@/assets/img/home/2-banner.png"),
           path: "",
           title: '',
           content: '',
         },
         {
-          img: require("@/assets/img/banner/banner2.png"),
+          img: require("@/assets/img/home/2-banner.png"),
           path: "",
           title: '',
           content: '',
+        }
+      ],
+      tecnologyShow: 0,
+      tecnologyList: [
+        {
+          title:'专业的技术',
+          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓'
+        },
+        {
+          title:'专业的技术',
+          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市'
+        },
+        {
+          title:'专业的技术',
+          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市'
+        },
+        {
+          title:'专业的技术',
+          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市'
         }
       ],
       listData: [
@@ -292,6 +363,20 @@ export default {
       ]
     };
   },
+   watch: {
+      tecnologyShow() {
+        this.$nextTick(() => { // 在dom渲染完后,再执行动画
+          var wow = new WOW({
+            boxClass: 'tacwow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+          })
+          wow.init()
+        })
+      }
+    },
   components: {
     MainScroll
   },
@@ -299,7 +384,7 @@ export default {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
-      effect: 'cube',
+      effect: 'coverflow',
       speed: 2000,
       //自动播放
       autoplay: {
@@ -351,7 +436,12 @@ export default {
       live: true
     })
     wow.init();
-  }
+  },
+  methods: {
+    changeTacnology(e) {
+      this.tecnologyShow = e
+    }
+  },
 };
 </script>
 <style scoped>
@@ -367,6 +457,7 @@ export default {
 #swiper .banner-swiper {
   width: 100%;
   height: 100%;
+  /* border:1px solid blue; */
 }
 #swiper .banner-swiper .swiper-slide img {
   width: 100%;
@@ -396,6 +487,130 @@ export default {
   margin-top: 1%;
   font-weight: 700;
 } */
+/* 专业的技术 */
+p{
+  margin:0;
+  padding:0;
+}
+#tecnology{
+  background: #472a2d;
+  height:268px;
+  padding:0 !important;
+}
+#tecnology .tecnologyList{
+  height:100%;
+}
+#tecnology .tecnologyList>ul{
+    display: flex;
+    margin-bottom:0 !important;
+    align-items: center;
+    width:100%;
+    height:100%;
+    /* background: green; */
+    /* justify-content: flex-end; */
+}
+#tecnology .tecnologyList>ul>li{
+  float:left;
+  margin:5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#tecnology .tecnologyList>ul>li>p{
+  background: red;
+  color:#fff;
+  font-size:16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height:208px;
+  width:30px;
+  /* margin: 0 auto;   */
+  line-height: 24px;  
+}
+#tecnology:hover{
+  cursor: pointer;
+}
+#tecnology .tecnologyList>ul>li>div{
+  width:90%;
+  height:208px;
+  /* background:yellow; */
+  margin:0 1%;
+}
+#tecnology .tecnologyList>ul>li>div .container{
+  height:100%;
+}
+#tecnology .tecnologyList>ul>li>div .row{
+  height:100%;
+}
+.tacimg{
+  /* border:1px solid green; */
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.taccon{
+  /* border:1px solid blue; */
+  float:right;
+  height:100%;
+  color:#fff;
+  writing-mode: tb-rl;
+  letter-spacing: 5px;
+  line-height: 25px;
+  position: relative;
+}
+.taccon p{
+  width:90%;
+  overflow: auto;
+  /* background: yellow; */
+}
+.taccon .button{
+  width:10%;
+}
+.taccon button{
+  height:120px;
+  width:26px;
+  position: absolute;
+  bottom:0;
+  left:0;
+  background: transparent;
+  outline: 0;
+  border:0;
+  border:1px solid #fff;
+}
+/* 新闻中心 */
+.newscontainer{
+  border:1px solid red;
+  margin-top:14px;
+}
+/* 新闻标题 */
+.newstitle{
+  /* background: blue; */
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 新闻导航 */
+.newsNav{
+  /* background: red; */
+  text-align: center;
+}
+.newsNav li{
+  /* float:left; */
+  display:inline-block;
+  border-right:1px solid #333;
+  padding:0 15px;
+}
+.newsNav li:last-child{
+  border:0;
+}
+.newsNav li:hover{
+  color:red;
+  cursor: pointer;
+}
 /* 大数据管理系统 */
 #bigData {
   padding: 100px;

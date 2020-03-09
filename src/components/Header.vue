@@ -20,30 +20,37 @@
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
-      <div class="header-nav-logo">
-        <img src="@/assets/img/logo.png">
-        <span>国草园集团</span>
+      <div class='row'>
+        <div class="header-nav-logo">
+          <img src="@/assets/img/home/1-head-logo.png" alt="">
+          <p>
+            <img src="@/assets/img/home/1-head-pinpai .png" alt="">
+          </p>
+        </div>
       </div>
       <!-- 导航内容 -->
-      <ul class="header-nav-wrapper">
-        <li
-          v-for="(item,index) in navList"
-          :key="index"
-          :class="index==navIndex?'active':''"
-          @click="navClick(index,item.name)"
-        >
-          <router-link :to="item.path">
-            {{item.name}}
-            <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
-            <i class="underline"></i>
-          </router-link>
-          <dl v-if="item.children.length>0">
-            <dt v-for="(i,n) in item.children" :key="n">
-              <router-link :to="i.path">{{i.name}}</router-link>
-            </dt>
-          </dl>
-        </li>
-      </ul>
+      <div class='navCon row'>
+          <ul class="header-nav-wrapper">
+            <li
+              v-for="(item,index) in navList"
+              :key="index"
+              :class="index==navIndex?'active':''"
+              @click="navClick(index,item.name)"
+            >
+              <router-link :to="item.path">
+                {{item.name}}
+                <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
+                <i class="underline"></i>
+              </router-link>
+              <dl v-if="item.children.length>0">
+                <dt v-for="(i,n) in item.children" :key="n">
+                  <router-link :to="i.path">{{i.name}}</router-link>
+                </dt>
+              </dl>
+            </li>
+          </ul>
+      </div>
+
     </div>
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
@@ -242,8 +249,10 @@ export default {
 <style scoped>
 /* 顶部 */
 #header {
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
   transition: all ease 0.6s;
+  background: url('../assets/img/home/toubu.png') no-repeat;
+  background-size: 100%;
 }
 #header .header-top {
   height: 50px;
@@ -258,51 +267,72 @@ export default {
 }
 /* 导航栏 */
 #header .header-nav {
-  height: 110px;
+  /* height: 500px; */
+  padding-top:100px;
 }
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
-  width: 240px;
+  /* border:1px solid red; */
+  /* width: 240px; */
   height: 100%;
-  float: left;
+  /* float: left; */
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 /* 导航栏logo图片 */
 #header .header-nav .header-nav-logo img {
-  width: 95px;
-  height: 95px;
+  width: 223px;
+  /* height: 145px; */
   margin: auto;
+  margin-bottom:10px;
 }
-#header .header-nav .header-nav-logo span {
+#header .header-nav .header-nav-logo p {
   margin: auto;
-  font-size: 25px;
+  width:100%;
   font-weight: bold;
-
+  text-align: center;
+  /* border:1px solid blue; */
+}
+#header .header-nav .header-nav-logo p img{
+  width:60%;
+  /* height:75px; */
 }
 /* 导航栏 导航容器 */
+.navCon{
+  /* border:1px solid red; */
+  height:110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #header .header-nav-fixed .header-nav-wrapper {
   line-height: 50px;
 }
 #header .header-nav .header-nav-wrapper {
   line-height: 110px;
-  float: right;
+  /* float: right; */
   margin: 0;
-  max-width: 800px;
+  /* max-width: 800px; */
 }
 /* 导航栏 每个导航 */
 #header .header-nav .header-nav-wrapper > li {
   float: left;
-  margin: 0 15px;
+  margin: 0 20px;
   position: relative;
 }
 /* 导航栏 每个导航下面的 a 链接 */
 #header .header-nav .header-nav-wrapper > li > a {
   color: #000;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   padding: 15px 0;
   position: relative;
+  /* border:1px solid red;
+  display:inline-block;
+  width:100px; */
 }
 /* 导航栏 每个导航下面的 a 链接的下划线 */
 #header .header-nav .header-nav-wrapper > li > a > i {
