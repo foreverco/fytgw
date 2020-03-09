@@ -8,8 +8,8 @@
             <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
-                <h1>{{item.title}}</h1>
-                <p>{{item.content}}</p>
+              <h1>{{item.title}}</h1>
+              <p>{{item.content}}</p>
             </div>
           </div>
         </div>
@@ -22,30 +22,33 @@
       </div>
     </div>
     <!-- 专业的技术 -->
-    <div id='tecnology' class='container-fluid'>
-        <div class='tecnologyList container'>
-            <ul>
-              <li v-for="(item, index) in tecnologyList" :style='{width:tecnologyShow===index?"90%":""}' :key="index" @click="changeTacnology(index)">
-                <p class='tacwow bounceInRight' data-wow-duration="0.2s">{{item.title}}</p>
-                <div class='tacwow bounceInRight' data-wow-duration="1.0s" v-if='tecnologyShow===index'>
-                  <!-- <div class='container'>  -->
-                    <div class='row'>
-                      <div class='hidden-sm hidden-xs col-md-4 tacimg'>
-                        <img src="@/assets/img/home/3-wenhua-logo.png" alt="">
-                      </div>
-                      <div class='col-xs-11 col-md-8 taccon'>
-                        <p>
-                          {{item.con}}
-                        </p>
-                        <div class='button'>
-                          <button>查看更多</button>  
-                        </div>
-                      </div>
-                    </div>
-                  <!-- </div> -->
+    <div id="tecnology" class="container-fluid">
+      <div class="tecnologyList container">
+        <ul>
+          <li
+            v-for="(item, index) in tecnologyList"
+            :style='{width:tecnologyShow===index?"90%":""}'
+            :key="index"
+            @click="changeTacnology(index)"
+          >
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{item.title}}</p>
+            <div class="tacwow bounceInRight" data-wow-duration="1.0s" v-if="tecnologyShow===index">
+              <!-- <div class='container'>  -->
+              <div class="row">
+                <div class="hidden-sm hidden-xs col-md-4 tacimg">
+                  <img src="@/assets/img/home/3-wenhua-logo.png" alt>
                 </div>
-              </li>
-              <!-- <li>
+                <div class="col-xs-11 col-md-8 taccon">
+                  <p>{{item.con}}</p>
+                  <div class="button">
+                    <button>查看更多</button>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+          </li>
+          <!-- <li>
                 <p>2222</p>
                 <div>bbbbbbb</div>
               </li>
@@ -56,21 +59,68 @@
               <li>
                 <p>4444</p>
                 <div>dddddd</div>
-              </li> -->
-            </ul>
-        </div>
+          </li>-->
+        </ul>
+      </div>
     </div>
     <!-- 新闻中心 -->
-    <div id='news' class='container-fuild'>
-      <div class='container newscontainer'>
-          <div class='row newstitle'>
-              <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt="">
+    <div id="news" class="container-fuild">
+      <div class="container newscontainer">
+        <div class="row newstitle">
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+        </div>
+        <ul class="row newsNav">
+          <li>行业动态</li>
+          <li>行业动态</li>
+          <li>行业动态</li>
+        </ul>
+        <ul class="newsList">
+          <li class="row" v-for="(item, index) in newsList" :key="index">
+            <div class="col-md-3 col-sm-12 wow zoomIn">
+              <img src="@/assets/img/home/4-xinwenzhongxin-1.png" alt>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <p>{{item.title}}</p>
+              <p>{{item.con}}</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <span>{{item.date}}</span>
+              <button>浏览更多</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 国草园产品 -->
+    <div id="product" class="container-fuild">
+      <div class="container productcontainer">
+        <div class="row producttitle">
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+        </div>
+        <ul class="row productNav">
+          <li>黄芪</li>
+          <li>板蓝根</li>
+          <li>柴胡</li>
+          <li>防风</li>
+        </ul>
+        <div class="swiper-container customer-swiper hidden-xs">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide customer-block"
+              v-for="(item,index) in customerList"
+              :key="index"
+            >
+              <div class="customer-logo">
+                <img class="center-block" :src="item.logo" alt="logo">
+              </div>
+              
+              <div class="customer-content2">{{item.title}}</div>
+            </div>
           </div>
-          <ul class='row newsNav'>
-            <li>行业动态</li>
-            <li>行业动态</li>
-            <li>行业动态</li>
-          </ul>
+          <!-- 如果需要导航按钮 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
     </div>
     <!-- 大数据管理系统 -->
@@ -84,12 +134,12 @@
             关于我们
             <small>/ Big Data Management System</small>
           </h2>
-          <MainScroll :listData='listData'></MainScroll>
+          <MainScroll :listData="listData"></MainScroll>
           <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>
           <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
           <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
           <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
-          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a> -->
+          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>-->
         </div>
       </div>
     </div>
@@ -168,7 +218,7 @@
             v-for="(item,index) in serverList"
             :key="index"
           >
-            <img src="@/assets/img/timg.jpg" alt="">
+            <img src="@/assets/img/timg.jpg" alt>
             <p class="text-center">{{item.title}}</p>
             <!-- <div
               class="server-block wow slideInUp"
@@ -183,7 +233,7 @@
                 onmouseenter="this.style.color='#28f'"
                 onmouseleave="this.style.color='#ccc'"
               ></div>
-            </div> -->
+            </div>-->
           </div>
         </div>
       </div>
@@ -192,65 +242,92 @@
 </template>
 <script>
 import Swiper from "swiper";
-import { WOW } from 'wowjs';
-import MainScroll from '../components/scroll/Scroll2'
+import { WOW } from "wowjs";
+import MainScroll from "../components/scroll/Scroll2";
 export default {
   name: "HomePage",
   data() {
     return {
+      /* 轮播图列表 */
       swiperList: [
         {
           img: require("@/assets/img/home/2-banner.png"),
           path: "",
-          title: '',
-          content: '',
+          title: "",
+          content: ""
         },
         {
           img: require("@/assets/img/home/2-banner.png"),
           path: "",
-          title: '',
-          content: '',
+          title: "",
+          content: ""
         },
         {
           img: require("@/assets/img/home/2-banner.png"),
           path: "",
-          title: '',
-          content: '',
+          title: "",
+          content: ""
         },
         {
           img: require("@/assets/img/home/2-banner.png"),
           path: "",
-          title: '',
-          content: '',
+          title: "",
+          content: ""
         }
       ],
+      /* 专业技术显示隐藏 */
       tecnologyShow: 0,
+      /* 专业技术列表 */
       tecnologyList: [
         {
-          title:'专业的技术',
-          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓'
+          title: "专业的技术",
+          con:
+            "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓"
         },
         {
-          title:'专业的技术',
-          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市'
+          title: "专业的技术",
+          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市"
         },
         {
-          title:'专业的技术',
-          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市'
+          title: "专业的技术",
+          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市"
         },
         {
-          title:'专业的技术',
-          con: '内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市'
+          title: "专业的技术",
+          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市"
+        }
+      ],
+      /* 新闻列表 */
+      newsList: [
+        {
+          imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
+          title: "关于阿擦擦",
+          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
+          date:'2020-03-09'
+        },
+        {
+          imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
+          title: "关于阿擦擦",
+          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
+          date:'2020-03-09'
+        },
+        {
+          imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
+          title: "关于阿擦擦",
+          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
+          date:'2020-03-09'
         }
       ],
       listData: [
         {
-        title:'',
-        date:'内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓'
+          title: "",
+          date:
+            "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓"
         },
-         {
-        title:'',
-        date:'内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓'
+        {
+          title: "",
+          date:
+            "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓"
         }
       ],
       customerList: [
@@ -363,20 +440,21 @@ export default {
       ]
     };
   },
-   watch: {
-      tecnologyShow() {
-        this.$nextTick(() => { // 在dom渲染完后,再执行动画
-          var wow = new WOW({
-            boxClass: 'tacwow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: true,
-            live: true
-          })
-          wow.init()
-        })
-      }
-    },
+  watch: {
+    tecnologyShow() {
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "tacwow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+    }
+  },
   components: {
     MainScroll
   },
@@ -384,7 +462,7 @@ export default {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
-      effect: 'coverflow',
+      effect: "coverflow",
       speed: 2000,
       //自动播放
       autoplay: {
@@ -429,19 +507,19 @@ export default {
     });
     /* wowjs动画 */
     var wow = new WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
+      boxClass: "wow",
+      animateClass: "animated",
       offset: 0,
       mobile: true,
-      live: true
-    })
+      live: false
+    });
     wow.init();
   },
   methods: {
     changeTacnology(e) {
-      this.tecnologyShow = e
+      this.tecnologyShow = e;
     }
-  },
+  }
 };
 </script>
 <style scoped>
@@ -463,7 +541,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-#swiper .banner-swiper .swiper-slide{
+#swiper .banner-swiper .swiper-slide {
   position: relative;
 }
 #swiper .banner-swiper .swiper-slide-title {
@@ -488,105 +566,105 @@ export default {
   font-weight: 700;
 } */
 /* 专业的技术 */
-p{
-  margin:0;
-  padding:0;
+p {
+  margin: 0;
+  padding: 0;
 }
-#tecnology{
+#tecnology {
   background: #472a2d;
-  height:268px;
-  padding:0 !important;
+  height: 268px;
+  padding: 0 !important;
 }
-#tecnology .tecnologyList{
-  height:100%;
+#tecnology .tecnologyList {
+  height: 100%;
 }
-#tecnology .tecnologyList>ul{
-    display: flex;
-    margin-bottom:0 !important;
-    align-items: center;
-    width:100%;
-    height:100%;
-    /* background: green; */
-    /* justify-content: flex-end; */
+#tecnology .tecnologyList > ul {
+  display: flex;
+  margin-bottom: 0 !important;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* background: green; */
+  /* justify-content: flex-end; */
 }
-#tecnology .tecnologyList>ul>li{
-  float:left;
-  margin:5px;
+#tecnology .tecnologyList > ul > li {
+  float: left;
+  margin: 5px;
   position: relative;
   display: flex;
   align-items: center;
 }
-#tecnology .tecnologyList>ul>li>p{
+#tecnology .tecnologyList > ul > li > p {
   background: red;
-  color:#fff;
-  font-size:16px;
+  color: #fff;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  height:208px;
-  width:30px;
+  height: 208px;
+  width: 30px;
   /* margin: 0 auto;   */
-  line-height: 24px;  
+  line-height: 24px;
 }
-#tecnology:hover{
+#tecnology .tecnologyList > ul > li > p:hover {
   cursor: pointer;
 }
-#tecnology .tecnologyList>ul>li>div{
-  width:90%;
-  height:208px;
+#tecnology .tecnologyList > ul > li > div {
+  width: 90%;
+  height: 208px;
   /* background:yellow; */
-  margin:0 1%;
+  margin: 0 1%;
 }
-#tecnology .tecnologyList>ul>li>div .container{
-  height:100%;
+#tecnology .tecnologyList > ul > li > div .container {
+  height: 100%;
 }
-#tecnology .tecnologyList>ul>li>div .row{
-  height:100%;
+#tecnology .tecnologyList > ul > li > div .row {
+  height: 100%;
 }
-.tacimg{
+.tacimg {
   /* border:1px solid green; */
-  height:100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.taccon{
+.taccon {
   /* border:1px solid blue; */
-  float:right;
-  height:100%;
-  color:#fff;
+  float: right;
+  height: 100%;
+  color: #fff;
   writing-mode: tb-rl;
   letter-spacing: 5px;
   line-height: 25px;
   position: relative;
 }
-.taccon p{
-  width:90%;
+.taccon p {
+  width: 90%;
   overflow: auto;
   /* background: yellow; */
 }
-.taccon .button{
-  width:10%;
+.taccon .button {
+  width: 10%;
 }
-.taccon button{
-  height:120px;
-  width:26px;
+.taccon button {
+  height: 120px;
+  width: 26px;
   position: absolute;
-  bottom:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   background: transparent;
   outline: 0;
-  border:0;
-  border:1px solid #fff;
+  border: 0;
+  border: 1px solid #fff;
 }
 /* 新闻中心 */
-.newscontainer{
-  border:1px solid red;
-  margin-top:14px;
+.newscontainer {
+  border: 1px solid red;
+  margin-top: 14px;
 }
 /* 新闻标题 */
-.newstitle{
+.newstitle {
   /* background: blue; */
   margin: 24px 0;
   display: flex;
@@ -594,21 +672,100 @@ p{
   justify-content: center;
 }
 /* 新闻导航 */
-.newsNav{
+.newsNav {
   /* background: red; */
   text-align: center;
 }
-.newsNav li{
+.newsNav > li {
   /* float:left; */
-  display:inline-block;
-  border-right:1px solid #333;
-  padding:0 15px;
+  display: inline-block;
+  border-right: 1px solid #333;
+  padding: 0 15px;
 }
-.newsNav li:last-child{
-  border:0;
+.newsNav li:last-child {
+  border: 0;
 }
-.newsNav li:hover{
-  color:red;
+.newsNav li:hover {
+  color: red;
+  cursor: pointer;
+}
+/* 新闻列表 */
+.newsList {
+}
+.newsList li {
+  /* border: 1px solid red; */
+  display: block;
+  margin:30px 0;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+}
+.newsList li > div {
+  height: 100%;
+  /* background: blue; */
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.newsList li > div:nth-child(2), .newsList li > div:nth-child(3){
+  height:120px;
+}
+.newsList li > div > p {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  /* border: 1px solid red; */
+}
+.newsList li > div > p:first-child {
+  height: 30%;
+  font-size:16px;
+  font-weight: bold;
+}
+.newsList li > div button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border:1px solid red;
+  color: red;
+}
+.newsList li > div span{
+  display: inline-block;
+  padding:0 20px;
+}
+/* 国草园产品 */
+.productcontainer {
+  border: 1px solid red;
+  margin-top: 14px;
+}
+/* 产品标题 */
+.producttitle {
+  /* background: blue; */
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 产品导航 */
+.productNav {
+  /* background: red; */
+  text-align: center;
+}
+.productNav > li {
+  /* float:left; */
+  display: inline-block;
+  border-right: 1px solid #333;
+  padding: 0 15px;
+}
+.productNav li:last-child {
+  border: 0;
+}
+.productNav li:hover {
+  color: red;
   cursor: pointer;
 }
 /* 大数据管理系统 */
@@ -616,7 +773,7 @@ p{
   padding: 100px;
   transition: all ease 0.6s;
   box-sizing: border-box;
-  padding-bottom:80px;
+  padding-bottom: 80px;
 }
 #bigData .bigData-title {
   padding-bottom: 10px;
@@ -861,15 +1018,15 @@ p{
   }
 }
 /* 我们的文化 */
-.server-wrapper{
+.server-wrapper {
   /* border:1px solid red; */
 }
-.server-wrapper img{
-  width:100%;
-  height:250px;
+.server-wrapper img {
+  width: 100%;
+  height: 250px;
 }
-.text-center{
-  font-size:25px;
+.text-center {
+  font-size: 25px;
   font-weight: bold;
   background: skyblue;
 }
