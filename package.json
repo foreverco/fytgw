@@ -12,6 +12,8 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
+    "sizzle": "^2.3.4",
+    "turn.js": "^1.0.5",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-seamless-scroll": "^1.1.17",

@@ -24,6 +24,11 @@ import './assets/css/reset.min.css'
 
 /* jquery */
 import 'jquery'
+// import jquery from 'jquery'
+// window.jquery = window.$ = jquery
+
+/* 引入翻书插件 */
+import 'turn.js'
 
 /* bootstarp */
 import './assets/css/bootstrap.min.css'

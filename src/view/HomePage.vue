@@ -1,11 +1,22 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild">
+    <div
+      id="swiper"
+      class="container-fuild"
+    >
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
+          <div
+            class="swiper-slide"
+            v-for="(item,index) in swiperList"
+            :key="index"
+          >
+            <img
+              class="swiper-lazy"
+              :data-src="item.img"
+              alt="轮播图"
+            >
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{item.title}}</h1>
@@ -22,7 +33,10 @@
       </div>
     </div>
     <!-- 专业的技术 -->
-    <div id="tecnology" class="container-fluid">
+    <div
+      id="tecnology"
+      class="container-fluid"
+    >
       <div class="tecnologyList container">
         <ul>
           <li
@@ -31,12 +45,21 @@
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{item.title}}</p>
-            <div class="tacwow bounceInRight" data-wow-duration="1.0s" v-if="tecnologyShow===index">
-              <!-- <div class='container'>  -->
+            <p
+              class="tacwow bounceInRight"
+              data-wow-duration="0.2s"
+            >{{item.title}}</p>
+            <div
+              class="tacwow bounceInRight"
+              data-wow-duration="1.0s"
+              v-if="tecnologyShow===index"
+            >
               <div class="row">
                 <div class="hidden-sm hidden-xs col-md-4 tacimg">
-                  <img src="@/assets/img/home/3-wenhua-logo.png" alt>
+                  <img
+                    src="@/assets/img/home/3-wenhua-logo.png"
+                    alt
+                  >
                 </div>
                 <div class="col-xs-11 col-md-8 taccon">
                   <p>{{item.con}}</p>
@@ -45,29 +68,22 @@
                   </div>
                 </div>
               </div>
-              <!-- </div> -->
             </div>
           </li>
-          <!-- <li>
-                <p>2222</p>
-                <div>bbbbbbb</div>
-              </li>
-              <li>
-                <p>3333</p>
-                <div>cccccc</div>
-              </li>
-              <li>
-                <p>4444</p>
-                <div>dddddd</div>
-          </li>-->
         </ul>
       </div>
     </div>
     <!-- 新闻中心 -->
-    <div id="news" class="container-fuild">
+    <div
+      id="news"
+      class="container-fuild"
+    >
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img
+            src="@/assets/img/home/biaoti-xinwenzhongxin.png"
+            alt
+          >
         </div>
         <ul class="row newsNav">
           <li>行业动态</li>
@@ -75,9 +91,16 @@
           <li>行业动态</li>
         </ul>
         <ul class="newsList">
-          <li class="row" v-for="(item, index) in newsList" :key="index">
+          <li
+            class="row"
+            v-for="(item, index) in newsList"
+            :key="index"
+          >
             <div class="col-md-3 col-sm-12 wow zoomIn">
-              <img src="@/assets/img/home/4-xinwenzhongxin-1.png" alt>
+              <img
+                src="@/assets/img/home/4-xinwenzhongxin-1.png"
+                alt
+              >
             </div>
             <div class="col-md-6 col-sm-12">
               <p>{{item.title}}</p>
@@ -92,10 +115,16 @@
       </div>
     </div>
     <!-- 国草园产品 -->
-    <div id="product" class="container-fuild">
+    <div
+      id="product"
+      class="container-fuild"
+    >
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+          <img
+            src="@/assets/img/home/biaoti-chanpin.png"
+            alt
+          >
         </div>
         <ul class="row productNav">
           <li>黄芪</li>
@@ -103,31 +132,171 @@
           <li>柴胡</li>
           <li>防风</li>
         </ul>
-        <div class="swiper-container customer-swiper hidden-xs">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide customer-block"
-              v-for="(item,index) in customerList"
-              :key="index"
-            >
-              <div class="customer-logo">
-                <img class="center-block" :src="item.logo" alt="logo">
+        <ul class='productList row'>
+          <li
+            class='col-md-3 col-sm-5 col-xs-9'
+            v-for="(item, index) in productList"
+            :key="index"
+          >
+            <p>{{item.name}}</p>
+            <p>{{item.effect}}</p>
+            <p class='imgBox wow zoomIn'>
+              <img
+                :src="item.imgUrl"
+                alt=""
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 关于国草园 -->
+    <div
+      id='aboutgcy'
+      class='container-fluid'
+    >
+      <div class='container aboutcontainer'>
+        <div class="row aboutTitle">
+          <img
+            src="@/assets/img/home/biaoti-guanyu.png"
+            alt
+          >
+        </div>
+        <div class='row aboutswiper'>
+          <div class="swiper-container aboutswipercontainer">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="../../static/img/6-guanyuguocaoyuan-tupian1.png"
+                  alt=""
+                >
               </div>
-              
-              <div class="customer-content2">{{item.title}}</div>
+              <div class="swiper-slide">
+                <img
+                  src="../../static/img/6-guanyuguocaoyuan-tupian1.png"
+                  alt=""
+                >
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="../../static/img/6-guanyuguocaoyuan-tupian1.png"
+                  alt=""
+                >
+              </div>
+
             </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- 如果需要滚动条 -->
+            <div class="swiper-scrollbar"></div>
           </div>
-          <!-- 如果需要导航按钮 -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+        </div>
+        <div class='row abouttxt'>
+          <p class='con col-md-11'>内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓</p>
+          <p class='title col-md-1'>国草园产品:</p>
+        </div>
+      </div>
+    </div>
+    <!-- 蒙中草药基地 -->
+    <div
+      id='base'
+      class='container-fluid'
+    >
+      <div class='container basecontainer'>
+        <div class="row aboutTitle">
+          <img
+            src="@/assets/img/home/biaoti-jidi.png"
+            alt
+          >
+        </div>
+        <ul class="row baseNav">
+          <li>黄芪</li>
+          <li>板蓝根</li>
+          <li>柴胡</li>
+          <li>防风</li>
+        </ul>
+        <div class="row">
+          <div
+            class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
+            v-for="(item,index) in basePicList"
+            :key="index"
+          >
+            <div class='basePicBox'>
+              <img
+                :src="item.imgUrl"
+                alt
+              >
+            </div>
+            <!-- <p class="text-center">{{item.title}}</p> -->
+            <!-- <div
+              class="server-block wow slideInUp"
+              onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
+              onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
+            >
+              <img class="center-block" :src="item.logo" alt="logo">
+              <p class="text-center">{{item.title}}</p>
+              <div
+                class="text-center"
+                v-html="item.content"
+                onmouseenter="this.style.color='#28f'"
+                onmouseleave="this.style.color='#ccc'"
+              ></div>
+            </div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 国草园文化 -->
+    <div
+      id="scooling"
+      class='container-fluid'
+    >
+      <div class="container scoolingcontainer">
+        <div class="row scoolingtitle">
+          <img
+            src="@/assets/img/home/biaoti-wenhua.png"
+            alt
+          >
+        </div>
+        <ul class="row scoolingNav">
+          <li>技术保障</li>
+          <li>跟踪服务</li>
+          <li>雄厚实力</li>
+        </ul>
+        <div class='row scoolingBox'>
+          <div class='col-md-6 scoolingTxt'>
+
+            <p class='con'>
+              内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓
+            </p>
+            <p class='title'>-------同修仁德 济世养生-------</p>
+            <p class='name'>
+              <span>国草园</span>
+              <span>◆</span>
+              <span>企业文化</span>
+            </p>
+          </div>
+          <div class='col-md-6 scoolingImg'>456</div>
         </div>
       </div>
     </div>
     <!-- 大数据管理系统 -->
-    <div id="bigData" class="container-fuild">
+    <!-- <div
+      id="bigData"
+      class="container-fuild"
+    >
       <div class="row bigData-container">
         <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive" src="@/assets/img/img1.png" alt="大数据管理系统">
+          <img
+            class="img-responsive"
+            src="@/assets/img/img1.png"
+            alt="大数据管理系统"
+          >
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
@@ -135,19 +304,27 @@
             <small>/ Big Data Management System</small>
           </h2>
           <MainScroll :listData="listData"></MainScroll>
-          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>
+          <a
+            href="#"
+            class="btn btn-lg btn-block btn-info"
+          >联系我们</a> -->
           <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
           <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
           <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
           <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>-->
-        </div>
+        <!-- </div>
       </div>
-    </div>
+    </div> -->
     <!-- 您身边的IT专家 -->
-    <div id="contactUs" class="container-fuild text-center">
+    <div
+      id="contactUs"
+      class="container-fuild text-center"
+    >
       <div class="container contactUs-container wow slideInUp">
-        <h1>111</h1>
-        <h3>222</h3>
+        <h1>400-8888-456</h1>
+        <div class='logo hidden-xs'>
+          <img src="@/assets/img/home/8-lianxiwomen-logo.png" alt="">
+        </div>
         <button
           class="btn btn-default btn-sm"
           onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#3f3f3f';"
@@ -161,7 +338,7 @@
       </div>
     </div>
     <!-- 客户评价 -->
-    <div id="customer" class="container-fuild">
+    <!-- <div id="customer" class="container-fuild">
       <div class="container customer-container">
         <p class="customer-title text-center">客户评价</p>
         <div class="swiper-container customer-swiper hidden-xs">
@@ -182,9 +359,9 @@
               </div>
               <div class="customer-content2">{{item.title}}</div>
             </div>
-          </div>
-          <!-- 如果需要导航按钮 -->
-          <div class="swiper-button-prev"></div>
+          </div> -->
+    <!-- 如果需要导航按钮 -->
+    <!-- <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
         <div class="row visible-xs customer-block">
@@ -204,9 +381,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 为什么选择我们 -->
-    <div id="whyChooseUs" class="conatiner-fuild">
+    <!-- <div
+      id="whyChooseUs"
+      class="conatiner-fuild"
+    >
       <div class="container">
         <div class="whyChooseUs-title text-center">
           <p>我们的文化</p>
@@ -218,8 +398,11 @@
             v-for="(item,index) in serverList"
             :key="index"
           >
-            <img src="@/assets/img/timg.jpg" alt>
-            <p class="text-center">{{item.title}}</p>
+            <img
+              src="@/assets/img/timg.jpg"
+              alt
+            > -->
+            <!-- <p class="text-center">{{item.title}}</p> -->
             <!-- <div
               class="server-block wow slideInUp"
               onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
@@ -234,16 +417,17 @@
                 onmouseleave="this.style.color='#ccc'"
               ></div>
             </div>-->
-          </div>
+          <!-- </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
 import Swiper from "swiper";
 import { WOW } from "wowjs";
 import MainScroll from "../components/scroll/Scroll2";
+
 export default {
   name: "HomePage",
   data() {
@@ -303,19 +487,92 @@ export default {
           imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
           title: "关于阿擦擦",
           con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
-          date:'2020-03-09'
+          date: "2020-03-09"
         },
         {
           imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
           title: "关于阿擦擦",
           con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
-          date:'2020-03-09'
+          date: "2020-03-09"
         },
         {
           imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
           title: "关于阿擦擦",
           con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
-          date:'2020-03-09'
+          date: "2020-03-09"
+        }
+      ],
+      /* 国草园产品 */
+      productList: [
+        {
+          name: "黄芪",
+          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin1.png",
+          effect: "清热解毒"
+        },
+        {
+          name: "板蓝根",
+          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin2.png",
+          effect: "清热解毒"
+        },
+        {
+          name: "柴胡",
+          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin3.png",
+          effect: "清热解毒"
+        },
+        {
+          name: "防风",
+          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin4.png",
+          effect: "清热解毒"
+        }
+      ],
+      /* 关于国草园轮播图 */
+      aboutgcyList: [
+        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" },
+        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" },
+        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" },
+        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" }
+      ],
+      /* 仲裁要基地图片 */
+      basePicList: [
+        {
+          imgUrl: "../../static/img/8-jidi-tu2.png",
+          title: "德诚百年",
+          content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu3.png",
+          title: "大医精诚",
+          content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu4.png",
+          title: "精益求精",
+          content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu5.png",
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu6.png",
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu7.png",
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu4.png",
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          imgUrl: "../../static/img/8-jidi-tu5.png",
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
       ],
       listData: [
@@ -436,6 +693,26 @@ export default {
           logo: require("@/assets/img/skill.png"),
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          logo: require("@/assets/img/skill.png"),
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          logo: require("@/assets/img/skill.png"),
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          logo: require("@/assets/img/skill.png"),
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        },
+        {
+          logo: require("@/assets/img/skill.png"),
+          title: "别具匠心",
+          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
       ]
     };
@@ -488,14 +765,25 @@ export default {
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
     /* customer-swiper */
-    new Swiper(".customer-swiper", {
+    new Swiper(".aboutswipercontainer", {
       loop: true, // 循环模式选项
-      slidesPerView: 3,
+      effect: "coverflow",
+      speed: 2000,
       //自动播放
       autoplay: {
-        delay: 3000,
+        delay: 2000,
         stopOnLastSlide: false,
         disableOnInteraction: false
+      },
+      slidesPerView: 2,
+      centeredSlides: true,
+      initialSlide: 1,
+      coverflow: {
+        rotate: 0, //设置为0
+        stretch: 10,
+        depth: 160,
+        modifier: 2,
+        slideShadows: true
       },
       // 如果需要前进后退按钮
       navigation: {
@@ -607,7 +895,10 @@ p {
   /* margin: 0 auto;   */
   line-height: 24px;
 }
-#tecnology .tecnologyList > ul > li > p:hover {
+/* #tecnology .tecnologyList > ul > li > p:hover {
+  cursor: pointer;
+} */
+#tecnology:hover {
   cursor: pointer;
 }
 #tecnology .tecnologyList > ul > li > div {
@@ -635,12 +926,13 @@ p {
   height: 100%;
   color: #fff;
   writing-mode: tb-rl;
-  letter-spacing: 5px;
-  line-height: 25px;
+  /* font-size:16px; */
+  /* letter-spacing: 5px; */
+  /* line-height: 25px; */
   position: relative;
 }
 .taccon p {
-  width: 90%;
+  width: 80%;
   overflow: auto;
   /* background: yellow; */
 }
@@ -660,7 +952,7 @@ p {
 }
 /* 新闻中心 */
 .newscontainer {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-top: 14px;
 }
 /* 新闻标题 */
@@ -675,6 +967,8 @@ p {
 .newsNav {
   /* background: red; */
   text-align: center;
+  margin-bottom: 50px;
+  font-size: 14px;
 }
 .newsNav > li {
   /* float:left; */
@@ -695,8 +989,8 @@ p {
 .newsList li {
   /* border: 1px solid red; */
   display: block;
-  margin:30px 0;
-  border-bottom:1px solid rgba(0,0,0,0.2);
+  margin: 30px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .newsList li > div {
   height: 100%;
@@ -707,8 +1001,9 @@ p {
   justify-content: center;
   flex-wrap: wrap;
 }
-.newsList li > div:nth-child(2), .newsList li > div:nth-child(3){
-  height:120px;
+.newsList li > div:nth-child(2),
+.newsList li > div:nth-child(3) {
+  height: 120px;
 }
 .newsList li > div > p {
   width: 100%;
@@ -717,29 +1012,29 @@ p {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   white-space: nowrap;
   /* border: 1px solid red; */
 }
 .newsList li > div > p:first-child {
   height: 30%;
-  font-size:16px;
+  font-size: 16px;
   font-weight: bold;
 }
 .newsList li > div button {
   background: transparent;
   outline: 0;
   border: 0;
-  border:1px solid red;
+  /* border: 1px solid red; */
   color: red;
 }
-.newsList li > div span{
+.newsList li > div span {
   display: inline-block;
-  padding:0 20px;
+  padding: 0 20px;
 }
 /* 国草园产品 */
 .productcontainer {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-top: 14px;
 }
 /* 产品标题 */
@@ -754,6 +1049,8 @@ p {
 .productNav {
   /* background: red; */
   text-align: center;
+  margin-bottom: 50px;
+  font-size: 14px;
 }
 .productNav > li {
   /* float:left; */
@@ -767,6 +1064,218 @@ p {
 .productNav li:hover {
   color: red;
   cursor: pointer;
+}
+/* 产品列表 */
+.productList {
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.productList li {
+  background: url("../assets/img/home/5-chanpinzhongxin-kuang.png") no-repeat;
+  background-size: 100% 100%;
+  height: 380px;
+  /* border:1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.productList li p {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #c5000d;
+}
+.productList li p:first-child {
+  margin: 0 auto;
+  width: 20px;
+  line-height: 24px;
+  margin-bottom: -30px;
+  font-size: 20px;
+}
+.productList li .imgBox {
+  /* border:1px solid red; */
+  width: 100%;
+  display: flex;
+  align-items: bottom;
+  justify-content: center;
+  margin-top: 30px;
+}
+.productList li img {
+  width: 85%;
+  /* position: absolute; */
+}
+/* 关于国草园 */
+.aboutcontainer {
+  /* border: 1px solid red; */
+  margin-top: 14px;
+}
+/* 关于国草园标题 */
+.aboutTitle {
+  /* background: blue; */
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 关于国草园轮播图 */
+#aboutgcy .swiper-container {
+  /* background:yellow; */
+  width: 100%;
+}
+#aboutgcy .swiper-container .swiper-slide {
+  /* width:100%; */
+  /* border:1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#aboutgcy .swiper-container .swiper-slide img {
+  width: 100%;
+}
+.abouttxt {
+  width: 100%;
+  margin-top: 40px;
+  height: 200px;
+  display: flex;
+}
+.abouttxt .title {
+  /* background: red; */
+  writing-mode: tb-rl;
+  /* width:10%; */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.abouttxt .con {
+  /* background: blue; */
+  /* width:90%; */
+  writing-mode: tb-rl;
+  overflow: auto;
+}
+/* #aboutgcy .customer-block img{
+  width:100%;
+} */
+/* 蒙中草药基地 */
+.basecontainer {
+  /* border: 1px solid red; */
+  margin-top: 30px;
+}
+/* 基地导航 */
+.baseNav {
+  /* background: red; */
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 14px;
+}
+.baseNav > li {
+  /* float:left; */
+  display: inline-block;
+  border-right: 1px solid #333;
+  padding: 0 15px;
+}
+.baseNav li:last-child {
+  border: 0;
+}
+.baseNav li:hover {
+  color: red;
+  cursor: pointer;
+}
+/* 基地图片 */
+.baseList {
+  /* border:1px solid red; */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.baseList .basePicBox {
+  width: 270px;
+  height: 270px;
+  background: url("../assets/img/home/8-jidi-kuang2.png");
+  background-size: 100% 100%;
+  /* background: blue; */
+}
+.baseList .basePicBox img {
+  width: 100%;
+  /* height: 250px; */
+}
+.text-center {
+  font-size: 25px;
+  font-weight: bold;
+  background: skyblue;
+}
+
+/* 国草园文化 */
+.scoolingcontainer {
+  /* border: 1px solid red; */
+  margin-top: 14px;
+}
+/* 国草园文化标题 */
+.scoolingtitle {
+  /* background: blue; */
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 国草园文化导航 */
+.scoolingNav {
+  /* background: red; */
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 14px;
+}
+.scoolingNav > li {
+  /* float:left; */
+  display: inline-block;
+  border-right: 1px solid #333;
+  padding: 0 15px;
+}
+.scoolingNav li:last-child {
+  border: 0;
+}
+.scoolingNav li:hover {
+  color: red;
+  cursor: pointer;
+}
+/* 文化展示 */
+.scoolingBox {
+}
+.scoolingBox > div {
+  border: 1px solid red;
+  height: 300px;
+}
+.scoolingTxt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.scoolingBox > div .name {
+  width: 5%;
+  writing-mode: tb-rl;
+}
+.scoolingBox > div .name span:first-child{
+  font-size:24px;
+}
+.scoolingBox > div .name span:nth-child(2){
+  font-size:24px;
+  color:red;
+}
+.scoolingBox > div .title {
+  width: 5%;
+  font-size:18px;
+  writing-mode: tb-rl;
+}
+.scoolingBox > div .con {
+  width: 80%;
+  overflow: auto;
+  writing-mode: tb-rl;
+  padding:10px 0;
 }
 /* 大数据管理系统 */
 #bigData {
@@ -822,9 +1331,14 @@ p {
   background: url("../assets/img/twitter.png") 0 0 no-repeat;
   background-size: 100% 100%;
 }
+  #contactUs .contactUs-container .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 /* 客户评价 */
-#customer {
+/* #customer {
   padding: 50px 0;
   box-sizing: border-box;
   background: #efefef;
@@ -836,8 +1350,9 @@ p {
   margin: 0 0 30px;
 }
 #customer .customer-block {
-  background: #fff;
+  background: red;
   padding: 30px;
+  background: 1px solid red;
 }
 #customer .customer-logo img {
   width: 94px;
@@ -854,7 +1369,7 @@ p {
 }
 #customer .customer-content2 {
   padding-top: 20px;
-}
+} */
 /* 为什么选择我们 */
 #whyChooseUs {
   padding: 100px;
@@ -1016,7 +1531,9 @@ p {
   #whyChooseUs {
     padding: 20px 0;
   }
+
 }
+
 /* 我们的文化 */
 .server-wrapper {
   /* border:1px solid red; */

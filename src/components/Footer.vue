@@ -29,9 +29,11 @@ export default {
   width: 100%;
   height: 100%;
   color: #fff;
-  background: #474747;
+  /* background: #474747; */
   overflow: hidden;
   text-align: center;
+  background: url('../assets/img/home/footer.png') no-repeat;
+  background-size: 100% 100%;
 }
 .logo {
   width: 95px;
