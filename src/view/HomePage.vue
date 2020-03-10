@@ -1301,8 +1301,9 @@ p {
 #contactUs {
   color: #fff;
   /* height: 400px; */
-  background: url("../assets/img/contact_us_bg.jpg") 0 0 no-repeat;
-  background-size: 100% 100%;
+  /* background: url("../assets/img/contact_us_bg.jpg") 0 0 no-repeat;
+  background-size: 100% 100%; */
+  background: #888;
   transition: all ease 0.6s;
 }
 #contactUs .contactUs-container {
