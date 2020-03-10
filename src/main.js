@@ -2,6 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+/* element-ui */
+import {
+  Pagination
+} from 'element-ui'
+
+Vue.use(Pagination)
 
 /* 路由 */
 import router from './router'

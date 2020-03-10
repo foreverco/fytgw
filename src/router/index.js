@@ -67,21 +67,46 @@ export default new Router({
               }
             }
           ]
-        }, {
+        }, 
+        {
+          path: '/news',
+          name: 'newsinformation',
+          component: resolve => require(['@/view/news/News'], resolve),
+          meta: {
+            title: '新闻动态'
+          },
+          children: [
+            {
+              path: '/news',
+              redirect: '/news/companynews'
+            },
+            {
+              path: '/news/companynews',
+              name: 'companynews',
+              component: resolve => require(['@/view/news/components/Company'], resolve),
+              meta: {
+                title: '公司新闻'
+              }
+            },
+            {
+              path:'/news/videonews',
+              name: 'videonews',
+              component: resolve => require(['@/view/news/components/VideoNews'], resolve),
+              meta: {
+                title: '视频展示'
+              }
+            }
+          ]
+        },
+        {
           path: '/service',
           name: 'service',
           component: resolve => require(['@/view/Service'], resolve),
           meta: {
             title: '相关服务'
           }
-        }, {
-          path: '/newsinformation',
-          name: 'newsinformation',
-          component: resolve => require(['@/view/NewsInformation'], resolve),
-          meta: {
-            title: '新闻动态'
-          }
-        }, {
+        }, 
+         {
           path: '/companyintroduction',
           name: 'companyintroduction',
           component: resolve => require(['@/view/CompanyIntroduction'], resolve),

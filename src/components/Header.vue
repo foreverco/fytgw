@@ -175,8 +175,12 @@ export default {
           children: [
             {
               name: "公司新闻",
-              path: "/software/smartTown"
+              path: "/news/companynews"
             },
+            {
+              name: "视频展示",
+              path: "/news/videonews"
+            }
             // {
             //   name: "重要公告",
             //   path: "/software/bigData"
@@ -189,10 +193,10 @@ export default {
             //   name: "专题报道",
             //   path: "/software/bigData"
             // },
-             {
-              name: "视频展示",
-              path: "/software/bigData"
-            }
+            //  {
+            //   name: "视频展示",
+            //   path: "/software/bigData"
+            // }
           ]
         },
         // {
