@@ -35,7 +35,7 @@
     </div>
     <hr>
     <ul class="newsList">
-      <li class="row listBox" v-for="(item, index) in newsList" :key="index">
+      <li class="row listBox" v-for="(item, index) in pageNewsList" :key="index">
         <div class="col-md-3 col-xs-12">
           <img :src="item.imgUrl" alt>
         </div>
@@ -72,36 +72,37 @@ export default {
     return {
       newsList: [
         {
-          date: "2020-03-10",
+          date: "2020-03-11",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
           imgUrl: "../../../../static/img/xinwen-2.png"
         },
         {
-          date: "2020-03-10",
+          date: "2020-03-12",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
           imgUrl: "../../../../static/img/xinwen-2.png"
         },
         {
-          date: "2020-03-10",
+          date: "2020-03-13",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
           imgUrl: "../../../../static/img/xinwen-2.png"
         },
         {
-          date: "2020-03-10",
+          date: "2020-03-14",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
           imgUrl: "../../../../static/img/xinwen-2.png"
         },
         {
-          date: "2020-03-10",
+          date: "2020-03-15",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
           imgUrl: "../../../../static/img/xinwen-2.png"
         }
       ],
+      pageNewsList:[],
       // 默认显示第几页
       currentPage: 1,
       // 总条数，根据接口获取数据长度(注意：这里不能为空)
@@ -117,7 +118,13 @@ export default {
           // 将数据赋值给tableData
          //  this.tableData = data.data.body;
           // 将数据的长度赋值给totalCount
-          this.totalCount = 100;
+          this.totalCount = this.newsList.length;
+          this.pageNewsList = this.newsList.slice(this.PageSize*this.currentPage-this.PageSize,this.PageSize*this.currentPage)
+          console.log(this.PageSize)
+          // console.log(this.currentPage)
+          // console.log(this.PageSize*this.currentPage-this.PageSize)
+          // console.log(this.pageNewsList)
+          // console.log(this.pageNewsList)
     },
     // 分页
     // 每页显示的条数
@@ -126,11 +133,13 @@ export default {
       this.PageSize = val;
       // 注意：在改变每页显示的条数时，要将页码显示到第一页
       this.currentPage = 1;
+      this.getData();
     },
     // 显示第几页
     handleCurrentChange(val) {
       // 改变默认的页数
       this.currentPage = val;
+      this.getData()
     }
   },
   created() {
@@ -245,5 +254,14 @@ export default {
   outline: 0;
   border: 1px solid #c5000d;
   color: #c5000d;
+}
+.tabListPage{
+  text-align: center;
+}
+.el-pagination {
+    white-space: inherit;
+    padding: 2px 5px;
+    color: #303133;
+    font-weight: 700;
 }
 </style>

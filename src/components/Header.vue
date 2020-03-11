@@ -1,6 +1,9 @@
 <template>
   <!-- 头部整体盒子 -->
-  <div id="header" class="container-fuild">
+  <div
+    id="header"
+    class="container-fuild"
+  >
     <!-- 头部顶部 -->
     <!-- <div class="header-top container-fuild hidden-xs">
       <div class="container">
@@ -22,45 +25,66 @@
       <!-- 导航logo -->
       <div class='row'>
         <div class="header-nav-logo">
-          <img src="@/assets/img/home/1-head-logo.png" alt="">
+          <img
+            src="@/assets/img/home/1-head-logo.png"
+            alt=""
+          >
           <p>
-            <img src="@/assets/img/home/1-head-pinpai .png" alt="">
+            <img
+              src="@/assets/img/home/1-head-pinpai .png"
+              alt=""
+            >
           </p>
         </div>
       </div>
       <!-- 导航内容 -->
-      <div class='navCon row'>
-          <ul class="header-nav-wrapper">
-            <li
-              v-for="(item,index) in navList"
-              :key="index"
-              :class="index==navIndex?'active':''"
-              @click="navClick(index,item.name)"
-            >
-              <router-link :to="item.path">
-                {{item.name}}
-                <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
-                <i class="underline"></i>
-              </router-link>
-              <dl v-if="item.children.length>0">
-                <dt v-for="(i,n) in item.children" :key="n">
-                  <router-link :to="i.path">{{i.name}}</router-link>
-                </dt>
-              </dl>
-            </li>
-          </ul>
+      <div class='navCon row' :class='{navShow : tabNav}'>
+        <div id='navshowLogo' v-show='tabNav' class='hidden-md'>
+          <img src="@/assets/img/home/1-head-logo.png" alt="">
+        </div>
+        <ul class="header-nav-wrapper">
+          <li
+            v-for="(item,index) in navList"
+            :key="index"
+            :class="index==navIndex?'active':''"
+            @click="navClick(index,item.name)"
+          >
+            <router-link :to="item.path">
+              {{item.name}}
+              <span
+                v-if="item.children.length>0"
+                class="glyphicon glyphicon-menu-down"
+              ></span>
+              <i class="underline"></i>
+            </router-link>
+            <dl v-if="item.children.length>0">
+              <dt
+                v-for="(i,n) in item.children"
+                :key="n"
+              >
+                <router-link :to="i.path">{{i.name}}</router-link>
+              </dt>
+            </dl>
+          </li>
+        </ul>
       </div>
 
     </div>
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img src="@/assets/img/logo.png" alt="logo">
+        <img
+          src="@/assets/img/logo.png"
+          alt="logo"
+        >
         <span class='logotxt'>国草园集团</span>
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
-        {{menuName}}<span v-if='sonName' style="font-size:13px;"> - {{sonName}}</span>
+        {{menuName}}<span
+          v-if='sonName'
+          style="font-size:13px;"
+        > - {{sonName}}</span>
 
         <div
           class="header-nav-m-menu-wrapper"
@@ -71,7 +95,10 @@
           <span :class="menuClass"></span>
         </div>
         <!-- 导航内容 -->
-        <ul id="menu" class="header-nav-m-wrapper collapse">
+        <ul
+          id="menu"
+          class="header-nav-m-wrapper collapse"
+        >
           <li
             v-for="(item,index) in navList"
             :key="index"
@@ -83,20 +110,27 @@
           >
             <router-link :to="item.path">
               {{item.name}}
-              <span v-if="item.children.length>0" class="glyphicon glyphicon-menu-down"></span>
+              <span
+                v-if="item.children.length>0"
+                class="glyphicon glyphicon-menu-down"
+              ></span>
               <i class="underline"></i>
             </router-link>
-             <ul :class="'navClass'+index" v-if="item.children.length>0" class="header-nav-m-wrapper1 collapse">
-            <li 
-              v-for="(i,n) in item.children" 
-              :key="n" 
-              @click.stop="getsonName(i.name)"
-              data-toggle="collapse"
-              data-target="#menu"
-               >
-              <router-link :to="i.path">{{i.name}}</router-link>
-            </li>
-          </ul>
+            <ul
+              :class="'navClass'+index"
+              v-if="item.children.length>0"
+              class="header-nav-m-wrapper1 collapse"
+            >
+              <li
+                v-for="(i,n) in item.children"
+                :key="n"
+                @click.stop="getsonName(i.name)"
+                data-toggle="collapse"
+                data-target="#menu"
+              >
+                <router-link :to="i.path">{{i.name}}</router-link>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -104,15 +138,18 @@
 
   </div>
 
-
 </template>
 <script>
 export default {
   name: "Header",
   data() {
     return {
-      targetId: '333',
-      navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
+      /* 滚动监听导航条 */
+      tabNav: false,
+      targetId: "333",
+      navIndex: sessionStorage.getItem("navIndex")
+        ? sessionStorage.getItem("navIndex")
+        : 0,
       menuName: "首页",
       sonName: "",
       menuClass: "glyphicon glyphicon-menu-down",
@@ -135,7 +172,7 @@ export default {
               name: "荣誉历程",
               path: "/software/rongyu"
             },
-             {
+            {
               name: "组织架构",
               path: "/software/jiagou"
             },
@@ -226,17 +263,20 @@ export default {
       ]
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
   methods: {
     navClick(index, name) {
-      console.log(444)
+      console.log(444);
       this.navIndex = index;
-      sessionStorage.setItem('navIndex',index)
-      this.sonName = ''
+      sessionStorage.setItem("navIndex", index);
+      this.sonName = "";
       this.menuName = name;
-      this.targetId = ".navClass" + index
+      this.targetId = ".navClass" + index;
     },
     menuClick() {
-      console.log(123)
+      console.log(123);
       if (this.menuClass == "glyphicon glyphicon-menu-down") {
         this.menuClass = "glyphicon glyphicon-menu-up";
       } else {
@@ -244,8 +284,21 @@ export default {
       }
     },
     getsonName(name) {
-        this.sonName = name
-        console.log(this.sonName)
+      this.sonName = name;
+      console.log(this.sonName);
+    },
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      if (scrollTop > 500) {
+        this.tabNav = true;
+        console.log(1111)
+      } else if (scrollTop < 500) {
+        this.tabNav = false;
+        console.log(222)
+      }
     }
   }
 };
@@ -255,7 +308,7 @@ export default {
 #header {
   /* background: #f7f7f7; */
   transition: all ease 0.6s;
-  background: url('../assets/img/home/toubu.png') no-repeat;
+  background: url("../assets/img/home/toubu.png") no-repeat;
   background-size: 100%;
 }
 #header .header-top {
@@ -272,7 +325,7 @@ export default {
 /* 导航栏 */
 #header .header-nav {
   /* height: 500px; */
-  padding-top:100px;
+  padding-top: 100px;
 }
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
@@ -291,26 +344,49 @@ export default {
   width: 223px;
   /* height: 145px; */
   margin: auto;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 #header .header-nav .header-nav-logo p {
   margin: auto;
-  width:100%;
+  width: 100%;
   font-weight: bold;
   text-align: center;
   /* border:1px solid blue; */
 }
-#header .header-nav .header-nav-logo p img{
-  width:60%;
+#header .header-nav .header-nav-logo p img {
+  width: 60%;
   /* height:75px; */
 }
 /* 导航栏 导航容器 */
-.navCon{
-  /* border:1px solid red; */
-  height:110px;
+.navCon {
+  /* border: 1px solid red; */
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* position: fixed;
+  top:0; */
+}
+.navShow {
+  width:100%;
+  background: rgba(255,255,255,0.5);
+  position: fixed;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+}
+#navshowLogo {
+  /* border:1px solid blue; */
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+#navshowLogo img{
+  height:80%;
+  position: absolute;
+  left:15%;
+  /* margin-left:250px; */
 }
 #header .header-nav-fixed .header-nav-wrapper {
   line-height: 50px;
@@ -428,8 +504,8 @@ export default {
     bottom: 0; */
     /* margin: auto; */
   }
-  .logotxt{
-    font-size:25px;
+  .logotxt {
+    font-size: 25px;
     font-weight: bold;
   }
   /* 导航栏  菜单容器 */
@@ -481,32 +557,32 @@ export default {
     font-size: 10px;
   }
 }
-.header-nav-m-wrapper1{
+.header-nav-m-wrapper1 {
   background: #555;
 }
-  /* 导航栏 每个导航 */
-  #header .header-nav-m .header-nav-m-wrapper1 > li {
-    /* height: 40px; */
-    line-height: 35px;
-    border-bottom: 1px solid #ccc;
-  }
-  #header .header-nav-m .header-nav-m-wrapper1 > li > a {
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 15px 0;
-    position: relative;
-  }
-.pull-left{
+/* 导航栏 每个导航 */
+#header .header-nav-m .header-nav-m-wrapper1 > li {
+  /* height: 40px; */
+  line-height: 35px;
+  border-bottom: 1px solid #ccc;
+}
+#header .header-nav-m .header-nav-m-wrapper1 > li > a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px 0;
+  position: relative;
+}
+.pull-left {
   /* border:1px solid red; */
-  display:flex;
+  display: flex;
   align-items: center;
 }
-.pull-left img{
-  height:50px;
+.pull-left img {
+  height: 50px;
 }
-.pull-left span{
-  font-size:18px;
+.pull-left span {
+  font-size: 18px;
   font-weight: bold;
 }
 </style>
