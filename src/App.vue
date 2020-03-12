@@ -9,7 +9,16 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      //  :class='{fengcaiBg:isFengcai==this.$route.path}'
+      // isFengcai:'/software/fengcai'
+    }
+  },
+  updated() {
+    console.log(this.$route.path)
+  },
 }
 </script>
 
@@ -53,4 +62,20 @@ p::-webkit-scrollbar{
   p::-webkit-scrollbar-corner{
     background: #179a16;
   }
+  /* .fengcaiBg{
+    background: url('./assets/img/qiye/qiyebg.png') no-repeat !important;
+    background-size:contain !important;
+  } */
+
+/* 分页样式 */
+  .tabListPage{
+  text-align: center;
+}
+.el-pagination {
+    white-space: inherit;
+    padding: 2px 5px;
+    color: #303133;
+    font-weight: 700;
+    margin:20px 0;
+}
 </style>

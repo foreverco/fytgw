@@ -168,10 +168,10 @@ export default {
               name: "企业简介",
               path: "/software/aboutUs"
             },
-            {
-              name: "荣誉历程",
-              path: "/software/rongyu"
-            },
+            // {
+            //   name: "荣誉历程",
+            //   path: "/software/rongyu"
+            // },
             {
               name: "组织架构",
               path: "/software/jiagou"

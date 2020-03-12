@@ -1,6 +1,6 @@
 <template>
   <div id="ContactUs">
-    <div class="banner container-fuild text-center">联系我们</div>
+    <div class="banner container-fuild text-center"></div>
     <div class="container">
       <div class="container-fuild ContactUs-container">
         <div class="row">
@@ -81,7 +81,7 @@ export default {
   font-size: 30px;
   height: 150px;
   line-height: 150px;
-  background-image: url("../assets/img/banner_1.jpg");
+  background-image: url("../assets/img/callme/6-1lianxiwom-banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
