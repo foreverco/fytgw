@@ -4,10 +4,18 @@ import Vue from 'vue'
 import App from './App'
 /* element-ui */
 import {
-  Pagination
+  Pagination,
+  Form,
+  FormItem,
+  Input,
+  Button
 } from 'element-ui'
 
 Vue.use(Pagination)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Button)
 
 /* 路由 */
 import router from './router'

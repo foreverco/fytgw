@@ -39,7 +39,7 @@
         <div class="col-md-3 col-xs-12">
           <img :src="item.imgUrl" alt>
         </div>
-        <div class="col-md-9 col-xs-12">
+        <div class="col-md-9 col-xs-12" style='padding-left:10px'>
           <h4>{{item.title}}</h4>
           <div class="titleBox">
             <span>{{item.date}}</span>
@@ -162,6 +162,7 @@ export default {
 }
 .conBox {
   height: 100%;
+  padding-left: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

@@ -99,6 +99,32 @@ export default new Router({
           ]
         },
         {
+          path: '/product',
+          name: 'Product',
+          component: resolve => require(['@/view/product/Product'], resolve),
+          meta: {
+            title: '产品中心'
+          },
+          children: [
+            {
+              path:'/product/productpack',
+              name: 'Productpack',
+              component: resolve => require(['@/view/product/components/Productpack'], resolve),
+              meta: {
+                title: '产品包装'
+              }
+            },
+            {
+              path:'/product/stockshow',
+              name: 'Stockshow',
+              component: resolve => require(['@/view/product/components/Stockshow'], resolve),
+              meta: {
+                title: '原料展示'
+              }
+            }
+          ]
+        },
+        {
           path: '/service',
           name: 'service',
           component: resolve => require(['@/view/Service'], resolve),

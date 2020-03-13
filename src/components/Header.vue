@@ -189,15 +189,15 @@ export default {
           children: [
             {
               name: "原料展示",
-              path: "/software/smartTown"
+              path: "/product/bigData"
             },
             {
               name: "产品包装",
-              path: "/software/bigData"
+              path: "/product/productpack"
             },
             {
               name: "种植实力",
-              path: "/software/smartTown"
+              path: "/product/stockshow"
             },
             {
               name: "防伪查询",

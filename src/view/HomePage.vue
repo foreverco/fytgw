@@ -876,7 +876,7 @@ p {
   /* justify-content: flex-end; */
 }
 #tecnology .tecnologyList > ul > li {
-  float: left;
+  /* float: left; */
   margin: 5px;
   position: relative;
   display: flex;
@@ -1547,6 +1547,23 @@ p {
   font-size: 25px;
   font-weight: bold;
   background: skyblue;
+}
+
+
+@media screen and (max-width: 996px){
+  #tecnology .tecnologyList > ul > li > p {
+  background: red;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 208px;
+  width: 25px;
+  /* margin: 0 auto;   */
+  line-height: 24px;
+}
 }
 </style>
 
