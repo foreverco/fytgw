@@ -22,7 +22,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang='less'>
+  @import './common/fonts/font.css';
+
   #app{
     background: url('./assets/img/bg.png');
                 -webkit-background-size: cover;
@@ -49,15 +51,15 @@ p::-webkit-scrollbar{
     /**/
   }
   p::-webkit-scrollbar-track{
-    background: rgb(239, 239, 239);
+    background: transparent;
     border-radius:2px;
   }
   p::-webkit-scrollbar-thumb{
-    background: #bfbfbf;
+    background: #bfbfbf50;
     border-radius:10px;
   }
   p::-webkit-scrollbar-thumb:hover{
-    background: #333;
+    background: #bfbfbf70;
   }
   p::-webkit-scrollbar-corner{
     background: #179a16;

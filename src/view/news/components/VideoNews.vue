@@ -66,71 +66,71 @@ export default {
       videoList: [
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/aaaa.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/aaaa.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/jc2.mp4"
+          videoSrc: "../../../../static/video/ssss.mp4"
         }
       ],
       newVideoList: [],

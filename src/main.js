@@ -48,9 +48,14 @@ import 'turn.js'
 import './assets/css/bootstrap.min.css'
 import './assets/js/bootstrap.min'
 
+/* 引入less */
+import less from 'less'
+
 /* animate.css */
 import 'animate.css'
 
+/* 引入特殊字体 */
+import '../static/font/font.css'
  
 /* 头部组件 */
 import Header from './components/Header'

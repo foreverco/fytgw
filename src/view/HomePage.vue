@@ -281,7 +281,9 @@
               <span>企业文化</span>
             </p>
           </div>
-          <div class='col-md-6 scoolingImg'>456</div>
+          <div class='col-md-6 scoolingImg wow zoomIn'>
+            <img src="../../static/img/chanpin/4-1chanpin-tu1.png" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -321,20 +323,23 @@
       class="container-fuild text-center"
     >
       <div class="container contactUs-container wow slideInUp">
-        <h1>400-8888-456</h1>
+        <button
+          class="btn btn-info btn-sm"
+          onmouseleave="this.style.borderColor='#46b8da'; this.style.backgroundColor='#5bc0de'; this.style.color='#fff';"
+          onmouseenter="this.style.backgroundColor='#5bc0de70'; this.style.borderColor='#ffffff'; this.style.color='#ffffff';"
+        >联系我们</button>
+        <h1 style='color:#c5000d'>400-8888-456</h1>
         <div class='logo hidden-xs'>
           <img src="@/assets/img/home/8-lianxiwomen-logo.png" alt="">
         </div>
-        <button
-          class="btn btn-default btn-sm"
-          onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#3f3f3f';"
-          onmouseenter="this.style.backgroundColor='transparent'; this.style.borderColor='#ffffff'; this.style.color='#ffffff';"
-        >联系我们</button>
-        <div class="contactUs-contactWay">
+        <hr>
+        <span style='background:black'>http://www.guocaoyuan.com</span>
+        <h3 style='color:#c5000d'>服务热线: 0471-3900199</h3>
+        <!-- <div class="contactUs-contactWay">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- 客户评价 -->
@@ -885,7 +890,8 @@ p {
 #tecnology .tecnologyList > ul > li > p {
   background: red;
   color: #fff;
-  font-size: 16px;
+  font-family: 'lv1';
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -934,6 +940,8 @@ p {
 .taccon p {
   width: 80%;
   overflow: auto;
+  font-family:'lv1';
+  font-size:16px;
   /* background: yellow; */
 }
 .taccon .button {
@@ -942,6 +950,7 @@ p {
 .taccon button {
   height: 120px;
   width: 26px;
+  font-family:'lv1';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1146,7 +1155,8 @@ p {
   /* background: red; */
   writing-mode: tb-rl;
   /* width:10%; */
-  font-size: 20px;
+  font-size: 24px;
+  font-family:'lv1';
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -1154,6 +1164,8 @@ p {
 .abouttxt .con {
   /* background: blue; */
   /* width:90%; */
+    font-size: 16px;
+  font-family:'lv1';
   writing-mode: tb-rl;
   overflow: auto;
 }
@@ -1207,7 +1219,6 @@ p {
 .text-center {
   font-size: 25px;
   font-weight: bold;
-  background: skyblue;
 }
 
 /* 国草园文化 */
@@ -1246,14 +1257,23 @@ p {
 /* 文化展示 */
 .scoolingBox {
 }
+.scoolingImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scoolingImg img{
+  width:80%;
+}
 .scoolingBox > div {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 300px;
 }
 .scoolingTxt {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'lv1';
 }
 .scoolingBox > div .name {
   width: 5%;
@@ -1273,6 +1293,7 @@ p {
 }
 .scoolingBox > div .con {
   width: 80%;
+  font-size:16px;
   overflow: auto;
   writing-mode: tb-rl;
   padding:10px 0;
@@ -1303,7 +1324,7 @@ p {
   /* height: 400px; */
   /* background: url("../assets/img/contact_us_bg.jpg") 0 0 no-repeat;
   background-size: 100% 100%; */
-  background: #888;
+  /* background: rgba(0,0,0,0.3); */
   transition: all ease 0.6s;
 }
 #contactUs .contactUs-container {
@@ -1312,7 +1333,13 @@ p {
 #contactUs .contactUs-container button {
   width: 300px;
   height: 50px;
-  margin-top: 40px;
+  margin-top: 20px;
+  font-size:26px;
+  letter-spacing: 8px;
+  font-family: 'lv1';
+}
+#contactUs .contactUs-container .contactUs-contactWay{
+  background: rgba(0,0,0,0.2);
 }
 #contactUs .contactUs-container .contactUs-contactWay span {
   display: inline-block;
@@ -1546,11 +1573,14 @@ p {
 .text-center {
   font-size: 25px;
   font-weight: bold;
-  background: skyblue;
 }
 
 
 @media screen and (max-width: 996px){
+  #tecnology .tecnologyList > ul > li{
+    margin:5px;
+    max-width: 70%;
+  }
   #tecnology .tecnologyList > ul > li > p {
   background: red;
   color: #fff;

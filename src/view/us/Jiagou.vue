@@ -7,12 +7,12 @@
       </div>
     <div class='container'>
       <div class='row'>
-        <div class='col-xs-12 logoBox'>
+        <!-- <div class='col-xs-12 logoBox'>
           <img
             src="@/assets/img/qiye/3-2zuzhijiagou-2.png"
             alt=""
           >
-        </div>
+        </div> -->
         <div class='col-xs-12 concTxt'>
           <img
             src="@/assets/img/qiye/3-2zuzhijiagou-3.png"
@@ -44,7 +44,7 @@ export default {
   justify-content: center;
 }
 .concTxt {
-  margin: 30px 0;
+  margin: 80px 0;
 }
 .concTxt img {
   width: 100%;
