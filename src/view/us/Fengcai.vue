@@ -14,10 +14,16 @@
             v-for="(item, index) in imgBox"
             :key="index"
           >
-            <img
+          <div class='imgSpace1'>
+                          <img
               :src="item.imgUrl"
               alt=""
             >
+          </div>
+
+            <p>
+              {{item.title}}
+            </p>
           </li>
         </ul>
     </div>
@@ -78,10 +84,10 @@ export default {
       // 默认每页显示的条数（可修改）
       PageSize: 6,
       imgBox: [
-        { imgUrl: "../../../static/img/3-3qiyefengcai-1.png" },
-        { imgUrl: "../../../static/img/3-3qiyefengcai-2.png" },
-        { imgUrl: "../../../static/img/3-3qiyefengcai-3.png" },
-        { imgUrl: "../../../static/img/3-3qiyefengcai-4.png" }
+        { imgUrl: "static/img/3-3qiyefengcai-1.png", title:'种植奠基仪式' },
+        { imgUrl: "static/img/3-3qiyefengcai-2.png", title:'种植奠基仪式' },
+        { imgUrl: "static/img/3-3qiyefengcai-3.png", title:'种植奠基仪式' },
+        { imgUrl: "static/img/3-3qiyefengcai-4.png", title:'种植奠基仪式' }
       ],
       fengeImgList: [
         { num: "壹" },
@@ -97,35 +103,35 @@ export default {
       ],
       imgList: [
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         }
       ]
@@ -195,6 +201,37 @@ export default {
 .imgBox li {
   /* height:430px; */
   /* border:1px solid red; */
+  position: relative;
+}
+.imgBox li p{
+  position: absolute;
+  bottom:0;
+  height:10%;
+  background:rgba(0,0,0,0.5);
+  width:100%;
+  padding-left: 5%;
+  color:#fff;
+  display: flex;
+  align-items: center;
+}
+.imgSpace1{
+  height:100%;
+}
+.imgBox li:hover .imgSpace1::after{
+    content: '奠基仪式 点击了解更多';
+    display: flex;
+    color:white;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.3);
+    cursor: pointer;
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 200000;
+    transition: all 400ms ease
 }
 .imgBox li:first-child,
 .imgBox li:last-child {
@@ -215,21 +252,21 @@ export default {
   margin: 3vw 0;
 }
 .fengeImg li {
-  width: 6vw;
-  height: 6vw;
+  width: 5vw;
+  height: 5vw;
   font-size: 2vw;
   /* font-weight:bold; */
   color: #8c1713;
-  background: url("../../../static/img/3-3qiyefengcai-5.png") no-repeat;
+  background: url("../../assets/img/qiye/3-3qiyefengcai-5.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .fengeImg li:nth-child(3) {
-     width: 8vw;
-  height: 8vw;
-  background: url("../../../static/img/3-3qiyefengcai-6.png") no-repeat;
+     width: 7vw;
+  height: 7vw;
+  background: url("../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
   background-size: 100% 100%;
 }
 .imgList {
@@ -241,6 +278,7 @@ export default {
 .imgList li {
   /* width:22%; */
   margin: 30px;
+  position: relative;
 }
 .imgList li .imgSpace {
   height: 50%;
@@ -264,16 +302,43 @@ export default {
     transition: all 400ms ease
 }
 .imgList li .txtSpace {
-  height: 50px;
-  font-size: 16px;
+  height: 20%;
+  width:100%;
+  font-size: 11px;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #8c1713;
+  position: absolute;
+  /* background: #8c1713; */
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 1000000001;
 }
 .imgList li .imgSpace img {
   width: 100%;
 }
+
+@media screen and (max-width: 800px) {
+  .fengeImg li[data-v-489fac63] {
+    width: 8vw;
+    height: 8vw;
+    font-size: 2vw;
+    color: #8c1713;
+    background: url(/static/img/3-3qiyefengcai-5.bb9823c.png) no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.fengeImg li:nth-child(3) {
+     width: 10vw;
+  height: 10vw;
+  background: url("../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
+  background-size: 100% 100%;
+}
+}
+
+
 </style>
 

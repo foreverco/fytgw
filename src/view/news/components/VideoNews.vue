@@ -5,7 +5,7 @@
         <!-- <h1>富宇通的快乐生活</h1> -->
         <!-- <img src="@/assets/img/news/datu-1.png" alt=""> -->
         <!-- 播放器的方向， landscape横屏，portraint竖屏，默认值为竖屏 -->
-        <!-- <video src="../../../../static/video/yyb.mp4"></video> -->
+        <!-- <video src="static/video/yyb.mp4"></video> -->
         <video
           id="videoactive"
           autoplay
@@ -66,71 +66,71 @@ export default {
       videoList: [
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/aaaa.mp4"
+          videoSrc: "static/video/aaaa.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/aaaa.mp4"
+          videoSrc: "static/video/aaaa.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "../../../../static/video/ssss.mp4"
+          videoSrc: "static/video/ssss.mp4"
         }
       ],
       newVideoList: [],
@@ -197,18 +197,17 @@ export default {
 </script>
 <style scoped>
 .videoBox {
-  /* border:1px solid rgba(0,0,0,0.1); */
-  /* height:500px; */
+  /* border:1px solid red; */
+  height:50vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
-.videoBox h1 {
-  width: 100%;
-  text-align: center;
-}
+
 #videoactive {
-  width: 60%;
+  height: 80%;
+  width: 100%;
 }
 .videoBox img {
   width: 100%;

@@ -104,11 +104,11 @@
             </div>
             <div class="col-md-6 col-sm-12">
               <p>{{item.title}}</p>
-              <p>{{item.con}}</p>
+              <p class='newsCon'>{{item.con}}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <span>{{item.date}}</span>
               <button>浏览更多</button>
+              <span>{{item.date}}</span>
             </div>
           </li>
         </ul>
@@ -134,7 +134,7 @@
         </ul>
         <ul class='productList row'>
           <li
-            class='col-md-3 col-sm-5 col-xs-9'
+            class='col-md-3 col-sm-5 col-xs-6'
             v-for="(item, index) in productList"
             :key="index"
           >
@@ -167,19 +167,19 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
-                  src="../../static/img/6-guanyuguocaoyuan-tupian1.png"
+                  src="static/img/6-guanyuguocaoyuan-tupian1.png"
                   alt=""
                 >
               </div>
               <div class="swiper-slide">
                 <img
-                  src="../../static/img/6-guanyuguocaoyuan-tupian1.png"
+                  src="static/img/6-guanyuguocaoyuan-tupian1.png"
                   alt=""
                 >
               </div>
               <div class="swiper-slide">
                 <img
-                  src="../../static/img/6-guanyuguocaoyuan-tupian1.png"
+                  src="static/img/6-guanyuguocaoyuan-tupian1.png"
                   alt=""
                 >
               </div>
@@ -197,8 +197,9 @@
           </div>
         </div>
         <div class='row abouttxt'>
-          <p class='con col-md-11'>内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓</p>
-          <p class='title col-md-1'>国草园产品:</p>
+          <p class='con col-md-11'>国草园集团，成立于 2018 年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。
+集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。 </p>
+          <p class='title col-md-1'>国草园集团:</p>
         </div>
       </div>
     </div>
@@ -225,13 +226,18 @@
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
             v-for="(item,index) in basePicList"
             :key="index"
+             @mouseover="hoverboxShow(index)" @mouseout="hoverboxHide"
           >
             <div class='basePicBox'>
               <img
                 :src="item.imgUrl"
                 alt
               >
+            <div class='hoverBox hoverwow bounceIn' v-show='hoverBoxShow == index'>
+              {{item.title}}
             </div>
+            </div>
+
             <!-- <p class="text-center">{{item.title}}</p> -->
             <!-- <div
               class="server-block wow slideInUp"
@@ -282,7 +288,7 @@
             </p>
           </div>
           <div class='col-md-6 scoolingImg wow zoomIn'>
-            <img src="../../static/img/chanpin/4-1chanpin-tu1.png" alt="">
+            <img src="static/img/chanpin/4-1chanpin-tu1.png" alt="">
           </div>
         </div>
       </div>
@@ -323,15 +329,15 @@
       class="container-fuild text-center"
     >
       <div class="container contactUs-container wow slideInUp">
-        <button
-          class="btn btn-info btn-sm"
-          onmouseleave="this.style.borderColor='#46b8da'; this.style.backgroundColor='#5bc0de'; this.style.color='#fff';"
-          onmouseenter="this.style.backgroundColor='#5bc0de70'; this.style.borderColor='#ffffff'; this.style.color='#ffffff';"
-        >联系我们</button>
-        <h1 style='color:#c5000d'>400-8888-456</h1>
-        <div class='logo hidden-xs'>
-          <img src="@/assets/img/home/8-lianxiwomen-logo.png" alt="">
+                <div class='logo hidden-xs'>
+          <img src="@/assets/img/home/8-lianxiwomen-logo1.png" alt="">
         </div>
+        <h1 style='color:#c5000d'>400-8888-456</h1>
+                <button
+          class="btn btn-info btn-sm"
+          onmouseleave="this.style.borderColor='#c60c16'; this.style.backgroundColor='#c60c16'; this.style.color='#fff';"
+          onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#c60c16'; this.style.color='#c60c16';"
+        >联系我们</button>
         <hr>
         <span style='background:black'>http://www.guocaoyuan.com</span>
         <h3 style='color:#c5000d'>服务热线: 0471-3900199</h3>
@@ -437,6 +443,7 @@ export default {
   name: "HomePage",
   data() {
     return {
+      hoverBoxShow: -1,
       /* 轮播图列表 */
       swiperList: [
         {
@@ -446,19 +453,13 @@ export default {
           content: ""
         },
         {
-          img: require("@/assets/img/home/2-banner.png"),
+          img: require("@/assets/img/home/banner2.jpg"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/home/2-banner.png"),
-          path: "",
-          title: "",
-          content: ""
-        },
-        {
-          img: require("@/assets/img/home/2-banner.png"),
+          img: require("@/assets/img/home/banner3.jpg"),
           path: "",
           title: "",
           content: ""
@@ -469,41 +470,40 @@ export default {
       /* 专业技术列表 */
       tecnologyList: [
         {
-          title: "专业的技术",
-          con:
-            "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓"
+          title: "以人为本",
+          con: "坚持以人为本，不断增强企业的核心竞争能力。进一步提高认识，深化改革，采取措施培养人才，用好人才，吸引人才，争取主动，强调通才，具有较强的创新意识，善于总结经验，勇于突破自我。  "
         },
         {
-          title: "专业的技术",
-          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市"
+          title: "诚信经营",
+          con: "以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣。"
         },
         {
-          title: "专业的技术",
-          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市"
+          title: "发展蒙药",
+          con: "国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范"
         },
         {
-          title: "专业的技术",
-          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市"
+          title: " 致力健康",
+          con: " 扎根内蒙  天然种植  选料上乘  辐射全国，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业"
         }
       ],
       /* 新闻列表 */
       newsList: [
         {
           imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
-          title: "关于阿擦擦",
-          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
+          title: "诚信经营",
+          con: "扎根内蒙天然种植选料上乘 辐射全国  ，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业",
           date: "2020-03-09"
         },
         {
           imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
-          title: "关于阿擦擦",
-          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
+          title: "致力健康",
+          con: "扎根内蒙天然种植选料上乘 辐射全国  ，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业",
           date: "2020-03-09"
         },
         {
           imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
-          title: "关于阿擦擦",
-          con: "内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市",
+          title: "以人为本",
+          con: "扎根内蒙天然种植选料上乘 辐射全国  ，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业",
           date: "2020-03-09"
         }
       ],
@@ -511,71 +511,71 @@ export default {
       productList: [
         {
           name: "黄芪",
-          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin1.png",
-          effect: "清热解毒"
+          imgUrl: "static/img/5-chanpinzhongxin-chanpin1.png",
+          effect: "增强免疫，保肝利尿"
         },
         {
           name: "板蓝根",
-          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin2.png",
-          effect: "清热解毒"
+          imgUrl: "static/img/5-chanpinzhongxin-chanpin2.png",
+          effect: "清热解毒，凉血利咽"
         },
         {
           name: "柴胡",
-          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin3.png",
-          effect: "清热解毒"
+          imgUrl: "static/img/5-chanpinzhongxin-chanpin3.png",
+          effect: "和解表里，疏肝解郁"
         },
         {
           name: "防风",
-          imgUrl: "../../static/img/5-chanpinzhongxin-chanpin4.png",
-          effect: "清热解毒"
+          imgUrl: "static/img/5-chanpinzhongxin-chanpin4.png",
+          effect: "祛风解表，胜湿止痛"
         }
       ],
       /* 关于国草园轮播图 */
       aboutgcyList: [
-        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" },
-        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" },
-        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" },
-        { imgUrl: "../../static/img/6-guanyuguocaoyuan-tupian1.png" }
+        { imgUrl: "static/img/6-guanyuguocaoyuan-tupian1.png" },
+        { imgUrl: "static/img/6-guanyuguocaoyuan-tupian1.png" },
+        { imgUrl: "static/img/6-guanyuguocaoyuan-tupian1.png" },
+        { imgUrl: "static/img/6-guanyuguocaoyuan-tupian1.png" }
       ],
       /* 仲裁要基地图片 */
       basePicList: [
         {
-          imgUrl: "../../static/img/8-jidi-tu2.png",
+          imgUrl: "static/img/8-jidi-tu2.png",
           title: "德诚百年",
           content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu3.png",
+          imgUrl: "static/img/8-jidi-tu3.png",
           title: "大医精诚",
           content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu4.png",
+          imgUrl: "static/img/8-jidi-tu4.png",
           title: "精益求精",
           content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu5.png",
+          imgUrl: "static/img/8-jidi-tu5.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu6.png",
+          imgUrl: "static/img/8-jidi-tu6.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu7.png",
+          imgUrl: "static/img/8-jidi-tu7.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu4.png",
+          imgUrl: "static/img/8-jidi-tu4.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "../../static/img/8-jidi-tu5.png",
+          imgUrl: "static/img/8-jidi-tu5.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
@@ -735,6 +735,19 @@ export default {
         });
         wow.init();
       });
+    },
+        hoverBoxShow() {
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "hoverwow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
     }
   },
   components: {
@@ -811,6 +824,12 @@ export default {
   methods: {
     changeTacnology(e) {
       this.tecnologyShow = e;
+    },
+    hoverboxShow(e) {
+      this.hoverBoxShow = e
+    },
+    hoverboxHide() {
+      this.hoverBoxShow = -1
     }
   }
 };
@@ -870,12 +889,15 @@ p {
 }
 #tecnology .tecnologyList {
   height: 100%;
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #tecnology .tecnologyList > ul {
   display: flex;
   margin-bottom: 0 !important;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
   /* background: green; */
   /* justify-content: flex-end; */
@@ -940,8 +962,9 @@ p {
 .taccon p {
   width: 80%;
   overflow: auto;
-  font-family:'lv1';
-  font-size:16px;
+  /* font-family:'lv1'; */
+  font-size:15px;
+  letter-spacing: 8px;
   /* background: yellow; */
 }
 .taccon .button {
@@ -996,7 +1019,6 @@ p {
 .newsList {
 }
 .newsList li {
-  /* border: 1px solid red; */
   display: block;
   margin: 30px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -1014,28 +1036,44 @@ p {
 .newsList li > div:nth-child(3) {
   height: 120px;
 }
+.newsList li > div:nth-child(2){
+  justify-content: left;
+  
+}
+.newsList li > div:nth-child(2) p{
+  justify-content: left;
+  text-align: left;
+
+}
 .newsList li > div > p {
   width: 100%;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  /* border: 1px solid red; */
+  /* height: 70%; */
+  text-align: left;
 }
 .newsList li > div > p:first-child {
   height: 30%;
   font-size: 16px;
   font-weight: bold;
 }
+.newsList .newsCon {
+  width:90%;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.newsList li > div:last-child{
+  padding-top:65px;
+}
 .newsList li > div button {
   background: transparent;
   outline: 0;
   border: 0;
-  /* border: 1px solid red; */
-  color: red;
+  border: 1px solid #c5000d;
+  color: #c5000d;
+}
+.newsList li > div button:hover {
+  background: #c5000d;
+  color:#fff;
 }
 .newsList li > div span {
   display: inline-block;
@@ -1084,7 +1122,7 @@ p {
 }
 .productList li {
   background: url("../assets/img/home/5-chanpinzhongxin-kuang.png") no-repeat;
-  background-size: 100% 100%;
+  background-size: 90% 100%;
   height: 380px;
   /* border:1px solid red; */
   display: flex;
@@ -1105,9 +1143,10 @@ p {
   margin-bottom: -30px;
   font-size: 20px;
 }
+
 .productList li .imgBox {
-  /* border:1px solid red; */
-  width: 100%;
+  width: 90%;
+  margin-left:-10%;
   display: flex;
   align-items: bottom;
   justify-content: center;
@@ -1148,7 +1187,7 @@ p {
 .abouttxt {
   width: 100%;
   margin-top: 40px;
-  height: 200px;
+  height: 230px;
   display: flex;
 }
 .abouttxt .title {
@@ -1156,7 +1195,7 @@ p {
   writing-mode: tb-rl;
   /* width:10%; */
   font-size: 24px;
-  font-family:'lv1';
+  /* font-family:'lv1'; */
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -1164,8 +1203,9 @@ p {
 .abouttxt .con {
   /* background: blue; */
   /* width:90%; */
-    font-size: 16px;
-  font-family:'lv1';
+    font-size: 13px;
+    letter-spacing: 3px;
+  /* font-family:'lv1'; */
   writing-mode: tb-rl;
   overflow: auto;
 }
@@ -1194,7 +1234,7 @@ p {
   border: 0;
 }
 .baseNav li:hover {
-  color: red;
+  color: #c5000d;
   cursor: pointer;
 }
 /* 基地图片 */
@@ -1208,12 +1248,29 @@ p {
 .baseList .basePicBox {
   width: 270px;
   height: 270px;
-  background: url("../assets/img/home/8-jidi-kuang2.png");
+  /* background: url("../assets/img/home/8-jidi-kuang2.png"); */
   background-size: 100% 100%;
+  position: relative;
   /* background: blue; */
 }
+.baseList .basePicBox:hover{
+  cursor: pointer;
+}
+.hoverBox{
+  background: #c5000d30;
+  position: absolute;
+  top:0;
+  left:0;
+  width:90%;
+  height:90%;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  font-size: 20px;
+}
 .baseList .basePicBox img {
-  width: 100%;
+  width: 90%;
   /* height: 250px; */
 }
 .text-center {
@@ -1326,13 +1383,14 @@ p {
   background-size: 100% 100%; */
   /* background: rgba(0,0,0,0.3); */
   transition: all ease 0.6s;
+  margin-bottom:60px;
 }
 #contactUs .contactUs-container {
   padding-top: 50px;
 }
 #contactUs .contactUs-container button {
   width: 300px;
-  height: 50px;
+  /* height: 50px; */
   margin-top: 20px;
   font-size:26px;
   letter-spacing: 8px;
@@ -1365,39 +1423,12 @@ p {
     justify-content: center;
   }
 
-/* 客户评价 */
-/* #customer {
-  padding: 50px 0;
-  box-sizing: border-box;
-  background: #efefef;
-  transition: all ease 0.6s;
+.btn-info {
+    color: #fff;
+    background-color: #c60c16;
+    border-color: #c60c16;
 }
-#customer .customer-title {
-  font-size: 30px;
-  color: rgb(102, 102, 102);
-  margin: 0 0 30px;
-}
-#customer .customer-block {
-  background: red;
-  padding: 30px;
-  background: 1px solid red;
-}
-#customer .customer-logo img {
-  width: 94px;
-  height: 94px;
-  border: 1px solid #ccc;
-}
-#customer .customer-yh img {
-  width: 34px;
-  height: 34px;
-}
-#customer .customer-content1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #0ce9f1;
-}
-#customer .customer-content2 {
-  padding-top: 20px;
-} */
+
 /* 为什么选择我们 */
 #whyChooseUs {
   padding: 100px;
@@ -1428,8 +1459,34 @@ p {
 #whyChooseUs .server-block > div {
   color: #ccc;
 }
+@media screen and (min-width: 768px) {
+.productList li p:first-child{
+  margin-top:-20px;
+  margin-left: 70px;
+}
+.productList li p:nth-child(2) {
+  margin-top:-20px;
+  margin-left: -15px;
+}
+}
 /* 媒体查询（手机） */
 @media screen and (max-width: 768px) {
+  #tecnology .tecnologyList > ul {
+  width: 100%;
+}
+.productList li p:first-child{
+  margin-top:-10px;
+  margin-left: 50px;
+}
+.productList li p:nth-child(2) {
+  margin-top:-10px;
+  margin-left: 10px;
+  width:60%;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+  
   #swiper {
     height: 200px;
   }
@@ -1444,7 +1501,8 @@ p {
     margin: 10px 0 10px;
   }
   #contactUs {
-    height: 200px;
+    /* height: 200px; */
+    /* border:1px solid red; */
     transition: all ease 0.6s;
   }
   #contactUs .contactUs-container {
@@ -1458,7 +1516,7 @@ p {
   }
   #contactUs .contactUs-container button {
     width: 200px;
-    height: 30px;
+    /* height: 30px; */
     margin-top: 20px;
   }
   #contactUs .contactUs-container .contactUs-contactWay span {
@@ -1581,6 +1639,10 @@ p {
     margin:5px;
     max-width: 70%;
   }
+  .newsList li > div:last-child{
+  /* border:1px solid red; */
+  padding-top:0;
+}
   #tecnology .tecnologyList > ul > li > p {
   background: red;
   color: #fff;
@@ -1593,6 +1655,30 @@ p {
   width: 25px;
   /* margin: 0 auto;   */
   line-height: 24px;
+}
+.newsList li{
+    /* border:1px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.newsList li > div:nth-child(2),
+.newsList li > div:nth-child(3) {
+  height: 60px;
+  width:70%;
+
+}
+#tecnology .tecnologyList > ul > li > div[data-v-4eb70d62] {
+    margin: 0 4%;
+}
+.productList li img {
+  width: 95%;
+  /* position: absolute; */
+}
+.productList li[data-v-4eb70d62] {
+
+    height: 300px;
+
 }
 }
 </style>

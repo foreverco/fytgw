@@ -21,7 +21,7 @@
           </div>
         </div>
         <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
 
         <!-- 如果需要导航按钮 -->
         <div class="swiper-button-prev"></div>
@@ -32,7 +32,7 @@
          <div class="row">
                <div id="left" class="col-md-3 col-xs-12">
                   <ul class="left-container wow bounceInLeft">
-                     <p>新闻中心</p>
+                     <!-- <p>新闻中心</p> -->
                      <li v-for="(item,index) in softwareList" :key="index" 
                      :class='{pathActive:item.path==$route.path}'>
                            <router-link :to=item.path>{{item.name}}</router-link>
@@ -134,7 +134,10 @@ export default {
 .left-container{
     width: 60%;
     margin: 0 auto;
-    border: 1px solid #474747;
+    /* border: 1px solid #474747; */
+    padding:10px;
+    background: url('../../assets/img/news/cebianlan-kuang1.png') no-repeat;
+    background-size: 100% 100%;
     border-radius: 5px;
 }
 .left-container>p{
@@ -142,7 +145,7 @@ export default {
     line-height: 45px;
     padding: 0;
     margin: 0;
-    background: #474747;
+    /* background: #807474; */
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -152,13 +155,19 @@ export default {
   height: 38px;
   line-height: 38px;
   margin: 0;
-  border-top: 1px solid #474747;
+  /* border-top: 1px solid #474747; */
+}
+.left-container>li:first-child {
+  border-bottom:1px solid rgba(0,0,0,1)
 }
 .left-container>li>a{
     text-decoration: none;
+    color:black;
+    font-size:16px;
 }
+
 .left-container>li:hover{
-    background: #928989;
+    /* background: #928989; */
 }
 #right{
     padding: 50px 0;
@@ -169,7 +178,8 @@ export default {
     }
 }
 .pathActive {
-   background: #ccc;
+   background: #c60c1620;
+   /* color:#c60c16 */
 }
 /* 轮播图 */
 /* #swiper {

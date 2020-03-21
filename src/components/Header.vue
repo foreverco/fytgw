@@ -40,7 +40,7 @@
       <!-- 导航内容 -->
       <div class='navCon row' :class='{navShow : tabNav}'>
         <div id='navshowLogo' v-show='tabNav' class='hidden-md'>
-          <img src="@/assets/img/home/1-head-logo.png" alt="">
+          <img src="@/assets/img/home/1-head-logo2.png" alt="">
         </div>
         <ul class="header-nav-wrapper">
           <li
@@ -105,7 +105,7 @@
             :class="index==navIndex?'active':''"
             data-toggle="collapse"
             aria-expanded="false"
-            :data-target="targetId"
+            :data-target="item.children.length>0?targetId:'#menu'"
             @click="navClick(index,item.name)"
           >
             <router-link :to="item.path">
@@ -124,7 +124,7 @@
               <li
                 v-for="(i,n) in item.children"
                 :key="n"
-                @click.stop="getsonName(i.name)"
+                @click="getsonName(i.name)"
                 data-toggle="collapse"
                 data-target="#menu"
               >
@@ -144,6 +144,7 @@ export default {
   name: "Header",
   data() {
     return {
+      
       /* 滚动监听导航条 */
       tabNav: false,
       targetId: "333",
@@ -187,10 +188,10 @@ export default {
           path: "",
           // path: "/service",
           children: [
-            {
-              name: "原料展示",
-              path: "/product/bigData"
-            },
+            // {
+            //   name: "原料展示",
+            //   path: "/product/bigData"
+            // },
             {
               name: "产品包装",
               path: "/product/productpack"
@@ -199,10 +200,10 @@ export default {
               name: "种植实力",
               path: "/product/stockshow"
             },
-            {
-              name: "防伪查询",
-              path: "/software/bigData"
-            }
+            // {
+            //   name: "防伪查询",
+            //   path: "/software/bigData"
+            // }
           ]
         },
         {
@@ -369,7 +370,7 @@ export default {
 }
 .navShow {
   width:100%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.5);
   position: fixed;
   top:0;
   left:50%;
@@ -383,9 +384,9 @@ export default {
   align-items: center;
 }
 #navshowLogo img{
-  height:80%;
-  position: absolute;
-  left:15%;
+  width:100%;
+  /* position: absolute; */
+  /* left:15%; */
   /* margin-left:250px; */
 }
 #header .header-nav-fixed .header-nav-wrapper {
@@ -414,6 +415,17 @@ export default {
   display:inline-block;
   width:100px; */
 }
+#header .header-nav .navShow .header-nav-wrapper > li > a {
+  color:#fff;
+}
+#header .header-nav .navShow{
+  /* border:1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+#header .header-nav .navShow .header-nav-wrapper {
+  /* background: blue; */
+}
 /* 导航栏 每个导航下面的 a 链接的下划线 */
 #header .header-nav .header-nav-wrapper > li > a > i {
   display: block;
@@ -424,7 +436,7 @@ export default {
   height: 2px;
   opacity: 0;
   transition: all 0.6s ease;
-  background-color: #1e73be;
+  background-color: #c60c16;
 }
 /* 导航栏 每个导航下面的 a 链接的右侧小三角 */
 #header .header-nav .header-nav-wrapper > li > a > span {
@@ -433,7 +445,7 @@ export default {
 }
 /* 导航栏 每个导航下面的 a 链接 鼠标滑上去的样式 */
 #header .header-nav .header-nav-wrapper > li > a:hover {
-  color: #1e73be;
+  color: #c60c16;
   text-decoration: none;
 }
 /* 导航栏 每个导航下面的 a 链接 鼠标滑上去下划线的样式 */
@@ -448,9 +460,9 @@ export default {
 }
 /* 导航栏 每个导航下面的 a 链接 鼠标点击后的样式 */
 #header .header-nav .header-nav-wrapper > li.active > a {
-  color: #1e73be;
+  color: #c60c16;
   text-decoration: none;
-  border-bottom: 2px solid #1e73be;
+  border-bottom: 2px solid #c60c16;
 }
 /* 导航栏 每个导航下面的二级导航容器 */
 #header .header-nav .header-nav-wrapper > li > dl {
@@ -468,6 +480,11 @@ export default {
   width: 100%;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  color:#c60c16;
+}
+li > dl > dt a {
+    color: #c60c16;
+    text-decoration: none;
 }
 /* 导航栏 每个导航下面的二级导航容器的每个导航 当鼠标滑上时的样式*/
 #header .header-nav .header-nav-wrapper > li > dl > dt > a:hover {

@@ -78,10 +78,10 @@ export default {
       // 默认每页显示的条数（可修改）
       PageSize: 6,
       imgBox: [
-        { imgUrl: "../../../../static/img/3-3qiyefengcai-1.png" },
-        { imgUrl: "../../../../static/img/3-3qiyefengcai-2.png" },
-        { imgUrl: "../../../../static/img/3-3qiyefengcai-3.png" },
-        { imgUrl: "../../../../static/img/3-3qiyefengcai-4.png" }
+        { imgUrl: "static/img/3-3qiyefengcai-1.png" },
+        { imgUrl: "static/img/3-3qiyefengcai-2.png" },
+        { imgUrl: "static/img/3-3qiyefengcai-3.png" },
+        { imgUrl: "static/img/3-3qiyefengcai-4.png" }
       ],
       fengeImgList: [
         { num: "壹" },
@@ -97,35 +97,35 @@ export default {
       ],
       imgList: [
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "../../../../static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/3-3qiyefengcai-14.png",
           title: "国草园与化德县建立了友好的合作关系"
         }
       ]
@@ -220,7 +220,7 @@ export default {
   font-size: 2vw;
   /* font-weight:bold; */
   color: #8c1713;
-  background: url("../../../../static/img/3-3qiyefengcai-5.png") no-repeat;
+  background: url("../../../assets/img/qiye/3-3qiyefengcai-5.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
   justify-content: center;
@@ -229,7 +229,7 @@ export default {
 .fengeImg li:nth-child(3) {
      width: 8vw;
   height: 8vw;
-  background: url("../../../../static/img/3-3qiyefengcai-6.png") no-repeat;
+  background: url("../../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
   background-size: 100% 100%;
 }
 .imgList {
@@ -265,7 +265,8 @@ export default {
 }
 .imgList li .txtSpace {
   height: 50px;
-  font-size: 16px;
+  font-size: 13px;
+  font-family:'lv1';
   color: #fff;
   display: flex;
   justify-content: center;

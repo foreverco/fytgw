@@ -45,9 +45,12 @@ export default {
 }
 .concTxt {
   margin: 80px 0;
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .concTxt img {
-  width: 100%;
+  width: 80%;
 }
 </style>
 

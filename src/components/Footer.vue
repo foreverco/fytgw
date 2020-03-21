@@ -77,7 +77,7 @@ export default {
 }
 .navList li{
   width:15%;
-  padding:5px 0;
+  padding:3px 0;
   border-right:1px solid #fff;
   /* margin: 50px auto 20px; */
 }

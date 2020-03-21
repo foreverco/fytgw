@@ -10,7 +10,7 @@
           <span>NEWS</span>
           <span>2020.01.25</span>
         </div>
-        <h4>内蒙古见覅全家福IQ而服务签约仪式</h4>
+        <h4>内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式</h4>
         <p>
           发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军
           人不能你嗡嗡发v,发GV我深Vwe大Vwig吗教你玩家GV
@@ -75,31 +75,31 @@ export default {
           date: "2020-03-11",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
-          imgUrl: "../../../../static/img/xinwen-2.png"
+          imgUrl: "static/img/xinwen-2.png"
         },
         {
           date: "2020-03-12",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
-          imgUrl: "../../../../static/img/xinwen-2.png"
+          imgUrl: "static/img/xinwen-2.png"
         },
         {
           date: "2020-03-13",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
-          imgUrl: "../../../../static/img/xinwen-2.png"
+          imgUrl: "static/img/xinwen-2.png"
         },
         {
           date: "2020-03-14",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
-          imgUrl: "../../../../static/img/xinwen-2.png"
+          imgUrl: "static/img/xinwen-2.png"
         },
         {
           date: "2020-03-15",
           con: "发GV我深Vwe大Vwig吗教你玩家GV给文化部二号布军",
           title: "内蒙古见覅全家福IQ而服务签约仪式",
-          imgUrl: "../../../../static/img/xinwen-2.png"
+          imgUrl: "static/img/xinwen-2.png"
         }
       ],
       pageNewsList:[],
@@ -153,6 +153,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  position: relative;
 }
 .imgBox {
   /* border: 1px solid red; */
@@ -176,11 +177,13 @@ export default {
 }
 .conBox .titleBox span {
   font-size: 17px;
+
   color: #e5000d;
 }
 .conBox h4 {
   height: 10%;
   width: 100%;
+    line-height: 30PX;
 }
 .conBox p {
   height: 60%;
@@ -188,13 +191,15 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 .conBox .btnBox {
   width: 100%;
   height: 10%;
   text-align: right;
+
+    align-self: flex-end;
 }
 .conBox .btnBox button {
   background: transparent;

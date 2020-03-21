@@ -241,6 +241,15 @@ export default {
   margin-right: 0;
   margin-left: 0;
 }
+.el-button--primary {
+    color: #FFF;
+    background-color: #c60c16;
+    border-color: #c60c16;
+}
+.el-button--primary:hover{
+  background: #fff;
+  color:#c60c16;
+}
 @media screen and (max-width: 997px) {
   .ContactUs-container {
     padding: 20px 0;
