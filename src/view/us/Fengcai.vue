@@ -10,7 +10,7 @@
       <div class='row'>
         <ul class='col-md-12 imgBox'>
           <li
-            class='imgone imgwow zoomIn'
+            class='imgone imgwow zoomIn pic1wow'
             v-for="(item, index) in imgBox"
             :key="index"
           >
@@ -74,6 +74,7 @@ export default {
   name: "aboutUs",
   data() {
     return {
+      picover:-1,
         newImgList:[],
       // 默认显示第几页
       currentPage: 1,
@@ -137,6 +138,21 @@ export default {
       ]
     };
   },
+        watch:{
+        picover() {
+                this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "pic1wow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+        }
+      },
     mounted() {
     /* wowjs动画 */
     var wow = new WOW({
@@ -152,6 +168,11 @@ export default {
       gotoImgMsg(e) {
           console.log(e)
       },
+      getIndex(e) {
+        console.log(e)
+          this.picover = e;
+      },
+
        getData() {
           // 将数据赋值给tableData
          //  this.tableData = data.data.body;
@@ -203,6 +224,9 @@ export default {
   /* border:1px solid red; */
   position: relative;
 }
+.imgBox li:hover{
+  cursor: pointer;
+}
 .imgBox li p{
   position: absolute;
   bottom:0;
@@ -217,6 +241,12 @@ export default {
 .imgSpace1{
   height:100%;
 }
+.imgSpace1 img{
+   transition: all 0.6s;  
+}
+            .imgSpace1 img:hover{  
+                transform: scale(1.4);  
+            }  
 .imgBox li:hover .imgSpace1::after{
     content: '奠基仪式 点击了解更多';
     display: flex;
