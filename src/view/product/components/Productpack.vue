@@ -6,7 +6,7 @@
             </li>
     </ul>-->
     <div class="row productpackBanner">
-      <img src="@/assets/img/chanpin/4-1chanpin-banner.png" alt />
+      <img src="@/assets/img/chanpin/4-1chanpin-banner.png" alt>
     </div>
     <div class="container">
       <div class="row listNavRow">
@@ -23,24 +23,25 @@
         <li class="row productTitle col-xs-12 wowProduct bounceInRight" :id="items.typeId">
           <span>{{items.type}}</span>
         </li>
-        <li
-          class="productList col-md-3 col-xs-5"
-          v-for="(item, index) in pagecpList"
-          :key="index"
+        <li class="productList col-md-3 col-xs-5" 
+        v-for="(item, index) in pagecpList" 
+        :key="index"
         >
+        <router-link :to="{name: 'Goods', params: {goodsId: item.id}}">
           <div class="productImgBox wowProduct zoomIn">
-            <img :src="item.imgUrl" alt />
+            <img :src="item.imgUrl" alt>
           </div>
           <p class="productnameBox">{{item.name}}</p>
           <p class="productpriceBox">{{item.price}}</p>
           <p class="productBtnBox">
             <button>立即了解</button>
           </p>
+          </router-link>
         </li>
       </ul>
     </div>
 
-     <div class="tabListPage">
+    <div class="tabListPage">
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -61,7 +62,7 @@ export default {
     return {
       navIndex: 0,
       newlistType: [],
-      pagecpList:[],
+      pagecpList: [],
       // 默认显示第几页
       currentPage: 1,
       // 总条数，根据接口获取数据长度(注意：这里不能为空)
@@ -76,80 +77,95 @@ export default {
           typeId: "box1",
           imgList: [
             {
+              id:'huangzhi11',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi22',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi33',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi44',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi55',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi66',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi77',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi88',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi99',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi00',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi001',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi002',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi003',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi004',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi005',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
-            },
+            }
           ]
         },
         {
@@ -157,80 +173,95 @@ export default {
           typeId: "box2",
           imgList: [
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
-            },
+            }
           ]
         },
         {
@@ -238,87 +269,102 @@ export default {
           typeId: "box3",
           imgList: [
             {
+              id:'huangzhi',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
+              id:'huangzhi1',
               imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
-            },
+            }
           ]
         }
       ]
     };
   },
   created() {
-     this.changeList()
+    this.changeList();
   },
   mounted() {
     /* wowjs动画 */
@@ -333,34 +379,42 @@ export default {
   },
   watch: {
     newlistType() {
-      this.$nextTick(() => { // 在dom渲染完后,再执行动画
-      var wow = new WOW({
-         boxClass: "wowProduct",
-        animateClass: "animated",
-        offset: 0,
-        mobile: true,
-        live: false
-      })
-      wow.init()
-    })
-  }
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "wowProduct",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+    }
   },
   methods: {
     changeList(e) {
-      console.log(e)
-      if(!e){
-        e=0
+      console.log(e);
+      if (!e) {
+        e = 0;
       }
-      this.navIndex = e
-      let arr = []
-      arr.push(this.listType[e])
-      console.log(this.listType[e])
-      this.newlistType = arr
-      console.log(this.newlistType[0].imgList)
-      this.pagecpList = this.newlistType[0].imgList.slice(this.PageSize*this.currentPage-this.PageSize,this.PageSize*this.currentPage)
+      this.navIndex = e;
+      let arr = [];
+      arr.push(this.listType[e]);
+      console.log(this.listType[e]);
+      this.newlistType = arr;
+      console.log(this.newlistType[0].imgList);
+      this.pagecpList = this.newlistType[0].imgList.slice(
+        this.PageSize * this.currentPage - this.PageSize,
+        this.PageSize * this.currentPage
+      );
       this.totalCount = this.newlistType[0].imgList.length;
     },
-        // 分页
+    // gotoGoods(e) {
+    //   // console.log(e)
+    //   this.$router.push({name:"Goods",query:{goodsId:this.e.id}})
+    // },
+    // 分页
     // 每页显示的条数
     handleSizeChange(val) {
       // 改变每页显示的条数
@@ -373,7 +427,7 @@ export default {
     handleCurrentChange(val) {
       // 改变默认的页数
       this.currentPage = val;
-      this.changeList()
+      this.changeList();
     }
   }
 };
@@ -409,9 +463,32 @@ export default {
   margin: 10px;
 }
 #productpack .productContainer .productImgBox {
+  height: 100%;
+  overflow: hidden;
 }
+
 #productpack .productContainer .productImgBox img {
   width: 100%;
+  transition: all 0.6s;
+}
+#productpack .productContainer .productImgBox:hover img {
+  cursor: pointer;
+   animation: changeBiger 1s linear;
+  /* animation-delay: 5s; */
+}
+@keyframes changeBiger {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 #productpack .productContainer .productBtnBox,
 #productpack .productContainer .productpriceBox,
@@ -427,6 +504,11 @@ export default {
   background: #c5000d;
   color: #fff;
   padding: 0.2vw 0.5vw;
+  transition: all 0.4s;
+}
+#productpack .productContainer .productBtnBox button:hover {
+  background: #c5000d90;
+  transform: scale(1.2)
 }
 #productpack .productContainer .productpriceBox {
   font-size: 24px;
@@ -486,18 +568,43 @@ a {
     no-repeat;
   background-size: 100% 100%;
   color: #fff;
-  width: 110px;
+  width: 207px;
+  height: 46px;
+  padding-left: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
+  transition: all 1s;
 }
-.listNav li:hover{
+.listNav li:hover {
   cursor: pointer;
+  font-size: 28px;
 }
 .navActive {
   background: url("../../../assets/img/chanpin/4-1chanpin-annui-weixvan.png")
     no-repeat !important;
   background-size: 100% 100% !important;
+}
+@media screen and (max-width: 768px) {
+  .listNav li {
+    background: url("../../../assets/img/chanpin/4-1chanpin-annui-xvanzhong.png")
+      no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    width: 103px;
+    height: 23px;
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
+  .listNav li:hover {
+  cursor: pointer;
+  font-size: 18px;
+}
 }
 </style>

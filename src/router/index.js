@@ -7,7 +7,8 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
-    }, {
+    }, 
+    {
       path: '/',
       name: 'PageView',
       component: resolve => require(['@/view/PageView'], resolve),
@@ -123,6 +124,16 @@ export default new Router({
               }
             }
           ]
+        },
+
+        {
+          path: '/goods/:goodsId',
+          name: 'Goods',
+          component: resolve => require(['@/view/goods/Goods'], resolve),
+          meta: {
+            title: '商品详情'
+          },
+          children: []
         },
         {
           path: '/service',

@@ -8,7 +8,8 @@ import {
   Form,
   FormItem,
   Input,
-  Button
+  Button,
+  InputNumber
 } from 'element-ui'
 
 Vue.use(Pagination)
@@ -16,6 +17,7 @@ Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(Button)
+Vue.use(InputNumber)
 
 /* 路由 */
 import router from './router'
@@ -28,6 +30,12 @@ Vue.prototype.api = api;
 
 /* swiper */
 import 'swiper/dist/css/swiper.min.css';
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 // vue-seamless-scroll列表滚动
 import scroll from 'vue-seamless-scroll'

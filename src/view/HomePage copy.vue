@@ -348,7 +348,7 @@ export default {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: true
+      live: false
     })
     wow.init();
   }
