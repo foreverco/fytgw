@@ -378,5 +378,16 @@ export default {
   color: #c5000c;
   transition: all 0.6s;
 }
+@media screen and (max-width: 768px){
+      .navTitle li {
+  width: 23%;
+  height: 40px;
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
 </style>
 
