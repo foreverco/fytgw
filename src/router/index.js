@@ -82,6 +82,15 @@ export default new Router({
               redirect: '/news/companynews'
             },
             {
+              path: '/news/newsmsg/:newsId',
+              name: 'NewsMsg',
+              component: resolve => require(['@/view/news/components/NewsMsg'], resolve),
+              meta: {
+                title: '新闻详情'
+              },
+              children: []
+            },
+            {
               path: '/news/companynews',
               name: 'companynews',
               component: resolve => require(['@/view/news/components/Company'], resolve),
@@ -135,6 +144,7 @@ export default new Router({
           },
           children: []
         },
+
         {
           path: '/service',
           name: 'service',

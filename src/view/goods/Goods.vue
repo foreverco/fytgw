@@ -350,7 +350,9 @@ export default {
 }
 .btnBox p:hover {
   cursor: pointer;
-  background: #ff000060;
+  border:1px solid #c5000c;
+  background: #fff;
+  color:#c5000c;
   transform: scale(1.2);
 }
 .navTitle {

@@ -96,12 +96,15 @@
             v-for="(item, index) in newsList"
             :key="index"
           >
+          <router-link :to="{name: 'NewsMsg', params: {newsId: item.newsid}}">
             <div class="col-md-3 col-sm-12 wow zoomIn">
               <img
-                src="@/assets/img/home/4-xinwenzhongxin-1.png"
+                :src="item.imgUrl"
                 alt
               >
             </div>
+            </router-link>
+
             <div class="col-md-6 col-sm-12">
               <p>{{item.title}}</p>
               <p class='newsCon'>{{item.con}}</p>
@@ -489,22 +492,25 @@ export default {
       /* 新闻列表 */
       newsList: [
         {
-          imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
-          title: "诚信经营",
-          con: "扎根内蒙天然种植选料上乘 辐射全国  ，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业",
+          newsid:1,
+          imgUrl: "static/img/news/news1.png",
+          title: "内蒙古蒙中药材种植持续火爆",
+          con: "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
+          date: "2015-04-10"
+        },
+        {
+          newsid:2,
+          imgUrl: "static/img/news/news1.png",
+          title: "内蒙古打造西部蒙中药材产业带 发力扶贫",
+          con: "【中国制药网 行业动态】目前，呼、包、乌兰察布已经开始打造蒙古黄芪种植基地，正在发挥着示范作用。“打造",
           date: "2020-03-09"
         },
         {
-          imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
-          title: "致力健康",
-          con: "扎根内蒙天然种植选料上乘 辐射全国  ，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业",
-          date: "2020-03-09"
-        },
-        {
-          imgUrl: "@/assets/img/home/4-xinwenzhongxin-1.png",
-          title: "以人为本",
-          con: "扎根内蒙天然种植选料上乘 辐射全国  ，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业",
-          date: "2020-03-09"
+          newsid:3,
+          imgUrl: "static/img/news/news1.png",
+          title: "奈曼旗打造现代蒙中药材全产业链",
+          con: "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
+          date: "2018-01-25"
         }
       ],
       /* 国草园产品 */
@@ -1018,6 +1024,9 @@ p {
 /* 新闻列表 */
 .newsList {
 }
+.newsList a{
+  color:#000;
+}
 .newsList li {
   display: block;
   margin: 30px 0;
@@ -1031,6 +1040,9 @@ p {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 .newsList li > div:nth-child(2),
 .newsList li > div:nth-child(3) {
@@ -1038,7 +1050,7 @@ p {
 }
 .newsList li > div:nth-child(2){
   justify-content: left;
-  
+  padding-left: 20px;
 }
 .newsList li > div:nth-child(2) p{
   justify-content: left;
@@ -1078,6 +1090,11 @@ white-space: nowrap;
 .newsList li > div span {
   display: inline-block;
   padding: 0 20px;
+}
+.newsList li img{
+  /* width:100%;
+  height:100%; */
+  /* border:1px solid red; */
 }
 /* 国草园产品 */
 .productcontainer {

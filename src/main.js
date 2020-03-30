@@ -9,7 +9,9 @@ import {
   FormItem,
   Input,
   Button,
-  InputNumber
+  InputNumber,
+  Breadcrumb,
+  BreadcrumbItem
 } from 'element-ui'
 
 Vue.use(Pagination)
@@ -18,9 +20,25 @@ Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(Button)
 Vue.use(InputNumber)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
 
 /* 路由 */
 import router from './router'
+
+/* 路由跳转 页面置顶 */
+// router.beforeEach((to, from, next) => {    
+//   // chrome
+//   document.body.scrollTop = 0
+//   // firefox
+//   document.documentElement.scrollTop = 0
+//   // safari
+//   window.pageYOffset = 0
+//   next()
+// })
+router.afterEach((to,from,next) => {
+  window.scrollTo(0,0);
+})
 
 /* axios */
 import axios from './api'
