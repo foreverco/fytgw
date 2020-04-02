@@ -65,72 +65,72 @@ export default {
       activeList: 0,
       videoList: [
         {
-          title: "hahaha",
-          videoSrc: "static/video/aaaa.mp4"
+          title: "中药材产业带",
+          videoSrc: "static/video/video1.mp4"
+        },
+        {
+          title: "药材全产业链",
+          videoSrc: "static/video/video1.mp4"
+        },
+        {
+          title: "发力扶贫",
+          videoSrc: "static/video/video1.mp4"
+        },
+        {
+          title: "国草园集团",
+          videoSrc: "static/video/video1.mp4"
+        },
+        {
+          title: "项目签约仪式",
+          videoSrc: "static/video/video1.mp4"
+        },
+         {
+          title: "增强免疫，保肝利尿",
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/aaaa.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
-        },
-        {
-          title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
          {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
-        },
-         {
-          title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
-        },
-        {
-          title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
-        },
-        {
-          title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
-        },
-        {
-          title: "hahaha",
-          videoSrc: "static/video/ssss.mp4"
+          videoSrc: "static/video/video1.mp4"
         }
       ],
       newVideoList: [],
@@ -218,12 +218,12 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  margin: 10px 0;
 }
 .videoList li {
   height: 200px;
   overflow: hidden;
-  margin: 10px;
+  margin: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -244,7 +244,7 @@ export default {
     align-items: center;
     justify-content: center;
     color:#fff;
-    font-size:20px;
+    font-size:18px;
 }
 .videoList li:hover {
   cursor: pointer;

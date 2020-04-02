@@ -84,35 +84,35 @@ export default {
       ],
       imgList: [
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai1.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai2.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai3.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai4.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai5.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai6.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai1.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/3-3qiyefengcai-14.png",
+          imgUrl: "static/img/qiye/fengcai2.png",
           title: "国草园与化德县建立了友好的合作关系"
         }
       ]
@@ -182,6 +182,9 @@ export default {
       // 改变默认的页数
       this.currentPage = val;
       this.getData();
+    },
+    gotoImgMsg(e) {
+      this.$router.push('/news/newsmsg/1')
     }
   },
   created() {

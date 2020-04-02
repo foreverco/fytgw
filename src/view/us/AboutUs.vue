@@ -34,29 +34,7 @@
                         </span>
                     </h3>
                     <p>
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
-                        防护墙和父亲回复缺乏维护其合法去合肥
+                        国草园集团，成立于 2018 年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。 集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
                     </p>
                 </div>
             </div>
@@ -65,7 +43,7 @@
 
     <div class='container'>
         <ul class='row txtpicBox1'>
-            <li class='col-xs-10' v-for="(item, index) in txtpicList" :key="index">
+            <li class='col-xs-10 imgwow zoomIn' v-for="(item, index) in txtpicList" :key="index">
               <img :src="item.imgUrl" alt="">
             </li>
             
@@ -86,7 +64,7 @@
 
     <div class='container'>
         <ul class='row txtpicBox2'>
-            <li class='col-xs-10' v-for="(item, index) in txtpicList2" :key="index">
+            <li class='col-xs-10 imgwow zoomIn' v-for="(item, index) in txtpicList2" :key="index">
               <p>
                 <img src="item.picUrl" alt="">
               </p>
@@ -100,6 +78,7 @@
 </template>
 <script>
 import Swiper from "swiper"
+import { WOW } from "wowjs"
 export default {
   name: "aboutUs",
   data() {
@@ -171,6 +150,15 @@ export default {
       observer: true, //修改swiper自己或子元素时，自动初始化swiper
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
+    /* wowjs动画 */
+    var wow = new WOW({
+      boxClass: "imgwow",
+      animateClass: "animated",
+      offset: 0,
+      mobile: true,
+      live: false
+    });
+    wow.init();
   }
 };
 </script>
@@ -232,11 +220,13 @@ export default {
 .aboutusTitle .txtBox p {
     /* border:1px solid red; */
     height:80%;
+    line-height: 20px;
+    letter-spacing: 3px;
     color:#fff;
-     font-size:1.3vw;
-    font-family: 'lv1';
+     font-size:12px;
+    /* font-family: 'lv1'; */
     padding:1vw;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .aboutUsList{
@@ -294,7 +284,7 @@ export default {
       flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* margin:20px 0; */
+    margin:40px 0;
 }
 .txtpicBox2 li img{
   width:80%;

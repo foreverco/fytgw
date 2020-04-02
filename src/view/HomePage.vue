@@ -64,7 +64,9 @@
                 <div class="col-xs-11 col-md-8 taccon">
                   <p>{{item.con}}</p>
                   <div class="button">
+                   <router-link :to="{path: '/software/aboutUs'}"> 
                     <button>查看更多</button>
+                  </router-link>
                   </div>
                 </div>
               </div>
@@ -101,6 +103,7 @@
               <img
                 :src="item.imgUrl"
                 alt
+                style='width:100%;'
               >
             </div>
             </router-link>
@@ -110,7 +113,9 @@
               <p class='newsCon'>{{item.con}}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <button>浏览更多</button>
+              <router-link :to="{name: 'NewsMsg', params: {newsId: item.newsid}}">
+                <button>浏览更多</button>
+              </router-link>
               <span>{{item.date}}</span>
             </div>
           </li>
@@ -140,14 +145,17 @@
             class='col-md-3 col-sm-5 col-xs-6'
             v-for="(item, index) in productList"
             :key="index"
+            @click='gotoprodect'
           >
             <p>{{item.name}}</p>
             <p>{{item.effect}}</p>
             <p class='imgBox wow zoomIn'>
+            <!-- <router-link :to="{path: '/product/productpack'}"> -->
               <img
                 :src="item.imgUrl"
                 alt=""
               >
+            <!-- </router-link> -->
             </p>
           </li>
         </ul>
@@ -176,13 +184,19 @@
               </div>
               <div class="swiper-slide">
                 <img
-                  src="static/img/6-guanyuguocaoyuan-tupian1.png"
+                  src="static/img/swiper11.png"
                   alt=""
                 >
               </div>
               <div class="swiper-slide">
                 <img
-                  src="static/img/6-guanyuguocaoyuan-tupian1.png"
+                  src="static/img/swiper22.png"
+                  alt=""
+                >
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="static/img/swiper33.png"
                   alt=""
                 >
               </div>
@@ -281,9 +295,9 @@
           <div class='col-md-6 scoolingTxt'>
 
             <p class='con'>
-              内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓储库10000㎡，机械陈列室1800㎡，科研室1200㎡，晾晒硬化场地10000㎡，绿化6000㎡，办公楼2000㎡，生活宿舍3000㎡内蒙古国草园实业科技发展有限于2018年建设内蒙古自治区乌兰察布市四子王旗柴胡、黄芪中草药种植基地一期原生态观光旅游，科研实验教学基地建设项目，该项目种植占地面积215700亩，建筑占地面积28000㎡，总建筑面积34000㎡，建筑包括：仓
+               国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
             </p>
-            <p class='title'>-------同修仁德 济世养生-------</p>
+            <p class='title'>-------同修仁德 济世养生------</p>
             <p class='name'>
               <span>国草园</span>
               <span>◆</span>
@@ -291,7 +305,7 @@
             </p>
           </div>
           <div class='col-md-6 scoolingImg wow zoomIn'>
-            <img src="static/img/chanpin/4-1chanpin-tu1.png" alt="">
+            <img src="static/img/7-wenhua-tupian1.png" alt="">
           </div>
         </div>
       </div>
@@ -338,6 +352,7 @@
         <h1 style='color:#c5000d'>400-8888-456</h1>
                 <button
           class="btn btn-info btn-sm"
+          @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#c60c16'; this.style.backgroundColor='#c60c16'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#c60c16'; this.style.color='#c60c16';"
         >联系我们</button>
@@ -450,13 +465,13 @@ export default {
       /* 轮播图列表 */
       swiperList: [
         {
-          img: require("@/assets/img/home/2-banner.png"),
+          img: require("@/assets/img/home/banner2.jpg"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/home/banner2.jpg"),
+          img: require("@/assets/img/home/2-banner.png"),
           path: "",
           title: "",
           content: ""
@@ -494,20 +509,20 @@ export default {
         {
           newsid:1,
           imgUrl: "static/img/news/news1.png",
-          title: "内蒙古蒙中药材种植持续火爆",
+          title: "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
           con: "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
           date: "2015-04-10"
         },
         {
           newsid:2,
-          imgUrl: "static/img/news/news1.png",
+          imgUrl: "static/img/news1.png",
           title: "内蒙古打造西部蒙中药材产业带 发力扶贫",
           con: "【中国制药网 行业动态】目前，呼、包、乌兰察布已经开始打造蒙古黄芪种植基地，正在发挥着示范作用。“打造",
           date: "2020-03-09"
         },
         {
           newsid:3,
-          imgUrl: "static/img/news/news1.png",
+          imgUrl: "static/img/news2.png",
           title: "奈曼旗打造现代蒙中药材全产业链",
           con: "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
           date: "2018-01-25"
@@ -836,6 +851,9 @@ export default {
     },
     hoverboxHide() {
       this.hoverBoxShow = -1
+    },
+    gotoprodect() {
+      this.$router.push('/product/productpack')
     }
   }
 };
@@ -928,12 +946,15 @@ p {
   width: 30px;
   /* margin: 0 auto;   */
   line-height: 24px;
+  transition: all 0.6s;
 }
-/* #tecnology .tecnologyList > ul > li > p:hover {
-  cursor: pointer;
-} */
+
+#tecnology .tecnologyList > ul > li > p:hover {
+  background: #c5000d;
+}
 #tecnology:hover {
   cursor: pointer;
+  
 }
 #tecnology .tecnologyList > ul > li > div {
   width: 90%;
@@ -962,7 +983,7 @@ p {
   writing-mode: tb-rl;
   /* font-size:16px; */
   /* letter-spacing: 5px; */
-  /* line-height: 25px; */
+  line-height: 37px;
   position: relative;
 }
 .taccon p {
@@ -979,6 +1000,7 @@ p {
 .taccon button {
   height: 120px;
   width: 26px;
+  line-height: 25px;
   font-family:'lv1';
   position: absolute;
   bottom: 0;
@@ -987,6 +1009,11 @@ p {
   outline: 0;
   border: 0;
   border: 1px solid #fff;
+  transition: all 0.6s;
+  color:#fff !important;
+}
+.taccon button:hover{
+  transform: scale(1.2);
 }
 /* 新闻中心 */
 .newscontainer {
@@ -1082,10 +1109,12 @@ white-space: nowrap;
   border: 0;
   border: 1px solid #c5000d;
   color: #c5000d;
+  transition: all 0.6s;
 }
 .newsList li > div button:hover {
   background: #c5000d;
   color:#fff;
+  transform: scale(1.2);
 }
 .newsList li > div span {
   display: inline-block;
@@ -1162,15 +1191,22 @@ white-space: nowrap;
 }
 
 .productList li .imgBox {
-  width: 90%;
+  width: 80%;
   margin-left:-10%;
   display: flex;
   align-items: bottom;
   justify-content: center;
   margin-top: 30px;
+  overflow: hidden;
+}
+.productList li .imgBox:hover img{
+  cursor: pointer;
+  transform: scale(1.4);
 }
 .productList li img {
-  width: 85%;
+  width: 95%;
+  transition: all 0.6s;
+
   /* position: absolute; */
 }
 /* 关于国草园 */
@@ -1367,10 +1403,13 @@ white-space: nowrap;
 }
 .scoolingBox > div .con {
   width: 80%;
-  font-size:16px;
+      font-size: 14px;
+    letter-spacing: 3px;
   overflow: auto;
   writing-mode: tb-rl;
   padding:10px 0;
+  line-height: 37px;
+  font-family: '微软雅黑';
 }
 /* 大数据管理系统 */
 #bigData {

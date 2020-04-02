@@ -1,7 +1,10 @@
 <template>
   <div id="goodscon" class="container">
+    <div class='row goodsTitle'>
+      甘草片泡水500克g瓶装干草粉野生茶叶食用中药材搭黄芪当归党参茶
+    </div>
     <div class="row goodsBox">
-      <div class="col-md-7 goodspic">
+      <div class="col-md-7 goodspic wow bounceInLeft">
         <div class="swiper-box">
           <!-- swiper1 -->
           <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
@@ -20,7 +23,7 @@
           </swiper>
         </div>
       </div>
-      <div class="col-md-5 goodsprice">
+      <div class="col-md-5 goodsprice wow bounceInRight">
         <div class="priceBox">
           <div class="priceBox1">
             <p>
@@ -74,17 +77,23 @@
       </div>
     </div>
 
-    <ul class="navTitle">
+    <ul class="row navTitle">
       <li
         v-for="(item, index) in navLists"
         :key="index"
         :class="{navActive:isnavActive==index}"
         @click='changenavMsg(index)'
       >{{item.name}}</li>
+      <li>
+      </li>
     </ul>
+    <div class='row testBox wow zoomIn'>
+        <img src="static/img/test.png" alt="">
+    </div>
   </div>
 </template>
 <script>
+import { WOW } from "wowjs";
 export default {
   data() {
     return {
@@ -92,27 +101,24 @@ export default {
       /* 轮播图 */
       swiperList: [
         {
-          imgUrl: "static/img/4-xinwenzhongxin-1.png",
+          imgUrl: "static/img/chanpin/goods4.png",
           title: "pic1"
         },
         {
-          imgUrl: "static/img/4-xinwenzhongxin-1.png",
+          imgUrl: "static/img/chanpin/goods3.png",
           title: "pic1"
         },
         {
-          imgUrl: "static/img/4-xinwenzhongxin-1.png",
+          imgUrl: "static/img/chanpin/goods2.png",
           title: "pic1"
         },
         {
-          imgUrl: "static/img/qiye/aa4.png",
-          title: "pic1"
-        },
-        {
-          imgUrl: "static/img/qiye/aa1.png",
+          imgUrl: "static/img/chanpin/goods1.jpg",
           title: "pic1"
         }
       ],
       swiperOptionTop: {
+        autoplay:true,
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -144,6 +150,15 @@ export default {
       swiperTop.controller.control = swiperThumbs;
       swiperThumbs.controller.control = swiperTop;
     });
+     /* wowjs动画 */
+    var wow = new WOW({
+      boxClass: "wow",
+      animateClass: "animated",
+      offset: 0,
+      mobile: true,
+      live: false
+    });
+    wow.init();
   },
   methods: {
     handleChange(value) {
@@ -156,6 +171,12 @@ export default {
 };
 </script>
 <style>
+ .goodsTitle{
+   font-size:22px;
+   font-weight: bold;
+   margin:10px 0;
+ }
+
 /* 计数器样式 */
 .el-input-number.is-controls-right .el-input-number__decrease,
 .el-input-number.is-controls-right .el-input-number__increase {
@@ -379,6 +400,12 @@ export default {
   background: #fff;
   color: #c5000c;
   transition: all 0.6s;
+}
+.testBox{
+  margin-top:20px;
+}
+.testBox img{
+  width:100%;
 }
 @media screen and (max-width: 768px){
       .navTitle li {

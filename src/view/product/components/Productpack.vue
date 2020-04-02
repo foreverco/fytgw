@@ -84,55 +84,55 @@ export default {
             },
             {
               id:'huangzhi22',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi33',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi44',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi55',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi66',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu6.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi77',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu7.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi88',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu8.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi99',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu9.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi00',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu10.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
@@ -144,25 +144,25 @@ export default {
             },
             {
               id:'huangzhi002',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi003',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi004',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi005',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             }
@@ -180,7 +180,55 @@ export default {
             },
             {
               id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu6.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu7.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu8.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu9.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu10.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
@@ -192,73 +240,25 @@ export default {
             },
             {
               id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             }
@@ -276,7 +276,55 @@ export default {
             },
             {
               id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu6.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu7.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu8.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu9.png",
+              name: "国草园黄氏饮片",
+              price: "￥67.00"
+            },
+            {
+              id:'huangzhi1',
+              imgUrl: "static/img/chanpin/4-1chanpin-tu10.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
@@ -288,73 +336,25 @@ export default {
             },
             {
               id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             },
             {
               id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "国草园黄氏饮片",
-              price: "￥67.00"
-            },
-            {
-              id:'huangzhi1',
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
+              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
               name: "国草园黄氏饮片",
               price: "￥67.00"
             }
