@@ -471,7 +471,7 @@ export default {
           content: ""
         },
         {
-          img: require("@/assets/img/home/2-banner.png"),
+          img: require("@/assets/img/home/homebanner2.jpg"),
           path: "",
           title: "",
           content: ""
