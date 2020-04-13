@@ -349,16 +349,16 @@
                 <div class='logo hidden-xs'>
           <img src="@/assets/img/home/8-lianxiwomen-logo1.png" alt="">
         </div>
-        <h1 style='color:#c5000d'>400-8888-456</h1>
+        <h1 style='color:#325815'>400-8888-456</h1>
                 <button
           class="btn btn-info btn-sm"
           @click="$router.push('/contactus')"
-          onmouseleave="this.style.borderColor='#c60c16'; this.style.backgroundColor='#c60c16'; this.style.color='#fff';"
-          onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#c60c16'; this.style.color='#c60c16';"
+          onmouseleave="this.style.borderColor='#325815'; this.style.backgroundColor='#325815'; this.style.color='#fff';"
+          onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#325815'; this.style.color='#325815';"
         >联系我们</button>
         <hr>
         <span style='background:black'>http://www.guocaoyuan.com</span>
-        <h3 style='color:#c5000d'>服务热线: 0471-3900199</h3>
+        <h3 style='color:#325815'>服务热线: 0471-3900199</h3>
         <!-- <div class="contactUs-contactWay">
           <span></span>
           <span></span>
@@ -862,6 +862,7 @@ export default {
 /* 整体盒子 */
 #HomePage {
   width: 100%;
+  border-top:10px solid #325815;
 }
 
 /* 轮播图 */
@@ -907,7 +908,8 @@ p {
   padding: 0;
 }
 #tecnology {
-  background: #472a2d;
+  background: url('../assets/img/home/3-dibu.png') no-repeat;
+  background-size:100% 100%;
   height: 268px;
   padding: 0 !important;
 }
@@ -934,7 +936,7 @@ p {
   align-items: center;
 }
 #tecnology .tecnologyList > ul > li > p {
-  background: red;
+  background: #325815;
   color: #fff;
   font-family: 'lv1';
   font-size: 18px;
@@ -950,7 +952,7 @@ p {
 }
 
 #tecnology .tecnologyList > ul > li > p:hover {
-  background: #c5000d;
+  background: #325815;
 }
 #tecnology:hover {
   cursor: pointer;
@@ -979,7 +981,7 @@ p {
   /* border:1px solid blue; */
   float: right;
   height: 100%;
-  color: #fff;
+  /* color: #fff; */
   writing-mode: tb-rl;
   /* font-size:16px; */
   /* letter-spacing: 5px; */
@@ -1017,7 +1019,7 @@ p {
 }
 /* 新闻中心 */
 .newscontainer {
-  /* border: 1px solid red; */
+  /* border: 1px solid #325815; */
   margin-top: 14px;
 }
 /* 新闻标题 */
@@ -1030,7 +1032,7 @@ p {
 }
 /* 新闻导航 */
 .newsNav {
-  /* background: red; */
+  /* background: #325815; */
   text-align: center;
   margin-bottom: 50px;
   font-size: 14px;
@@ -1045,7 +1047,7 @@ p {
   border: 0;
 }
 .newsNav li:hover {
-  color: red;
+  color: #325815;
   cursor: pointer;
 }
 /* 新闻列表 */
@@ -1107,12 +1109,12 @@ white-space: nowrap;
   background: transparent;
   outline: 0;
   border: 0;
-  border: 1px solid #c5000d;
-  color: #c5000d;
+  border: 1px solid #325815;
+  color: #325815;
   transition: all 0.6s;
 }
 .newsList li > div button:hover {
-  background: #c5000d;
+  background: #325815;
   color:#fff;
   transform: scale(1.2);
 }
@@ -1123,11 +1125,11 @@ white-space: nowrap;
 .newsList li img{
   /* width:100%;
   height:100%; */
-  /* border:1px solid red; */
+  /* border:1px solid #325815; */
 }
 /* 国草园产品 */
 .productcontainer {
-  /* border: 1px solid red; */
+  /* border: 1px solid #325815; */
   margin-top: 14px;
 }
 /* 产品标题 */
@@ -1140,7 +1142,7 @@ white-space: nowrap;
 }
 /* 产品导航 */
 .productNav {
-  /* background: red; */
+  /* background: #325815; */
   text-align: center;
   margin-bottom: 50px;
   font-size: 14px;
@@ -1155,12 +1157,12 @@ white-space: nowrap;
   border: 0;
 }
 .productNav li:hover {
-  color: red;
+  color: #325815;
   cursor: pointer;
 }
 /* 产品列表 */
 .productList {
-  /* background: red; */
+  /* background: #325815; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1170,7 +1172,7 @@ white-space: nowrap;
   background: url("../assets/img/home/5-chanpinzhongxin-kuang.png") no-repeat;
   background-size: 90% 100%;
   height: 380px;
-  /* border:1px solid red; */
+  /* border:1px solid #325815; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1180,7 +1182,7 @@ white-space: nowrap;
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #c5000d;
+  color: #325815;
 }
 .productList li p:first-child {
   margin: 0 auto;
@@ -1211,7 +1213,7 @@ white-space: nowrap;
 }
 /* 关于国草园 */
 .aboutcontainer {
-  /* border: 1px solid red; */
+  /* border: 1px solid #325815; */
   margin-top: 14px;
 }
 /* 关于国草园标题 */
@@ -1244,7 +1246,7 @@ white-space: nowrap;
   display: flex;
 }
 .abouttxt .title {
-  /* background: red; */
+  /* background: #325815; */
   writing-mode: tb-rl;
   /* width:10%; */
   font-size: 24px;
@@ -1267,12 +1269,12 @@ white-space: nowrap;
 } */
 /* 蒙中草药基地 */
 .basecontainer {
-  /* border: 1px solid red; */
+  /* border: 1px solid #325815; */
   margin-top: 30px;
 }
 /* 基地导航 */
 .baseNav {
-  /* background: red; */
+  /* background: #325815; */
   text-align: center;
   margin-bottom: 50px;
   font-size: 14px;
@@ -1287,12 +1289,12 @@ white-space: nowrap;
   border: 0;
 }
 .baseNav li:hover {
-  color: #c5000d;
+  color: #325815;
   cursor: pointer;
 }
 /* 基地图片 */
 .baseList {
-  /* border:1px solid red; */
+  /* border:1px solid #325815; */
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -1310,7 +1312,7 @@ white-space: nowrap;
   cursor: pointer;
 }
 .hoverBox{
-  background: #c5000d30;
+  background: #32581530;
   position: absolute;
   top:0;
   left:0;
@@ -1333,7 +1335,7 @@ white-space: nowrap;
 
 /* 国草园文化 */
 .scoolingcontainer {
-  /* border: 1px solid red; */
+  /* border: 1px solid #325815; */
   margin-top: 14px;
 }
 /* 国草园文化标题 */
@@ -1346,7 +1348,7 @@ white-space: nowrap;
 }
 /* 国草园文化导航 */
 .scoolingNav {
-  /* background: red; */
+  /* background: #325815; */
   text-align: center;
   margin-bottom: 50px;
   font-size: 14px;
@@ -1361,7 +1363,7 @@ white-space: nowrap;
   border: 0;
 }
 .scoolingNav li:hover {
-  color: red;
+  color: #325815;
   cursor: pointer;
 }
 /* 文化展示 */
@@ -1376,7 +1378,7 @@ white-space: nowrap;
   width:80%;
 }
 .scoolingBox > div {
-  /* border: 1px solid red; */
+  /* border: 1px solid #325815; */
   height: 300px;
 }
 .scoolingTxt {
@@ -1394,7 +1396,7 @@ white-space: nowrap;
 }
 .scoolingBox > div .name span:nth-child(2){
   font-size:24px;
-  color:red;
+  color:#325815;
 }
 .scoolingBox > div .title {
   width: 5%;
@@ -1481,8 +1483,8 @@ white-space: nowrap;
 
 .btn-info {
     color: #fff;
-    background-color: #c60c16;
-    border-color: #c60c16;
+    background-color: #325815;
+    border-color: #325815;
 }
 
 /* 为什么选择我们 */
@@ -1522,7 +1524,7 @@ white-space: nowrap;
 }
 .productList li p:nth-child(2) {
   margin-top:-20px;
-  margin-left: -15px;
+  margin-left: 20px;
 }
 }
 /* 媒体查询（手机） */
@@ -1558,7 +1560,7 @@ white-space: nowrap;
   }
   #contactUs {
     /* height: 200px; */
-    /* border:1px solid red; */
+    /* border:1px solid #325815; */
     transition: all ease 0.6s;
   }
   #contactUs .contactUs-container {
@@ -1678,7 +1680,7 @@ white-space: nowrap;
 
 /* 我们的文化 */
 .server-wrapper {
-  /* border:1px solid red; */
+  /* border:1px solid #325815; */
 }
 .server-wrapper img {
   width: 100%;
@@ -1696,11 +1698,11 @@ white-space: nowrap;
     max-width: 70%;
   }
   .newsList li > div:last-child{
-  /* border:1px solid red; */
+  /* border:1px solid #325815; */
   padding-top:0;
 }
   #tecnology .tecnologyList > ul > li > p {
-  background: red;
+  background: #325815;
   color: #fff;
   font-size: 16px;
   display: flex;
@@ -1713,7 +1715,7 @@ white-space: nowrap;
   line-height: 24px;
 }
 .newsList li{
-    /* border:1px solid red; */
+    /* border:1px solid #325815; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

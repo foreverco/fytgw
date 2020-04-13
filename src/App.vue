@@ -26,7 +26,7 @@ export default {
   @import './common/fonts/font.css';
 
   #app{
-    background: url('./assets/img/bg.png');
+    background: url('./assets/img/bg1.png');
                 -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;

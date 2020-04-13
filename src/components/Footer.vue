@@ -9,16 +9,15 @@
         </li>
       </ul>
     <!-- <p class="title">国草园集团有限公司</p> -->
-    <p class="address_tel_fax">
+    <!-- <p class="address_tel_fax">
       <span>地址：南京市雨花台区凤展路30号A1幢9楼</span>
-      <span>Tel：025-66088155</span>
+      <span>Tel：025-66088155</span> -->
       <!-- <span>Fax：8888-88888888</span> -->
-    </p>
-    <p class="email_wx">
-      <span>版权所有 &copy; 蒙ICP备 18002915号</span>
+    <!-- </p>
+      <span>版权所有 &copy; 蒙ICP备 18002915号</span> -->
       <!-- <span>公司微信号：ilyk_gg</span> -->
-    </p>
-    <p class="copy">Copyright &copy; 2018 - 2019 公司名称公司名称</p>
+    <!-- </p> -->
+    <!-- <p class="copy">Copyright &copy; 2018 - 2019 公司名称公司名称</!--> -->
   </div>
 </template>
 <script>
@@ -55,17 +54,18 @@ export default {
 </script>
 <style scoped>
  #footer a{
-    color:#fff;
+    color:#000;
   }
 #footer {
   width: 100%;
   height: 100%;
-  color: #fff;
+  /* color: #fff; */
   /* background: #474747; */
   overflow: hidden;
   text-align: center;
   background: url('../assets/img/home/footer.png') no-repeat;
-  background-size: 100% 100%;
+  background-size:contain;
+  background-position: bottom;
   margin-top:50px;
 }
 .navList{
@@ -73,12 +73,12 @@ export default {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  margin-top:30px;
+  padding:20px 0;
 }
 .navList li{
   width:15%;
   padding:3px 0;
-  border-right:1px solid #fff;
+  border-right:1px solid #000;
   /* margin: 50px auto 20px; */
 }
 .navList li:last-child{
@@ -94,16 +94,16 @@ export default {
   margin-bottom: 20px;
 }
 .address_tel_fax {
-  color: #d3d3d3;
+  color: #000;
   font-size: 14px;
   margin: 10px 0;
 }
 .email_wx {
-  color: #d3d3d3;
+  color: #000;
   font-size: 14px;
 }
 .copy {
-  color: #d3d3d3;
+  color: #000;
   font-size: 14px;
   margin: 10px 0 30px;
 }

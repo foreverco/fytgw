@@ -4,43 +4,13 @@
     id="header"
     class="container-fuild"
   >
-    <!-- 头部顶部 -->
-    <!-- <div class="header-top container-fuild hidden-xs">
-      <div class="container">
-        <div class="server pull-left">
-           <img class="img-responsive" src="@/assets/img/logo_hp.png" alt="国草园LOGO">
-          <span>国草园集团</span>
-          <span class="glyphicon glyphicon-earphone"></span>(025)66088177
-          <span class="glyphicon glyphicon-envelope"></span>liyunkun_11@163.com
-          <span class="glyphicon glyphicon-time"></span>7x24小时为您服务
-        </div>
-        <div class="shejiao pull-right">
-          <span class="glyphicon glyphicon-hand-right"></span>赶快联系我们吧！
-          <span class="glyphicon glyphicon-hand-left"></span>
-        </div>
-      </div>
-    </div> -->
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
-      <!-- 导航logo -->
-      <div class='row'>
-        <div class="header-nav-logo">
-          <img
-            src="@/assets/img/home/1-head-logo.png"
-            alt=""
-          >
-          <p>
-            <img
-              src="@/assets/img/home/1-head-pinpai .png"
-              alt=""
-            >
-          </p>
-        </div>
-      </div>
+
       <!-- 导航内容 -->
-      <div class='navCon row' :class='{navShow : tabNav}'>
-        <div id='navshowLogo' v-show='tabNav' class='hidden-md'>
-          <img src="@/assets/img/home/1-head-logo2.png" alt="">
+      <div class='navCon row'>
+        <div id='navshowLogo'>
+          <img src="@/assets/img/home/1-head-logo.png" alt="">
         </div>
         <ul class="header-nav-wrapper">
           <li
@@ -50,12 +20,17 @@
             @click="navClick(index,item.name)"
           >
             <router-link :to="item.path">
-              {{item.name}}
-              <span
+              <span class='navTxt'>
+                {{item.name}}
+              </span>
+              <span class='navTxt'>
+                {{item.name1}}
+              </span>
+              <!-- <span
                 v-if="item.children.length>0"
                 class="glyphicon glyphicon-menu-down"
               ></span>
-              <i class="underline"></i>
+              <i class="underline"></i> -->
             </router-link>
             <dl v-if="item.children.length>0">
               <dt
@@ -67,8 +42,12 @@
             </dl>
           </li>
         </ul>
+        <ul class='loginBox'>
+        <li>登录 / </li>
+        <li> 注册</li>
+      </ul>
       </div>
-
+      
     </div>
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
@@ -157,11 +136,13 @@ export default {
       navList: [
         {
           name: "首页",
+          name1:"SHOWYE",
           path: "/",
           children: []
         },
         {
           name: "企业文化",
+          name1:"QIYEWENHUA",
           path: "",
           // path: "/software",
           children: [
@@ -185,6 +166,7 @@ export default {
         },
         {
           name: "产品中心",
+          name1:"CPZHONGXIN",
           path: "",
           // path: "/service",
           children: [
@@ -208,6 +190,7 @@ export default {
         },
         {
           name: "新闻中心",
+          name1:"XWZHONGXIN",
           path: "",
           // path: "/newsinformation",
           children: [
@@ -249,6 +232,7 @@ export default {
         // },
         {
           name: "联系我们",
+          name1:"LIANXIWOMEN",
           path: "/contactus",
           children: [
             // {
@@ -309,15 +293,15 @@ export default {
 #header {
   /* background: #f7f7f7; */
   transition: all ease 0.6s;
-  background: url("../assets/img/home/toubu.png") no-repeat;
-  background-size: 100%;
+  /* background: url("../assets/img/home/toubu.png") no-repeat;
+  background-size: 100%; */
 }
 #header .header-top {
   height: 50px;
-  color: #fff;
+  color: #325815;
   font-size: 12px;
   line-height: 50px;
-  background: #474747;
+  background: #dcdcdc;
 }
 /* 顶部的图标 */
 #header .header-top span {
@@ -326,7 +310,6 @@ export default {
 /* 导航栏 */
 #header .header-nav {
   /* height: 500px; */
-  padding-top: 100px;
 }
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
@@ -360,11 +343,10 @@ export default {
 }
 /* 导航栏 导航容器 */
 .navCon {
-  /* border: 1px solid red; */
-  height: 110px;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   /* position: fixed;
   top:0; */
 }
@@ -384,7 +366,7 @@ export default {
   align-items: center;
 }
 #navshowLogo img{
-  width:100%;
+  height:60%;
   /* position: absolute; */
   /* left:15%; */
   /* margin-left:250px; */
@@ -393,7 +375,10 @@ export default {
   line-height: 50px;
 }
 #header .header-nav .header-nav-wrapper {
-  line-height: 110px;
+  height:80px;
+  /* border:1px solid red; */
+  /* width:700px; */
+  /* line-height: 40px; */
   /* float: right; */
   margin: 0;
   /* max-width: 800px; */
@@ -401,19 +386,39 @@ export default {
 /* 导航栏 每个导航 */
 #header .header-nav .header-nav-wrapper > li {
   float: left;
-  margin: 0 20px;
   position: relative;
+  height:80px;
+    display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 /* 导航栏 每个导航下面的 a 链接 */
 #header .header-nav .header-nav-wrapper > li > a {
   color: #000;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 15px 0;
-  position: relative;
+  display: inline-block;
+  height:50px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   /* border:1px solid red;
   display:inline-block;
   width:100px; */
+}
+#header .header-nav .header-nav-wrapper > li > a .navTxt{
+  /* border:1px solid red; */
+  display: inline-block;
+  width:100%;
+  font-size: 18px;
+  text-align: center;
+}
+#header .header-nav .header-nav-wrapper > li:hover{
+  background: rgba(0,0,0,0.2);
+}
+#header .header-nav .header-nav-wrapper > li:hover a{
+  text-decoration: none;
+}
+#header .header-nav .header-nav-wrapper > li > a .navTxt:last-child {
+  font-size:9px;
 }
 #header .header-nav .navShow .header-nav-wrapper > li > a {
   color:#fff;
@@ -426,50 +431,20 @@ export default {
 #header .header-nav .navShow .header-nav-wrapper {
   /* background: blue; */
 }
-/* 导航栏 每个导航下面的 a 链接的下划线 */
-#header .header-nav .header-nav-wrapper > li > a > i {
-  display: block;
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  opacity: 0;
-  transition: all 0.6s ease;
-  background-color: #c60c16;
-}
-/* 导航栏 每个导航下面的 a 链接的右侧小三角 */
-#header .header-nav .header-nav-wrapper > li > a > span {
-  font-size: 12px;
-  transition: transform ease 0.5s;
-}
-/* 导航栏 每个导航下面的 a 链接 鼠标滑上去的样式 */
-#header .header-nav .header-nav-wrapper > li > a:hover {
-  color: #c60c16;
-  text-decoration: none;
-}
-/* 导航栏 每个导航下面的 a 链接 鼠标滑上去下划线的样式 */
-#header .header-nav .header-nav-wrapper > li > a:hover .underline {
-  opacity: 1;
-  width: 100%;
-  left: 0;
-}
-/* 导航栏 每个导航下面的 a 链接 鼠标滑上去三角标的样式 */
-#header .header-nav .header-nav-wrapper > li > a:hover span {
-  transform: rotate(180deg);
-}
 /* 导航栏 每个导航下面的 a 链接 鼠标点击后的样式 */
-#header .header-nav .header-nav-wrapper > li.active > a {
-  color: #c60c16;
+#header .header-nav .header-nav-wrapper > li.active{
+  background: #325815;
+}
+#header .header-nav .header-nav-wrapper > li.active >a{
+  color: #fff;
   text-decoration: none;
-  border-bottom: 2px solid #c60c16;
 }
 /* 导航栏 每个导航下面的二级导航容器 */
 #header .header-nav .header-nav-wrapper > li > dl {
   display: none;
   position: absolute;
   width: 168px;
-  top: 80%;
+  top: 100%;
   left: 0;
   z-index: 999999;
   box-shadow: 0 0 3px 1px #ccc;
@@ -480,10 +455,10 @@ export default {
   width: 100%;
   padding: 10px;
   border-bottom: 1px solid #ccc;
-  color:#c60c16;
+  color:#325815;
 }
 li > dl > dt a {
-    color: #c60c16;
+    color: #325815;
     text-decoration: none;
 }
 /* 导航栏 每个导航下面的二级导航容器的每个导航 当鼠标滑上时的样式*/
@@ -497,6 +472,14 @@ li > dl > dt a {
 #header .header-nav .header-nav-wrapper > li > dl > dt:hover {
   cursor: pointer;
   background: #ccc;
+}
+@media screen and (max-width: 1199px){
+  #navshowLogo{
+    display:none;
+  }
+  .loginBox{
+    display:none !important;
+  }
 }
 @media screen and (max-width: 997px) {
   #header .header-nav-m {
@@ -590,16 +573,68 @@ li > dl > dt a {
   padding: 15px 0;
   position: relative;
 }
-.pull-left {
+.pull-right {
   /* border:1px solid red; */
   display: flex;
   align-items: center;
 }
+.pull-right b{
+  /* border:1px solid red; */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding:0 5px;
+  
+}
+.pull-right b:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.2);
+}
+.erweiBox{
+  position: absolute;
+  top:80px;
+  left:0;
+  width:100px;
+  height:100px;
+  border:1px solid rgba(0,0,0,0.4);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+}
+.pull-right b:hover .erweiBox{
+    opacity: 1;
+    transform: scale(1.5);
+    z-index: 10002;
+}
+.erweiBox img{
+  width:90%;
+  height:90% !important;
+}
+.pull-left {
+  height:50px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .pull-left img {
-  height: 50px;
+  height: 30px;
 }
 .pull-left span {
   font-size: 18px;
   font-weight: bold;
+}
+.loginBox{
+  /* border:1px solid red; */
+  height:100%;
+      display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginBox li{
+  
 }
 </style>
