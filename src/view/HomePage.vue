@@ -86,12 +86,17 @@
             src="@/assets/img/home/biaoti-xinwenzhongxin.png"
             alt
           >
+          <ul class='newsNav'>
+            <li>行业动态</li>
+          <li>行业动态</li>
+          <li>行业动态</li>
+          </ul>
         </div>
-        <ul class="row newsNav">
+        <!-- <ul class="row newsNav">
           <li>行业动态</li>
           <li>行业动态</li>
           <li>行业动态</li>
-        </ul>
+        </ul> -->
         <ul class="newsList">
           <li
             class="row"
@@ -133,13 +138,19 @@
             src="@/assets/img/home/biaoti-chanpin.png"
             alt
           >
+          <ul class='productNav'>
+             <li>黄芪</li>
+          <li>板蓝根</li>
+          <li>柴胡</li>
+          <li>防风</li>
+          </ul>
         </div>
-        <ul class="row productNav">
+        <!-- <ul class="row productNav">
           <li>黄芪</li>
           <li>板蓝根</li>
           <li>柴胡</li>
           <li>防风</li>
-        </ul>
+        </ul> -->
         <ul class='productList row'>
           <li
             class='col-md-3 col-sm-5 col-xs-6'
@@ -231,13 +242,19 @@
             src="@/assets/img/home/biaoti-jidi.png"
             alt
           >
-        </div>
-        <ul class="row baseNav">
+          <ul class="baseNav">
           <li>黄芪</li>
           <li>板蓝根</li>
           <li>柴胡</li>
           <li>防风</li>
         </ul>
+        </div>
+        <!-- <ul class="row baseNav">
+          <li>黄芪</li>
+          <li>板蓝根</li>
+          <li>柴胡</li>
+          <li>防风</li>
+        </ul> -->
         <div class="row">
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -285,6 +302,11 @@
             src="@/assets/img/home/biaoti-wenhua.png"
             alt
           >
+          <ul class="scoolingNav">
+          <li>技术保障</li>
+          <li>跟踪服务</li>
+          <li>雄厚实力</li>
+        </ul>
         </div>
         <ul class="row scoolingNav">
           <li>技术保障</li>
@@ -465,19 +487,19 @@ export default {
       /* 轮播图列表 */
       swiperList: [
         {
-          img: require("@/assets/img/home/banner2.jpg"),
+          img: require("@/assets/img/home/banner.png"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/home/homebanner2.jpg"),
+          img: require("@/assets/img/home/banner.png"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/home/banner3.jpg"),
+          img: require("@/assets/img/home/banner.png"),
           path: "",
           title: "",
           content: ""
@@ -861,8 +883,8 @@ export default {
 <style scoped>
 /* 整体盒子 */
 #HomePage {
-  width: 100%;
-  border-top:10px solid #325815;
+  /* width: 100%;
+  border-top:10px solid #325815; */
 }
 
 /* 轮播图 */
@@ -1029,13 +1051,15 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 /* 新闻导航 */
 .newsNav {
   /* background: #325815; */
   text-align: center;
-  margin-bottom: 50px;
   font-size: 14px;
+  position: absolute;
+  bottom:20px;
 }
 .newsNav > li {
   /* float:left; */
@@ -1139,13 +1163,16 @@ white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 /* 产品导航 */
 .productNav {
   /* background: #325815; */
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   font-size: 14px;
+  position: absolute;
+  bottom:20px;
 }
 .productNav > li {
   /* float:left; */
@@ -1223,6 +1250,7 @@ white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 /* 关于国草园轮播图 */
 #aboutgcy .swiper-container {
@@ -1271,13 +1299,16 @@ white-space: nowrap;
 .basecontainer {
   /* border: 1px solid #325815; */
   margin-top: 30px;
+  position: relative;
 }
 /* 基地导航 */
 .baseNav {
   /* background: #325815; */
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   font-size: 14px;
+  position: absolute;
+  bottom:20px;
 }
 .baseNav > li {
   /* float:left; */
@@ -1345,13 +1376,16 @@ white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 /* 国草园文化导航 */
 .scoolingNav {
   /* background: #325815; */
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   font-size: 14px;
+  position: absolute;
+  bottom:20px;
 }
 .scoolingNav > li {
   /* float:left; */

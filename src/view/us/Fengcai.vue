@@ -84,35 +84,35 @@ export default {
       ],
       imgList: [
         {
-          imgUrl: "static/img/qiye/fengcai1.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-8.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai2.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-9.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai3.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-10.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai4.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-11.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai5.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-12.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai6.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-13.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai1.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-8.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai2.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-9.png",
           title: "国草园与化德县建立了友好的合作关系"
         }
       ]
@@ -216,13 +216,16 @@ export default {
 .imgBox li p {
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 10%;
   background: rgba(0, 0, 0, 0.5);
-  width: 100%;
+  width: 98%;
   padding-left: 5%;
   color: #fff;
   display: flex;
   align-items: center;
+  transition: all 0.8s;
 }
 .imgSpace1 {
   height: 100%;
@@ -250,6 +253,9 @@ export default {
     z-index: 200000;
     transition: all 400ms ease
 }
+.imgBox li:hover p{
+  width:100%;
+}
 .imgBox li:first-child,
 .imgBox li:last-child {
   width: 60%;
@@ -275,7 +281,7 @@ export default {
   height: 5vw;
   font-size: 2vw;
   /* font-weight:bold; */
-  color: #8c1713;
+  color: #325815;
   background: url("../../assets/img/qiye/3-3qiyefengcai-5.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
@@ -344,7 +350,7 @@ export default {
   justify-content: center;
   align-items: center;
   position: absolute;
-  /* background: #8c1713; */
+  /* background: #325815; */
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -359,7 +365,7 @@ export default {
     width: 8vw;
     height: 8vw;
     font-size: 2vw;
-    color: #8c1713;
+    color: #325815;
     background: url(/static/img/3-3qiyefengcai-5.bb9823c.png) no-repeat;
     background-size: 100% 100%;
     transform: all 0.6s;

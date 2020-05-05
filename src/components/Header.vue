@@ -1,16 +1,52 @@
 <template>
   <!-- 头部整体盒子 -->
-  <div
-    id="header"
-    class="container-fuild"
-  >
+  <div id="header" class="container-fuild">
+    <!-- 头部顶部 -->
+    <div class="header-top container-fuild hidden-xs">
+      <div class="container">
+        <div class="server pull-left">
+          <!-- <img class="img-responsive" src="@/assets/img/home/1-head-logo.png" alt="国草园LOGO"> -->
+          <span class="navTxt">国草园集团</span>
+        </div>
+        <div class="shejiao pull-right">
+          <b>
+            <span class="glyphicon glyphicon-music"></span>
+            <!-- <span></span> -->
+            <div class="erweiBox">
+              <img src="../assets/img/home/erweima.jpg" alt>
+            </div>
+          </b>
+          <b>
+            <span class="glyphicon glyphicon-phone"></span>
+            <!-- <span></span> -->
+            <div class="erweiBox">
+              <img src="../assets/img/home/erweima.jpg" alt>
+            </div>
+          </b>
+          <b>
+            <span class="glyphicon glyphicon-time"></span>
+            <!-- <span></span> -->
+            <!-- 7x24小时为您服务 -->
+          </b>
+          <!-- <span class="glyphicon glyphicon-hand-right"></span>
+          赶快联系我们吧！
+          <span class="glyphicon glyphicon-hand-left"></span>-->
+        </div>
+      </div>
+    </div>
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
-
+      <div class="row">
+        <div class="header-nav-logo">
+          <p>
+            <img src="@/assets/img/home/1-head-pinpai .png" alt>
+          </p>
+        </div>
+      </div>
       <!-- 导航内容 -->
-      <div class='navCon row'>
-        <div id='navshowLogo'>
-          <img src="@/assets/img/home/1-head-logo.png" alt="">
+      <div class="navCon row">
+        <div id="navshowLogo">
+          <img src="@/assets/img/home/1-head-logo.png" alt>
         </div>
         <ul class="header-nav-wrapper">
           <li
@@ -20,50 +56,37 @@
             @click="navClick(index,item.name)"
           >
             <router-link :to="item.path">
-              <span class='navTxt'>
-                {{item.name}}
-              </span>
-              <span class='navTxt'>
-                {{item.name1}}
-              </span>
+              <span class="navTxt">{{item.name}}</span>
+              <span class="navTxt">{{item.name1}}</span>
               <!-- <span
                 v-if="item.children.length>0"
                 class="glyphicon glyphicon-menu-down"
               ></span>
-              <i class="underline"></i> -->
+              <i class="underline"></i>-->
             </router-link>
             <dl v-if="item.children.length>0">
-              <dt
-                v-for="(i,n) in item.children"
-                :key="n"
-              >
+              <dt v-for="(i,n) in item.children" :key="n">
                 <router-link :to="i.path">{{i.name}}</router-link>
               </dt>
             </dl>
           </li>
         </ul>
-        <ul class='loginBox'>
-        <li>登录 / </li>
-        <li> 注册</li>
-      </ul>
+        <ul class="loginBox">
+          <li>登录 /</li>
+          <li>注册</li>
+        </ul>
       </div>
-      
     </div>
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img
-          src="@/assets/img/logo.png"
-          alt="logo"
-        >
-        <span class='logotxt'>国草园集团</span>
+        <img src="@/assets/img/logo.png" alt="logo">
+        <span class="logotxt">国草园集团</span>
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
-        {{menuName}}<span
-          v-if='sonName'
-          style="font-size:13px;"
-        > - {{sonName}}</span>
+        {{menuName}}
+        <span v-if="sonName" style="font-size:13px;">- {{sonName}}</span>
 
         <div
           class="header-nav-m-menu-wrapper"
@@ -74,10 +97,7 @@
           <span :class="menuClass"></span>
         </div>
         <!-- 导航内容 -->
-        <ul
-          id="menu"
-          class="header-nav-m-wrapper collapse"
-        >
+        <ul id="menu" class="header-nav-m-wrapper collapse">
           <li
             v-for="(item,index) in navList"
             :key="index"
@@ -114,16 +134,13 @@
         </ul>
       </div>
     </div>
-
   </div>
-
 </template>
 <script>
 export default {
   name: "Header",
   data() {
     return {
-      
       /* 滚动监听导航条 */
       tabNav: false,
       targetId: "333",
@@ -136,14 +153,14 @@ export default {
       navList: [
         {
           name: "首页",
-          name1:"SHOWYE",
+          name1: "SHOWYE",
           path: "/",
           children: []
         },
         {
           name: "企业文化",
-          name1:"QIYEWENHUA",
-          path: "",
+          name1: "QIYEWENHUA",
+          path: "/software/aboutUs",
           // path: "/software",
           children: [
             {
@@ -166,7 +183,7 @@ export default {
         },
         {
           name: "产品中心",
-          name1:"CPZHONGXIN",
+          name1: "CPZHONGXIN",
           path: "",
           // path: "/service",
           children: [
@@ -181,7 +198,7 @@ export default {
             {
               name: "种植实力",
               path: "/product/stockshow"
-            },
+            }
             // {
             //   name: "防伪查询",
             //   path: "/software/bigData"
@@ -190,7 +207,7 @@ export default {
         },
         {
           name: "新闻中心",
-          name1:"XWZHONGXIN",
+          name1: "XWZHONGXIN",
           path: "",
           // path: "/newsinformation",
           children: [
@@ -232,7 +249,7 @@ export default {
         // },
         {
           name: "联系我们",
-          name1:"LIANXIWOMEN",
+          name1: "LIANXIWOMEN",
           path: "/contactus",
           children: [
             // {
@@ -279,10 +296,10 @@ export default {
         document.body.scrollTop;
       if (scrollTop > 500) {
         this.tabNav = true;
-        console.log(1111)
+        console.log(1111);
       } else if (scrollTop < 500) {
         this.tabNav = false;
-        console.log(222)
+        console.log(222);
       }
     }
   }
@@ -293,14 +310,16 @@ export default {
 #header {
   /* background: #f7f7f7; */
   transition: all ease 0.6s;
+    width: 100%;
+  border-bottom:10px solid #325815;
   /* background: url("../assets/img/home/toubu.png") no-repeat;
   background-size: 100%; */
 }
 #header .header-top {
-  height: 50px;
+  height: 40px;
   color: #325815;
   font-size: 12px;
-  line-height: 50px;
+  line-height: 40px;
   background: #dcdcdc;
 }
 /* 顶部的图标 */
@@ -313,7 +332,7 @@ export default {
 }
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
-  /* border:1px solid red; */
+  /* border: 1px solid red; */
   /* width: 240px; */
   height: 100%;
   /* float: left; */
@@ -322,6 +341,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 20px 0;
 }
 /* 导航栏logo图片 */
 #header .header-nav .header-nav-logo img {
@@ -351,22 +371,22 @@ export default {
   top:0; */
 }
 .navShow {
-  width:100%;
-  background: rgba(0,0,0,0.5);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
-  top:0;
-  left:50%;
+  top: 0;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 10001;
 }
 #navshowLogo {
   /* border:1px solid blue; */
-  height:100%;
+  height: 100%;
   display: flex;
   align-items: center;
 }
-#navshowLogo img{
-  height:60%;
+#navshowLogo img {
+  height: 60%;
   /* position: absolute; */
   /* left:15%; */
   /* margin-left:250px; */
@@ -375,7 +395,7 @@ export default {
   line-height: 50px;
 }
 #header .header-nav .header-nav-wrapper {
-  height:80px;
+  height: 80px;
   /* border:1px solid red; */
   /* width:700px; */
   /* line-height: 40px; */
@@ -387,8 +407,8 @@ export default {
 #header .header-nav .header-nav-wrapper > li {
   float: left;
   position: relative;
-  height:80px;
-    display: flex;
+  height: 80px;
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -396,7 +416,7 @@ export default {
 #header .header-nav .header-nav-wrapper > li > a {
   color: #000;
   display: inline-block;
-  height:50px;
+  height: 50px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -404,26 +424,26 @@ export default {
   display:inline-block;
   width:100px; */
 }
-#header .header-nav .header-nav-wrapper > li > a .navTxt{
+#header .header-nav .header-nav-wrapper > li > a .navTxt {
   /* border:1px solid red; */
   display: inline-block;
-  width:100%;
+  width: 100%;
   font-size: 18px;
   text-align: center;
 }
-#header .header-nav .header-nav-wrapper > li:hover{
-  background: rgba(0,0,0,0.2);
+#header .header-nav .header-nav-wrapper > li:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
-#header .header-nav .header-nav-wrapper > li:hover a{
+#header .header-nav .header-nav-wrapper > li:hover a {
   text-decoration: none;
 }
 #header .header-nav .header-nav-wrapper > li > a .navTxt:last-child {
-  font-size:9px;
+  font-size: 9px;
 }
 #header .header-nav .navShow .header-nav-wrapper > li > a {
-  color:#fff;
+  color: #fff;
 }
-#header .header-nav .navShow{
+#header .header-nav .navShow {
   /* border:1px solid red; */
   display: flex;
   justify-content: space-between;
@@ -432,10 +452,10 @@ export default {
   /* background: blue; */
 }
 /* 导航栏 每个导航下面的 a 链接 鼠标点击后的样式 */
-#header .header-nav .header-nav-wrapper > li.active{
+#header .header-nav .header-nav-wrapper > li.active {
   background: #325815;
 }
-#header .header-nav .header-nav-wrapper > li.active >a{
+#header .header-nav .header-nav-wrapper > li.active > a {
   color: #fff;
   text-decoration: none;
 }
@@ -453,13 +473,19 @@ export default {
 /* 导航栏 每个导航下面的二级导航容器的每个导航 */
 #header .header-nav .header-nav-wrapper > li > dl > dt {
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   border-bottom: 1px solid #ccc;
-  color:#325815;
+  color: #325815;
+  height:100%;
+  width:100%;
 }
 li > dl > dt a {
-    color: #325815;
-    text-decoration: none;
+  color: #325815;
+  text-decoration: none;
+  height:100%;
+  width:100%;
+  display: inline-block;
+  padding: 10px;
 }
 /* 导航栏 每个导航下面的二级导航容器的每个导航 当鼠标滑上时的样式*/
 #header .header-nav .header-nav-wrapper > li > dl > dt > a:hover {
@@ -473,12 +499,12 @@ li > dl > dt a {
   cursor: pointer;
   background: #ccc;
 }
-@media screen and (max-width: 1199px){
-  #navshowLogo{
-    display:none;
+@media screen and (max-width: 1199px) {
+  #navshowLogo {
+    display: none;
   }
-  .loginBox{
-    display:none !important;
+  .loginBox {
+    display: none !important;
   }
 }
 @media screen and (max-width: 997px) {
@@ -574,49 +600,51 @@ li > dl > dt a {
   position: relative;
 }
 .pull-right {
-  /* border:1px solid red; */
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
+  height: 40px;
 }
-.pull-right b{
+.pull-right b {
   /* border:1px solid red; */
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
-  padding:0 5px;
-  
+  height:100%;
+  /* padding: 0 5px; */
 }
-.pull-right b:hover{
+.pull-right b:hover {
   cursor: pointer;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
-.erweiBox{
+.erweiBox {
   position: absolute;
-  top:80px;
-  left:0;
-  width:100px;
-  height:100px;
-  border:1px solid rgba(0,0,0,0.4);
+  top: 80px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   display: flex;
   opacity: 0;
   align-items: center;
   justify-content: center;
   transition: all 1s;
 }
-.pull-right b:hover .erweiBox{
-    opacity: 1;
-    transform: scale(1.5);
-    z-index: 10002;
+.pull-right b:hover .erweiBox {
+  opacity: 1;
+  transform: scale(1.5);
+  z-index: 10002;
 }
-.erweiBox img{
-  width:90%;
-  height:90% !important;
+.erweiBox img {
+  width: 90%;
+  height: 90% !important;
 }
 .pull-left {
-  height:50px;
-    display: flex;
+  height: 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -624,17 +652,17 @@ li > dl > dt a {
   height: 30px;
 }
 .pull-left span {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 10px;
+  /* font-weight: bold; */
 }
-.loginBox{
+.loginBox {
   /* border:1px solid red; */
-  height:100%;
-      display: flex;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.loginBox li{
-  
+.loginBox li {
 }
 </style>
