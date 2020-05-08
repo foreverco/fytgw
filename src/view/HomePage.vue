@@ -1,26 +1,19 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div
-      id="swiper"
-      class="container-fuild"
-    >
+    <div id="swiper" class="container-fuild">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
           <div
             class="swiper-slide"
-            v-for="(item,index) in swiperList"
+            v-for="(item, index) in swiperList"
             :key="index"
           >
-            <img
-              class="swiper-lazy"
-              :data-src="item.img"
-              alt="轮播图"
-            >
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
-              <h1>{{item.title}}</h1>
-              <p>{{item.content}}</p>
+              <h1>{{ item.title }}</h1>
+              <p>{{ item.content }}</p>
             </div>
           </div>
         </div>
@@ -28,45 +21,38 @@
         <div class="swiper-pagination"></div>
 
         <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
       </div>
     </div>
     <!-- 专业的技术 -->
-    <div
-      id="tecnology"
-      class="container-fluid"
-    >
+    <div id="tecnology" class="container-fluid">
       <div class="tecnologyList container">
         <ul>
           <li
             v-for="(item, index) in tecnologyList"
-            :style='{width:tecnologyShow===index?"90%":""}'
+            :style="{ width: tecnologyShow === index ? '90%' : '' }"
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p
-              class="tacwow bounceInRight"
-              data-wow-duration="0.2s"
-            >{{item.title}}</p>
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
+              {{ item.title }}
+            </p>
             <div
               class="tacwow bounceInRight"
               data-wow-duration="1.0s"
-              v-if="tecnologyShow===index"
+              v-if="tecnologyShow === index"
             >
               <div class="row">
                 <div class="hidden-sm hidden-xs col-md-4 tacimg">
-                  <img
-                    src="@/assets/img/home/3-wenhua-logo.png"
-                    alt
-                  >
+                  <img src="@/assets/img/home/3-wenhua-logo.png" alt />
                 </div>
                 <div class="col-xs-11 col-md-8 taccon">
-                  <p>{{item.con}}</p>
+                  <p>{{ item.con }}</p>
                   <div class="button">
-                   <router-link :to="{path: '/software/aboutUs'}"> 
-                    <button>查看更多</button>
-                  </router-link>
+                    <router-link :to="{ path: '/software/aboutUs' }">
+                      <button>查看更多</button>
+                    </router-link>
                   </div>
                 </div>
               </div>
@@ -76,20 +62,14 @@
       </div>
     </div>
     <!-- 新闻中心 -->
-    <div
-      id="news"
-      class="container-fuild"
-    >
+    <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img
-            src="@/assets/img/home/biaoti-xinwenzhongxin.png"
-            alt
-          >
-          <ul class='newsNav'>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <ul class="newsNav">
             <li>行业动态</li>
-          <li>行业动态</li>
-          <li>行业动态</li>
+            <li>行业动态</li>
+            <li>行业动态</li>
           </ul>
         </div>
         <!-- <ul class="row newsNav">
@@ -98,51 +78,41 @@
           <li>行业动态</li>
         </ul> -->
         <ul class="newsList">
-          <li
-            class="row"
-            v-for="(item, index) in newsList"
-            :key="index"
-          >
-          <router-link :to="{name: 'NewsMsg', params: {newsId: item.newsid}}">
-            <div class="col-md-3 col-sm-12 wow zoomIn">
-              <img
-                :src="item.imgUrl"
-                alt
-                style='width:100%;'
-              >
-            </div>
+          <li class="row" v-for="(item, index) in newsList" :key="index">
+            <router-link
+              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+            >
+              <div class="col-md-3 col-sm-12 wow zoomIn">
+                <img :src="item.imgUrl" alt style="width:100%;" />
+              </div>
             </router-link>
 
             <div class="col-md-6 col-sm-12">
-              <p>{{item.title}}</p>
-              <p class='newsCon'>{{item.con}}</p>
+              <p>{{ item.title }}</p>
+              <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link :to="{name: 'NewsMsg', params: {newsId: item.newsid}}">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <button>浏览更多</button>
               </router-link>
-              <span>{{item.date}}</span>
+              <span>{{ item.date }}</span>
             </div>
           </li>
         </ul>
       </div>
     </div>
     <!-- 国草园产品 -->
-    <div
-      id="product"
-      class="container-fuild"
-    >
+    <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img
-            src="@/assets/img/home/biaoti-chanpin.png"
-            alt
-          >
-          <ul class='productNav'>
-             <li>黄芪</li>
-          <li>板蓝根</li>
-          <li>柴胡</li>
-          <li>防风</li>
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <ul class="productNav">
+            <li>黄芪</li>
+            <li>板蓝根</li>
+            <li>柴胡</li>
+            <li>防风</li>
           </ul>
         </div>
         <!-- <ul class="row productNav">
@@ -151,67 +121,45 @@
           <li>柴胡</li>
           <li>防风</li>
         </ul> -->
-        <ul class='productList row'>
+        <ul class="productList row">
           <li
-            class='col-md-3 col-sm-5 col-xs-6'
+            class="col-md-3 col-sm-5 col-xs-6"
             v-for="(item, index) in productList"
             :key="index"
-            @click='gotoprodect'
+            @click="gotoprodect"
           >
-            <p>{{item.name}}</p>
-            <p>{{item.effect}}</p>
-            <p class='imgBox wow zoomIn'>
-            <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img
-                :src="item.imgUrl"
-                alt=""
-              >
-            <!-- </router-link> -->
+            <p>{{ item.name }}</p>
+            <p>{{ item.effect }}</p>
+            <p class="imgBox wow zoomIn">
+              <!-- <router-link :to="{path: '/product/productpack'}"> -->
+              <img :src="item.imgUrl" alt="" />
+              <!-- </router-link> -->
             </p>
           </li>
         </ul>
       </div>
     </div>
     <!-- 关于国草园 -->
-    <div
-      id='aboutgcy'
-      class='container-fluid'
-    >
-      <div class='container aboutcontainer'>
+    <div id="aboutgcy" class="container-fluid">
+      <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img
-            src="@/assets/img/home/biaoti-guanyu.png"
-            alt
-          >
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
-        <div class='row aboutswiper'>
+        <div class="row aboutswiper">
           <div class="swiper-container aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img
-                  src="static/img/6-guanyuguocaoyuan-tupian1.png"
-                  alt=""
-                >
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt="" />
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/swiper11.png"
-                  alt=""
-                >
+                <img src="static/img/swiper11.png" alt="" />
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/swiper22.png"
-                  alt=""
-                >
+                <img src="static/img/swiper22.png" alt="" />
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/swiper33.png"
-                  alt=""
-                >
+                <img src="static/img/swiper33.png" alt="" />
               </div>
-
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
@@ -224,30 +172,27 @@
             <div class="swiper-scrollbar"></div>
           </div>
         </div>
-        <div class='row abouttxt'>
-          <p class='con col-md-11'>国草园集团，成立于 2018 年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。
-集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。 </p>
-          <p class='title col-md-1'>国草园集团:</p>
+        <div class="row abouttxt">
+          <p class="con col-md-11">
+            国草园集团，成立于 2018
+            年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。
+            集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
+          </p>
+          <p class="title col-md-1">国草园集团:</p>
         </div>
       </div>
     </div>
     <!-- 蒙中草药基地 -->
-    <div
-      id='base'
-      class='container-fluid'
-    >
-      <div class='container basecontainer'>
+    <div id="base" class="container-fluid">
+      <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img
-            src="@/assets/img/home/biaoti-jidi.png"
-            alt
-          >
+          <img src="@/assets/img/home/biaoti-jidi.png" alt />
           <ul class="baseNav">
-          <li>黄芪</li>
-          <li>板蓝根</li>
-          <li>柴胡</li>
-          <li>防风</li>
-        </ul>
+            <li>黄芪</li>
+            <li>板蓝根</li>
+            <li>柴胡</li>
+            <li>防风</li>
+          </ul>
         </div>
         <!-- <ul class="row baseNav">
           <li>黄芪</li>
@@ -258,18 +203,14 @@
         <div class="row">
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
-            v-for="(item,index) in basePicList"
+            v-for="(item, index) in basePicList"
             :key="index"
-             @mouseover="hoverboxShow(index)" @mouseout="hoverboxHide"
           >
-            <div class='basePicBox'>
-              <img
-                :src="item.imgUrl"
-                alt
-              >
-            <div class='hoverBox hoverwow bounceIn' v-show='hoverBoxShow == index'>
-              {{item.title}}
-            </div>
+            <div class="basePicBox">
+              <img :src="item.imgUrl" alt />
+              <div class="hoverBox hoverwow bounceIn">
+                {{ item.title }}
+              </div>
             </div>
 
             <!-- <p class="text-center">{{item.title}}</p> -->
@@ -292,42 +233,35 @@
       </div>
     </div>
     <!-- 国草园文化 -->
-    <div
-      id="scooling"
-      class='container-fluid'
-    >
+    <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img
-            src="@/assets/img/home/biaoti-wenhua.png"
-            alt
-          >
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
           <ul class="scoolingNav">
-          <li>技术保障</li>
-          <li>跟踪服务</li>
-          <li>雄厚实力</li>
-        </ul>
+            <li>技术保障</li>
+            <li>跟踪服务</li>
+            <li>雄厚实力</li>
+          </ul>
         </div>
-        <ul class="row scoolingNav">
+        <!-- <ul class="row scoolingNav">
           <li>技术保障</li>
           <li>跟踪服务</li>
           <li>雄厚实力</li>
-        </ul>
-        <div class='row scoolingBox'>
-          <div class='col-md-6 scoolingTxt'>
-
-            <p class='con'>
-               国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+        </ul> -->
+        <div class="row scoolingBox">
+          <div class="col-md-6 scoolingTxt">
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
             </p>
-            <p class='title'>-------同修仁德 济世养生------</p>
-            <p class='name'>
+            <p class="title">-------同修仁德 济世养生------</p>
+            <p class="name">
               <span>国草园</span>
               <span>◆</span>
               <span>企业文化</span>
             </p>
           </div>
-          <div class='col-md-6 scoolingImg wow zoomIn'>
-            <img src="static/img/7-wenhua-tupian1.png" alt="">
+          <div class="col-md-6 scoolingImg wow zoomIn">
+            <img src="static/img/7-wenhua-tupian1.png" alt="" />
           </div>
         </div>
       </div>
@@ -355,32 +289,31 @@
             href="#"
             class="btn btn-lg btn-block btn-info"
           >联系我们</a> -->
-          <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
+    <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
           <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
           <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
           <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>-->
-        <!-- </div>
+    <!-- </div>
       </div>
     </div> -->
     <!-- 您身边的IT专家 -->
-    <div
-      id="contactUs"
-      class="container-fuild text-center"
-    >
+    <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
-                <div class='logo hidden-xs'>
-          <img src="@/assets/img/home/8-lianxiwomen-logo1.png" alt="">
-        </div>
-        <h1 style='color:#325815'>400-8888-456</h1>
-                <button
+        <!-- <div class="logo hidden-xs">
+          <img src="@/assets/img/home/8-lianxiwomen-logo1.png" alt="" />
+        </div> -->
+        <h1 style="color:#81b25b">400-8888-456</h1>
+        <button
           class="btn btn-info btn-sm"
           @click="$router.push('/contactus')"
-          onmouseleave="this.style.borderColor='#325815'; this.style.backgroundColor='#325815'; this.style.color='#fff';"
-          onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#325815'; this.style.color='#325815';"
-        >联系我们</button>
-        <hr>
-        <span style='background:black'>http://www.guocaoyuan.com</span>
-        <h3 style='color:#325815'>服务热线: 0471-3900199</h3>
+          onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
+          onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
+        >
+          联系我们
+        </button>
+        <!-- <hr />
+        <span style="background:black">http://www.guocaoyuan.com</span>
+        <h3 style="color:#81b25b">服务热线: 0471-3900199</h3> -->
         <!-- <div class="contactUs-contactWay">
           <span></span>
           <span></span>
@@ -453,8 +386,8 @@
               src="@/assets/img/timg.jpg"
               alt
             > -->
-            <!-- <p class="text-center">{{item.title}}</p> -->
-            <!-- <div
+    <!-- <p class="text-center">{{item.title}}</p> -->
+    <!-- <div
               class="server-block wow slideInUp"
               onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
@@ -468,7 +401,7 @@
                 onmouseleave="this.style.color='#ccc'"
               ></div>
             </div>-->
-          <!-- </div>
+    <!-- </div>
         </div>
       </div>
     </div> -->
@@ -493,13 +426,7 @@ export default {
           content: ""
         },
         {
-          img: require("@/assets/img/home/banner.png"),
-          path: "",
-          title: "",
-          content: ""
-        },
-        {
-          img: require("@/assets/img/home/banner.png"),
+          img: require("@/assets/img/home/banner2.png"),
           path: "",
           title: "",
           content: ""
@@ -511,42 +438,50 @@ export default {
       tecnologyList: [
         {
           title: "以人为本",
-          con: "坚持以人为本，不断增强企业的核心竞争能力。进一步提高认识，深化改革，采取措施培养人才，用好人才，吸引人才，争取主动，强调通才，具有较强的创新意识，善于总结经验，勇于突破自我。  "
+          con:
+            "坚持以人为本，不断增强企业的核心竞争能力。进一步提高认识，深化改革，采取措施培养人才，用好人才，吸引人才，争取主动，强调通才，具有较强的创新意识，善于总结经验，勇于突破自我。  "
         },
         {
           title: "诚信经营",
-          con: "以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣。"
+          con:
+            "以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣。"
         },
         {
           title: "发展蒙药",
-          con: "国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范"
+          con:
+            "国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范"
         },
         {
           title: " 致力健康",
-          con: " 扎根内蒙  天然种植  选料上乘  辐射全国，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业"
+          con:
+            " 扎根内蒙  天然种植  选料上乘  辐射全国，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业"
         }
       ],
       /* 新闻列表 */
       newsList: [
         {
-          newsid:1,
+          newsid: 1,
           imgUrl: "static/img/news/news1.png",
-          title: "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
-          con: "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
+          title:
+            "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+          con:
+            "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
           date: "2015-04-10"
         },
         {
-          newsid:2,
+          newsid: 2,
           imgUrl: "static/img/news1.png",
           title: "内蒙古打造西部蒙中药材产业带 发力扶贫",
-          con: "【中国制药网 行业动态】目前，呼、包、乌兰察布已经开始打造蒙古黄芪种植基地，正在发挥着示范作用。“打造",
+          con:
+            "【中国制药网 行业动态】目前，呼、包、乌兰察布已经开始打造蒙古黄芪种植基地，正在发挥着示范作用。“打造",
           date: "2020-03-09"
         },
         {
-          newsid:3,
+          newsid: 3,
           imgUrl: "static/img/news2.png",
           title: "奈曼旗打造现代蒙中药材全产业链",
-          con: "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
+          con:
+            "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
           date: "2018-01-25"
         }
       ],
@@ -779,7 +714,7 @@ export default {
         wow.init();
       });
     },
-        hoverBoxShow() {
+    hoverBoxShow() {
       this.$nextTick(() => {
         // 在dom渲染完后,再执行动画
         var wow = new WOW({
@@ -800,7 +735,7 @@ export default {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
-      effect: "coverflow",
+      // effect: "coverflow",
       speed: 2000,
       //自动播放
       autoplay: {
@@ -869,22 +804,22 @@ export default {
       this.tecnologyShow = e;
     },
     hoverboxShow(e) {
-      this.hoverBoxShow = e
+      this.hoverBoxShow = e;
     },
     hoverboxHide() {
-      this.hoverBoxShow = -1
+      this.hoverBoxShow = -1;
     },
     gotoprodect() {
-      this.$router.push('/product/productpack')
+      this.$router.push("/product/productpack");
     }
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 /* 整体盒子 */
 #HomePage {
   /* width: 100%;
-  border-top:10px solid #325815; */
+  border-top:10px solid #81b25b; */
 }
 
 /* 轮播图 */
@@ -930,14 +865,20 @@ p {
   padding: 0;
 }
 #tecnology {
-  background: url('../assets/img/home/3-dibu.png') no-repeat;
-  background-size:100% 100%;
-  height: 268px;
-  padding: 0 !important;
+  background: url("../assets/img/home/3-dibu.png") no-repeat;
+  background-size: 100% 100%;
+  // height: 268px;
+  padding: 2vw 0 !important;
+  margin: 0 auto;
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   padding: 10%;
+  // }
 }
 #tecnology .tecnologyList {
   height: 100%;
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -958,9 +899,9 @@ p {
   align-items: center;
 }
 #tecnology .tecnologyList > ul > li > p {
-  background: #325815;
+  background: #81b25b;
   color: #fff;
-  font-family: 'lv1';
+  font-family: "lv1";
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -974,11 +915,10 @@ p {
 }
 
 #tecnology .tecnologyList > ul > li > p:hover {
-  background: #325815;
+  background: #81b25b;
 }
 #tecnology:hover {
   cursor: pointer;
-  
 }
 #tecnology .tecnologyList > ul > li > div {
   width: 90%;
@@ -1014,7 +954,7 @@ p {
   width: 80%;
   overflow: auto;
   /* font-family:'lv1'; */
-  font-size:15px;
+  font-size: 15px;
   letter-spacing: 8px;
   /* background: yellow; */
 }
@@ -1025,7 +965,7 @@ p {
   height: 120px;
   width: 26px;
   line-height: 25px;
-  font-family:'lv1';
+  font-family: "lv1";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1034,14 +974,14 @@ p {
   border: 0;
   border: 1px solid #fff;
   transition: all 0.6s;
-  color:#fff !important;
+  color: #fff !important;
 }
-.taccon button:hover{
+.taccon button:hover {
   transform: scale(1.2);
 }
 /* 新闻中心 */
 .newscontainer {
-  /* border: 1px solid #325815; */
+  /* border: 1px solid #81b25b; */
   margin-top: 14px;
 }
 /* 新闻标题 */
@@ -1055,11 +995,11 @@ p {
 }
 /* 新闻导航 */
 .newsNav {
-  /* background: #325815; */
+  /* background: #81b25b; */
   text-align: center;
   font-size: 14px;
   position: absolute;
-  bottom:20px;
+  bottom: 20px;
 }
 .newsNav > li {
   /* float:left; */
@@ -1071,14 +1011,14 @@ p {
   border: 0;
 }
 .newsNav li:hover {
-  color: #325815;
+  color: #81b25b;
   cursor: pointer;
 }
 /* 新闻列表 */
 .newsList {
 }
-.newsList a{
-  color:#000;
+.newsList a {
+  color: #000;
 }
 .newsList li {
   display: block;
@@ -1093,22 +1033,21 @@ p {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-    overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .newsList li > div:nth-child(2),
 .newsList li > div:nth-child(3) {
   height: 120px;
 }
-.newsList li > div:nth-child(2){
+.newsList li > div:nth-child(2) {
   justify-content: left;
   padding-left: 20px;
 }
-.newsList li > div:nth-child(2) p{
+.newsList li > div:nth-child(2) p {
   justify-content: left;
   text-align: left;
-
 }
 .newsList li > div > p {
   width: 100%;
@@ -1121,39 +1060,39 @@ white-space: nowrap;
   font-weight: bold;
 }
 .newsList .newsCon {
-  width:90%;
+  width: 90%;
   overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.newsList li > div:last-child{
-  padding-top:65px;
+.newsList li > div:last-child {
+  padding-top: 65px;
 }
 .newsList li > div button {
   background: transparent;
   outline: 0;
   border: 0;
-  border: 1px solid #325815;
-  color: #325815;
+  border: 1px solid #81b25b;
+  color: #81b25b;
   transition: all 0.6s;
 }
 .newsList li > div button:hover {
-  background: #325815;
-  color:#fff;
+  background: #81b25b;
+  color: #fff;
   transform: scale(1.2);
 }
 .newsList li > div span {
   display: inline-block;
   padding: 0 20px;
 }
-.newsList li img{
+.newsList li img {
   /* width:100%;
   height:100%; */
-  /* border:1px solid #325815; */
+  /* border:1px solid #81b25b; */
 }
 /* 国草园产品 */
 .productcontainer {
-  /* border: 1px solid #325815; */
+  /* border: 1px solid #81b25b; */
   margin-top: 14px;
 }
 /* 产品标题 */
@@ -1167,12 +1106,12 @@ white-space: nowrap;
 }
 /* 产品导航 */
 .productNav {
-  /* background: #325815; */
+  /* background: #81b25b; */
   text-align: center;
   /* margin-bottom: 50px; */
   font-size: 14px;
   position: absolute;
-  bottom:20px;
+  bottom: 20px;
 }
 .productNav > li {
   /* float:left; */
@@ -1184,12 +1123,12 @@ white-space: nowrap;
   border: 0;
 }
 .productNav li:hover {
-  color: #325815;
+  color: #81b25b;
   cursor: pointer;
 }
 /* 产品列表 */
 .productList {
-  /* background: #325815; */
+  /* background: #81b25b; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1199,7 +1138,7 @@ white-space: nowrap;
   background: url("../assets/img/home/5-chanpinzhongxin-kuang.png") no-repeat;
   background-size: 90% 100%;
   height: 380px;
-  /* border:1px solid #325815; */
+  /* border:1px solid #81b25b; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1209,7 +1148,7 @@ white-space: nowrap;
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #325815;
+  color: #81b25b;
 }
 .productList li p:first-child {
   margin: 0 auto;
@@ -1221,14 +1160,14 @@ white-space: nowrap;
 
 .productList li .imgBox {
   width: 80%;
-  margin-left:-10%;
+  margin-left: -10%;
   display: flex;
   align-items: bottom;
   justify-content: center;
   margin-top: 30px;
   overflow: hidden;
 }
-.productList li .imgBox:hover img{
+.productList li .imgBox:hover img {
   cursor: pointer;
   transform: scale(1.4);
 }
@@ -1240,7 +1179,7 @@ white-space: nowrap;
 }
 /* 关于国草园 */
 .aboutcontainer {
-  /* border: 1px solid #325815; */
+  /* border: 1px solid #81b25b; */
   margin-top: 14px;
 }
 /* 关于国草园标题 */
@@ -1274,7 +1213,7 @@ white-space: nowrap;
   display: flex;
 }
 .abouttxt .title {
-  /* background: #325815; */
+  /* background: #81b25b; */
   writing-mode: tb-rl;
   /* width:10%; */
   font-size: 24px;
@@ -1286,8 +1225,8 @@ white-space: nowrap;
 .abouttxt .con {
   /* background: blue; */
   /* width:90%; */
-    font-size: 13px;
-    letter-spacing: 3px;
+  font-size: 13px;
+  letter-spacing: 3px;
   /* font-family:'lv1'; */
   writing-mode: tb-rl;
   overflow: auto;
@@ -1297,18 +1236,18 @@ white-space: nowrap;
 } */
 /* 蒙中草药基地 */
 .basecontainer {
-  /* border: 1px solid #325815; */
+  /* border: 1px solid #81b25b; */
   margin-top: 30px;
   position: relative;
 }
 /* 基地导航 */
 .baseNav {
-  /* background: #325815; */
+  /* background: #81b25b; */
   text-align: center;
   /* margin-bottom: 50px; */
   font-size: 14px;
   position: absolute;
-  bottom:20px;
+  bottom: 20px;
 }
 .baseNav > li {
   /* float:left; */
@@ -1320,12 +1259,12 @@ white-space: nowrap;
   border: 0;
 }
 .baseNav li:hover {
-  color: #325815;
+  color: #81b25b;
   cursor: pointer;
 }
 /* 基地图片 */
 .baseList {
-  /* border:1px solid #325815; */
+  /* border:1px solid #81b25b; */
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -1339,21 +1278,26 @@ white-space: nowrap;
   position: relative;
   /* background: blue; */
 }
-.baseList .basePicBox:hover{
+.baseList .basePicBox:hover {
   cursor: pointer;
 }
-.hoverBox{
-  background: #32581530;
+.baseList .basePicBox:hover .hoverBox {
+  opacity: 1;
+}
+.hoverBox {
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
-  top:0;
-  left:0;
-  width:90%;
-  height:90%;
-    display: flex;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color:#fff;
+  color: #fff;
+  opacity: 0;
   font-size: 20px;
+  transition: all 0.6s;
 }
 .baseList .basePicBox img {
   width: 90%;
@@ -1366,7 +1310,7 @@ white-space: nowrap;
 
 /* 国草园文化 */
 .scoolingcontainer {
-  /* border: 1px solid #325815; */
+  /* border: 1px solid #81b25b; */
   margin-top: 14px;
 }
 /* 国草园文化标题 */
@@ -1380,12 +1324,12 @@ white-space: nowrap;
 }
 /* 国草园文化导航 */
 .scoolingNav {
-  /* background: #325815; */
+  /* background: #81b25b; */
   text-align: center;
   /* margin-bottom: 50px; */
   font-size: 14px;
   position: absolute;
-  bottom:20px;
+  bottom: 20px;
 }
 .scoolingNav > li {
   /* float:left; */
@@ -1397,55 +1341,55 @@ white-space: nowrap;
   border: 0;
 }
 .scoolingNav li:hover {
-  color: #325815;
+  color: #81b25b;
   cursor: pointer;
 }
 /* 文化展示 */
 .scoolingBox {
 }
-.scoolingImg{
+.scoolingImg {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.scoolingImg img{
-  width:80%;
+.scoolingImg img {
+  width: 80%;
 }
 .scoolingBox > div {
-  /* border: 1px solid #325815; */
+  /* border: 1px solid #81b25b; */
   height: 300px;
 }
 .scoolingTxt {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'lv1';
+  font-family: "lv1";
 }
 .scoolingBox > div .name {
   width: 5%;
   writing-mode: tb-rl;
 }
-.scoolingBox > div .name span:first-child{
-  font-size:24px;
+.scoolingBox > div .name span:first-child {
+  font-size: 24px;
 }
-.scoolingBox > div .name span:nth-child(2){
-  font-size:24px;
-  color:#325815;
+.scoolingBox > div .name span:nth-child(2) {
+  font-size: 24px;
+  color: #81b25b;
 }
 .scoolingBox > div .title {
   width: 5%;
-  font-size:18px;
+  font-size: 18px;
   writing-mode: tb-rl;
 }
 .scoolingBox > div .con {
   width: 80%;
-      font-size: 14px;
-    letter-spacing: 3px;
+  font-size: 14px;
+  letter-spacing: 3px;
   overflow: auto;
   writing-mode: tb-rl;
-  padding:10px 0;
+  padding: 10px 0;
   line-height: 37px;
-  font-family: '微软雅黑';
+  font-family: "微软雅黑";
 }
 /* 大数据管理系统 */
 #bigData {
@@ -1475,7 +1419,7 @@ white-space: nowrap;
   background-size: 100% 100%; */
   /* background: rgba(0,0,0,0.3); */
   transition: all ease 0.6s;
-  margin-bottom:60px;
+  margin-bottom: 60px;
 }
 #contactUs .contactUs-container {
   padding-top: 50px;
@@ -1484,12 +1428,12 @@ white-space: nowrap;
   width: 300px;
   /* height: 50px; */
   margin-top: 20px;
-  font-size:26px;
+  font-size: 26px;
   letter-spacing: 8px;
-  font-family: 'lv1';
+  font-family: "lv1";
 }
-#contactUs .contactUs-container .contactUs-contactWay{
-  background: rgba(0,0,0,0.2);
+#contactUs .contactUs-container .contactUs-contactWay {
+  background: rgba(0, 0, 0, 0.2);
 }
 #contactUs .contactUs-container .contactUs-contactWay span {
   display: inline-block;
@@ -1509,16 +1453,16 @@ white-space: nowrap;
   background: url("../assets/img/twitter.png") 0 0 no-repeat;
   background-size: 100% 100%;
 }
-  #contactUs .contactUs-container .logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+#contactUs .contactUs-container .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .btn-info {
-    color: #fff;
-    background-color: #325815;
-    border-color: #325815;
+  color: #fff;
+  background-color: #81b25b;
+  border-color: #81b25b;
 }
 
 /* 为什么选择我们 */
@@ -1552,33 +1496,33 @@ white-space: nowrap;
   color: #ccc;
 }
 @media screen and (min-width: 768px) {
-.productList li p:first-child{
-  margin-top:-20px;
-  margin-left: 70px;
-}
-.productList li p:nth-child(2) {
-  margin-top:-20px;
-  margin-left: 20px;
-}
+  .productList li p:first-child {
+    margin-top: -20px;
+    margin-left: 70px;
+  }
+  .productList li p:nth-child(2) {
+    margin-top: -20px;
+    margin-left: 20px;
+  }
 }
 /* 媒体查询（手机） */
 @media screen and (max-width: 768px) {
   #tecnology .tecnologyList > ul {
-  width: 100%;
-}
-.productList li p:first-child{
-  margin-top:-10px;
-  margin-left: 50px;
-}
-.productList li p:nth-child(2) {
-  margin-top:-10px;
-  margin-left: 10px;
-  width:60%;
-  overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
-}
-  
+    width: 100%;
+  }
+  .productList li p:first-child {
+    margin-top: -10px;
+    margin-left: 50px;
+  }
+  .productList li p:nth-child(2) {
+    margin-top: -10px;
+    margin-left: 10px;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   #swiper {
     height: 200px;
   }
@@ -1594,7 +1538,7 @@ white-space: nowrap;
   }
   #contactUs {
     /* height: 200px; */
-    /* border:1px solid #325815; */
+    /* border:1px solid #81b25b; */
     transition: all ease 0.6s;
   }
   #contactUs .contactUs-container {
@@ -1709,12 +1653,11 @@ white-space: nowrap;
   #whyChooseUs {
     padding: 20px 0;
   }
-
 }
 
 /* 我们的文化 */
 .server-wrapper {
-  /* border:1px solid #325815; */
+  /* border:1px solid #81b25b; */
 }
 .server-wrapper img {
   width: 100%;
@@ -1725,53 +1668,48 @@ white-space: nowrap;
   font-weight: bold;
 }
 
-
-@media screen and (max-width: 996px){
-  #tecnology .tecnologyList > ul > li{
-    margin:5px;
+@media screen and (max-width: 996px) {
+  #tecnology .tecnologyList > ul > li {
+    margin: 5px;
     max-width: 70%;
   }
-  .newsList li > div:last-child{
-  /* border:1px solid #325815; */
-  padding-top:0;
-}
+  .newsList li > div:last-child {
+    /* border:1px solid #81b25b; */
+    padding-top: 0;
+  }
   #tecnology .tecnologyList > ul > li > p {
-  background: #325815;
-  color: #fff;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 208px;
-  width: 25px;
-  /* margin: 0 auto;   */
-  line-height: 24px;
-}
-.newsList li{
-    /* border:1px solid #325815; */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.newsList li > div:nth-child(2),
-.newsList li > div:nth-child(3) {
-  height: 60px;
-  width:70%;
-
-}
-#tecnology .tecnologyList > ul > li > div[data-v-4eb70d62] {
+    background: #81b25b;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 208px;
+    width: 25px;
+    /* margin: 0 auto;   */
+    line-height: 24px;
+  }
+  .newsList li {
+    /* border:1px solid #81b25b; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .newsList li > div:nth-child(2),
+  .newsList li > div:nth-child(3) {
+    height: 60px;
+    width: 70%;
+  }
+  #tecnology .tecnologyList > ul > li > div[data-v-4eb70d62] {
     margin: 0 4%;
-}
-.productList li img {
-  width: 95%;
-  /* position: absolute; */
-}
-.productList li[data-v-4eb70d62] {
-
+  }
+  .productList li img {
+    width: 95%;
+    /* position: absolute; */
+  }
+  .productList li[data-v-4eb70d62] {
     height: 300px;
-
-}
+  }
 }
 </style>
-

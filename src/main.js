@@ -1,7 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
+import Vue from "vue";
+import App from "./App";
 /* element-ui */
 import {
   Pagination,
@@ -12,22 +12,24 @@ import {
   InputNumber,
   Breadcrumb,
   BreadcrumbItem
-} from 'element-ui'
+} from "element-ui";
 
-Vue.use(Pagination)
-Vue.use(Form)
-Vue.use(FormItem)
-Vue.use(Input)
-Vue.use(Button)
-Vue.use(InputNumber)
-Vue.use(Breadcrumb)
-Vue.use(BreadcrumbItem)
+Vue.use(Pagination);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+Vue.use(Button);
+Vue.use(InputNumber);
+Vue.use(Breadcrumb);
+Vue.use(BreadcrumbItem);
 
 /* 路由 */
-import router from './router'
+import router from "./router";
+/* vuex */
+import store from "./store";
 
 /* 路由跳转 页面置顶 */
-// router.beforeEach((to, from, next) => {    
+// router.beforeEach((to, from, next) => {
 //   // chrome
 //   document.body.scrollTop = 0
 //   // firefox
@@ -36,80 +38,78 @@ import router from './router'
 //   window.pageYOffset = 0
 //   next()
 // })
-router.afterEach((to,from,next) => {
-  window.scrollTo(0,0);
-})
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0);
+});
 
 /* axios */
-import axios from './api'
-import api from './api/api'
+import axios from "./api";
+import api from "./api/api";
 Vue.prototype.http = axios;
 Vue.prototype.api = api;
 
 /* swiper */
-import 'swiper/dist/css/swiper.min.css';
+import "swiper/dist/css/swiper.min.css";
 
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueAwesomeSwiper from "vue-awesome-swiper";
 
 // require styles
-import 'swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+import "swiper/dist/css/swiper.css";
+Vue.use(VueAwesomeSwiper /* { default global options } */);
 
 // vue-seamless-scroll列表滚动
-import scroll from 'vue-seamless-scroll'
-Vue.use(scroll)
+import scroll from "vue-seamless-scroll";
+Vue.use(scroll);
 
 /* 重置样式 */
-import './assets/css/reset.min.css'
+import "./assets/css/reset.min.css";
 
 /* jquery */
-import 'jquery'
+import "jquery";
 // import jquery from 'jquery'
 // window.jquery = window.$ = jquery
 
 /* 引入翻书插件 */
-import 'turn.js'
+import "turn.js";
 
 /* bootstarp */
-import './assets/css/bootstrap.min.css'
-import './assets/js/bootstrap.min'
+import "./assets/css/bootstrap.min.css";
+import "./assets/js/bootstrap.min";
 
 /* 引入less */
-import less from 'less'
+import less from "less";
 
 /* animate.css */
-import 'animate.css'
+import "animate.css";
 
 /* 引入特殊字体 */
-import '../static/font/font.css'
- 
-/* 头部组件 */
-import Header from './components/Header'
-Vue.component(Header.name,Header)
+import "../static/font/font.css";
 
+/* 头部组件 */
+import Header from "./components/Header";
+Vue.component(Header.name, Header);
 
 /* 尾部组件 */
-import Footer from './components/Footer'
-Vue.component(Footer.name,Footer)
+import Footer from "./components/Footer";
+Vue.component(Footer.name, Footer);
 
 /* 回到顶部 */
-import GoTop from './components/GoTop'
-Vue.component(GoTop.name,GoTop)
+import GoTop from "./components/GoTop";
+Vue.component(GoTop.name, GoTop);
 
-Vue.config.productionTip = false
-
+Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
-    if(to.meta.title){
-      document.title = to.meta.title
-    }
-    next();
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  next();
 });
 
-
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
+  store,
   components: { App },
-  template: '<App/>'
-})
+  template: "<App/>"
+});

@@ -13,14 +13,14 @@
             <span class="glyphicon glyphicon-music"></span>
             <!-- <span></span> -->
             <div class="erweiBox">
-              <img src="../assets/img/home/erweima.jpg" alt>
+              <img src="../assets/img/home/erweima.jpg" alt />
             </div>
           </b>
           <b>
             <span class="glyphicon glyphicon-phone"></span>
             <!-- <span></span> -->
             <div class="erweiBox">
-              <img src="../assets/img/home/erweima.jpg" alt>
+              <img src="../assets/img/home/erweima.jpg" alt />
             </div>
           </b>
           <b>
@@ -39,34 +39,34 @@
       <div class="row">
         <div class="header-nav-logo">
           <p>
-            <img src="@/assets/img/home/1-head-pinpai .png" alt>
+            <img src="@/assets/img/home/1-head-pinpai .png" alt />
           </p>
         </div>
       </div>
       <!-- 导航内容 -->
       <div class="navCon row">
         <div id="navshowLogo">
-          <img src="@/assets/img/home/1-head-logo.png" alt>
+          <img src="@/assets/img/home/1-head-logo.png" alt />
         </div>
         <ul class="header-nav-wrapper">
           <li
-            v-for="(item,index) in navList"
+            v-for="(item, index) in navList"
             :key="index"
-            :class="index==navIndex?'active':''"
-            @click="navClick(index,item.name)"
+            :class="index == navIndex ? 'active' : ''"
+            @click="navClick(index, item.name)"
           >
             <router-link :to="item.path">
-              <span class="navTxt">{{item.name}}</span>
-              <span class="navTxt">{{item.name1}}</span>
+              <span class="navTxt">{{ item.name }}</span>
+              <span class="navTxt">{{ item.name1 }}</span>
               <!-- <span
                 v-if="item.children.length>0"
                 class="glyphicon glyphicon-menu-down"
               ></span>
               <i class="underline"></i>-->
             </router-link>
-            <dl v-if="item.children.length>0">
-              <dt v-for="(i,n) in item.children" :key="n">
-                <router-link :to="i.path">{{i.name}}</router-link>
+            <dl v-if="item.children.length > 0">
+              <dt v-for="(i, n) in item.children" :key="n">
+                <router-link :to="i.path">{{ i.name }}</router-link>
               </dt>
             </dl>
           </li>
@@ -80,13 +80,13 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img src="@/assets/img/logo.png" alt="logo">
+        <img src="@/assets/img/logo.png" alt="logo" />
         <span class="logotxt">国草园集团</span>
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
-        {{menuName}}
-        <span v-if="sonName" style="font-size:13px;">- {{sonName}}</span>
+        {{ menuName }}
+        <span v-if="sonName" style="font-size:13px;">- {{ sonName }}</span>
 
         <div
           class="header-nav-m-menu-wrapper"
@@ -99,35 +99,35 @@
         <!-- 导航内容 -->
         <ul id="menu" class="header-nav-m-wrapper collapse">
           <li
-            v-for="(item,index) in navList"
+            v-for="(item, index) in navList"
             :key="index"
-            :class="index==navIndex?'active':''"
+            :class="index == navIndex ? 'active' : ''"
             data-toggle="collapse"
             aria-expanded="false"
-            :data-target="item.children.length>0?targetId:'#menu'"
-            @click="navClick(index,item.name)"
+            :data-target="item.children.length > 0 ? targetId : '#menu'"
+            @click="navClick(index, item.name)"
           >
             <router-link :to="item.path">
-              {{item.name}}
+              {{ item.name }}
               <span
-                v-if="item.children.length>0"
+                v-if="item.children.length > 0"
                 class="glyphicon glyphicon-menu-down"
               ></span>
               <i class="underline"></i>
             </router-link>
             <ul
-              :class="'navClass'+index"
-              v-if="item.children.length>0"
+              :class="'navClass' + index"
+              v-if="item.children.length > 0"
               class="header-nav-m-wrapper1 collapse"
             >
               <li
-                v-for="(i,n) in item.children"
+                v-for="(i, n) in item.children"
                 :key="n"
                 @click="getsonName(i.name)"
                 data-toggle="collapse"
                 data-target="#menu"
               >
-                <router-link :to="i.path">{{i.name}}</router-link>
+                <router-link :to="i.path">{{ i.name }}</router-link>
               </li>
             </ul>
           </li>
@@ -184,7 +184,7 @@ export default {
         {
           name: "产品中心",
           name1: "CPZHONGXIN",
-          path: "",
+          path: "/product/productpack",
           // path: "/service",
           children: [
             // {
@@ -208,7 +208,7 @@ export default {
         {
           name: "新闻中心",
           name1: "XWZHONGXIN",
-          path: "",
+          path: "/news/companynews",
           // path: "/newsinformation",
           children: [
             {
@@ -265,12 +265,22 @@ export default {
       ]
     };
   },
+  // 监听,当路由发生变化的时候执行
+  watch: {
+    $route(to, from) {
+      if (to.meta.navIndex) {
+        this.navIndex = to.meta.navIndex;
+      }
+      console.log("我变了");
+    }
+  },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    console.log(this.$route.path);
   },
   methods: {
     navClick(index, name) {
-      console.log(444);
+      console.log(index);
       this.navIndex = index;
       sessionStorage.setItem("navIndex", index);
       this.sonName = "";
@@ -310,17 +320,18 @@ export default {
 #header {
   /* background: #f7f7f7; */
   transition: all ease 0.6s;
-    width: 100%;
-  border-bottom:10px solid #325815;
-  /* background: url("../assets/img/home/toubu.png") no-repeat;
-  background-size: 100%; */
+  width: 100%;
+  border-bottom: 1px solid #81b25b;
+  background: url("../assets/img/dingbu.png") no-repeat;
+  background-size: auto;
+  background-position: bottom;
 }
 #header .header-top {
   height: 40px;
-  color: #325815;
+  color: #81b25b;
   font-size: 12px;
   line-height: 40px;
-  background: #dcdcdc;
+  background: #dcdcdc50;
 }
 /* 顶部的图标 */
 #header .header-top span {
@@ -411,6 +422,9 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  width: 105px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 /* 导航栏 每个导航下面的 a 链接 */
 #header .header-nav .header-nav-wrapper > li > a {
@@ -420,6 +434,7 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
   /* border:1px solid red;
   display:inline-block;
   width:100px; */
@@ -432,7 +447,7 @@ export default {
   text-align: center;
 }
 #header .header-nav .header-nav-wrapper > li:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: #81b25b20;
 }
 #header .header-nav .header-nav-wrapper > li:hover a {
   text-decoration: none;
@@ -453,7 +468,7 @@ export default {
 }
 /* 导航栏 每个导航下面的 a 链接 鼠标点击后的样式 */
 #header .header-nav .header-nav-wrapper > li.active {
-  background: #325815;
+  background: #81b25b;
 }
 #header .header-nav .header-nav-wrapper > li.active > a {
   color: #fff;
@@ -463,29 +478,34 @@ export default {
 #header .header-nav .header-nav-wrapper > li > dl {
   display: none;
   position: absolute;
-  width: 168px;
+  width: 105px;
   top: 100%;
   left: 0;
   z-index: 999999;
   box-shadow: 0 0 3px 1px #ccc;
-  background: #fff;
+  background: #81b25b;
 }
 /* 导航栏 每个导航下面的二级导航容器的每个导航 */
 #header .header-nav .header-nav-wrapper > li > dl > dt {
   width: 100%;
   /* padding: 10px; */
-  border-bottom: 1px solid #ccc;
-  color: #325815;
-  height:100%;
-  width:100%;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 li > dl > dt a {
-  color: #325815;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  text-align: center;
   text-decoration: none;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 90%;
   display: inline-block;
   padding: 10px;
+}
+li > dl > dt:last-child a {
+  border-bottom: 0;
 }
 /* 导航栏 每个导航下面的二级导航容器的每个导航 当鼠标滑上时的样式*/
 #header .header-nav .header-nav-wrapper > li > dl > dt > a:hover {
@@ -497,7 +517,7 @@ li > dl > dt a {
 }
 #header .header-nav .header-nav-wrapper > li > dl > dt:hover {
   cursor: pointer;
-  background: #ccc;
+  background: #ffffff30;
 }
 @media screen and (max-width: 1199px) {
   #navshowLogo {
@@ -611,7 +631,7 @@ li > dl > dt a {
   align-items: center;
   justify-content: center;
   position: relative;
-  height:100%;
+  height: 100%;
   /* padding: 0 5px; */
 }
 .pull-right b:hover {
