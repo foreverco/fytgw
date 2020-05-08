@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
 import App from "./App";
+import VueLazyLoad from 'vue-lazyload'; // 懒加载
+
 /* element-ui */
 import {
   Pagination,
@@ -22,6 +24,11 @@ Vue.use(Button);
 Vue.use(InputNumber);
 Vue.use(Breadcrumb);
 Vue.use(BreadcrumbItem);
+
+Vue.use(VueLazyLoad, {
+  error: '../static/img/3-3qiyefengcai-5.png', // 加载错误的图片
+  loading: '../static/img/3-3qiyefengcai-5.png' // 加载时的图片
+});
 
 /* 路由 */
 import router from "./router";
@@ -55,7 +62,7 @@ import VueAwesomeSwiper from "vue-awesome-swiper";
 
 // require styles
 import "swiper/dist/css/swiper.css";
-Vue.use(VueAwesomeSwiper /* { default global options } */);
+Vue.use(VueAwesomeSwiper /* { default global options } */ );
 
 // vue-seamless-scroll列表滚动
 import scroll from "vue-seamless-scroll";
@@ -110,6 +117,8 @@ new Vue({
   el: "#app",
   router,
   store,
-  components: { App },
+  components: {
+    App
+  },
   template: "<App/>"
 });

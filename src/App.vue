@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <router-view />
+    <router-view/>
     <Footer></Footer>
     <GoTop></GoTop>
   </div>
@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 @import "./common/fonts/font.css";
 
 #app {
@@ -94,10 +94,19 @@ export default {
 .el-pager {
 }
 .el-pager li {
-  border: 1px solid #303133 !important;
-  min-width: 30px;
-  margin: 0 0.2vw;
-  border-radius: 10px;
+  border: 1px solid #81b25b !important;
+  min-width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 0.5vw;
+  // border-radius: 10px;
+  transform: rotate(45deg);
+  &:after {
+    display: inline-block;
+    content: "";
+    transform: rotate(-45deg);
+    // transform-origin: bottom left;
+  }
 }
 .el-pager li.active {
   color: #fff;
@@ -108,6 +117,12 @@ export default {
 a {
   color: #81b25b;
   text-decoration: none;
+}
+.el-pagination .btn-prev {
+  margin-right: 0.5vw;
+}
+.el-pagination .btn-next {
+  margin-left: 0.5vw;
 }
 /*修改滚动条样式*/
 p::-webkit-scrollbar {

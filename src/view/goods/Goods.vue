@@ -1,8 +1,6 @@
 <template>
   <div id="goodscon" class="container">
-    <div class='row goodsTitle'>
-      甘草片泡水500克g瓶装干草粉野生茶叶食用中药材搭黄芪当归党参茶
-    </div>
+    <div class="row goodsTitle">甘草片泡水500克g瓶装干草粉野生茶叶食用中药材搭黄芪当归党参茶</div>
     <div class="row goodsBox">
       <div class="col-md-7 goodspic wow bounceInLeft">
         <div class="swiper-box">
@@ -82,13 +80,12 @@
         v-for="(item, index) in navLists"
         :key="index"
         :class="{navActive:isnavActive==index}"
-        @click='changenavMsg(index)'
+        @click="changenavMsg(index)"
       >{{item.name}}</li>
-      <li>
-      </li>
+      <li></li>
     </ul>
-    <div class='row testBox wow zoomIn'>
-        <img src="static/img/test.png" alt="">
+    <div class="row testBox wow zoomIn">
+      <img src="static/img/test.png" alt>
     </div>
   </div>
 </template>
@@ -118,7 +115,7 @@ export default {
         }
       ],
       swiperOptionTop: {
-        autoplay:true,
+        autoplay: true,
         spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
@@ -150,7 +147,7 @@ export default {
       swiperTop.controller.control = swiperThumbs;
       swiperThumbs.controller.control = swiperTop;
     });
-     /* wowjs动画 */
+    /* wowjs动画 */
     var wow = new WOW({
       boxClass: "wow",
       animateClass: "animated",
@@ -165,17 +162,17 @@ export default {
       console.log(value);
     },
     changenavMsg(e) {
-       this.isnavActive = e
+      this.isnavActive = e;
     }
   }
 };
 </script>
 <style>
- .goodsTitle{
-   font-size:22px;
-   font-weight: bold;
-   margin:10px 0;
- }
+.goodsTitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+}
 
 /* 计数器样式 */
 .el-input-number.is-controls-right .el-input-number__decrease,
@@ -215,8 +212,8 @@ export default {
   padding: 0;
 }
 #goodscon {
-//   border: 1px solid yellow;
-//   height: 1000px;
+  //   border: 1px solid yellow;
+  //   height: 1000px;
 }
 
 /* 轮播图 */
@@ -360,7 +357,7 @@ export default {
 }
 .btnBox p {
   width: 60%;
-  background: #c5000c;
+  background: #81b25b;
   height: 40px;
   display: flex;
   align-items: center;
@@ -371,13 +368,13 @@ export default {
 }
 .btnBox p:hover {
   cursor: pointer;
-  border:1px solid #c5000c;
+  border: 1px solid #81b25b;
   background: #fff;
-  color:#c5000c;
+  color: #81b25b;
   transform: scale(1.2);
 }
 .navTitle {
-  background: #c5000c;
+  background: #81b25b;
   display: flex;
   align-items: flex-end;
   height: 50px;
@@ -398,25 +395,25 @@ export default {
 }
 .navTitle li.navActive {
   background: #fff;
-  color: #c5000c;
+  color: #81b25b;
   transition: all 0.6s;
 }
-.testBox{
-  margin-top:20px;
+.testBox {
+  margin-top: 20px;
 }
-.testBox img{
-  width:100%;
+.testBox img {
+  width: 100%;
 }
-@media screen and (max-width: 768px){
-      .navTitle li {
-  width: 23%;
-  height: 40px;
-  color: #fff;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@media screen and (max-width: 768px) {
+  .navTitle li {
+    width: 23%;
+    height: 40px;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>
 

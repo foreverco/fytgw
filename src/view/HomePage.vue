@@ -4,12 +4,9 @@
     <div id="swiper" class="container-fuild">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+            <!-- <img class="swiper-lazy" alt="轮播图" v-lazy="item.img"> -->
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -22,7 +19,7 @@
 
         <!-- 如果需要导航按钮 -->
         <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
+        <div class="swiper-button-next"></div>-->
       </div>
     </div>
     <!-- 专业的技术 -->
@@ -35,9 +32,7 @@
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
-              {{ item.title }}
-            </p>
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{ item.title }}</p>
             <div
               class="tacwow bounceInRight"
               data-wow-duration="1.0s"
@@ -45,7 +40,7 @@
             >
               <div class="row">
                 <div class="hidden-sm hidden-xs col-md-4 tacimg">
-                  <img src="@/assets/img/home/3-wenhua-logo.png" alt />
+                  <img :src="item.imgUrl" alt>
                 </div>
                 <div class="col-xs-11 col-md-8 taccon">
                   <p>{{ item.con }}</p>
@@ -65,7 +60,7 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
           <ul class="newsNav">
             <li>行业动态</li>
             <li>行业动态</li>
@@ -76,14 +71,12 @@
           <li>行业动态</li>
           <li>行业动态</li>
           <li>行业动态</li>
-        </ul> -->
+        </ul>-->
         <ul class="newsList">
           <li class="row" v-for="(item, index) in newsList" :key="index">
-            <router-link
-              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-            >
+            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
               <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;" />
+                <img :src="item.imgUrl" alt style="width:100%;">
               </div>
             </router-link>
 
@@ -92,9 +85,7 @@
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link
-                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-              >
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
@@ -107,7 +98,7 @@
     <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -120,7 +111,7 @@
           <li>板蓝根</li>
           <li>柴胡</li>
           <li>防风</li>
-        </ul> -->
+        </ul>-->
         <ul class="productList row">
           <li
             class="col-md-3 col-sm-5 col-xs-6"
@@ -132,7 +123,7 @@
             <p>{{ item.effect }}</p>
             <p class="imgBox wow zoomIn">
               <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img :src="item.imgUrl" alt="" />
+              <img :src="item.imgUrl" alt>
               <!-- </router-link> -->
             </p>
           </li>
@@ -143,22 +134,22 @@
     <div id="aboutgcy" class="container-fluid">
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
         </div>
         <div class="row aboutswiper">
           <div class="swiper-container aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt="" />
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt="" />
+                <img src="static/img/swiper11.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt="" />
+                <img src="static/img/swiper22.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt="" />
+                <img src="static/img/swiper33.png" alt>
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -186,7 +177,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt />
+          <img src="@/assets/img/home/biaoti-jidi.png" alt>
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -199,7 +190,7 @@
           <li>板蓝根</li>
           <li>柴胡</li>
           <li>防风</li>
-        </ul> -->
+        </ul>-->
         <div class="row">
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -207,10 +198,8 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt />
-              <div class="hoverBox hoverwow bounceIn">
-                {{ item.title }}
-              </div>
+              <img :src="item.imgUrl" alt>
+              <div class="hoverBox hoverwow bounceIn">{{ item.title }}</div>
             </div>
 
             <!-- <p class="text-center">{{item.title}}</p> -->
@@ -236,7 +225,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -247,12 +236,12 @@
           <li>技术保障</li>
           <li>跟踪服务</li>
           <li>雄厚实力</li>
-        </ul> -->
+        </ul>-->
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p class="con">
-              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
-            </p>
+            <p
+              class="con"
+            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -261,7 +250,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt="" />
+            <img src="static/img/7-wenhua-tupian1.png" alt>
           </div>
         </div>
       </div>
@@ -288,37 +277,35 @@
           <a
             href="#"
             class="btn btn-lg btn-block btn-info"
-          >联系我们</a> -->
+    >联系我们</a>-->
     <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
           <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
           <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
-          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>-->
+    <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>-->
     <!-- </div>
       </div>
-    </div> -->
+    </div>-->
     <!-- 您身边的IT专家 -->
     <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
         <!-- <div class="logo hidden-xs">
           <img src="@/assets/img/home/8-lianxiwomen-logo1.png" alt="" />
-        </div> -->
+        </div>-->
         <h1 style="color:#81b25b">400-8888-456</h1>
         <button
           class="btn btn-info btn-sm"
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >
-          联系我们
-        </button>
+        >联系我们</button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
-        <h3 style="color:#81b25b">服务热线: 0471-3900199</h3> -->
+        <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
         <!-- <div class="contactUs-contactWay">
           <span></span>
           <span></span>
           <span></span>
-        </div> -->
+        </div>-->
       </div>
     </div>
     <!-- 客户评价 -->
@@ -343,7 +330,7 @@
               </div>
               <div class="customer-content2">{{item.title}}</div>
             </div>
-          </div> -->
+    </div>-->
     <!-- 如果需要导航按钮 -->
     <!-- <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -365,7 +352,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>-->
     <!-- 为什么选择我们 -->
     <!-- <div
       id="whyChooseUs"
@@ -385,7 +372,7 @@
             <img
               src="@/assets/img/timg.jpg"
               alt
-            > -->
+    >-->
     <!-- <p class="text-center">{{item.title}}</p> -->
     <!-- <div
               class="server-block wow slideInUp"
@@ -400,11 +387,11 @@
                 onmouseenter="this.style.color='#28f'"
                 onmouseleave="this.style.color='#ccc'"
               ></div>
-            </div>-->
+    </div>-->
     <!-- </div>
         </div>
       </div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
@@ -416,6 +403,7 @@ export default {
   name: "HomePage",
   data() {
     return {
+      lazyimg: "static/img/3-3qiyefengcai-5.png",
       hoverBoxShow: -1,
       /* 轮播图列表 */
       swiperList: [
@@ -438,21 +426,25 @@ export default {
       tecnologyList: [
         {
           title: "以人为本",
+          imgUrl: require("@/assets/img/home/tecnoligy1.jpg"),
           con:
             "坚持以人为本，不断增强企业的核心竞争能力。进一步提高认识，深化改革，采取措施培养人才，用好人才，吸引人才，争取主动，强调通才，具有较强的创新意识，善于总结经验，勇于突破自我。  "
         },
         {
           title: "诚信经营",
+          imgUrl: require("@/assets/img/home/tecnoligy2.jpg"),
           con:
             "以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣。"
         },
         {
           title: "发展蒙药",
+          imgUrl: require("@/assets/img/home/tecnoligy3.jpg"),
           con:
             "国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范"
         },
         {
           title: " 致力健康",
+          imgUrl: require("@/assets/img/home/tecnoligy4.jpg"),
           con:
             " 扎根内蒙  天然种植  选料上乘  辐射全国，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业"
         }
@@ -865,7 +857,7 @@ p {
   padding: 0;
 }
 #tecnology {
-  background: url("../assets/img/home/3-dibu.png") no-repeat;
+  background: url("../assets/img/home/3-dibu.jpg") no-repeat;
   background-size: 100% 100%;
   // height: 268px;
   padding: 2vw 0 !important;
@@ -933,11 +925,15 @@ p {
   height: 100%;
 }
 .tacimg {
-  /* border:1px solid green; */
+  // border: 1px solid green;
+  width: 30%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    width: 100%;
+  }
 }
 .taccon {
   /* border:1px solid blue; */
@@ -987,7 +983,7 @@ p {
 /* 新闻标题 */
 .newstitle {
   /* background: blue; */
-  margin: 24px 0;
+  margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1023,7 +1019,7 @@ p {
 .newsList li {
   display: block;
   margin: 30px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .newsList li > div {
   height: 100%;
@@ -1035,7 +1031,13 @@ p {
   flex-wrap: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  p {
+    &:first-child {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
 .newsList li > div:nth-child(2),
 .newsList li > div:nth-child(3) {
@@ -1063,7 +1065,9 @@ p {
   width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .newsList li > div:last-child {
   padding-top: 65px;
@@ -1098,7 +1102,7 @@ p {
 /* 产品标题 */
 .producttitle {
   /* background: blue; */
-  margin: 24px 0;
+  margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1185,7 +1189,7 @@ p {
 /* 关于国草园标题 */
 .aboutTitle {
   /* background: blue; */
-  margin: 24px 0;
+  margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1316,7 +1320,7 @@ p {
 /* 国草园文化标题 */
 .scoolingtitle {
   /* background: blue; */
-  margin: 24px 0;
+  margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;

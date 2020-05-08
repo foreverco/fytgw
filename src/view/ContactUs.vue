@@ -35,7 +35,7 @@
                   <button type="submit" class="btn btn-default btn-block">提交</button>
                 </div>
               </div>
-            </form> -->
+            </form>-->
 
             <el-form
               :model="ruleForm"
@@ -46,41 +46,16 @@
               class="demo-ruleForm"
               label-position="left"
             >
-              <el-form-item
-                label="姓名"
-                prop="name"
-              >
-                <el-input
-                  clearable
-                  v-model="ruleForm.name"
-                  autocomplete="off"
-                  placeholder="请输入姓名"
-                ></el-input>
+              <el-form-item label="姓名" prop="name">
+                <el-input clearable v-model="ruleForm.name" autocomplete="off" placeholder="请输入姓名"></el-input>
               </el-form-item>
-              <el-form-item
-                label="邮箱"
-                prop="email"
-              >
-                <el-input
-                  clearable
-                  v-model="ruleForm.email"
-                  autocomplete="off"
-                  placeholder="请输入邮箱"
-                ></el-input>
+              <el-form-item label="邮箱" prop="email">
+                <el-input clearable v-model="ruleForm.email" autocomplete="off" placeholder="请输入邮箱"></el-input>
               </el-form-item>
-              <el-form-item
-                label="手机号"
-                prop="phone"
-              >
-                <el-input
-                  v-model.number="ruleForm.phone"
-                  placeholder="请输入手机号"
-                ></el-input>
+              <el-form-item label="手机号" prop="phone">
+                <el-input v-model.number="ruleForm.phone" placeholder="请输入手机号"></el-input>
               </el-form-item>
-              <el-form-item
-                label="留言"
-                prop="content"
-              >
+              <el-form-item label="留言" prop="content">
                 <el-input
                   v-model.number="ruleForm.content"
                   placeholder="请输入留言"
@@ -89,19 +64,13 @@
                 ></el-input>
               </el-form-item>
               <el-form-item>
-                <el-button
-                  type="primary"
-                  @click="submitForm('ruleForm')"
-                >提交</el-button>
+                <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
               </el-form-item>
             </el-form>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-8 mapBox">
-            <div
-              id="map"
-              class="wow zoomIn"
-            ></div>
+            <div id="map" class="wow zoomIn"></div>
           </div>
         </div>
       </div>
@@ -242,13 +211,13 @@ export default {
   margin-left: 0;
 }
 .el-button--primary {
-    color: #FFF;
-    background-color: #c60c16;
-    border-color: #c60c16;
+  color: #fff;
+  background-color: #c60c16;
+  border-color: #c60c16;
 }
-.el-button--primary:hover{
+.el-button--primary:hover {
   background: #fff;
-  color:#c60c16;
+  color: #c60c16;
 }
 @media screen and (max-width: 997px) {
   .ContactUs-container {
@@ -257,7 +226,7 @@ export default {
 }
 @media screen and (min-width: 997px) {
   .ContactUs-container {
-    background: url("../assets/img/callkuang.png") no-repeat;
+    background: url("../assets/img/callkuang.jpg") no-repeat;
     background-size: 100% 100%;
   }
   .mapBox {
