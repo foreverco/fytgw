@@ -1,14 +1,10 @@
 <template>
   <div class="container-fluid">
-    <div id="swiper" class="newsswiper" v-show="$route.name != 'NewsMsg'">
+    <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -34,13 +30,13 @@
               :key="index"
               :class="{ pathActive: item.path == $route.path }"
             >
-              <router-link :to="item.path"
-                ><img
+              <router-link :to="item.path">
+                <img
                   v-if="item.path == $route.path"
                   src="../../assets/img/news/dl.png"
                   class="activeImg"
-                  alt=""
-                />
+                  alt
+                >
                 {{ item.name }}
               </router-link>
             </li>
@@ -98,6 +94,11 @@ export default {
         }
       ]
     };
+  },
+  watch: {
+    $route(to, from) {
+      console.log(to);
+    }
   },
   mounted() {
     console.log(this.$route.path);

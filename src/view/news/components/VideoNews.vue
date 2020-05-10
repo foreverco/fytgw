@@ -29,9 +29,7 @@
           :key="index"
           :class="{ video_type_active: type_active_index == index }"
           @click="changevideotype(index)"
-        >
-          {{ item.type }}
-        </li>
+        >{{ item.type }}</li>
       </ul>
       <ul class="row videoList">
         <li
@@ -41,10 +39,11 @@
           @click="getVideoSrc(index, item.videoSrc)"
           :class="{ activeClass: activeList == index }"
         >
-          <video id="video" :src="item.videoSrc"></video>
-          <p>
-            {{ item.title }}
-          </p>
+          <div class="videoTag">
+            <img :src="item.tagSrc" alt>
+            <span>{{item.videostatus}}</span>
+          </div>
+          <video id="video" :src="item.videoSrc" :poster="item.imgSrc"></video>
         </li>
       </ul>
       <div class="tabListPage">
@@ -80,70 +79,122 @@ export default {
       videoList: [
         {
           title: "中药材产业带",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "直播中",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "药材全产业链",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag2.png",
+          videostatus: "录播",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "发力扶贫",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag2.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "国草园集团",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag2.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "项目签约仪式",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag2.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "增强免疫，保肝利尿",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         },
         {
           title: "hahaha",
+          imgSrc: "static/img/news/videobg.png",
+          tagSrc: "static/img/news/tag1.png",
+          videostatus: "录播",
           videoSrc: "static/video/video1.mp4"
         }
       ],
@@ -218,11 +269,12 @@ export default {
 <style lang="scss" scoped>
 .videoBox {
   /* border:1px solid red; */
-  height: 50vw;
+  // height: 50vw;
+  margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #videoactive {
@@ -269,39 +321,53 @@ export default {
   margin: 10px 0;
 }
 .videoList li {
-  height: 200px;
+  height: 330px;
   overflow: hidden;
   margin: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  // border: 1px solid blue;
+  position: relative;
+  .videoTag {
+    position: absolute;
+    // background: rgb(219, 141, 141);
+    top: 0;
+    left: 8%;
+    img {
+      width: 100%;
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding-top: 5px;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      // border: 1px solid red;
+      color: #fff;
+      writing-mode: vertical-lr; /*从左向右 从右向左是 writing-mode: vertical-rl;*/
+      writing-mode: tb-lr; /*IE浏览器的从左向右 从右向左是 writing-mode: tb-rl；*/
+    }
+  }
 }
 
 .videoList li #video {
   /* width:100%; */
-  height: 80%;
+  height: 100%;
 }
-.videoList li p {
-  width: 100%;
-  height: 15%;
-  margin-top: 5%;
-  background: url("../../../assets/img/news/biaoti-1.png") no-repeat;
-  background-size: 100% 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-}
+
 .videoList li:hover {
   cursor: pointer;
-  background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
-  background-size: 100% 100%;
+  // background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
+  // background-size: 100% 100%;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
 }
 .activeClass {
-  background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
-  background-size: 100% 100%;
+  // background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
+  // background-size: 100% 100%;
+  box-shadow: 5px 5px 10px 5px #81b25b70;
 }
 .tabListPage {
   text-align: center;

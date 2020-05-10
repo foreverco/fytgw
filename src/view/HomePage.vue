@@ -4,13 +4,9 @@
     <div id="swiper" class="container-fuild">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
             <!-- <img class="swiper-lazy" alt="轮播图" v-lazy="item.img"> -->
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -36,9 +32,7 @@
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
-              {{ item.title }}
-            </p>
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{ item.title }}</p>
             <div
               class="tacwow bounceInRight"
               data-wow-duration="1.0s"
@@ -47,14 +41,14 @@
               <div class="row">
                 <!-- <div class="hidden-sm hidden-xs col-md-4 tacimg">
                   <img :src="item.imgUrl" alt />
-                </div> -->
+                </div>-->
                 <div class="col-xs-11 col-md-12 taccon">
                   <p>{{ item.con }}</p>
                   <div class="button">
-                    <img :src="item.imgUrl" alt />
+                    <img :src="item.imgUrl" alt>
                     <!-- <router-link :to="{ path: '/software/aboutUs' }">
                       <button>查看更多</button>
-                    </router-link> -->
+                    </router-link>-->
                   </div>
                 </div>
               </div>
@@ -67,7 +61,7 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
           <ul class="newsNav">
             <li>行业动态</li>
             <li>行业动态</li>
@@ -81,11 +75,9 @@
         </ul>-->
         <ul class="newsList">
           <li class="row" v-for="(item, index) in newsList" :key="index">
-            <router-link
-              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-            >
+            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
               <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;" />
+                <img :src="item.imgUrl" alt style="width:100%;">
               </div>
             </router-link>
 
@@ -94,9 +86,7 @@
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link
-                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-              >
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
@@ -109,7 +99,7 @@
     <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -134,7 +124,7 @@
             <p>{{ item.effect }}</p>
             <p class="imgBox wow zoomIn">
               <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img :src="item.imgUrl" alt />
+              <img :src="item.imgUrl" alt>
               <!-- </router-link> -->
             </p>
           </li>
@@ -145,22 +135,22 @@
     <div id="aboutgcy" class="container-fluid">
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
         </div>
         <div class="row aboutswiper">
           <div class="swiper-container aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt />
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt />
+                <img src="static/img/swiper11.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt />
+                <img src="static/img/swiper22.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt />
+                <img src="static/img/swiper33.png" alt>
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -188,7 +178,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt />
+          <img src="@/assets/img/home/biaoti-jidi.png" alt>
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -204,13 +194,22 @@
         </ul>-->
         <div class="row plantingBox">
           <div
+            class="planting_model hoverwow zoomIn"
+            data-wow-duration='1.5s'
+            v-if="activePic!==-1"
+            @mouseleave.stop="movePicIndex"
+          >
+            <div class="closePic" @click="bigPicIndex(activePic)">X</div>
+            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt>
+          </div>
+          <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
             v-for="(item, index) in basePicList"
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt />
-              <div class="hoverBox hoverwow bounceIn">{{ item.title }}</div>
+              <img :src="item.imgUrl" alt @mouseover.stop="getBigPic(index)">
+              <div class="hoverBox">{{ item.title }}</div>
             </div>
 
             <!-- <p class="text-center">{{item.title}}</p> -->
@@ -236,7 +235,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -250,9 +249,9 @@
         </ul>-->
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p class="con">
-              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
-            </p>
+            <p
+              class="con"
+            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -261,7 +260,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt />
+            <img src="static/img/7-wenhua-tupian1.png" alt>
           </div>
         </div>
       </div>
@@ -308,9 +307,7 @@
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >
-          联系我们
-        </button>
+        >联系我们</button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
         <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
@@ -521,44 +518,53 @@ export default {
         { imgUrl: "static/img/6-guanyuguocaoyuan-tupian1.png" }
       ],
       /* 仲裁要基地图片 */
+      activePic: -1,
       basePicList: [
         {
           imgUrl: "static/img/1.png",
+          imgUrlHover: "static/img/homeHover/1.png",
           title: "德诚百年",
           content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
           imgUrl: "static/img/2.png",
+          imgUrlHover: "static/img/homeHover/2.png",
           title: "大医精诚",
           content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
           imgUrl: "static/img/3.png",
+          imgUrlHover: "static/img/homeHover/3.png",
           title: "精益求精",
           content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
           imgUrl: "static/img/4.png",
+          imgUrlHover: "static/img/homeHover/4.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/5.png",
+          imgUrlHover: "static/img/homeHover/5.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/6.png",
+          imgUrlHover: "static/img/homeHover/6.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/7.png",
+          imgUrlHover: "static/img/homeHover/7.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/8.png",
+          imgUrlHover: "static/img/homeHover/8.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
@@ -706,6 +712,19 @@ export default {
     };
   },
   watch: {
+    activePic() {
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "hoverwow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+    },
     tecnologyShow() {
       this.$nextTick(() => {
         // 在dom渲染完后,再执行动画
@@ -816,6 +835,19 @@ export default {
     },
     gotoprodect() {
       this.$router.push("/product/productpack");
+    },
+    getBigPic(e) {
+      console.log(e);
+      this.activePic = e;
+    },
+    // moveBigPic() {
+    //   this.activePic = -1;
+    // },
+    bigPicIndex(e) {
+      this.activePic = -1;
+    },
+    movePicIndex() {
+      this.activePic = -1;
     }
   }
 };
@@ -1294,7 +1326,38 @@ p {
 }
 /* 基地图片 */
 .plantingBox {
-  border: 1px solid red;
+  // border: 1px solid red;
+  position: relative;
+  .planting_model {
+    // height: 100%;
+    // width: 50%;
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.5),
+      -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: -5%;
+    left: 16%;
+    // transform: translateX(-50%);
+    z-index: 3;
+    .closePic {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      // border: 1px solid #fff;
+      color: #00000050;
+      box-shadow: 2px 2px 5px 2px rgba(255, 255, 255, 0.3);
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      transition: all 0.6s;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+    img {
+      height: 100%;
+    }
+  }
 }
 .baseList {
   margin-bottom: 10px;
@@ -1316,7 +1379,7 @@ p {
   justify-content: center;
   // border: 1px solid red;
   /* background: blue; */
-  z-index: 2000000;
+  z-index: 2;
   .hoverBox {
     position: absolute;
     bottom: 2.8%;
@@ -1328,6 +1391,9 @@ p {
   }
   img {
     height: 100%;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
