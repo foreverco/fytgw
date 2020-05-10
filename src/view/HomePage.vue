@@ -4,9 +4,13 @@
     <div id="swiper" class="container-fuild">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
             <!-- <img class="swiper-lazy" alt="轮播图" v-lazy="item.img"> -->
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -32,22 +36,25 @@
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{ item.title }}</p>
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
+              {{ item.title }}
+            </p>
             <div
               class="tacwow bounceInRight"
               data-wow-duration="1.0s"
               v-if="tecnologyShow === index"
             >
               <div class="row">
-                <div class="hidden-sm hidden-xs col-md-4 tacimg">
-                  <img :src="item.imgUrl" alt>
-                </div>
-                <div class="col-xs-11 col-md-8 taccon">
+                <!-- <div class="hidden-sm hidden-xs col-md-4 tacimg">
+                  <img :src="item.imgUrl" alt />
+                </div> -->
+                <div class="col-xs-11 col-md-12 taccon">
                   <p>{{ item.con }}</p>
                   <div class="button">
-                    <router-link :to="{ path: '/software/aboutUs' }">
+                    <img :src="item.imgUrl" alt />
+                    <!-- <router-link :to="{ path: '/software/aboutUs' }">
                       <button>查看更多</button>
-                    </router-link>
+                    </router-link> -->
                   </div>
                 </div>
               </div>
@@ -60,7 +67,7 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
             <li>行业动态</li>
             <li>行业动态</li>
@@ -74,9 +81,11 @@
         </ul>-->
         <ul class="newsList">
           <li class="row" v-for="(item, index) in newsList" :key="index">
-            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+            <router-link
+              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+            >
               <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;">
+                <img :src="item.imgUrl" alt style="width:100%;" />
               </div>
             </router-link>
 
@@ -85,7 +94,9 @@
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
@@ -98,7 +109,7 @@
     <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -123,7 +134,7 @@
             <p>{{ item.effect }}</p>
             <p class="imgBox wow zoomIn">
               <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img :src="item.imgUrl" alt>
+              <img :src="item.imgUrl" alt />
               <!-- </router-link> -->
             </p>
           </li>
@@ -134,22 +145,22 @@
     <div id="aboutgcy" class="container-fluid">
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
         <div class="row aboutswiper">
           <div class="swiper-container aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt>
+                <img src="static/img/swiper11.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt>
+                <img src="static/img/swiper22.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt>
+                <img src="static/img/swiper33.png" alt />
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -177,7 +188,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt>
+          <img src="@/assets/img/home/biaoti-jidi.png" alt />
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -191,14 +202,14 @@
           <li>柴胡</li>
           <li>防风</li>
         </ul>-->
-        <div class="row">
+        <div class="row plantingBox">
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
             v-for="(item, index) in basePicList"
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt>
+              <img :src="item.imgUrl" alt />
               <div class="hoverBox hoverwow bounceIn">{{ item.title }}</div>
             </div>
 
@@ -225,7 +236,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -239,9 +250,9 @@
         </ul>-->
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p
-              class="con"
-            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+            </p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -250,7 +261,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt>
+            <img src="static/img/7-wenhua-tupian1.png" alt />
           </div>
         </div>
       </div>
@@ -297,7 +308,9 @@
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >联系我们</button>
+        >
+          联系我们
+        </button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
         <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
@@ -462,7 +475,7 @@ export default {
         },
         {
           newsid: 2,
-          imgUrl: "static/img/news1.png",
+          imgUrl: "static/img/4-xinwenzhongxin-1.png",
           title: "内蒙古打造西部蒙中药材产业带 发力扶贫",
           con:
             "【中国制药网 行业动态】目前，呼、包、乌兰察布已经开始打造蒙古黄芪种植基地，正在发挥着示范作用。“打造",
@@ -510,42 +523,42 @@ export default {
       /* 仲裁要基地图片 */
       basePicList: [
         {
-          imgUrl: "static/img/8-jidi-tu2.png",
+          imgUrl: "static/img/1.png",
           title: "德诚百年",
           content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
-          imgUrl: "static/img/8-jidi-tu3.png",
+          imgUrl: "static/img/2.png",
           title: "大医精诚",
           content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
-          imgUrl: "static/img/8-jidi-tu4.png",
+          imgUrl: "static/img/3.png",
           title: "精益求精",
           content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
-          imgUrl: "static/img/8-jidi-tu5.png",
+          imgUrl: "static/img/4.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "static/img/8-jidi-tu6.png",
+          imgUrl: "static/img/5.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "static/img/8-jidi-tu7.png",
+          imgUrl: "static/img/6.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "static/img/8-jidi-tu4.png",
+          imgUrl: "static/img/7.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
-          imgUrl: "static/img/8-jidi-tu5.png",
+          imgUrl: "static/img/8.png",
           title: "别具匠心",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
@@ -945,9 +958,12 @@ p {
   /* letter-spacing: 5px; */
   line-height: 37px;
   position: relative;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 .taccon p {
-  width: 80%;
+  // width: 80%;
   overflow: auto;
   /* font-family:'lv1'; */
   font-size: 15px;
@@ -955,26 +971,35 @@ p {
   /* background: yellow; */
 }
 .taccon .button {
-  width: 10%;
+  height: 100%;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid red;
+  img {
+    height: 100%;
+  }
+  // width: 10%;
 }
-.taccon button {
-  height: 120px;
-  width: 26px;
-  line-height: 25px;
-  font-family: "lv1";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: transparent;
-  outline: 0;
-  border: 0;
-  border: 1px solid #fff;
-  transition: all 0.6s;
-  color: #fff !important;
-}
-.taccon button:hover {
-  transform: scale(1.2);
-}
+// .taccon button {
+//   height: 120px;
+//   width: 26px;
+//   line-height: 25px;
+//   font-family: "lv1";
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   background: transparent;
+//   outline: 0;
+//   border: 0;
+//   border: 1px solid #fff;
+//   transition: all 0.6s;
+//   color: #fff !important;
+// }
+// .taccon button:hover {
+//   transform: scale(1.2);
+// }
 /* 新闻中心 */
 .newscontainer {
   /* border: 1px solid #81b25b; */
@@ -1163,17 +1188,18 @@ p {
 }
 
 .productList li .imgBox {
-  width: 80%;
+  width: 88%;
   margin-left: -10%;
   display: flex;
   align-items: bottom;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 60px;
   overflow: hidden;
+  // border: 1px solid red;
 }
 .productList li .imgBox:hover img {
   cursor: pointer;
-  transform: scale(1.4);
+  transform: scale(1.3);
 }
 .productList li img {
   width: 95%;
@@ -1267,49 +1293,42 @@ p {
   cursor: pointer;
 }
 /* 基地图片 */
+.plantingBox {
+  border: 1px solid red;
+}
 .baseList {
-  /* border:1px solid #81b25b; */
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  // position: relative;
 }
 .baseList .basePicBox {
   width: 270px;
   height: 270px;
-  /* background: url("../assets/img/home/8-jidi-kuang2.png"); */
-  background-size: 100% 100%;
+  // width: 100%;
+  // height: 100%;
+  // background: url("/static/img/home/kuang.png");
+  // background-size: 100% 100%;
   position: relative;
-  /* background: blue; */
-}
-.baseList .basePicBox:hover {
-  cursor: pointer;
-}
-.baseList .basePicBox:hover .hoverBox {
-  opacity: 1;
-}
-.hoverBox {
-  background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  opacity: 0;
-  font-size: 20px;
-  transition: all 0.6s;
-}
-.baseList .basePicBox img {
-  width: 90%;
-  /* height: 250px; */
-}
-.text-center {
-  font-size: 25px;
-  font-weight: bold;
+  // border: 1px solid red;
+  /* background: blue; */
+  z-index: 2000000;
+  .hoverBox {
+    position: absolute;
+    bottom: 2.8%;
+    left: 50%;
+    transform: translateX(-40%);
+    letter-spacing: 10px;
+    color: #81b25b;
+    z-index: 1;
+  }
+  img {
+    height: 100%;
+  }
 }
 
 /* 国草园文化 */
@@ -1501,12 +1520,12 @@ p {
 }
 @media screen and (min-width: 768px) {
   .productList li p:first-child {
-    margin-top: -20px;
+    // margin-top: -20px;
     margin-left: 70px;
   }
   .productList li p:nth-child(2) {
-    margin-top: -20px;
-    margin-left: 20px;
+    margin-top: 40px;
+    margin-left: -15px;
   }
 }
 /* 媒体查询（手机） */

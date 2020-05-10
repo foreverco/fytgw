@@ -1,18 +1,18 @@
 <template>
   <div class="container-fluid">
-    <div
-      id="swiper"
-      class="newsswiper"
-      v-show='$route.name!="NewsMsg"'
-    >
+    <div id="swiper" class="newsswiper" v-show="$route.name != 'NewsMsg'">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
             <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
-              <h1>{{item.title}}</h1>
-              <p>{{item.content}}</p>
+              <h1>{{ item.title }}</h1>
+              <p>{{ item.content }}</p>
             </div>
           </div>
         </div>
@@ -30,11 +30,19 @@
           <ul class="left-container wow bounceInLeft">
             <!-- <p>新闻中心</p> -->
             <li
-              v-for="(item,index) in softwareList"
+              v-for="(item, index) in softwareList"
               :key="index"
-              :class="{pathActive:item.path==$route.path}"
+              :class="{ pathActive: item.path == $route.path }"
             >
-              <router-link :to="item.path">{{item.name}}</router-link>
+              <router-link :to="item.path"
+                ><img
+                  v-if="item.path == $route.path"
+                  src="../../assets/img/news/dl.png"
+                  class="activeImg"
+                  alt=""
+                />
+                {{ item.name }}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -155,13 +163,14 @@ export default {
   line-height: 38px;
   margin: 0;
   /* border-top: 1px solid #474747; */
+  position: relative;
 }
 .left-container > li:first-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
 .left-container > li > a {
   text-decoration: none;
-  color: black;
+  color: #fff;
   font-size: 16px;
 }
 
@@ -171,14 +180,22 @@ export default {
 #right {
   padding: 20px 0;
 }
+
 @media screen and (max-width: 768px) {
   #right {
     padding: 15px;
   }
 }
 .pathActive {
-  background: #c60c1620;
+  background: #00000020;
   /* color:#c60c16 */
+}
+.activeImg {
+  position: absolute;
+  height: 70%;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
 }
 /* 轮播图 */
 /* #swiper {
@@ -194,4 +211,3 @@ export default {
   height: 100%;
 }
 </style>
-

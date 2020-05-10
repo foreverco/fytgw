@@ -1,8 +1,9 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
+import "babel-polyfill";
 import App from "./App";
-import VueLazyLoad from 'vue-lazyload'; // 懒加载
+import VueLazyLoad from "vue-lazyload"; // 懒加载
 
 /* element-ui */
 import {
@@ -26,8 +27,8 @@ Vue.use(Breadcrumb);
 Vue.use(BreadcrumbItem);
 
 Vue.use(VueLazyLoad, {
-  error: '../static/img/3-3qiyefengcai-5.png', // 加载错误的图片
-  loading: '../static/img/3-3qiyefengcai-5.png' // 加载时的图片
+  error: "../static/img/3-3qiyefengcai-5.png", // 加载错误的图片
+  loading: "../static/img/3-3qiyefengcai-5.png" // 加载时的图片
 });
 
 /* 路由 */
@@ -62,7 +63,7 @@ import VueAwesomeSwiper from "vue-awesome-swiper";
 
 // require styles
 import "swiper/dist/css/swiper.css";
-Vue.use(VueAwesomeSwiper /* { default global options } */ );
+Vue.use(VueAwesomeSwiper /* { default global options } */);
 
 // vue-seamless-scroll列表滚动
 import scroll from "vue-seamless-scroll";
@@ -77,7 +78,6 @@ import "jquery";
 // window.jquery = window.$ = jquery
 
 /* 引入翻书插件 */
-import "turn.js";
 
 /* bootstarp */
 import "./assets/css/bootstrap.min.css";

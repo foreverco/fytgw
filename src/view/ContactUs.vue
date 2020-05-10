@@ -47,13 +47,26 @@
               label-position="left"
             >
               <el-form-item label="姓名" prop="name">
-                <el-input clearable v-model="ruleForm.name" autocomplete="off" placeholder="请输入姓名"></el-input>
+                <el-input
+                  clearable
+                  v-model="ruleForm.name"
+                  autocomplete="off"
+                  placeholder="请输入姓名"
+                ></el-input>
               </el-form-item>
               <el-form-item label="邮箱" prop="email">
-                <el-input clearable v-model="ruleForm.email" autocomplete="off" placeholder="请输入邮箱"></el-input>
+                <el-input
+                  clearable
+                  v-model="ruleForm.email"
+                  autocomplete="off"
+                  placeholder="请输入邮箱"
+                ></el-input>
               </el-form-item>
               <el-form-item label="手机号" prop="phone">
-                <el-input v-model.number="ruleForm.phone" placeholder="请输入手机号"></el-input>
+                <el-input
+                  v-model.number="ruleForm.phone"
+                  placeholder="请输入手机号"
+                ></el-input>
               </el-form-item>
               <el-form-item label="留言" prop="content">
                 <el-input
@@ -64,7 +77,9 @@
                 ></el-input>
               </el-form-item>
               <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+                <el-button type="primary" @click="submitForm('ruleForm')"
+                  >提交</el-button
+                >
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
               </el-form-item>
             </el-form>
@@ -153,7 +168,7 @@ export default {
       height: 10, // 信息窗口高度
       title: "国草园集团" // 信息窗口标题
     };
-    var infoWindow = new BMap.InfoWindow("1", opts); // 创建信息窗口对象
+    var infoWindow = new BMap.InfoWindow("中草药生产基地", opts); // 创建信息窗口对象
     map.openInfoWindow(infoWindow, map.getCenter()); // 打开信息窗口
     var wow = new WOW();
     wow.init();
@@ -212,12 +227,12 @@ export default {
 }
 .el-button--primary {
   color: #fff;
-  background-color: #c60c16;
-  border-color: #c60c16;
+  background-color: #81b25b;
+  border-color: #81b25b;
 }
 .el-button--primary:hover {
   background: #fff;
-  color: #c60c16;
+  color: #81b25b;
 }
 @media screen and (max-width: 997px) {
   .ContactUs-container {
@@ -234,4 +249,3 @@ export default {
   }
 }
 </style>
-

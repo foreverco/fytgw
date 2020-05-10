@@ -1,7 +1,7 @@
 <template>
   <div id="company">
-    <div class='row'>
-      <div class='col-xs-12 videoBox'>
+    <div class="row">
+      <div class="col-xs-12 videoBox">
         <!-- <h1>富宇通的快乐生活</h1> -->
         <!-- <img src="@/assets/img/news/datu-1.png" alt=""> -->
         <!-- 播放器的方向， landscape横屏，portraint竖屏，默认值为竖屏 -->
@@ -19,39 +19,45 @@
           x5-video-player-fullscreen="true"
           x5-video-orientation="portraint"
           style="object-fit:fill"
-        >
-        </video>
-
+        ></video>
       </div>
     </div>
-    <ul class='row videoList'>
-      <li
-        class='col-md-3 col-xs-5 videowow zoomIn'
-        v-for="(item, index) in newVideoList"
-        :key="index"
-        @click='getVideoSrc(index,item.videoSrc)'
-        :class='{activeClass:activeList==index}'
-      >
-        <video
-          id="video"
-          :src="item.videoSrc"
+    <div class="video_container">
+      <ul class="video_type_list">
+        <li
+          v-for="(item, index) in video_type_list"
+          :key="index"
+          :class="{ video_type_active: type_active_index == index }"
+          @click="changevideotype(index)"
         >
-        </video>
-        <p>
-            {{item.title}}
-        </p>
-      </li>
-    </ul>
-    <div class="tabListPage">
-      <el-pagination
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage"
-        :page-sizes="pageSizes"
-        :page-size="PageSize"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="totalCount"
-      ></el-pagination>
+          {{ item.type }}
+        </li>
+      </ul>
+      <ul class="row videoList">
+        <li
+          class="col-md-3 col-xs-5 videowow zoomIn"
+          v-for="(item, index) in newVideoList"
+          :key="index"
+          @click="getVideoSrc(index, item.videoSrc)"
+          :class="{ activeClass: activeList == index }"
+        >
+          <video id="video" :src="item.videoSrc"></video>
+          <p>
+            {{ item.title }}
+          </p>
+        </li>
+      </ul>
+      <div class="tabListPage">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage"
+          :page-sizes="pageSizes"
+          :page-size="PageSize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="totalCount"
+        ></el-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -63,6 +69,14 @@ export default {
     return {
       videoActive: "",
       activeList: 0,
+      /* 视频类型 */
+      video_type_list: [
+        { type: "视频直播" },
+        { type: "抖音视频" },
+        { type: "监控视频" }
+      ],
+      /* 选中视频类型 */
+      type_active_index: 0,
       videoList: [
         {
           title: "中药材产业带",
@@ -84,7 +98,7 @@ export default {
           title: "项目签约仪式",
           videoSrc: "static/video/video1.mp4"
         },
-         {
+        {
           title: "增强免疫，保肝利尿",
           videoSrc: "static/video/video1.mp4"
         },
@@ -100,10 +114,6 @@ export default {
           title: "hahaha",
           videoSrc: "static/video/video1.mp4"
         },
-         {
-          title: "hahaha",
-          videoSrc: "static/video/video1.mp4"
-        },
         {
           title: "hahaha",
           videoSrc: "static/video/video1.mp4"
@@ -116,7 +126,11 @@ export default {
           title: "hahaha",
           videoSrc: "static/video/video1.mp4"
         },
-         {
+        {
+          title: "hahaha",
+          videoSrc: "static/video/video1.mp4"
+        },
+        {
           title: "hahaha",
           videoSrc: "static/video/video1.mp4"
         },
@@ -145,7 +159,7 @@ export default {
     };
   },
   created() {
-      this.getData();
+    this.getData();
     this.videoActive = this.newVideoList[0].videoSrc;
   },
   mounted() {
@@ -160,22 +174,28 @@ export default {
     wow.init();
   },
   methods: {
+    changevideotype(e) {
+      this.type_active_index = e;
+    },
     getVideoSrc(index, e) {
       this.videoActive = e;
       console.log(e);
       this.activeList = index;
     },
     getData() {
-          // 将数据赋值给tableData
-         //  this.tableData = data.data.body;
-          // 将数据的长度赋值给totalCount
-          this.totalCount = this.videoList.length;
-          this.newVideoList = this.videoList.slice(this.PageSize*this.currentPage-this.PageSize,this.PageSize*this.currentPage)
-          console.log(this.PageSize)
-          // console.log(this.currentPage)
-          // console.log(this.PageSize*this.currentPage-this.PageSize)
-          // console.log(this.pageNewsList)
-          // console.log(this.pageNewsList)
+      // 将数据赋值给tableData
+      //  this.tableData = data.data.body;
+      // 将数据的长度赋值给totalCount
+      this.totalCount = this.videoList.length;
+      this.newVideoList = this.videoList.slice(
+        this.PageSize * this.currentPage - this.PageSize,
+        this.PageSize * this.currentPage
+      );
+      console.log(this.PageSize);
+      // console.log(this.currentPage)
+      // console.log(this.PageSize*this.currentPage-this.PageSize)
+      // console.log(this.pageNewsList)
+      // console.log(this.pageNewsList)
     },
     // 分页
     // 每页显示的条数
@@ -184,21 +204,21 @@ export default {
       this.PageSize = val;
       // 注意：在改变每页显示的条数时，要将页码显示到第一页
       this.currentPage = 1;
-      this.getData()
+      this.getData();
     },
     // 显示第几页
     handleCurrentChange(val) {
       // 改变默认的页数
       this.currentPage = val;
-      this.getData()
+      this.getData();
     }
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .videoBox {
   /* border:1px solid red; */
-  height:50vw;
+  height: 50vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -212,8 +232,36 @@ export default {
 .videoBox img {
   width: 100%;
 }
+.video_container {
+  // border: 1px solid red;
+  background: #fff;
+  .video_type_list {
+    background: #81b25b;
+    padding-top: 3px;
+    padding-left: 3px;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      // border: 1px solid red;
+      color: #fff;
+      padding: 0 30px;
+      &.video_type_active {
+        background: #fff;
+        color: #81b25b;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
 .videoList {
-  /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -234,17 +282,17 @@ export default {
   /* width:100%; */
   height: 80%;
 }
-.videoList li p{
-    width:100%;
-    height:15%;
-    margin-top:5%;
-    background: url('../../../assets/img/news/biaoti-1.png') no-repeat;
-    background-size: 100% 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#fff;
-    font-size:18px;
+.videoList li p {
+  width: 100%;
+  height: 15%;
+  margin-top: 5%;
+  background: url("../../../assets/img/news/biaoti-1.png") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
 }
 .videoList li:hover {
   cursor: pointer;
@@ -255,13 +303,13 @@ export default {
   background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
   background-size: 100% 100%;
 }
-.tabListPage{
+.tabListPage {
   text-align: center;
 }
 .el-pagination {
-    white-space: inherit;
-    padding: 2px 5px;
-    color: #303133;
-    font-weight: 700;
+  white-space: inherit;
+  padding: 2px 5px;
+  color: #303133;
+  font-weight: 700;
 }
 </style>

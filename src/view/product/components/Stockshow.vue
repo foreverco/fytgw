@@ -1,17 +1,21 @@
 <template>
   <div id="fengcai">
     <div class="row qiyebg">
-      <img src="../../../assets/img/qiye/bg.png" alt>
+      <img src="../../../assets/img/qiye/plantingbg.png" alt />
     </div>
     <div class="container">
       <div class="row">
         <ul class="col-md-12 imgBox">
-          <li class="imgone imgwow zoomIn pic1wow" v-for="(item, index) in imgBox" :key="index">
+          <li
+            class="imgone imgwow zoomIn pic1wow"
+            v-for="(item, index) in imgBox"
+            :key="index"
+          >
             <div class="imgSpace1">
-              <img :src="item.imgUrl" alt>
+              <img :src="item.imgUrl" alt />
             </div>
 
-            <p>{{item.title}}</p>
+            <p>{{ item.title }}</p>
           </li>
         </ul>
       </div>
@@ -20,7 +24,11 @@
           class="imgwow bounceInRight"
           v-for="(item, index) in fengeImgList"
           :key="index"
-        >{{item.num}}</li>
+        >
+          <span>
+            {{ item.num }}
+          </span>
+        </li>
       </ul>
       <ul class="row imgList">
         <li
@@ -30,9 +38,9 @@
           @click="gotoImgMsg(item.imgUrl)"
         >
           <div class="imgSpace">
-            <img :src="item.imgUrl" alt>
+            <img :src="item.imgUrl" alt />
           </div>
-          <div class="txtSpace">{{item.title}}</div>
+          <div class="txtSpace">{{ item.title }}</div>
         </li>
       </ul>
       <div class="row tabListPage">
@@ -66,10 +74,10 @@ export default {
       // 默认每页显示的条数（可修改）
       PageSize: 6,
       imgBox: [
-        { imgUrl: "static/img/3-3qiyefengcai-1.png", title: "种植奠基仪式" },
-        { imgUrl: "static/img/3-3qiyefengcai-2.png", title: "种植奠基仪式" },
-        { imgUrl: "static/img/3-3qiyefengcai-3.png", title: "种植奠基仪式" },
-        { imgUrl: "static/img/3-3qiyefengcai-4.png", title: "种植奠基仪式" }
+        { imgUrl: "static/img/plating.png", title: "种植奠基仪式" },
+        { imgUrl: "static/img/plating2.png", title: "种植奠基仪式" },
+        { imgUrl: "static/img/plating4.png", title: "种植奠基仪式" },
+        { imgUrl: "static/img/plating3.png", title: "种植奠基仪式" }
       ],
       fengeImgList: [
         { num: "壹" },
@@ -84,35 +92,35 @@ export default {
       ],
       imgList: [
         {
-          imgUrl: "static/img/qiye/fengcai1.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-8.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai2.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-9.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai3.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-10.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai4.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-11.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai5.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-12.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai6.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-13.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai1.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-8.png",
           title: "国草园与化德县建立了友好的合作关系"
         },
         {
-          imgUrl: "static/img/qiye/fengcai2.png",
+          imgUrl: "static/img/qiye/3-3qiyefengcai-9.png",
           title: "国草园与化德县建立了友好的合作关系"
         }
       ]
@@ -184,7 +192,7 @@ export default {
       this.getData();
     },
     gotoImgMsg(e) {
-      this.$router.push('/news/newsmsg/1')
+      this.$router.push("/news/newsmsg/1");
     }
   },
   created() {
@@ -192,7 +200,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .qiyebg img {
   width: 100%;
 }
@@ -207,7 +215,7 @@ export default {
 }
 .imgBox li {
   /* height:430px; */
-  /* border:1px solid red; */
+  // border: 1px solid red;
   position: relative;
 }
 .imgBox li:hover {
@@ -216,6 +224,8 @@ export default {
 .imgBox li p {
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   height: 10%;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -223,6 +233,8 @@ export default {
   color: #fff;
   display: flex;
   align-items: center;
+  transition: all 0.6s;
+  margin: 0;
 }
 .imgSpace1 {
   height: 100%;
@@ -231,24 +243,29 @@ export default {
 .imgSpace1 img {
   transition: all 0.6s;
 }
-.imgSpace1:hover  img{
+.imgSpace1:hover img {
   transform: scale(1.4);
 }
-.imgBox li:hover .imgSpace1::after{
-    content: '奠基仪式 点击了解更多';
-    display: flex;
-    color:white;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.3);
-    cursor: pointer;
-    position: absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    z-index: 200000;
-    transition: all 400ms ease
+.imgBox li:hover .imgSpace1::after {
+  content: "奠基仪式 点击了解更多";
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 200000;
+  transition: all 400ms ease;
+}
+.imgBox li:hover p {
+  width: 100%;
+  height: 14%;
+  // bottom: -2%;
 }
 .imgBox li:first-child,
 .imgBox li:last-child {
@@ -268,26 +285,32 @@ export default {
   align-items: center;
   margin: 1vw 0;
   /* border:1px solid red; */
-  height:8vw;
+  height: 8vw;
 }
 .fengeImg li {
   width: 5vw;
   height: 5vw;
   font-size: 2vw;
   /* font-weight:bold; */
-  color: #8c1713;
+  color: #81b25b;
   background: url("../../../assets/img/qiye/3-3qiyefengcai-5.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.6s;
+  span {
+    transition: all 0.6s;
+  }
 }
-.fengeImg li:hover{
+.fengeImg li:hover {
   transform: scale(1.4);
   cursor: pointer;
   background: url("../../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
   background-size: 100% 100%;
+  span {
+    opacity: 0;
+  }
 }
 /* .fengeImg li:nth-child(3) {
 
@@ -309,15 +332,15 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.imgList li .imgSpace img{
+.imgList li .imgSpace img {
   transition: all 0.6s;
 }
-.imgList li .imgSpace:hover img{
+.imgList li .imgSpace:hover img {
   cursor: pointer;
   transform: scale(1.4);
 }
-.imgList li:hover .txtSpace{
-  background: rgba(0,0,0,0.5);
+.imgList li:hover .txtSpace {
+  background: rgba(0, 0, 0, 0.5);
 }
 .imgList li:hover .imgSpace::after {
   content: "点击了解更多";
@@ -364,12 +387,11 @@ export default {
     background-size: 100% 100%;
     transform: all 0.6s;
   }
-.fengeImg li:hover{
-  transform: scale(1.4);
-  cursor: pointer;
-  background: url("../../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
-  background-size: 100% 100%;
-}
+  .fengeImg li:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+    background: url("../../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
+    background-size: 100% 100%;
+  }
 }
 </style>
-

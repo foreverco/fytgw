@@ -5,18 +5,23 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: "*",
-      redirect: "/"
+      path: "/",
+      redirect: "/home"
     },
     {
-      path: "/",
+      path: "/welcome",
+      name: "Welcome",
+      component: resolve => require(["@/view/Welcome"], resolve)
+    },
+    {
+      path: "/home",
       name: "PageView",
       component: resolve => require(["@/view/PageView"], resolve),
       children: [
-        {
-          path: "/",
-          redirect: "/home"
-        },
+        // {
+        //   path: "/",
+        //   redirect: "/home"
+        // },
         {
           path: "/home",
           name: "home",

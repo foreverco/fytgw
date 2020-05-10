@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <router-view/>
-    <Footer></Footer>
-    <GoTop></GoTop>
+    <Header v-if="$route.name !== 'Welcome'"></Header>
+    <router-view />
+    <Footer v-if="$route.name !== 'Welcome'"></Footer>
+    <GoTop v-if="$route.name !== 'Welcome'"></GoTop>
   </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
       // isFengcai:'/software/fengcai'
     };
   },
-  updated() {
-    // console.log(this.$route.path);
+  mounted() {
+    console.log(this.$route);
   }
 };
 </script>
@@ -95,18 +95,12 @@ export default {
 }
 .el-pager li {
   border: 1px solid #81b25b !important;
-  min-width: 24px;
-  height: 24px;
-  line-height: 24px;
+  min-width: 30px;
+  height: 30px;
+  line-height: 30px;
   margin: 0 0.5vw;
   // border-radius: 10px;
-  transform: rotate(45deg);
-  &:after {
-    display: inline-block;
-    content: "";
-    transform: rotate(-45deg);
-    // transform-origin: bottom left;
-  }
+  // transform: rotate(45deg);
 }
 .el-pager li.active {
   color: #fff;
