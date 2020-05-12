@@ -319,13 +319,14 @@ export default {
 .imgList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .imgList li {
   /* width:22%; */
-  margin: 30px;
+  margin: 4%;
   position: relative;
+  // border: 1px solid red;
 }
 .imgList li .imgSpace {
   height: 50%;
@@ -399,7 +400,7 @@ export default {
   .fengeImg li {
     width: 3vw;
     height: 3vw;
-    font-size: 2vw;
+    font-size: 1vw;
     /* font-weight:bold; */
     color: #325815;
     background: url("../../assets/img/qiye/3-3qiyefengcai-5.png") no-repeat;

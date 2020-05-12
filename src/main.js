@@ -1,7 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from "vue";
 import "babel-polyfill";
+import Vue from "vue";
 import App from "./App";
 import VueLazyLoad from "vue-lazyload"; // 懒加载
 
@@ -84,7 +84,7 @@ import "./assets/css/bootstrap.min.css";
 import "./assets/js/bootstrap.min";
 
 /* 引入less */
-import less from "less";
+// import less from "less";
 
 /* animate.css */
 import "animate.css";

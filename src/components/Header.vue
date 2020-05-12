@@ -13,7 +13,7 @@
             <span class="glyphicon glyphicon-music"></span>
             <!-- <span></span> -->
             <div class="erweiBox">
-              <img src="../assets/img/home/erweima.jpg" alt />
+              <img src="../assets/img/home/douyinerwm.jpg" alt />
             </div>
           </b>
           <b>
@@ -315,7 +315,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 /* 顶部 */
 #header {
   /* background: #f7f7f7; */
@@ -641,19 +641,23 @@ li > dl > dt:last-child a {
 .erweiBox {
   position: absolute;
   top: 80px;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  right: -5%;
+  width: 0;
+  /* height: 100px; */
+  /* border: 1px solid rgba(0, 0, 0, 0.4); */
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
   display: flex;
   opacity: 0;
   align-items: center;
   justify-content: center;
   transition: all 1s;
+  img {
+    width: 100%;
+  }
 }
 .pull-right b:hover .erweiBox {
+  width: 150px;
   opacity: 1;
   transform: scale(1.5);
   z-index: 10002;

@@ -28,7 +28,7 @@ export default {
         },
         {
           name: "企业文化",
-          path: "/software/fengcai"
+          path: "/software/aboutUs"
         },
         {
           name: "产品中心",

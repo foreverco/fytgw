@@ -10,9 +10,12 @@ function resolve(dir) {
 }
 
 module.exports = {
+  devServer: {
+    disableHostCheck: true
+  },
   context: path.resolve(__dirname, "../"),
   entry: {
-    app: "./src/main.js"
+    app: ["babel-polyfill", "./src/main.js"]
   },
   externals: {
     BMap: "BMap"
@@ -64,6 +67,7 @@ module.exports = {
         include: [
           resolve("src"),
           resolve("test"),
+          resolve("static"),
           resolve("node_modules/webpack-dev-server/client")
         ]
       },

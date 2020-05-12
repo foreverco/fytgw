@@ -1,22 +1,54 @@
 <template>
   <div id="goodscon" class="container">
-    <div class="row goodsTitle">甘草片泡水500克g瓶装干草粉野生茶叶食用中药材搭黄芪当归党参茶</div>
+    <div class="row goodsTitle">
+      甘草片泡水500克g瓶装干草粉野生茶叶食用中药材搭黄芪当归党参茶
+    </div>
     <div class="row goodsBox">
       <div class="col-md-7 goodspic wow bounceInLeft">
         <div class="swiper-box">
           <!-- swiper1 -->
-          <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
-            <swiper-slide class="slide-1" v-for="(item, index) in swiperList" :key="index">
-              <img class="comp-intro-banner" :src="item.imgUrl" alt="item.title">
+          <swiper
+            :options="swiperOptionTop"
+            class="gallery-top"
+            ref="swiperTop"
+          >
+            <swiper-slide
+              class="slide-1"
+              v-for="(item, index) in swiperList"
+              :key="index"
+            >
+              <img
+                class="comp-intro-banner"
+                :src="item.imgUrl"
+                alt="item.title"
+              />
             </swiper-slide>
 
-            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+            <div
+              class="swiper-button-next swiper-button-white"
+              slot="button-next"
+            ></div>
+            <div
+              class="swiper-button-prev swiper-button-white"
+              slot="button-prev"
+            ></div>
           </swiper>
           <!-- swiper2 Thumbs -->
-          <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs">
-            <swiper-slide class="slide-1" v-for="(item, index) in swiperList" :key="index">
-              <img class="comp-intro-banner" :src="item.imgUrl" alt="item.title">
+          <swiper
+            :options="swiperOptionThumbs"
+            class="gallery-thumbs"
+            ref="swiperThumbs"
+          >
+            <swiper-slide
+              class="slide-1"
+              v-for="(item, index) in swiperList"
+              :key="index"
+            >
+              <img
+                class="comp-intro-banner"
+                :src="item.imgUrl"
+                alt="item.title"
+              />
             </swiper-slide>
           </swiper>
         </div>
@@ -79,13 +111,15 @@
       <li
         v-for="(item, index) in navLists"
         :key="index"
-        :class="{navActive:isnavActive==index}"
+        :class="{ navActive: isnavActive == index }"
         @click="changenavMsg(index)"
-      >{{item.name}}</li>
+      >
+        {{ item.name }}
+      </li>
       <li></li>
     </ul>
     <div class="row testBox wow zoomIn">
-      <img src="static/img/test.png" alt>
+      <img src="static/img/test1.png" alt />
     </div>
   </div>
 </template>
@@ -416,4 +450,3 @@ export default {
   }
 }
 </style>
-

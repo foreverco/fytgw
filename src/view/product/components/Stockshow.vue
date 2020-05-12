@@ -74,7 +74,7 @@ export default {
       // 默认每页显示的条数（可修改）
       PageSize: 6,
       imgBox: [
-        { imgUrl: "static/img/plating.png", title: "种植奠基仪式" },
+        { imgUrl: "static/img/plating.png", title: "玻璃大棚" },
         { imgUrl: "static/img/plating2.png", title: "种植奠基仪式" },
         { imgUrl: "static/img/plating4.png", title: "种植奠基仪式" },
         { imgUrl: "static/img/plating3.png", title: "种植奠基仪式" }
@@ -276,8 +276,8 @@ export default {
   width: 40%;
 }
 .imgBox li img {
-  width: 100%;
-  height: 100%;
+  width: 99%;
+  height: 99%;
 }
 .fengeImg {
   display: flex;
@@ -318,8 +318,8 @@ export default {
 .imgList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .imgList li {
   /* width:22%; */
@@ -376,7 +376,27 @@ export default {
 .imgList li .imgSpace img {
   width: 100%;
 }
-
+@media screen and (min-width: 1600px) {
+  .fengeImg li {
+    width: 3vw;
+    height: 3vw;
+    font-size: 1vw;
+    /* font-weight:bold; */
+    color: #325815;
+    background: url("../../../assets/img/qiye/3-3qiyefengcai-5.png") no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s;
+  }
+  .fengeImg li:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+    background: url("../../../assets/img/qiye/3-3qiyefengcai-6.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}
 @media screen and (max-width: 800px) {
   .fengeImg li[data-v-489fac63] {
     width: 8vw;

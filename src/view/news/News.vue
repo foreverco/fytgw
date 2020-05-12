@@ -3,8 +3,12 @@
     <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -16,8 +20,34 @@
         <!-- <div class="swiper-pagination"></div> -->
 
         <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+      </div>
+    </div>
+    <!-- 企业宣传片 -->
+    <div id="company" class="container" v-if="$route.name === 'videonews'">
+      <div class="row">
+        <div class="col-xs-12 videoBox">
+          <!-- <h1>富宇通的快乐生活</h1> -->
+          <!-- <img src="@/assets/img/news/datu-1.png" alt=""> -->
+          <!-- 播放器的方向， landscape横屏，portraint竖屏，默认值为竖屏 -->
+          <!-- <video src="static/video/yyb.mp4"></video> -->
+          <video
+            id="videoactive"
+            autoplay
+            :src="videoActive"
+            poster="../../../static/img/news/xuanchuanvidoe.png"
+            controls="true"
+            preload="auto"
+            webkit-playsinline="true"
+            playsinline="true"
+            x-webkit-airplay="allow"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+            x5-video-orientation="portraint"
+            style="object-fit:fill"
+          ></video>
+        </div>
       </div>
     </div>
     <div id="Software" class="container">
@@ -36,7 +66,7 @@
                   src="../../assets/img/news/dl.png"
                   class="activeImg"
                   alt
-                >
+                />
                 {{ item.name }}
               </router-link>
             </li>
@@ -56,6 +86,7 @@ export default {
   name: "Software",
   data() {
     return {
+      videoActive: "",
       softwareList: [
         {
           name: "公司新闻",
@@ -69,25 +100,25 @@ export default {
       /* 轮播图列表 */
       swiperList: [
         {
-          img: require("@/assets/img/news/banner-1.png"),
+          img: require("@/assets/img/news/banner-2.png"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/news/banner-1.png"),
+          img: require("@/assets/img/news/banner-2.png"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/news/banner-1.png"),
+          img: require("@/assets/img/news/banner-2.png"),
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/news/banner-1.png"),
+          img: require("@/assets/img/news/banner-2.png"),
           path: "",
           title: "",
           content: ""
@@ -115,6 +146,7 @@ export default {
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
+      autoplay: false,
       // 如果需要分页器
       pagination: {
         el: ".swiper-pagination",
@@ -135,7 +167,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 #left {
   margin: 20px 0;
 }
@@ -177,6 +209,10 @@ export default {
 
 .left-container > li:hover {
   /* background: #928989; */
+  // background: rgba(0, 0, 0, 0.1);
+  a {
+    font-size: 18px;
+  }
 }
 #right {
   padding: 20px 0;
@@ -188,8 +224,12 @@ export default {
   }
 }
 .pathActive {
-  background: #00000020;
+  background: #81b25b;
   /* color:#c60c16 */
+  &a {
+    font-size: 20px;
+    color: red !important;
+  }
 }
 .activeImg {
   position: absolute;
@@ -210,5 +250,13 @@ export default {
 #swiper .banner-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
+}
+#company {
+  // border: 1px solid red;
+
+  #videoactive {
+    width: 95%;
+    margin-left: 5%;
+  }
 }
 </style>

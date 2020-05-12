@@ -1,11 +1,7 @@
 <template>
   <div id="company">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-xs-12 videoBox">
-        <!-- <h1>富宇通的快乐生活</h1> -->
-        <!-- <img src="@/assets/img/news/datu-1.png" alt=""> -->
-        <!-- 播放器的方向， landscape横屏，portraint竖屏，默认值为竖屏 -->
-        <!-- <video src="static/video/yyb.mp4"></video> -->
         <video
           id="videoactive"
           autoplay
@@ -21,7 +17,7 @@
           style="object-fit:fill"
         ></video>
       </div>
-    </div>
+    </div> -->
     <div class="video_container">
       <ul class="video_type_list">
         <li
@@ -29,21 +25,27 @@
           :key="index"
           :class="{ video_type_active: type_active_index == index }"
           @click="changevideotype(index)"
-        >{{ item.type }}</li>
+        >
+          {{ item.type }}
+        </li>
       </ul>
       <ul class="row videoList">
         <li
           class="col-md-3 col-xs-5 videowow zoomIn"
           v-for="(item, index) in newVideoList"
           :key="index"
-          @click="getVideoSrc(index, item.videoSrc)"
+          @click="getVideoSrc(index, item.videoSrc, item.videoid, $event)"
           :class="{ activeClass: activeList == index }"
         >
           <div class="videoTag">
-            <img :src="item.tagSrc" alt>
-            <span>{{item.videostatus}}</span>
+            <img :src="item.tagSrc" alt />
+            <span>{{ item.videostatus }}</span>
           </div>
-          <video id="video" :src="item.videoSrc" :poster="item.imgSrc"></video>
+          <video
+            :id="item.videoid"
+            :src="item.videoSrc"
+            :poster="item.imgSrc || ''"
+          ></video>
         </li>
       </ul>
       <div class="tabListPage">
@@ -67,136 +69,350 @@ export default {
   data() {
     return {
       videoActive: "",
-      activeList: 0,
+      activeList: -1,
       /* 视频类型 */
       video_type_list: [
-        { type: "视频直播" },
-        { type: "抖音视频" },
-        { type: "监控视频" }
+        { type: "抖音视频", id: "videoList" },
+        { type: "视频直播", id: "dyVideoList" },
+        { type: "监控视频", id: "jkvideoList" }
       ],
       /* 选中视频类型 */
       type_active_index: 0,
+      old_id: "",
+      videoListObj: [
+                [
+          {
+            videoid: "v1",
+            title: "中药材产业带",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag1.png",
+            videostatus: "直播中",
+            videoSrc: "static/video/douyin/douyin1.mp4"
+          },
+          // {
+          //   videoid: "v2",
+          //   title: "药材全产业链",
+          //   // imgSrc: "static/img/news/videobg.png",
+          //   tagSrc: "static/img/news/tag2.png",
+          //   videostatus: "录播",
+          //   videostatus: "录播",
+          //   videoSrc: "static/video/douyin/douyin2.mp4"
+          // },
+          {
+            videoid: "v3",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin3.mp4"
+          },
+          // {
+          //   videoid: "v4",
+          //   title: "药材全产业链",
+          //   // imgSrc: "static/img/news/videobg.png",
+          //   tagSrc: "static/img/news/tag2.png",
+          //   videostatus: "录播",
+          //   videostatus: "录播",
+          //   videoSrc: "static/video/douyin/douyin4.mp4"
+          // },
+          {
+            videoid: "v5",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin5.mp4"
+          },
+          {
+            videoid: "v6",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin6.mp4"
+          },
+          // {
+          //   videoid: "v7",
+          //   title: "药材全产业链",
+          //   // imgSrc: "static/img/news/videobg.png",
+          //   tagSrc: "static/img/news/tag2.png",
+          //   videostatus: "录播",
+          //   videostatus: "录播",
+          //   videoSrc: "static/video/douyin/douyin7.mp4"
+          // },
+          {
+            videoid: "v8",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin8.mp4"
+          },
+          {
+            videoid: "v9",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin9.mp4"
+          },
+          {
+            videoid: "v10",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin10.mp4"
+          },
+          {
+            videoid: "v11",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin11.mp4"
+          },
+          {
+            videoid: "v12",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin12.mp4"
+          },
+          {
+            videoid: "v13",
+            title: "药材全产业链",
+            // imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/douyin/douyin13.mp4"
+          }
+        ],
+        [
+          {
+            videoid: "v1",
+            title: "中药材产业带",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag1.png",
+            videostatus: "直播中",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            videoid: "v2",
+            title: "药材全产业链",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            videoid: "v3",
+            title: "中药材产业带",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag1.png",
+            videostatus: "直播中",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            videoid: "v4",
+            title: "药材全产业链",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            videoid: "v5",
+            title: "中药材产业带",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag1.png",
+            videostatus: "直播中",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            videoid: "v6",
+            title: "药材全产业链",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            videoid: "v7",
+            title: "发力扶贫",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videoSrc: "static/video/video1.mp4"
+          }
+        ],
+        [
+          {
+            title: "中药材产业带",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag1.png",
+            videostatus: "直播中",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            title: "药材全产业链",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            title: "中药材产业带",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag1.png",
+            videostatus: "直播中",
+            videoSrc: "static/video/video1.mp4"
+          },
+          {
+            title: "药材全产业链",
+            imgSrc: "static/img/news/videobg.png",
+            tagSrc: "static/img/news/tag2.png",
+            videostatus: "录播",
+            videostatus: "录播",
+            videoSrc: "static/video/video1.mp4"
+          }
+        ]
+      ],
       videoList: [
-        {
-          title: "中药材产业带",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "直播中",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "药材全产业链",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag2.png",
-          videostatus: "录播",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "发力扶贫",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag2.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "国草园集团",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag2.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "项目签约仪式",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag2.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "增强免疫，保肝利尿",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        },
-        {
-          title: "hahaha",
-          imgSrc: "static/img/news/videobg.png",
-          tagSrc: "static/img/news/tag1.png",
-          videostatus: "录播",
-          videoSrc: "static/video/video1.mp4"
-        }
+        // {
+        //   title: "中药材产业带",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "直播中",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "药材全产业链",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag2.png",
+        //   videostatus: "录播",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "发力扶贫",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag2.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "国草园集团",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag2.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "项目签约仪式",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag2.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "增强免疫，保肝利尿",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // },
+        // {
+        //   title: "hahaha",
+        //   imgSrc: "static/img/news/videobg.png",
+        //   tagSrc: "static/img/news/tag1.png",
+        //   videostatus: "录播",
+        //   videoSrc: "static/video/video1.mp4"
+        // }
       ],
       newVideoList: [],
       // 默认显示第几页
@@ -210,6 +426,7 @@ export default {
     };
   },
   created() {
+    this.videoList = this.videoListObj[0];
     this.getData();
     this.videoActive = this.newVideoList[0].videoSrc;
   },
@@ -227,11 +444,29 @@ export default {
   methods: {
     changevideotype(e) {
       this.type_active_index = e;
+      this.videoList = this.videoListObj[e];
+      this.getData();
     },
-    getVideoSrc(index, e) {
-      this.videoActive = e;
-      console.log(e);
+    getVideoSrc(index, src, id, e) {
       this.activeList = index;
+      console.log(e.target.id);
+      var idx = e.target.id ? e.target.id : e.target.dataset.id;
+      var newVis = document.getElementById(idx);
+      if (this.old_id == idx) {
+        if (newVis.paused) {
+          newVis.play();
+        } else if (newVis.play()) {
+          newVis.pause();
+        }
+      } else {
+        if (this.old_id && document.getElementById(this.old_id).play()) {
+          document.getElementById(this.old_id).pause();
+        }
+        if (newVis.paused) {
+          newVis.play();
+        }
+      }
+      this.old_id = idx;
     },
     getData() {
       // 将数据赋值给tableData
@@ -276,10 +511,14 @@ export default {
   justify-content: center;
   align-items: flex-start;
 }
+video {
+  width: 100%;
+  height: 100%;
+}
 
 #videoactive {
-  height: 80%;
-  width: 100%;
+  height: 60%;
+  // width: 100%;
 }
 .videoBox img {
   width: 100%;
@@ -287,10 +526,12 @@ export default {
 .video_container {
   // border: 1px solid red;
   background: #fff;
+  padding-bottom: 10px;
   .video_type_list {
     background: #81b25b;
     padding-top: 3px;
     padding-left: 3px;
+    margin-bottom: 20px;
     &::after {
       content: "";
       display: block;
@@ -316,20 +557,24 @@ export default {
 .videoList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: 10px 0;
 }
 .videoList li {
   height: 330px;
   overflow: hidden;
   margin: 35px;
+  // border: 1px solid #00000030;
+  // border-radius: 5px;
+  // padding: 6px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   // border: 1px solid blue;
   position: relative;
+  transition: all 0.6s;
   .videoTag {
     position: absolute;
     // background: rgb(219, 141, 141);
@@ -362,12 +607,25 @@ export default {
   cursor: pointer;
   // background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
   // background-size: 100% 100%;
-  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+  // box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+  // padding: 15px 0;
+  // background: #81b25b50;
+  // border-radius: 10px;
+  // transform: scale(1.3);
+  video {
+    // border: 1px solid red;
+    // width: 100%;
+  }
+  &:after{
+    content: '';
+    display: block;
+  }
 }
 .activeClass {
   // background: url("../../../assets/img/home/8-jidi-kuang1.png") no-repeat;
   // background-size: 100% 100%;
-  box-shadow: 5px 5px 10px 5px #81b25b70;
+  // box-shadow: 5px 5px 10px 5px #81b25b70;
+  transform: scale(1.3);
 }
 .tabListPage {
   text-align: center;
