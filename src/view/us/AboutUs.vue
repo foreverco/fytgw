@@ -23,7 +23,7 @@
     <div class="row aboutusTitle imgwow zoomIn">
       <img src="../../assets/img/aboutUs/3-1qiyewenhua-2guanyu-1.png" alt="" />
       <div class="container">
-        <p>{{ company_profile }}</p>
+        <p class="hidden-xs">{{ company_profile }}</p>
       </div>
     </div>
 

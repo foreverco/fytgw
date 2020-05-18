@@ -3,15 +3,19 @@
     <div class="row breadBox">
       <Menu :pathList="pathList"></Menu>
     </div>
-    <p class="row newsmsgtitle">{{newsMsgObj.title}}</p>
+    <p class="row newsmsgtitle">{{ newsMsgObj.title }}</p>
     <p class="row newsmsgtime">
-      <span>来源: {{newsMsgObj.from}}</span>
-      <span>日期: {{newsMsgObj.from}}</span>
+      <span>来源: {{ newsMsgObj.from }}</span>
+      <span>日期: {{ newsMsgObj.date }}</span>
     </p>
-    <div class="row newsPicBox" v-for="(item, index) in newsMsgObj.imgList" :key="index">
+    <div
+      class="row newsPicBox"
+      v-for="(item, index) in newsMsgObj.imgList"
+      :key="index"
+    >
       <img :src="item.imrUrl" alt />
     </div>
-    <div class="row newsmsgCon" v-html='newsMsgObj.con'></div>
+    <div class="row newsmsgCon" v-html="newsMsgObj.con"></div>
   </div>
 </template>
 
@@ -24,10 +28,10 @@ export default {
         title:
           "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
         from: "天地网讯",
-        date: "2015-04-10 10:15:33",
+        date: "2020-01-15",
         imgList: [
-            { imrUrl: "static/img/news/qy.png" },
-            { imrUrl: "static/img/news/ws.png" },
+          { imrUrl: "static/img/news/qy.png" },
+          { imrUrl: "static/img/news/ws.png" }
         ],
         con: `<p>1月15号上午，我县举行农业项目合作签约仪式，与国草园集团正式签订百万亩蒙中道地药材产业发展合作项目合作协议，
                 并就全县农牧业产业化发展规划编制召开座谈会。县委书记王兵，县委副书记、政法委书记白俊伟，县委常委、县委办主任郝晓光，
@@ -97,6 +101,13 @@ export default {
 .newsmsgCon {
   // border:1px solid red;
   padding: 10px 20px;
-  margin-bottom:50px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .newsmsgtime span {
+    width: 100%;
+    display: inline-block;
+  }
 }
 </style>

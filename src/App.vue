@@ -154,4 +154,14 @@ p::-webkit-scrollbar-corner {
   font-weight: 700;
   margin: 20px 0;
 }
+@media screen and (max-width: 768px) {
+  .el-pagination__total {
+    border: 1px solid red;
+    display: none !important;
+  }
+  .el-pagination__sizes {
+    border: 1px solid red;
+    display: none !important;
+  }
+}
 </style>

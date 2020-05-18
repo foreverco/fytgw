@@ -603,7 +603,7 @@ a {
       no-repeat;
     background-size: 100% 100%;
     color: #fff;
-    width: 103px;
+    width: 30%;
     height: 23px;
     padding-left: 20px;
     display: flex;

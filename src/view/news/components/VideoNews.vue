@@ -80,7 +80,7 @@ export default {
       type_active_index: 0,
       old_id: "",
       videoListObj: [
-                [
+        [
           {
             videoid: "v1",
             title: "中药材产业带",
@@ -616,8 +616,8 @@ video {
     // border: 1px solid red;
     // width: 100%;
   }
-  &:after{
-    content: '';
+  &:after {
+    content: "";
     display: block;
   }
 }
@@ -635,5 +635,46 @@ video {
   padding: 2px 5px;
   color: #303133;
   font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  .videoList li[data-v-d2f3c900] {
+    margin: 0 auto;
+  }
+  .videoList li .videoTag[data-v-d2f3c900] {
+    position: absolute;
+    top: 8%;
+    left: 8%;
+  }
+  .video_container {
+  // border: 1px solid red;
+  background: #fff;
+  padding-bottom: 10px;
+  .video_type_list {
+    background: #81b25b;
+    padding-top: 3px;
+    padding-left: 3px;
+    margin-bottom: 20px;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    li {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      // border: 1px solid red;
+      color: #fff;
+      padding: 0 10px;
+      &.video_type_active {
+        background: #fff;
+        color: #81b25b;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
 }
 </style>

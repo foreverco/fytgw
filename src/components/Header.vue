@@ -57,7 +57,7 @@
           >
             <router-link :to="item.path">
               <span class="navTxt">{{ item.name }}</span>
-              <span class="navTxt">{{ item.name1 }}</span>
+              <!-- <span class="navTxt">{{ item.name1 }}</span> -->
               <!-- <span
                 v-if="item.children.length>0"
                 class="glyphicon glyphicon-menu-down"
@@ -71,10 +71,10 @@
             </dl>
           </li>
         </ul>
-        <ul class="loginBox">
+        <!-- <ul class="loginBox">
           <li>登录 /</li>
           <li>注册</li>
-        </ul>
+        </ul> -->
       </div>
     </div>
     <!-- 手机导航 -->
@@ -453,7 +453,7 @@ export default {
   text-decoration: none;
 }
 #header .header-nav .header-nav-wrapper > li > a .navTxt:last-child {
-  font-size: 9px;
+  // font-size: 9px;
 }
 #header .header-nav .navShow .header-nav-wrapper > li > a {
   color: #fff;
@@ -687,6 +687,15 @@ li > dl > dt:last-child a {
   align-items: center;
   justify-content: center;
 }
-.loginBox li {
+@media screen and (max-width: 768px) {
+  #header .header-nav-m .header-nav-m-wrapper > li > a[data-v-61dd7a3d] {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+  }
 }
 </style>

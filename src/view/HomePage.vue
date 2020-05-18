@@ -22,8 +22,8 @@
         <div class="swiper-pagination"></div>
 
         <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev hidden-xs"></div>
+        <div class="swiper-button-next hidden-xs"></div>
       </div>
     </div>
     <!-- 专业的技术 -->
@@ -69,9 +69,9 @@
         <div class="row newstitle">
           <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
+            <li>国草园咨询</li>
             <li>行业动态</li>
-            <li>行业动态</li>
-            <li>行业动态</li>
+            <li>最新公告</li>
           </ul>
         </div>
         <!-- <ul class="row newsNav">
@@ -219,7 +219,7 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt @mouseover.stop="getBigPic(index)" />
+              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
               <div class="hoverBox">{{ item.title }}</div>
             </div>
 
@@ -508,7 +508,7 @@ export default {
             "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
           con:
             "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
-          date: "2015-04-10"
+          date: "2020-01-15"
         },
         {
           newsid: 2,
@@ -525,7 +525,7 @@ export default {
           title: "奈曼旗打造现代蒙中药材全产业链",
           con:
             "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
-          date: "2018-01-25"
+          date: "2020-01-25"
         }
       ],
       /* 国草园产品 */
@@ -562,51 +562,51 @@ export default {
       activePic: -1,
       basePicList: [
         {
-          imgUrl: "static/img/1.png",
+          imgUrl: "static/img/11.png",
           imgUrlHover: "static/img/homeHover/1.png",
-          title: "德诚百年",
+          title: "初加工产业园",
           content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
           imgUrl: "static/img/2.png",
           imgUrlHover: "static/img/homeHover/2.png",
-          title: "大医精诚",
+          title: "智慧玻璃大棚",
           content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
           imgUrl: "static/img/3.png",
           imgUrlHover: "static/img/homeHover/3.png",
-          title: "精益求精",
+          title: "智慧玻璃大棚",
           content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
           imgUrl: "static/img/4.png",
           imgUrlHover: "static/img/homeHover/4.png",
-          title: "别具匠心",
+          title: "智慧玻璃大棚",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/5.png",
           imgUrlHover: "static/img/homeHover/5.png",
-          title: "别具匠心",
+          title: "产业基地",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/6.png",
           imgUrlHover: "static/img/homeHover/6.png",
-          title: "别具匠心",
+          title: "产业基地",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/7.png",
           imgUrlHover: "static/img/homeHover/7.png",
-          title: "别具匠心",
+          title: "产业基地",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         },
         {
           imgUrl: "static/img/8.png",
           imgUrlHover: "static/img/homeHover/8.png",
-          title: "别具匠心",
+          title: "产业基地",
           content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
       ],
@@ -889,7 +889,7 @@ export default {
       this.activePic = -1;
     },
     movePicIndex() {
-      this.activePic = -1;
+      // this.activePic = -1;
     },
     handleClose(e) {
       this.activePic = -1;
@@ -1031,6 +1031,7 @@ p {
   height: 100%;
   /* color: #fff; */
   writing-mode: tb-rl;
+  overflow: auto;
   /* font-size:16px; */
   /* letter-spacing: 5px; */
   line-height: 37px;
@@ -1428,8 +1429,9 @@ p {
     position: absolute;
     bottom: 2.8%;
     left: 50%;
-    transform: translateX(-40%);
-    letter-spacing: 10px;
+    transform: translate(-45%, 8%);
+    // transform: translateY(5%);
+    letter-spacing: 6px;
     color: #81b25b;
     z-index: 1;
   }
@@ -1644,7 +1646,7 @@ p {
     width: 100%;
   }
   .productList li p:first-child {
-    margin-top: -10px;
+    margin-top: -20px;
     margin-left: 50px;
   }
   .productList li p:nth-child(2) {
@@ -1844,5 +1846,18 @@ p {
   .productList li[data-v-4eb70d62] {
     height: 300px;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .newsList a[data-v-4eb70d62] {
+    padding-bottom: 10px;
+  }
+  .productList li p:nth-child(2) {
+    margin-top: 22px !important;
+    // margin-left: 50px;
+  }
+  .productList li p[data-v-4eb70d62]:first-child {
+    margin-top: -3px;
+}
 }
 </style>

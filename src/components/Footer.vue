@@ -1,8 +1,8 @@
 <template>
-  <div id="footer" class="container-fluid">
+  <div id="footer" class="container-fluid" style="position:relative">
     <img src="@/assets/img/dibu.png" alt="logo图" />
     <div class="container footer_msg_box">
-      <ul class="navList">
+      <ul class="navList hidden-xs">
         <li v-for="(item, index) in navList" :key="index">
           <router-link :to="item.path">
             {{ item.name }}
@@ -10,10 +10,18 @@
         </li>
       </ul>
       <p>
-        <span>版权所有 &copy; 蒙ICP备 18002915号</span>
+        <span class="hidden-xs">版权所有 &copy; 蒙ICP备 18002915号</span>
       </p>
-      <p class="copy">Copyright &copy; 2018 - 2019 公司名称公司名称</p>
+      <p class="copy hidden-xs">
+        Copyright &copy; 2018 - 2019 公司名称公司名称
+      </p>
     </div>
+    <p
+      class=" visible-xs"
+      style="position:absolute;width:100%;top:50%;left:50%;transform: translate(-50%, -50%);"
+    >
+      <span>版权所有 &copy;蒙ICP备 18002915号</span>
+    </p>
   </div>
 </template>
 <script>
