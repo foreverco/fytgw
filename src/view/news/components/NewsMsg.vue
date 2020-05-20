@@ -8,12 +8,8 @@
       <span>来源: {{ newsMsgObj.from }}</span>
       <span>发布日期: {{ newsMsgObj.date }}</span>
     </p>
-    <div
-      class="row newsPicBox"
-      v-for="(item, index) in newsMsgObj.imgList"
-      :key="index"
-    >
-      <img :src="item.imrUrl" alt />
+    <div class="row newsPicBox" v-for="(item, index) in newsMsgObj.imgList" :key="index">
+      <img :src="item.imrUrl" alt>
     </div>
     <div class="row newsmsgCon" v-html="newsMsgObj.con"></div>
   </div>
@@ -105,10 +101,11 @@ export default {
           title:
             "国草园集团代表与化德县领导于近日在林西县扶贫产业园和蒙中草药种植基地进行考察",
           from: "天地网讯",
-          date: "2020-03-14",
+          date: "2020-03-30",
           imgList: [
-            { imrUrl: "static/img/news/qy.png" },
-            { imrUrl: "static/img/news/ws.png" }
+            { imrUrl: "static/img/news/news3-1.png" },
+            { imrUrl: "static/img/news/news3-2.png" },
+            { imrUrl: "static/img/news/news3-3.png" }
           ],
           con: `<p>2020年3月30日，国草园集团董事长慈平凡、总裁唐琳与化德县领导在当地有关部门的陪同下到林西县东山生态扶贫产业园和蒙中草药种植基地设施农业项目进行实地考察调研。</p>
             　　<p>林西县东山生态扶贫产业园自开工建设以来，建设重点集中在三个方面：一是加强山体生态修复，二是加快基础设施建设。三是打造好主导产业。截至2018年7月东山产业园区完成投资约3.7亿元，其中项目建设前期及土地流转等完成投资约8000万元，项目建设完成投资约2.6亿元，产业项目完成投资约3000万元。林西县项目工程主要包含以下几个部分：
@@ -143,7 +140,7 @@ export default {
   },
   mounted() {
     console.log(this.$route.path);
-    let arr = String(this.$route.path).split("\/");
+    let arr = String(this.$route.path).split("/");
     let basenewsId = arr[arr.length - 1];
     console.log(basenewsId);
     this.newsMsgObj = this.baseNewsList.filter(item => {

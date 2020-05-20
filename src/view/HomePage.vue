@@ -1,16 +1,12 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild">
-      <div class="swiper-container banner-swiper">
+    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
+      <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
-            <div class="swiper-lazy-preloader"></div>
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+            <img class="swiper-lazy" :src="item.img" alt="轮播图">
+            <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
               <p>{{ item.content }}</p>
@@ -21,8 +17,8 @@
         <div class="swiper-pagination"></div>
 
         <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev hidden-xs"></div>
-        <div class="swiper-button-next hidden-xs"></div>
+        <!-- <div class="swiper-button-prev hidden-xs"></div>
+        <div class="swiper-button-next hidden-xs"></div> -->
       </div>
     </div>
     <!-- 专业的技术 -->
@@ -35,9 +31,7 @@
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
-              {{ item.title }}
-            </p>
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{ item.title }}</p>
             <div
               class="tacwow bounceInRight"
               data-wow-duration="1.0s"
@@ -50,7 +44,7 @@
                 <div class="col-xs-11 col-md-12 taccon">
                   <p>{{ item.con }}</p>
                   <div class="button">
-                    <img :src="item.imgUrl" alt />
+                    <img :src="item.imgUrl" alt>
                     <!-- <router-link :to="{ path: '/software/aboutUs' }">
                       <button>查看更多</button>
                     </router-link>-->
@@ -66,19 +60,17 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >
-              {{ item.name }}
-            </li>
+            >{{ item.name }}</li>
             <!-- <li>国草园咨询</li>
             <li>行业动态</li>
-            <li>最新公告</li> -->
+            <li>最新公告</li>-->
           </ul>
         </div>
         <!-- <ul class="row newsNav">
@@ -87,16 +79,10 @@
           <li>行业动态</li>
         </ul>-->
         <ul class="newsList">
-          <li
-            class="row newschangewow zoomIn"
-            v-for="(item, index) in newsList"
-            :key="index"
-          >
-            <router-link
-              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-            >
+          <li class="row newschangewow zoomIn" v-for="(item, index) in newsList" :key="index">
+            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
               <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;" />
+                <img :src="item.imgUrl" alt style="width:100%;">
               </div>
             </router-link>
 
@@ -105,9 +91,7 @@
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link
-                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-              >
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
@@ -120,7 +104,7 @@
     <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -145,7 +129,7 @@
             <p>{{ item.effect }}</p>
             <p class="imgBox wow zoomIn">
               <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img :src="item.imgUrl" alt />
+              <img :src="item.imgUrl" alt>
               <!-- </router-link> -->
             </p>
           </li>
@@ -153,33 +137,38 @@
       </div>
     </div>
     <!-- 关于国草园 -->
-    <div id="aboutgcy" class="container-fluid">
+    <div
+      id="aboutgcy"
+      class="container-fluid"
+      @mouseenter="on_bot_enter"
+      @mouseleave="on_bot_leave"
+    >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
         </div>
         <div class="row aboutswiper">
-          <div class="swiper-container aboutswipercontainer">
+          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt />
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt />
+                <img src="static/img/swiper11.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt />
+                <img src="static/img/swiper22.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt />
+                <img src="static/img/swiper33.png" alt>
               </div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
 
             <!-- 如果需要导航按钮 -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
 
             <!-- 如果需要滚动条 -->
             <div class="swiper-scrollbar"></div>
@@ -199,7 +188,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt />
+          <img src="@/assets/img/home/biaoti-jidi.png" alt>
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -207,12 +196,6 @@
             <li>防风</li>
           </ul>
         </div>
-        <!-- <ul class="row baseNav">
-          <li>黄芪</li>
-          <li>板蓝根</li>
-          <li>柴胡</li>
-          <li>防风</li>
-        </ul>-->
         <div class="row plantingBox">
           <div
             class="planting_model hoverwow zoomIn"
@@ -222,7 +205,7 @@
             v-clickoutside="handleClose"
           >
             <div class="closePic" @click="bigPicIndex(activePic)">X</div>
-            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt />
+            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt>
           </div>
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -230,7 +213,7 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
+              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)">
               <div class="hoverBox">{{ item.title }}</div>
             </div>
 
@@ -257,23 +240,18 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
             <li>雄厚实力</li>
           </ul>
         </div>
-        <!-- <ul class="row scoolingNav">
-          <li>技术保障</li>
-          <li>跟踪服务</li>
-          <li>雄厚实力</li>
-        </ul>-->
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p class="con">
-              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
-            </p>
+            <p
+              class="con"
+            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -282,7 +260,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt />
+            <img src="static/img/7-wenhua-tupian1.png" alt>
           </div>
         </div>
       </div>
@@ -320,18 +298,13 @@
     <!-- 您身边的IT专家 -->
     <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
-        <!-- <div class="logo hidden-xs">
-          <img src="@/assets/img/home/8-lianxiwomen-logo1.png" alt="" />
-        </div>-->
         <h1 style="color:#81b25b">400-8888-456</h1>
         <button
           class="btn btn-info btn-sm"
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >
-          联系我们
-        </button>
+        >联系我们</button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
         <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
@@ -432,13 +405,6 @@
 import Swiper from "swiper";
 import { WOW } from "wowjs";
 import MainScroll from "../components/scroll/Scroll2";
-$(".swiper-slide").mouseenter(function() {
-  console.log(123);
-  mySwiper.autoplay.stop();
-});
-$(".swiper-slide").mouseleave(function() {
-  mySwiper.autoplay.start();
-});
 const clickoutside = {
   // 初始化指令
   bind(el, binding, vnode) {
@@ -474,13 +440,13 @@ export default {
       /* 轮播图列表 */
       swiperList: [
         {
-          img: require("@/assets/img/home/banner.png"),
+          img: "static/img/home/banner.png",
           path: "",
           title: "",
           content: ""
         },
         {
-          img: require("@/assets/img/home/banner2.png"),
+          img: "static/img/home/banner2.png",
           path: "",
           title: "",
           content: ""
@@ -560,7 +526,7 @@ export default {
             newsid: 4,
             imgUrl: "static/img/news/news1.png",
             title:
-              "2内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+              "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
             con:
               "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
             date: "2020-01-15"
@@ -569,7 +535,7 @@ export default {
             newsid: 5,
             imgUrl: "static/img/4-xinwenzhongxin-1.png",
             title:
-              "2国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
+              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
             con:
               "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
             date: "2020-03-09"
@@ -577,7 +543,7 @@ export default {
           {
             newsid: 6,
             imgUrl: "static/img/news2.png",
-            title: "2奈曼旗打造现代蒙中药材全产业链",
+            title: "奈曼旗打造现代蒙中药材全产业链",
             con:
               "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
             date: "2020-01-25"
@@ -588,7 +554,7 @@ export default {
             newsid: 7,
             imgUrl: "static/img/news/news1.png",
             title:
-              "3内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+              "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
             con:
               "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
             date: "2020-01-15"
@@ -597,7 +563,7 @@ export default {
             newsid: 8,
             imgUrl: "static/img/4-xinwenzhongxin-1.png",
             title:
-              "3国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
+              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
             con:
               "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
             date: "2020-03-09"
@@ -605,7 +571,7 @@ export default {
           {
             newsid: 9,
             imgUrl: "static/img/news2.png",
-            title: "3奈曼旗打造现代蒙中药材全产业链",
+            title: "奈曼旗打造现代蒙中药材全产业链",
             con:
               "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
             date: "2020-01-25"
@@ -896,7 +862,7 @@ export default {
   mounted() {
     this.newsList = this.newsList1[0];
     /* banner-swiper */
-    let mySwiper = new Swiper(".banner-swiper", {
+    new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
       // effect: "coverflow",
       speed: 2000,
@@ -963,7 +929,30 @@ export default {
     wow.init();
   },
   directives: { clickoutside },
+  //计算属性，获得可以操作的swiper对象
+  computed: {
+    mySwiper() {
+      // mySwiper 是要绑定到标签中的ref属性
+      return this.$refs.mySwiper.swiper;
+    },
+    myBotSwiper() {
+      return this.$refs.aboutswipercontainer.swiper;
+    }
+  },
   methods: {
+    on_top_enter() {
+      this.mySwiper.stopAutoplay();
+    },
+    on_top_leave() {
+      this.mySwiper.startAutoplay();
+    },
+    on_bot_enter() {
+      this.myBotSwiper.stopAutoplay();
+    },
+    on_bot_leave() {
+      this.myBotSwiper.startAutoplay();
+    },
+
     newsTitleChange(e) {
       this.newsTitleActive = e;
       this.newsList = this.newsList1[e];
@@ -1015,6 +1004,9 @@ export default {
   width: 100%;
   height: 100%;
   /* border:1px solid blue; */
+  &:hover {
+    cursor: pointer;
+  }
 }
 #swiper .banner-swiper .swiper-slide img {
   width: 100%;
@@ -1395,6 +1387,9 @@ p {
 .aboutcontainer {
   /* border: 1px solid #81b25b; */
   margin-top: 14px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 /* 关于国草园标题 */
 .aboutTitle {

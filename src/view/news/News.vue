@@ -1,29 +1,28 @@
 <template>
   <div class="container-fluid">
     <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
+      <img src="../../assets/img/news/banner-2.png" alt>
+    </div>
+    <!-- <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
               <p>{{ item.content }}</p>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- 如果需要分页器 -->
         <!-- <div class="swiper-pagination"></div> -->
 
         <!-- 如果需要导航按钮 -->
         <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
+        <div class="swiper-button-next"></div>
       </div>
-    </div>
+    </div> -->
     <!-- 企业宣传片 -->
     <div id="company" class="container" v-if="$route.name === 'videonews'">
       <div class="row">
@@ -66,7 +65,7 @@
                   src="../../assets/img/news/dl.png"
                   class="activeImg"
                   alt
-                />
+                >
                 {{ item.name }}
               </router-link>
             </li>
@@ -81,7 +80,7 @@
 </template>
 <script>
 import { WOW } from "wowjs";
-import Swiper from "swiper";
+// import Swiper from "swiper";
 export default {
   name: "Software",
   data() {

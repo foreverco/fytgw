@@ -11,17 +11,17 @@
               <p>{{item.content}}</p>
             </div>
           </div>
-        </div> -->
+    </div>-->
     <!-- 如果需要分页器 -->
     <!-- <div class="swiper-pagination"></div> -->
 
     <!-- 如果需要导航按钮 -->
     <!-- <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-      </div> -->
+    </div>-->
     <!-- </div> -->
     <div class="row aboutusTitle imgwow zoomIn">
-      <img src="../../assets/img/aboutUs/3-1qiyewenhua-2guanyu-1.png" alt="" />
+      <img src="../../assets/img/aboutUs/3-1qiyewenhua-2guanyu-1.png" alt>
       <div class="container">
         <p class="hidden-xs">{{ company_profile }}</p>
       </div>
@@ -29,36 +29,26 @@
 
     <div class="container">
       <ul class="row txtpicBox1">
-        <li
-          class="col-xs-10 imgwow zoomIn"
-          v-for="(item, index) in txtpicList"
-          :key="index"
-        >
-          <img :src="item.imgUrl" alt="" />
+        <li class="col-xs-10 imgwow zoomIn" v-for="(item, index) in txtpicList" :key="index">
+          <img :src="item.imgUrl" alt>
         </li>
       </ul>
     </div>
     <div class="tecnolyge container">
       <div class="row">
         <div class="tecnolyge_title col-md-4 imgwow bounceInLeft">
-          <img src="../../assets/img/aboutUs/tecnolegy.png" alt="" />
+          <img src="../../assets/img/aboutUs/tecnolegy.png" alt>
         </div>
-        <div class="tecnolyge_content col-md-7 imgwow bounceInRight">
-          国草园集团与安徽药科大学共同成立了中医药产学研合作基地，专家们为合作项目提供人才、技术、信息等方面的支持；并成立专家咨询小组，进行项目咨询、技术指导、技术培训，或开展专项研发等工作。包括土壤分析、蒙中药材选种、育种育苗技术指导、种植布局评估、种植技术指导、加工厂建设指导、蒙中药材加工技术指导、技术人员培训等。
-        </div>
+        <div
+          class="tecnolyge_content col-md-7 imgwow bounceInRight"
+        >国草园集团与安徽药科大学共同成立了中医药产学研合作基地，专家们为合作项目提供人才、技术、信息等方面的支持；并成立专家咨询小组，进行项目咨询、技术指导、技术培训，或开展专项研发等工作。包括土壤分析、蒙中药材选种、育种育苗技术指导、种植布局评估、种植技术指导、加工厂建设指导、蒙中药材加工技术指导、技术人员培训等。</div>
       </div>
       <ul class="leaderList row">
-        <li
-          class="col-md-3 imgwow zoomIn"
-          v-for="(item, index) in leaderList"
-          :key="index"
-        >
-          <img :src="item.imgUrl" alt="" />
+        <li class="col-md-3 imgwow zoomIn" v-for="(item, index) in leaderList" :key="index">
+          <img :src="item.imgUrl" alt>
           <div class="leader_msg">
             <div class="leader_msg_box">
-              <p v-for="(itemSon, index) in item.msg" :key="index">
-                {{ itemSon }}
-              </p>
+              <p v-for="(itemSon, index) in item.msg" :key="index">{{ itemSon }}</p>
             </div>
           </div>
           <div class="leader_name">
@@ -78,26 +68,22 @@
       <li>
         以科技创新引领行业
       </li>
-    </ul> -->
+    </ul>-->
 
     <div class="container">
       <ul class="row txtpicBox2">
-        <li
-          class="col-xs-10 imgwow zoomIn"
-          v-for="(item, index) in txtpicList2"
-          :key="index"
-        >
+        <li class="col-xs-10 imgwow zoomIn" v-for="(item, index) in txtpicList2" :key="index">
           <p>
-            <img src="item.picUrl" alt="" />
+            <img src="item.picUrl" alt>
           </p>
-          <img :src="item.imgUrl" alt="" />
+          <img :src="item.imgUrl" alt>
         </li>
       </ul>
     </div>
   </div>
 </template>
 <script>
-import Swiper from "swiper";
+// import Swiper from "swiper";
 import { WOW } from "wowjs";
 export default {
   name: "aboutUs",
