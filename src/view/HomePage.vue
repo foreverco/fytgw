@@ -9,7 +9,6 @@
             v-for="(item, index) in swiperList"
             :key="index"
           >
-            <!-- <img class="swiper-lazy" alt="轮播图" v-lazy="item.img"> -->
             <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
             <div class="swiper-lazy-preloader"></div>
             <div class="swiper-slide-title">
@@ -69,9 +68,17 @@
         <div class="row newstitle">
           <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
-            <li>国草园咨询</li>
+            <li
+              v-for="(item, index) in newsTypeList"
+              :key="index"
+              :class="newsTitleActive === index ? 'newsTitleActive' : ''"
+              @click="newsTitleChange(index)"
+            >
+              {{ item.name }}
+            </li>
+            <!-- <li>国草园咨询</li>
             <li>行业动态</li>
-            <li>最新公告</li>
+            <li>最新公告</li> -->
           </ul>
         </div>
         <!-- <ul class="row newsNav">
@@ -80,7 +87,11 @@
           <li>行业动态</li>
         </ul>-->
         <ul class="newsList">
-          <li class="row" v-for="(item, index) in newsList" :key="index">
+          <li
+            class="row newschangewow zoomIn"
+            v-for="(item, index) in newsList"
+            :key="index"
+          >
             <router-link
               :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
             >
@@ -421,7 +432,13 @@
 import Swiper from "swiper";
 import { WOW } from "wowjs";
 import MainScroll from "../components/scroll/Scroll2";
-
+$(".swiper-slide").mouseenter(function() {
+  console.log(123);
+  mySwiper.autoplay.stop();
+});
+$(".swiper-slide").mouseleave(function() {
+  mySwiper.autoplay.start();
+});
 const clickoutside = {
   // 初始化指令
   bind(el, binding, vnode) {
@@ -499,34 +516,101 @@ export default {
             " 扎根内蒙  天然种植  选料上乘  辐射全国，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业"
         }
       ],
+      /* 新闻类型列表 */
+      newsTypeList: [
+        { name: "国草园咨询" },
+        { name: "最新公告" },
+        { name: "行业动态" }
+      ],
+      newsTitleActive: 0,
       /* 新闻列表 */
-      newsList: [
-        {
-          newsid: 1,
-          imgUrl: "static/img/news/news1.png",
-          title:
-            "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
-          con:
-            "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
-          date: "2020-01-15"
-        },
-        {
-          newsid: 2,
-          imgUrl: "static/img/4-xinwenzhongxin-1.png",
-          title:
-            "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
-          con:
-            "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
-          date: "2020-03-09"
-        },
-        {
-          newsid: 3,
-          imgUrl: "static/img/news2.png",
-          title: "奈曼旗打造现代蒙中药材全产业链",
-          con:
-            "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
-          date: "2020-01-25"
-        }
+      newsList: [],
+      newsList1: [
+        [
+          {
+            newsid: 1,
+            imgUrl: "static/img/news/news1.png",
+            title:
+              "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+            con:
+              "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
+            date: "2020-01-15"
+          },
+          {
+            newsid: 2,
+            imgUrl: "static/img/4-xinwenzhongxin-1.png",
+            title:
+              "国草园集团代表与内蒙古化德县种植大户关于中草药种植合作形式举行会议宣讲",
+            con:
+              "2020年3月14日上午，国草园集团与内蒙古化德县当地种植大户就百万亩中草药种植合作模式举行会议宣讲。会上，国草园集团代表就项目进展以及种植收益等方面进行了详细讲解，并就种植户提出的种植、合作问题进行了深入探讨。",
+            date: "2020-03-14"
+          },
+          {
+            newsid: 3,
+            imgUrl: "static/img/news2.png",
+            title:
+              "国草园集团代表与化德县领导于近日在林西县扶贫产业园和蒙中草药种植基地进行考察",
+            con:
+              "2020年3月30日，国草园集团董事长慈平凡、总裁唐琳与化德县领导在当地有关部门的陪同下到林西县东山生态扶贫产业园和蒙中草药种植基地设施农业项目进行实地考察调研。",
+            date: "2020-03-30"
+          }
+        ],
+        [
+          {
+            newsid: 4,
+            imgUrl: "static/img/news/news1.png",
+            title:
+              "2内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+            con:
+              "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
+            date: "2020-01-15"
+          },
+          {
+            newsid: 5,
+            imgUrl: "static/img/4-xinwenzhongxin-1.png",
+            title:
+              "2国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
+            con:
+              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
+            date: "2020-03-09"
+          },
+          {
+            newsid: 6,
+            imgUrl: "static/img/news2.png",
+            title: "2奈曼旗打造现代蒙中药材全产业链",
+            con:
+              "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
+            date: "2020-01-25"
+          }
+        ],
+        [
+          {
+            newsid: 7,
+            imgUrl: "static/img/news/news1.png",
+            title:
+              "3内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+            con:
+              "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
+            date: "2020-01-15"
+          },
+          {
+            newsid: 8,
+            imgUrl: "static/img/4-xinwenzhongxin-1.png",
+            title:
+              "3国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
+            con:
+              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
+            date: "2020-03-09"
+          },
+          {
+            newsid: 9,
+            imgUrl: "static/img/news2.png",
+            title: "3奈曼旗打造现代蒙中药材全产业链",
+            con:
+              "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
+            date: "2020-01-25"
+          }
+        ]
       ],
       /* 国草园产品 */
       productList: [
@@ -753,6 +837,19 @@ export default {
     };
   },
   watch: {
+    newsTitleActive() {
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "newschangewow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+    },
     activePic() {
       this.$nextTick(() => {
         // 在dom渲染完后,再执行动画
@@ -797,8 +894,9 @@ export default {
     MainScroll
   },
   mounted() {
+    this.newsList = this.newsList1[0];
     /* banner-swiper */
-    new Swiper(".banner-swiper", {
+    let mySwiper = new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
       // effect: "coverflow",
       speed: 2000,
@@ -866,6 +964,11 @@ export default {
   },
   directives: { clickoutside },
   methods: {
+    newsTitleChange(e) {
+      this.newsTitleActive = e;
+      this.newsList = this.newsList1[e];
+      console.log(this.newsList);
+    },
     changeTacnology(e) {
       this.tecnologyShow = e;
     },
@@ -1113,6 +1216,10 @@ p {
   cursor: pointer;
 }
 /* 新闻列表 */
+.newsTitleActive {
+  color: #81b25b;
+  font-size: 16px;
+}
 .newsList {
 }
 .newsList a {
@@ -1858,6 +1965,6 @@ p {
   }
   .productList li p[data-v-4eb70d62]:first-child {
     margin-top: -3px;
-}
+  }
 }
 </style>

@@ -59,11 +59,11 @@ Vue.prototype.api = api;
 /* swiper */
 import "swiper/dist/css/swiper.min.css";
 
-import VueAwesomeSwiper from "vue-awesome-swiper";
+// import VueAwesomeSwiper from "vue-awesome-swiper";
 
 // require styles
-import "swiper/dist/css/swiper.css";
-Vue.use(VueAwesomeSwiper /* { default global options } */);
+// import "swiper/dist/css/swiper.css";
+// Vue.use(VueAwesomeSwiper /* { default global options } */);
 
 // vue-seamless-scroll列表滚动
 import scroll from "vue-seamless-scroll";

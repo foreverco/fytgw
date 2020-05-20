@@ -55,7 +55,7 @@ export default new Router({
             },
             {
               path: "/software/rongyu",
-              name: "software",
+              name: "rongyu",
               component: resolve => require(["@/view/us/Rongyu"], resolve),
               meta: {
                 title: "企业文化丨荣誉历程",
@@ -64,7 +64,7 @@ export default new Router({
             },
             {
               path: "/software/jiagou",
-              name: "software",
+              name: "jiagou",
               component: resolve => require(["@/view/us/Jiagou"], resolve),
               meta: {
                 title: "企业文化丨组织架构",
@@ -73,7 +73,7 @@ export default new Router({
             },
             {
               path: "/software/fengcai",
-              name: "software",
+              name: "fengcai",
               component: resolve => require(["@/view/us/Fengcai"], resolve),
               meta: {
                 title: "企业文化丨企业风采",

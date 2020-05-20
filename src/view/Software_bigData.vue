@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: 'Software',
+    name: 'Software1',
     data(){
         return{
 
