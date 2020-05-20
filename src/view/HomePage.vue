@@ -18,7 +18,7 @@
 
         <!-- 如果需要导航按钮 -->
         <!-- <div class="swiper-button-prev hidden-xs"></div>
-        <div class="swiper-button-next hidden-xs"></div> -->
+        <div class="swiper-button-next hidden-xs"></div>-->
       </div>
     </div>
     <!-- 专业的技术 -->
@@ -168,7 +168,7 @@
 
             <!-- 如果需要导航按钮 -->
             <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
+            <div class="swiper-button-next"></div>-->
 
             <!-- 如果需要滚动条 -->
             <div class="swiper-scrollbar"></div>
@@ -1620,6 +1620,7 @@ p {
 }
 .scoolingBox > div .con {
   width: 80%;
+  height: 90%;
   font-size: 14px;
   letter-spacing: 3px;
   overflow: auto;
