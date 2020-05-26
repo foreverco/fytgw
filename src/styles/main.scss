@@ -1,0 +1,28 @@
+@import './config.scss';
+@import './nomalize.scss';
+
+@media (min-width: 1200px) {
+  .container {
+    min-width: 1400px;
+    //  border: 1px solid red;
+  }
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+* {
+  text-decoration: none !important;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}

@@ -1,52 +1,12 @@
 <template>
   <!-- 头部整体盒子 -->
   <div id="header" class="container-fuild">
-    <!-- 头部顶部 -->
-    <div class="header-top container-fuild hidden-xs">
-      <div class="container">
-        <div class="server pull-left">
-          <!-- <img class="img-responsive" src="@/assets/img/home/1-head-logo.png" alt="国草园LOGO"> -->
-          <span class="navTxt">国草园集团</span>
-        </div>
-        <div class="shejiao pull-right">
-          <b>
-            <span class="glyphicon glyphicon-music"></span>
-            <!-- <span></span> -->
-            <div class="erweiBox">
-              <img src="../assets/img/home/douyinerwm.jpg" alt />
-            </div>
-          </b>
-          <b>
-            <span class="glyphicon glyphicon-phone"></span>
-            <!-- <span></span> -->
-            <div class="erweiBox">
-              <img src="../assets/img/home/erweima.jpg" alt />
-            </div>
-          </b>
-          <b>
-            <span class="glyphicon glyphicon-time"></span>
-            <!-- <span></span> -->
-            <!-- 7x24小时为您服务 -->
-          </b>
-          <!-- <span class="glyphicon glyphicon-hand-right"></span>
-          赶快联系我们吧！
-          <span class="glyphicon glyphicon-hand-left"></span>-->
-        </div>
-      </div>
-    </div>
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
-      <div class="row">
-        <div class="header-nav-logo">
-          <p>
-            <img src="@/assets/img/home/1-head-pinpai .png" alt />
-          </p>
-        </div>
-      </div>
       <!-- 导航内容 -->
       <div class="navCon row">
         <div id="navshowLogo">
-          <img src="@/assets/img/home/1-head-logo.png" alt />
+          <img src="@/assets/img/home/1-head-logo.png" alt>
         </div>
         <ul class="header-nav-wrapper">
           <li
@@ -57,30 +17,27 @@
           >
             <router-link :to="item.path">
               <span class="navTxt">{{ item.name }}</span>
-              <!-- <span class="navTxt">{{ item.name1 }}</span> -->
-              <!-- <span
-                v-if="item.children.length>0"
-                class="glyphicon glyphicon-menu-down"
-              ></span>
-              <i class="underline"></i>-->
             </router-link>
             <dl v-if="item.children.length > 0">
+              <div id="line"></div>
               <dt v-for="(i, n) in item.children" :key="n">
                 <router-link :to="i.path">{{ i.name }}</router-link>
               </dt>
             </dl>
           </li>
         </ul>
-        <!-- <ul class="loginBox">
-          <li>登录 /</li>
+        <ul class="loginBox">
+          <li>登录</li>
+          <li>/</li>
           <li>注册</li>
-        </ul> -->
+        </ul>
       </div>
     </div>
+
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img src="@/assets/img/logo.png" alt="logo" />
+        <img src="@/assets/img/logo.png" alt="logo">
         <span class="logotxt">国草园集团</span>
       </div>
       <!-- 导航栏 -->
@@ -316,217 +273,157 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/styles/main.scss";
 /* 顶部 */
 #header {
-  /* background: #f7f7f7; */
   transition: all ease 0.6s;
   width: 100%;
-  border-bottom: 1px solid #81b25b;
-  background: url("../assets/img/dingbu.png") no-repeat;
-  background-size: auto;
-  background-position: bottom;
-}
-#header .header-top {
-  height: 40px;
-  color: #81b25b;
-  font-size: 12px;
-  line-height: 40px;
-  background: #dcdcdc50;
-}
-/* 顶部的图标 */
-#header .header-top span {
-  margin: 0 8px;
-}
-/* 导航栏 */
-#header .header-nav {
-  /* height: 500px; */
-}
-/* 导航栏logo */
-#header .header-nav .header-nav-logo {
-  /* border: 1px solid red; */
-  /* width: 240px; */
-  height: 100%;
-  /* float: left; */
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-/* 导航栏logo图片 */
-#header .header-nav .header-nav-logo img {
-  width: 223px;
-  /* height: 145px; */
-  margin: auto;
-  margin-bottom: 10px;
-}
-#header .header-nav .header-nav-logo p {
-  margin: auto;
-  width: 100%;
-  font-weight: bold;
-  text-align: center;
-  /* border:1px solid blue; */
-}
-#header .header-nav .header-nav-logo p img {
-  width: 60%;
-  /* height:75px; */
-}
-/* 导航栏 导航容器 */
-.navCon {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* position: fixed;
-  top:0; */
-}
-.navShow {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10001;
-}
-#navshowLogo {
-  /* border:1px solid blue; */
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-#navshowLogo img {
-  height: 60%;
-  /* position: absolute; */
-  /* left:15%; */
-  /* margin-left:250px; */
-}
-#header .header-nav-fixed .header-nav-wrapper {
-  line-height: 50px;
-}
-#header .header-nav .header-nav-wrapper {
-  height: 80px;
-  /* border:1px solid red; */
-  /* width:700px; */
-  /* line-height: 40px; */
-  /* float: right; */
-  margin: 0;
-  /* max-width: 800px; */
-}
-/* 导航栏 每个导航 */
-#header .header-nav .header-nav-wrapper > li {
-  float: left;
-  position: relative;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 105px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-/* 导航栏 每个导航下面的 a 链接 */
-#header .header-nav .header-nav-wrapper > li > a {
-  color: #000;
-  display: inline-block;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  /* border:1px solid red;
-  display:inline-block;
-  width:100px; */
-}
-#header .header-nav .header-nav-wrapper > li > a .navTxt {
-  /* border:1px solid red; */
-  display: inline-block;
-  width: 100%;
-  font-size: 18px;
-  text-align: center;
-}
-#header .header-nav .header-nav-wrapper > li:hover {
-  background: #81b25b20;
-}
-#header .header-nav .header-nav-wrapper > li:hover a {
-  text-decoration: none;
-}
-#header .header-nav .header-nav-wrapper > li > a .navTxt:last-child {
-  // font-size: 9px;
-}
-#header .header-nav .navShow .header-nav-wrapper > li > a {
-  color: #fff;
-}
-#header .header-nav .navShow {
-  /* border:1px solid red; */
-  display: flex;
-  justify-content: space-between;
-}
-#header .header-nav .navShow .header-nav-wrapper {
-  /* background: blue; */
-}
-/* 导航栏 每个导航下面的 a 链接 鼠标点击后的样式 */
-#header .header-nav .header-nav-wrapper > li.active {
-  background: #81b25b;
-}
-#header .header-nav .header-nav-wrapper > li.active > a {
-  color: #fff;
-  text-decoration: none;
-}
-/* 导航栏 每个导航下面的二级导航容器 */
-#header .header-nav .header-nav-wrapper > li > dl {
-  display: none;
-  position: absolute;
-  width: 105px;
-  top: 100%;
-  left: 0;
-  z-index: 999999;
-  box-shadow: 0 0 3px 1px #ccc;
-  background: #81b25b;
-}
-/* 导航栏 每个导航下面的二级导航容器的每个导航 */
-#header .header-nav .header-nav-wrapper > li > dl > dt {
-  width: 100%;
-  /* padding: 10px; */
-  color: #fff;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-li > dl > dt a {
-  color: #fff;
-  border-bottom: 1px solid #fff;
-  text-align: center;
-  text-decoration: none;
-  height: 100%;
-  width: 90%;
-  display: inline-block;
-  padding: 10px;
-}
-li > dl > dt:last-child a {
-  border-bottom: 0;
-}
-/* 导航栏 每个导航下面的二级导航容器的每个导航 当鼠标滑上时的样式*/
-#header .header-nav .header-nav-wrapper > li > dl > dt > a:hover {
-  text-decoration: none;
-}
-/* 导航栏 滑上一级导航显示二级导航 */
-#header .header-nav .header-nav-wrapper > li:hover dl {
-  display: block;
-}
-#header .header-nav .header-nav-wrapper > li > dl > dt:hover {
-  cursor: pointer;
-  background: #ffffff30;
-}
-@media screen and (max-width: 1199px) {
-  #navshowLogo {
-    display: none;
-  }
-  .loginBox {
-    display: none !important;
+  // border-bottom: 1px solid $mainColor;
+  background: #fff;
+  // background: url("../assets/img/dingbu.png") no-repeat;
+  // background-size: auto;
+  // background-position: bottom;
+  .header-nav {
+    .navCon {
+      // border: 1px solid red;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      #navshowLogo {
+        height: 60%;
+        img {
+          height: 100%;
+        }
+      }
+      .header-nav-wrapper {
+        height: 100%;
+        margin: 0;
+        li {
+          float: left;
+          // border: 1px solid blue;
+          height: 100%;
+          position: relative;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 105px;
+          margin-left: 10px;
+          margin-right: 10px;
+          &.active {
+            background: #24585210;
+          }
+          &:hover {
+            // background: #81b25b20;
+            cursor: pointer;
+            > a {
+              color: $mainColor;
+              transform: translateY(-5px);
+            }
+            dl {
+              // animation: hideIndex 0.7s;
+              display: block;
+            }
+            #line {
+              width: 100%;
+              animation: hideIndex 0.4s;
+            }
+          }
+          > a {
+            color: #000;
+            display: inline-block;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            transition: all 0.2s linear;
+            &:hover {
+              text-decoration: none;
+            }
+            .navTxt {
+              display: inline-block;
+              width: 100%;
+              font-size: 18px;
+              text-align: center;
+            }
+          }
+          dl {
+            display: none;
+            position: absolute;
+            width: 105px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10001;
+            // box-shadow: 0 0 3px 1px #ccc;
+            background: #fff;
+            padding: 0 20px;
+            box-sizing: content-box;
+            // border-top: 1px solid red;
+            #line {
+              width: 0px;
+              height: 2px;
+              border-radius: 2px;
+              background-color: $mainColor;
+              margin: 0 auto;
+              transition: all 2s ease;
+            }
+            dt {
+              width: 100%;
+              /* padding: 10px; */
+              color: #fff;
+              height: 100%;
+              width: 100%;
+              text-align: center;
+              transition: all 0.2s linear;
+              &:hover {
+                transform: translateX(5px);
+                a {
+                  color: #24585290;
+                }
+              }
+              a {
+                color: $mainColor;
+                border-bottom: 1px solid #fff;
+                text-align: center;
+                text-decoration: none;
+                height: 100%;
+                width: 90%;
+                display: inline-block;
+                padding: 10px;
+                transition: all 0.2s linear;
+              }
+            }
+          }
+        }
+      }
+      .loginBox {
+        li {
+          float: left;
+          font-size: 18px;
+        }
+      }
+    }
   }
 }
+
+@keyframes hideIndex {
+  0% {
+    opacity: 0;
+    width: 0px;
+    // transform: translate(800px, 0);
+    // transform: translateX(-50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    width: 100px;
+    // transform: translate(0, 0);
+    // transform: translateX(-50%) scale(1.2);
+  }
+}
+
 @media screen and (max-width: 997px) {
   #header .header-nav-m {
     position: relative;

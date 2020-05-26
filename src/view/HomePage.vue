@@ -1,20 +1,11 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div
-      id="swiper"
-      class="container-fuild"
-      @mouseenter="on_top_enter"
-      @mouseleave="on_top_leave"
-    >
+    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
-            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+            <img class="swiper-lazy" :src="item.img" alt="轮播图">
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -32,76 +23,28 @@
     </div>
     <!-- 专业的技术 -->
     <div id="tecnology" class="container-fluid">
-      <div class="tecnologyList container">
-        <ul>
-          <li
-            v-for="(item, index) in tecnologyList"
-            :style="{ width: tecnologyShow === index ? '90%' : '' }"
-            :key="index"
-            @click="changeTacnology(index)"
-          >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
-              {{ item.title }}
-            </p>
-            <div
-              class="tacwow bounceInRight"
-              data-wow-duration="1.0s"
-              v-if="tecnologyShow === index"
-            >
-              <div class="row">
-                <!-- <div class="hidden-sm hidden-xs col-md-4 tacimg">
-                  <img :src="item.imgUrl" alt />
-                </div>-->
-                <div class="col-xs-11 col-md-12 taccon">
-                  <p>{{ item.con }}</p>
-                  <div class="button">
-                    <img :src="item.imgUrl" alt />
-                    <!-- <router-link :to="{ path: '/software/aboutUs' }">
-                      <button>查看更多</button>
-                    </router-link>-->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <div class="tecnologyList container"></div>
     </div>
     <!-- 新闻中心 -->
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >
-              {{ item.name }}
-            </li>
-            <!-- <li>国草园咨询</li>
-            <li>行业动态</li>
-            <li>最新公告</li>-->
+            >{{ item.name }}</li>
           </ul>
         </div>
-        <!-- <ul class="row newsNav">
-          <li>行业动态</li>
-          <li>行业动态</li>
-          <li>行业动态</li>
-        </ul>-->
+
         <ul class="newsList">
-          <li
-            class="row newschangewow zoomIn"
-            v-for="(item, index) in newsList"
-            :key="index"
-          >
-            <router-link
-              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-            >
+          <li class="row newschangewow zoomIn" v-for="(item, index) in newsList" :key="index">
+            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
               <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;" />
+                <img :src="item.imgUrl" alt style="width:100%;">
               </div>
             </router-link>
 
@@ -110,9 +53,7 @@
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link
-                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-              >
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
@@ -125,7 +66,7 @@
     <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -139,22 +80,7 @@
           <li>柴胡</li>
           <li>防风</li>
         </ul>-->
-        <ul class="productList row">
-          <li
-            class="col-md-3 col-sm-5 col-xs-6"
-            v-for="(item, index) in productList"
-            :key="index"
-            @click="gotoprodect"
-          >
-            <p>{{ item.name }}</p>
-            <p>{{ item.effect }}</p>
-            <p class="imgBox wow zoomIn">
-              <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img :src="item.imgUrl" alt />
-              <!-- </router-link> -->
-            </p>
-          </li>
-        </ul>
+        <ul class="productList row"></ul>
       </div>
     </div>
     <!-- 关于国草园 -->
@@ -166,25 +92,22 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
         </div>
         <div class="row aboutswiper">
-          <div
-            class="swiper-container aboutswipercontainer"
-            ref="aboutswipercontainer"
-          >
+          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt />
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt />
+                <img src="static/img/swiper11.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt />
+                <img src="static/img/swiper22.png" alt>
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt />
+                <img src="static/img/swiper33.png" alt>
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -212,7 +135,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt />
+          <img src="@/assets/img/home/biaoti-jidi.png" alt>
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -229,7 +152,7 @@
             v-clickoutside="handleClose"
           >
             <div class="closePic" @click="bigPicIndex(activePic)">X</div>
-            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt />
+            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt>
           </div>
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -237,7 +160,7 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
+              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)">
               <div class="hoverBox">{{ item.title }}</div>
             </div>
 
@@ -264,7 +187,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -273,9 +196,9 @@
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p class="con">
-              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
-            </p>
+            <p
+              class="con"
+            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -284,41 +207,11 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt />
+            <img src="static/img/7-wenhua-tupian1.png" alt>
           </div>
         </div>
       </div>
     </div>
-    <!-- 大数据管理系统 -->
-    <!-- <div
-      id="bigData"
-      class="container-fuild"
-    >
-      <div class="row bigData-container">
-        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img
-            class="img-responsive"
-            src="@/assets/img/img1.png"
-            alt="大数据管理系统"
-          >
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <h2 class="bigData-title">
-            关于我们
-            <small>/ Big Data Management System</small>
-          </h2>
-          <MainScroll :listData="listData"></MainScroll>
-          <a
-            href="#"
-            class="btn btn-lg btn-block btn-info"
-    >联系我们</a>-->
-    <!-- <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
-          <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
-          <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
-    <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>-->
-    <!-- </div>
-      </div>
-    </div>-->
     <!-- 您身边的IT专家 -->
     <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
@@ -328,9 +221,7 @@
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >
-          联系我们
-        </button>
+        >联系我们</button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
         <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
@@ -341,90 +232,6 @@
         </div>-->
       </div>
     </div>
-    <!-- 客户评价 -->
-    <!-- <div id="customer" class="container-fuild">
-      <div class="container customer-container">
-        <p class="customer-title text-center">客户评价</p>
-        <div class="swiper-container customer-swiper hidden-xs">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide customer-block"
-              v-for="(item,index) in customerList"
-              :key="index"
-            >
-              <div class="customer-logo">
-                <img class="center-block" :src="item.logo" alt="logo">
-              </div>
-              <div class="customer-yh">
-                <img src="@/assets/img/yinhao.png" alt="引号">
-              </div>
-              <div class="customer-content1">
-                <small>{{item.content}}</small>
-              </div>
-              <div class="customer-content2">{{item.title}}</div>
-            </div>
-    </div>-->
-    <!-- 如果需要导航按钮 -->
-    <!-- <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-        <div class="row visible-xs customer-block">
-          <div class="col-xs-12" v-for="(item,index) in customerList" :key="index">
-            <div class="customer-logo">
-              <img class="center-block" :src="item.logo" alt="logo">
-            </div>
-            <div class="customer-yh">
-              <img src="@/assets/img/yinhao.png" alt="引号">
-            </div>
-            <div class="customer-content1">
-              <small>{{item.content}}</small>
-            </div>
-            <div class="customer-content2">
-              <small>{{item.title}}</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <!-- 为什么选择我们 -->
-    <!-- <div
-      id="whyChooseUs"
-      class="conatiner-fuild"
-    >
-      <div class="container">
-        <div class="whyChooseUs-title text-center">
-          <p>我们的文化</p>
-          <p>THE REASON TO CHOOSING US</p>
-        </div>
-        <div class="row">
-          <div
-            class="col-xs-12 col-sm-6 col-md-3 server-wrapper wow zoomIn"
-            v-for="(item,index) in serverList"
-            :key="index"
-          >
-            <img
-              src="@/assets/img/timg.jpg"
-              alt
-    >-->
-    <!-- <p class="text-center">{{item.title}}</p> -->
-    <!-- <div
-              class="server-block wow slideInUp"
-              onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
-              onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
-            >
-              <img class="center-block" :src="item.logo" alt="logo">
-              <p class="text-center">{{item.title}}</p>
-              <div
-                class="text-center"
-                v-html="item.content"
-                onmouseenter="this.style.color='#28f'"
-                onmouseleave="this.style.color='#ccc'"
-              ></div>
-    </div>-->
-    <!-- </div>
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
 <script>
@@ -1016,353 +823,209 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/styles/main.scss";
 /* 整体盒子 */
 #HomePage {
-  /* width: 100%;
-  border-top:10px solid #81b25b; */
-}
-
-/* 轮播图 */
-/* #swiper {
-  height: 600px;
-} */
-#swiper .banner-swiper {
-  width: 100%;
-  height: 100%;
-  /* border:1px solid blue; */
-  &:hover {
-    cursor: pointer;
-  }
-}
-#swiper .banner-swiper .swiper-slide img {
-  width: 100%;
-  height: 100%;
-}
-#swiper .banner-swiper .swiper-slide {
-  position: relative;
-}
-#swiper .banner-swiper .swiper-slide-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999999999;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  /* background: rgba(51, 51, 51, 0.534); */
-  text-align: center;
-  line-height: 80px;
-}
-/* #swiper .banner-swiper .swiper-slide-title > h1{
-  font-size: 50px;
-  margin-top: 12%;
-}
-#swiper .banner-swiper .swiper-slide-title > p{
-  font-size: 20px;
-  margin-top: 1%;
-  font-weight: 700;
-} */
-/* 专业的技术 */
-p {
-  margin: 0;
-  padding: 0;
-}
-#tecnology {
-  background: url("../assets/img/home/3-dibu.jpg") no-repeat;
-  background-size: 100% 100%;
-  // height: 268px;
-  padding: 2vw 0 !important;
-  margin: 0 auto;
-  // &:after {
-  //   content: "";
-  //   display: block;
-  //   padding: 10%;
-  // }
-}
-#tecnology .tecnologyList {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#tecnology .tecnologyList > ul {
-  display: flex;
-  margin-bottom: 0 !important;
-  align-items: center;
-  width: 80%;
-  height: 100%;
-  /* background: green; */
-  /* justify-content: flex-end; */
-}
-#tecnology .tecnologyList > ul > li {
-  /* float: left; */
-  margin: 5px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-#tecnology .tecnologyList > ul > li > p {
-  background: #81b25b;
-  color: #fff;
-  font-family: "lv1";
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 208px;
-  width: 30px;
-  /* margin: 0 auto;   */
-  line-height: 35px;
-  transition: all 0.6s;
-}
-
-#tecnology .tecnologyList > ul > li > p:hover {
-  background: #81b25b;
-}
-#tecnology:hover {
-  cursor: pointer;
-}
-#tecnology .tecnologyList > ul > li > div {
-  width: 90%;
-  height: 208px;
-  /* background:yellow; */
-  margin: 0 1%;
-}
-#tecnology .tecnologyList > ul > li > div .container {
-  height: 100%;
-}
-#tecnology .tecnologyList > ul > li > div .row {
-  height: 100%;
-}
-.tacimg {
-  // border: 1px solid green;
-  width: 30%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
+  /* 轮播图 */
+  #swiper .banner-swiper {
     width: 100%;
-  }
-}
-.taccon {
-  /* border:1px solid blue; */
-  float: right;
-  height: 100%;
-  /* color: #fff; */
-  writing-mode: tb-rl;
-  overflow: auto;
-  /* font-size:16px; */
-  /* letter-spacing: 5px; */
-  line-height: 37px;
-  position: relative;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-}
-.taccon p {
-  // width: 80%;
-  overflow: auto;
-  /* font-family:'lv1'; */
-  font-size: 15px;
-  letter-spacing: 8px;
-  /* background: yellow; */
-}
-.taccon .button {
-  height: 208px;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
     height: 100%;
+    /* border:1px solid blue; */
+    &:hover {
+      cursor: pointer;
+    }
+    .swiper-slide {
+      position: relative;
+      .swiper-slide-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999999999;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        /* background: rgba(51, 51, 51, 0.534); */
+        text-align: center;
+        line-height: 80px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
-  // width: 10%;
-}
-// .taccon button {
-//   height: 120px;
-//   width: 26px;
-//   line-height: 25px;
-//   font-family: "lv1";
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   background: transparent;
-//   outline: 0;
-//   border: 0;
-//   border: 1px solid #fff;
-//   transition: all 0.6s;
-//   color: #fff !important;
-// }
-// .taccon button:hover {
-//   transform: scale(1.2);
-// }
-/* 新闻中心 */
-.newscontainer {
-  /* border: 1px solid #81b25b; */
-  margin-top: 14px;
-}
-/* 新闻标题 */
-.newstitle {
-  /* background: blue; */
-  margin: 12px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-/* 新闻导航 */
-.newsNav {
-  /* background: #81b25b; */
-  left: 50%;
-  transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  text-align: center;
-  font-size: 14px;
-  position: absolute;
-  bottom: 20px;
-}
-.newsNav > li {
-  /* float:left; */
-  display: inline-block;
-  border-right: 1px solid #333;
-  padding: 0 15px;
-}
-.newsNav li:last-child {
-  border: 0;
-}
-.newsNav li:hover {
-  color: #81b25b;
-  cursor: pointer;
-}
-/* 新闻列表 */
-.newsTitleActive {
-  color: #81b25b;
-  font-size: 16px;
-}
-.newsList {
-}
-.newsList a {
-  color: #000;
-}
-.newsList li {
-  display: block;
-  margin: 30px 0;
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.newsList li > div {
-  height: 100%;
-  /* background: blue; */
-  height: 135px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  p {
-    &:first-child {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+  /* 专业的技术 */
+  #tecnology {
+    background: url("../assets/img/home/3-dibu.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 268px;
+    padding: 2vw 0 !important;
+    margin: 0 auto;
+    .tecnologyList {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  /* 新闻中心 */
+  .newscontainer {
+    margin-top: 14px;
+    /* 新闻标题 */
+    .newstitle {
+      /* background: blue; */
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    /* 新闻导航 */
+    .newsNav {
+      /* background: #81b25b; */
+      left: 50%;
+      transform: translate(-50%);
+      -ms-transform: translate(-50%);
+      text-align: center;
+      font-size: 14px;
+      position: absolute;
+      bottom: 20px;
+      > li {
+        /* float:left; */
+        display: inline-block;
+        border-right: 1px solid #333;
+        padding: 0 15px;
+        &:last-child {
+          border: 0;
+        }
+        &:hover {
+          color: #81b25b;
+          cursor: pointer;
+        }
+        /* 新闻列表 */
+        &.newsTitleActive {
+          color: #81b25b;
+          font-size: 16px;
+        }
+      }
+    }
+    /* 新闻列表 */
+    .newsList {
+      a {
+        color: #000;
+      }
+      li {
+        display: block;
+        margin: 30px 0;
+        // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        > div {
+          height: 100%;
+          /* background: blue; */
+          height: 135px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &:nth-child(2) {
+            height: 120px;
+            justify-content: left;
+            padding-left: 20px;
+            p {
+              justify-content: left;
+              text-align: left;
+            }
+          }
+          &:nth-child(3) {
+            height: 120px;
+          }
+          &:last-child {
+            padding-top: 65px;
+          }
+          p {
+            width: 100%;
+            text-align: left;
+            &:first-child {
+              height: 30%;
+              font-size: 16px;
+              font-weight: bold;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          button {
+            background: transparent;
+            outline: 0;
+            border: 0;
+            border: 1px solid #81b25b;
+            color: #81b25b;
+            transition: all 0.6s;
+            &:hover {
+              background: #81b25b;
+              color: #fff;
+              transform: scale(1.2);
+            }
+          }
+          span {
+            display: inline-block;
+            padding: 0 20px;
+          }
+        }
+        .newsCon {
+          width: 90%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+
+  /* 国草园产品 */
+  .productcontainer {
+    border: 1px solid #81b25b;
+    margin-top: 14px;
+    /* 产品标题 */
+    .producttitle {
+      /* background: blue; */
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    /* 产品导航 */
+    .productNav {
+      left: 50%;
+      transform: translate(-50%);
+      -ms-transform: translate(-50%);
+      /* background: #81b25b; */
+      text-align: center;
+      /* margin-bottom: 50px; */
+      font-size: 14px;
+      position: absolute;
+      bottom: 20px;
+      > li {
+        /* float:left; */
+        display: inline-block;
+        border-right: 1px solid #333;
+        padding: 0 15px;
+        &:last-child {
+          border: 0;
+        }
+        &:hover {
+          color: #81b25b;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
-.newsList li > div:nth-child(2),
-.newsList li > div:nth-child(3) {
-  height: 120px;
-}
-.newsList li > div:nth-child(2) {
-  justify-content: left;
-  padding-left: 20px;
-}
-.newsList li > div:nth-child(2) p {
-  justify-content: left;
-  text-align: left;
-}
-.newsList li > div > p {
-  width: 100%;
-  /* height: 70%; */
-  text-align: left;
-}
-.newsList li > div > p:first-child {
-  height: 30%;
-  font-size: 16px;
-  font-weight: bold;
-}
-.newsList .newsCon {
-  width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-.newsList li > div:last-child {
-  padding-top: 65px;
-}
-.newsList li > div button {
-  background: transparent;
-  outline: 0;
-  border: 0;
-  border: 1px solid #81b25b;
-  color: #81b25b;
-  transition: all 0.6s;
-}
-.newsList li > div button:hover {
-  background: #81b25b;
-  color: #fff;
-  transform: scale(1.2);
-}
-.newsList li > div span {
-  display: inline-block;
-  padding: 0 20px;
-}
-.newsList li img {
-  /* width:100%;
-  height:100%; */
-  /* border:1px solid #81b25b; */
-}
-/* 国草园产品 */
-.productcontainer {
-  /* border: 1px solid #81b25b; */
-  margin-top: 14px;
-}
-/* 产品标题 */
-.producttitle {
-  /* background: blue; */
-  margin: 12px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-/* 产品导航 */
-.productNav {
-  left: 50%;
-  transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  /* background: #81b25b; */
-  text-align: center;
-  /* margin-bottom: 50px; */
-  font-size: 14px;
-  position: absolute;
-  bottom: 20px;
-}
-.productNav > li {
-  /* float:left; */
-  display: inline-block;
-  border-right: 1px solid #333;
-  padding: 0 15px;
-}
-.productNav li:last-child {
-  border: 0;
-}
-.productNav li:hover {
-  color: #81b25b;
-  cursor: pointer;
-}
+
 /* 产品列表 */
 .productList {
   /* background: #81b25b; */
