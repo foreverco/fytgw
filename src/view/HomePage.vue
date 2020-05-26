@@ -1,11 +1,20 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
+    <div
+      id="swiper"
+      class="container-fuild"
+      @mouseenter="on_top_enter"
+      @mouseleave="on_top_leave"
+    >
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
-            <img class="swiper-lazy" :src="item.img" alt="轮播图">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
+            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -31,7 +40,9 @@
             :key="index"
             @click="changeTacnology(index)"
           >
-            <p class="tacwow bounceInRight" data-wow-duration="0.2s">{{ item.title }}</p>
+            <p class="tacwow bounceInRight" data-wow-duration="0.2s">
+              {{ item.title }}
+            </p>
             <div
               class="tacwow bounceInRight"
               data-wow-duration="1.0s"
@@ -44,7 +55,7 @@
                 <div class="col-xs-11 col-md-12 taccon">
                   <p>{{ item.con }}</p>
                   <div class="button">
-                    <img :src="item.imgUrl" alt>
+                    <img :src="item.imgUrl" alt />
                     <!-- <router-link :to="{ path: '/software/aboutUs' }">
                       <button>查看更多</button>
                     </router-link>-->
@@ -60,14 +71,16 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >{{ item.name }}</li>
+            >
+              {{ item.name }}
+            </li>
             <!-- <li>国草园咨询</li>
             <li>行业动态</li>
             <li>最新公告</li>-->
@@ -79,10 +92,16 @@
           <li>行业动态</li>
         </ul>-->
         <ul class="newsList">
-          <li class="row newschangewow zoomIn" v-for="(item, index) in newsList" :key="index">
-            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+          <li
+            class="row newschangewow zoomIn"
+            v-for="(item, index) in newsList"
+            :key="index"
+          >
+            <router-link
+              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+            >
               <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;">
+                <img :src="item.imgUrl" alt style="width:100%;" />
               </div>
             </router-link>
 
@@ -91,7 +110,9 @@
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <div class="col-md-3 col-sm-12">
-              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
@@ -104,7 +125,7 @@
     <div id="product" class="container-fuild">
       <div class="container productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -129,7 +150,7 @@
             <p>{{ item.effect }}</p>
             <p class="imgBox wow zoomIn">
               <!-- <router-link :to="{path: '/product/productpack'}"> -->
-              <img :src="item.imgUrl" alt>
+              <img :src="item.imgUrl" alt />
               <!-- </router-link> -->
             </p>
           </li>
@@ -145,22 +166,25 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
         <div class="row aboutswiper">
-          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
+          <div
+            class="swiper-container aboutswipercontainer"
+            ref="aboutswipercontainer"
+          >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt>
+                <img src="static/img/swiper11.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt>
+                <img src="static/img/swiper22.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt>
+                <img src="static/img/swiper33.png" alt />
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -188,7 +212,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt>
+          <img src="@/assets/img/home/biaoti-jidi.png" alt />
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -205,7 +229,7 @@
             v-clickoutside="handleClose"
           >
             <div class="closePic" @click="bigPicIndex(activePic)">X</div>
-            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt>
+            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt />
           </div>
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -213,7 +237,7 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)">
+              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
               <div class="hoverBox">{{ item.title }}</div>
             </div>
 
@@ -240,7 +264,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -249,9 +273,9 @@
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p
-              class="con"
-            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+            </p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -260,7 +284,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt>
+            <img src="static/img/7-wenhua-tupian1.png" alt />
           </div>
         </div>
       </div>
@@ -304,7 +328,9 @@
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >联系我们</button>
+        >
+          联系我们
+        </button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
         <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
@@ -1189,6 +1215,9 @@ p {
 /* 新闻导航 */
 .newsNav {
   /* background: #81b25b; */
+  left: 50%;
+  transform: translate(-50%);
+  -ms-transform: translate(-50%);
   text-align: center;
   font-size: 14px;
   position: absolute;
@@ -1311,6 +1340,9 @@ p {
 }
 /* 产品导航 */
 .productNav {
+  left: 50%;
+  transform: translate(-50%);
+  -ms-transform: translate(-50%);
   /* background: #81b25b; */
   text-align: center;
   /* margin-bottom: 50px; */
@@ -1452,6 +1484,9 @@ p {
 /* 基地导航 */
 .baseNav {
   /* background: #81b25b; */
+  left: 50%;
+  transform: translate(-50%);
+  -ms-transform: translate(-50%);
   text-align: center;
   /* margin-bottom: 50px; */
   font-size: 14px;
@@ -1562,6 +1597,9 @@ p {
 /* 国草园文化导航 */
 .scoolingNav {
   /* background: #81b25b; */
+  left: 50%;
+  transform: translate(-50%);
+  -ms-transform: translate(-50%);
   text-align: center;
   /* margin-bottom: 50px; */
   font-size: 14px;
