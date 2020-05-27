@@ -23,7 +23,27 @@
     </div>
     <!-- 专业的技术 -->
     <div id="tecnology" class="container-fluid">
-      <div class="tecnologyList container"></div>
+      <div
+        id="tecnologyswiper"
+        class="tecnologyList container"
+        @mouseenter="on_top_enter"
+        @mouseleave="on_top_leave"
+      >
+        <div class="swiper-container tecnology-swiper" ref="mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(item, index) in tecnologyList" :key="index">
+              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+              <div class="swiper-slide-title">{{ item.title }}</div>
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+
+          <!-- 如果需要导航按钮 -->
+          <!-- <div class="swiper-button-prev hidden-xs"></div>
+          <div class="swiper-button-next hidden-xs"></div>-->
+        </div>
+      </div>
     </div>
     <!-- 新闻中心 -->
     <div id="news" class="container-fuild">
@@ -42,29 +62,32 @@
 
         <ul class="newsList">
           <li class="row newschangewow zoomIn" v-for="(item, index) in newsList" :key="index">
-            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
-              <div class="col-md-3 col-sm-12 wow zoomIn">
-                <img :src="item.imgUrl" alt style="width:100%;">
-              </div>
-            </router-link>
+            <div class="imgbox">
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+                <div class="wow zoomIn">
+                  <img :src="item.imgUrl" alt>
+                </div>
+              </router-link>
+            </div>
 
-            <div class="col-md-6 col-sm-12">
-              <p>{{ item.title }}</p>
+            <div class="newsContent">
+              <p class="newstitle2">{{ item.title }}</p>
+              <p class="newsdate">{{item.date}}</p>
               <p class="newsCon">{{ item.con }}</p>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <!-- <div class="col-md-3 col-sm-12">
               <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <button>浏览更多</button>
               </router-link>
               <span>{{ item.date }}</span>
-            </div>
+            </div>-->
           </li>
         </ul>
       </div>
     </div>
     <!-- 国草园产品 -->
     <div id="product" class="container-fuild">
-      <div class="container productcontainer">
+      <div class="productcontainer">
         <div class="row producttitle">
           <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
@@ -80,7 +103,33 @@
           <li>柴胡</li>
           <li>防风</li>
         </ul>-->
-        <ul class="productList row"></ul>
+        <ul class="productList row">
+          <div
+            id="productListswiper"
+            class="productListswiperList container"
+            @mouseenter="on_top_enter"
+            @mouseleave="on_top_leave"
+          >
+            <div class="swiper-container tecnology-swiper" ref="mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
+                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+                  <div class="swiper-slide-title">
+                    <p>{{ item.name }}</p>
+                    <p>{{ item.title }}</p>
+                  </div>
+                </div>
+              </div>
+              <!-- 如果需要分页器 -->
+              <div class="swiper-pagination"></div>
+
+              <!-- 如果需要导航按钮 -->
+              <!-- <div class="swiper-button-prev hidden-xs"></div>
+              <div class="swiper-button-next hidden-xs"></div>-->
+            </div>
+          </div>
+          <img src="../../static/img/3/home/cpbg.png" alt>
+        </ul>
       </div>
     </div>
     <!-- 关于国草园 -->
@@ -291,28 +340,19 @@ export default {
       tecnologyList: [
         {
           title: "以人为本",
-          imgUrl: require("@/assets/img/home/tecnoligy2.png"),
-          con:
-            "坚持以人为本，不断增强企业的核心竞争能力。采取措施培养人才，用好人才，吸引人才，具有较强的创新意识，善于总结经验，勇于突破自我。  "
-          // "坚持以人为本，不断增强企业的核心竞争能力。进一步提高认识，深化改革，采取措施培养人才，用好人才，吸引人才，争取主动，强调通才，具有较强的创新意识，善于总结经验，勇于突破自我。  "
+          imgUrl: "static/img/3/home/tac1.png"
         },
         {
           title: "诚信经营",
-          imgUrl: require("@/assets/img/home/tecnoligy4.png"),
-          con:
-            "以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣。"
+          imgUrl: "static/img/3/home/tac2.png"
         },
         {
           title: "发展蒙药",
-          imgUrl: require("@/assets/img/home/tecnoligy1.png"),
-          con:
-            "国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范"
+          imgUrl: "static/img/3/home/tac3.png"
         },
         {
           title: " 致力健康",
-          imgUrl: require("@/assets/img/home/tecnoligy3.png"),
-          con:
-            " 扎根内蒙  天然种植  选料上乘  辐射全国，以道地药材立足根本，以优质产品健康大众，以科技创新引领行业"
+          imgUrl: "static/img/3/home/tac4.png"
         }
       ],
       /* 新闻类型列表 */
@@ -414,24 +454,24 @@ export default {
       /* 国草园产品 */
       productList: [
         {
+          title: "增强免疫，保肝利尿",
           name: "黄芪",
-          imgUrl: "static/img/5-chanpinzhongxin-chanpin1.png",
-          effect: "增强免疫，保肝利尿"
+          imgUrl: "static/img/3/home/ph1.png"
         },
         {
+          title: "清热解毒，凉血利咽",
           name: "板蓝根",
-          imgUrl: "static/img/5-chanpinzhongxin-chanpin2.png",
-          effect: "清热解毒，凉血利咽"
+          imgUrl: "static/img/3/home/pb2.png"
         },
         {
+          title: "和解表里，疏肝解郁",
           name: "柴胡",
-          imgUrl: "static/img/5-chanpinzhongxin-chanpin3.png",
-          effect: "和解表里，疏肝解郁"
+          imgUrl: "static/img/3/home/pc3.png"
         },
         {
+          title: " 祛风解表，胜湿止痛",
           name: "防风",
-          imgUrl: "static/img/5-chanpinzhongxin-chanpin4.png",
-          effect: "祛风解表，胜湿止痛"
+          imgUrl: "static/img/3/home/pf4.png"
         }
       ],
       /* 关于国草园轮播图 */
@@ -698,13 +738,38 @@ export default {
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
       // effect: "coverflow",
-      speed: 2000,
+      speed: 3000,
       //自动播放
       autoplay: {
-        delay: 2000,
+        delay: 1000000,
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
+      // 如果需要分页器
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      // 延迟加载
+      lazy: {
+        loadPrevNext: true
+      },
+      observer: true, //修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true //修改swiper的父元素时，自动初始化swiper
+    });
+    /* 专业技术swiper tecnology-swiper */
+    new Swiper(".tecnology-swiper", {
+      slidesPerView: 4,
+      loop: true, // 循环模式选项
+      // effect: "coverflow",
+      speed: 2000,
+      //自动播放
+      autoplay: false,
       // 如果需要分页器
       pagination: {
         el: ".swiper-pagination",
@@ -824,6 +889,22 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
+@keyframes imgrotate {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
 /* 整体盒子 */
 #HomePage {
   /* 轮播图 */
@@ -856,9 +937,9 @@ export default {
   }
   /* 专业的技术 */
   #tecnology {
-    background: url("../assets/img/home/3-dibu.jpg") no-repeat;
+    background: url("../../static/img/3/home/tecbg.png") no-repeat;
     background-size: 100% 100%;
-    height: 268px;
+    // height: 268px;
     padding: 2vw 0 !important;
     margin: 0 auto;
     .tecnologyList {
@@ -866,6 +947,42 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      // border: 1px solid red;
+      .swiper-slide {
+        // border: 1px solid blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          cursor: pointer;
+          .swiper-slide-title {
+            color: $mainColor;
+            transform: translateX(10px) scale(1.2);
+          }
+          img {
+            animation: imgrotate 2s infinite alternate;
+            -webkit-animation: imgrotate 2s infinite alternate;
+            -moz-animation: imgrotate 2s infinite alternate;
+            -o-animation: imgrotate 2s infinite alternate;
+            -ms-animation: imgrotate 2s infinite alternate;
+          }
+        }
+        img {
+          height: 80%;
+          margin-right: 20px;
+          // transition: All 0.4s ease-in-out;
+          // -webkit-transition: All 0.4s ease-in-out;
+          // -moz-transition: All 0.4s ease-in-out;
+          // -o-transition: All 0.4s ease-in-out;
+        }
+        .swiper-slide-title {
+          font-size: 24px;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+        }
+      }
     }
   }
   /* 新闻中心 */
@@ -917,69 +1034,52 @@ export default {
       li {
         display: block;
         margin: 30px 0;
+        background: url("/static/img/3/home/newsBg.png") no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-around;
         // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        > div {
-          height: 100%;
-          /* background: blue; */
-          height: 135px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          &:nth-child(2) {
-            height: 120px;
-            justify-content: left;
-            padding-left: 20px;
-            p {
-              justify-content: left;
-              text-align: left;
-            }
-          }
-          &:nth-child(3) {
-            height: 120px;
-          }
-          &:last-child {
-            padding-top: 65px;
-          }
-          p {
-            width: 100%;
-            text-align: left;
-            &:first-child {
-              height: 30%;
-              font-size: 16px;
-              font-weight: bold;
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            }
-          }
-          button {
-            background: transparent;
-            outline: 0;
-            border: 0;
-            border: 1px solid #81b25b;
-            color: #81b25b;
-            transition: all 0.6s;
-            &:hover {
-              background: #81b25b;
-              color: #fff;
-              transform: scale(1.2);
-            }
-          }
-          span {
-            display: inline-block;
-            padding: 0 20px;
+        .imgbox {
+          // position: absolute;
+          padding: 5px 0;
+          img {
+            opacity: 1;
+            width: 34%;
+            margin-left: 5px;
           }
         }
-        .newsCon {
-          width: 90%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
+        .newsContent {
+          // border: 1px solid red;
+          width: 55%;
+          position: absolute;
+          right: 7%;
+          top: 50%;
+          transform: translateY(-50%);
+          .newstitle2 {
+            font-size: $titleFontSize;
+            line-height: 50px;
+            font-weight: bold;
+          }
+          .newsdate {
+            background: url("/static/img/3/home/newsdate.png") no-repeat;
+            background-size: 100% 100%;
+            padding: 3px 20px 2px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+          }
+          .newsCon {
+            width: 100%;
+            line-height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
         }
       }
     }
@@ -987,7 +1087,6 @@ export default {
 
   /* 国草园产品 */
   .productcontainer {
-    border: 1px solid #81b25b;
     margin-top: 14px;
     /* 产品标题 */
     .producttitle {
@@ -1023,61 +1122,51 @@ export default {
         }
       }
     }
+    /* 产品列表 */
+    .productList {
+      // position: relative;
+      margin-bottom: -150px;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // flex-wrap: wrap;
+      > img {
+        width: 100%;
+        transform: translateY(-60%);
+      }
+      #productListswiper {
+        z-index: 100;
+        position: relative;
+        // border: 1px solid blue;
+        .swiper-slide-title {
+          background: 00000010;
+          position: absolute;
+          bottom: 0;
+          width: 87%;
+          height: 20%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          p {
+            width: 100%;
+            text-align: center;
+            color: #888;
+            &:first-child {
+              font-size: $titleFontSize;
+              color: $mainColor;
+              margin-top: 10px;
+            }
+            &:last-child {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-/* 产品列表 */
-.productList {
-  /* background: #81b25b; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.productList li {
-  background: url("../assets/img/home/5-chanpinzhongxin-kuang.png") no-repeat;
-  background-size: 90% 100%;
-  height: 380px;
-  /* border:1px solid #81b25b; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.productList li p {
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  color: #81b25b;
-}
-.productList li p:first-child {
-  margin: 0 auto;
-  width: 20px;
-  line-height: 24px;
-  margin-bottom: -30px;
-  font-size: 20px;
-}
-
-.productList li .imgBox {
-  width: 88%;
-  margin-left: -10%;
-  display: flex;
-  align-items: bottom;
-  justify-content: center;
-  margin-top: 60px;
-  overflow: hidden;
-  // border: 1px solid red;
-}
-.productList li .imgBox:hover img {
-  cursor: pointer;
-  transform: scale(1.3);
-}
-.productList li img {
-  width: 95%;
-  transition: all 0.6s;
-
-  /* position: absolute; */
-}
 /* 关于国草园 */
 .aboutcontainer {
   /* border: 1px solid #81b25b; */

@@ -21,6 +21,7 @@
     "turn.js": "^1.0.5",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^4.0.4",
+    "vue-concise-slider": "^3.4.4",
     "vue-router": "^3.0.1",
     "vue-seamless-scroll": "^1.1.17",
     "vuex": "^3.0.1"

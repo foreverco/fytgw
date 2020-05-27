@@ -17,9 +17,9 @@
           >
             <router-link :to="item.path">
               <span class="navTxt">{{ item.name }}</span>
+              <div id="line"></div>
             </router-link>
             <dl v-if="item.children.length > 0">
-              <div id="line"></div>
               <dt v-for="(i, n) in item.children" :key="n">
                 <router-link :to="i.path">{{ i.name }}</router-link>
               </dt>
@@ -27,6 +27,9 @@
           </li>
         </ul>
         <ul class="loginBox">
+          <li>
+            <span class="glyphicon glyphicon-user"></span>
+          </li>
           <li>登录</li>
           <li>/</li>
           <li>注册</li>
@@ -158,6 +161,46 @@ export default {
             }
             // {
             //   name: "防伪查询",
+            //   path: "/software/bigData"
+            // }
+          ]
+        },
+        {
+          name: "中药材基地",
+          name1: "XWZHONGXIN",
+          path: "/news/companynews",
+          // path: "/newsinformation",
+          children: [
+            {
+              name: "种植基地",
+              path: "/news/companynews"
+            },
+            {
+              name: "智慧农业",
+              path: "/news/videonews"
+            },
+            {
+              name: "康养小镇",
+              path: "/news/videonews"
+            },
+            {
+              name: "加工产业园",
+              path: "/news/videonews"
+            }
+            // {
+            //   name: "重要公告",
+            //   path: "/software/bigData"
+            // },
+            // {
+            //   name: "行业动态",
+            //   path: "/software/smartTown"
+            // },
+            // {
+            //   name: "专题报道",
+            //   path: "/software/bigData"
+            // },
+            //  {
+            //   name: "视频展示",
             //   path: "/software/bigData"
             // }
           ]
@@ -312,21 +355,24 @@ export default {
           margin-right: 10px;
           &.active {
             background: #24585210;
+            #line {
+              width: 100%;
+            }
           }
           &:hover {
             // background: #81b25b20;
             cursor: pointer;
             > a {
               color: $mainColor;
-              transform: translateY(-5px);
+              span {
+                transform: translateY(-5px);
+              }
             }
             dl {
-              // animation: hideIndex 0.7s;
               display: block;
             }
             #line {
               width: 100%;
-              animation: hideIndex 0.4s;
             }
           }
           > a {
@@ -338,7 +384,21 @@ export default {
             flex-wrap: wrap;
             width: 100%;
             height: 100%;
-            transition: all 0.2s linear;
+            span {
+              transition: all 0.2s linear;
+            }
+            #line {
+              width: 0px;
+              height: 2px;
+              border-radius: 2px;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color: $mainColor;
+              margin: 0 auto;
+              transition: all 0.6s ease;
+            }
             &:hover {
               text-decoration: none;
             }
@@ -362,14 +422,7 @@ export default {
             padding: 0 20px;
             box-sizing: content-box;
             // border-top: 1px solid red;
-            #line {
-              width: 0px;
-              height: 2px;
-              border-radius: 2px;
-              background-color: $mainColor;
-              margin: 0 auto;
-              transition: all 2s ease;
-            }
+
             dt {
               width: 100%;
               /* padding: 10px; */
@@ -403,6 +456,10 @@ export default {
         li {
           float: left;
           font-size: 18px;
+          span {
+            font-size: 16px;
+            margin-right: 10px;
+          }
         }
       }
     }
