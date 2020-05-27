@@ -187,22 +187,6 @@ export default {
               name: "加工产业园",
               path: "/news/videonews"
             }
-            // {
-            //   name: "重要公告",
-            //   path: "/software/bigData"
-            // },
-            // {
-            //   name: "行业动态",
-            //   path: "/software/smartTown"
-            // },
-            // {
-            //   name: "专题报道",
-            //   path: "/software/bigData"
-            // },
-            //  {
-            //   name: "视频展示",
-            //   path: "/software/bigData"
-            // }
           ]
         },
         {

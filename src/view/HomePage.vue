@@ -322,13 +322,19 @@ export default {
       /* 轮播图列表 */
       swiperList: [
         {
-          img: "static/img/home/banner.png",
+          img: "static/img/3/home/banner.png",
           path: "",
           title: "",
           content: ""
         },
         {
-          img: "static/img/home/banner2.png",
+          img: "static/img/3/home/banner.png",
+          path: "",
+          title: "",
+          content: ""
+        },
+        {
+          img: "static/img/3/home/banner.png",
           path: "",
           title: "",
           content: ""
@@ -907,6 +913,7 @@ export default {
 }
 /* 整体盒子 */
 #HomePage {
+  margin-top: 3px;
   /* 轮播图 */
   #swiper .banner-swiper {
     width: 100%;
