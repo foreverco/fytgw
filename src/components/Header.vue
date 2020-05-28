@@ -1,12 +1,12 @@
 <template>
   <!-- 头部整体盒子 -->
-  <div id="header" class="container-fuild">
+  <div id="header" class="container-fuild" :class="tabNav?'navscroll':''">
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
       <!-- 导航内容 -->
       <div class="navCon row">
         <div id="navshowLogo">
-          <img src="@/assets/img/home/1-head-logo.png" alt />
+          <img src="@/assets/img/home/1-head-logo.png" alt>
         </div>
         <ul class="header-nav-wrapper">
           <li
@@ -40,7 +40,7 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img src="@/assets/img/logo.png" alt="logo" />
+        <img src="@/assets/img/logo.png" alt="logo">
         <span class="logotxt">国草园集团</span>
       </div>
       <!-- 导航栏 -->
@@ -173,7 +173,7 @@ export default {
           children: [
             {
               name: "种植基地",
-              path: "/news/companynews"
+              path: "/base/plantingbase"
             },
             {
               name: "智慧农业",
@@ -301,12 +301,18 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
+.navscroll {
+  // opacity: 0.3;
+  background: #ffffff70 !important;
+}
 /* 顶部 */
 #header {
   transition: all ease 0.6s;
   width: 100%;
   // border-bottom: 1px solid $mainColor;
   background: #fff;
+  position: fixed;
+  z-index: 100001;
   // background: url("../assets/img/dingbu.png") no-repeat;
   // background-size: auto;
   // background-position: bottom;

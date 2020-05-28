@@ -1,7 +1,7 @@
 <template>
   <div id="intelligentag">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt="" />
+      <img src="../../../../static/img/3/planting/basetop.png" alt>
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -11,19 +11,19 @@
           class="wow bounceInRight"
           data-wow-delay="0"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/planting/zhny2.png" alt="" />
+        <img src="/static/img/3/planting/zhny2.png" alt>
       </div>
       <div class="baseBoxCon">
         <div class="baseBoxConws">
           <div class="baseBoxConwsimgBox wow bounceInLeft">
-            <img src="../../../../static/img/3/planting/blws2.png" alt="" />
+            <img src="../../../../static/img/3/planting/blws2.png" alt>
           </div>
           <div class="baseBoxConwsTxt wow bounceInRight">
             <p class="baseBoxConwsTxtTitle">智慧玻璃温室</p>
@@ -40,14 +40,14 @@
                 src="../../../../static/img/3/planting/blwsx1.png"
                 class="wow bounceInUp"
                 data-wow-delay="0.3s"
-                alt=""
-              />
+                alt
+              >
               <img
                 src="../../../../static/img/3/planting/blwsx2.png"
-                alt=""
+                alt
                 class="wow bounceInUp"
                 data-wow-delay="0.6s"
-              />
+              >
             </div>
             <p class="baseBoxConwsTxtFooter">各种传感节点</p>
           </div>
@@ -70,26 +70,26 @@
                 src="../../../../static/img/3/planting/zhnyht2.png"
                 class="wow bounceInUp"
                 data-wow-delay="0.3s"
-                alt=""
-              />
+                alt
+              >
               <img
                 src="../../../../static/img/3/planting/zhnyht1.png"
                 class="wow bounceInUp"
                 data-wow-delay="0.6s"
-                alt=""
-              />
+                alt
+              >
             </div>
             <p class="baseBoxConwsTxtFooter">系统界面展示</p>
           </div>
           <div class="baseBoxConwsimgBox2 wow bounceInRight">
-            <img src="../../../../static/img/3/planting/login.png" alt="" />
+            <img src="../../../../static/img/3/planting/login.png" alt>
           </div>
         </div>
       </div>
       <div class="baseBoxCon">
         <div class="baseBoxConws">
           <div class="baseBoxConwsimgBox wow bounceInLeft">
-            <img src="../../../../static/img/3/planting/nydsj.png" alt="" />
+            <img src="../../../../static/img/3/planting/nydsj.png" alt>
           </div>
           <div class="baseBoxConwsTxt wow bounceInRight">
             <p class="baseBoxConwsTxtTitle">智慧农业大数据分析系统</p>
@@ -104,10 +104,10 @@
             <div class="baseBoxConwsTxtimgbox3">
               <img
                 src="../../../../static/img/3/planting/nydsjx.png"
-                alt=""
+                alt
                 class="wow bounceIn"
                 data-wow-delay="0.7s"
-              />
+              >
               <!-- <img src="../../../../static/img/3/planting/blwsx2.png" alt="" /> -->
             </div>
             <p class="baseBoxConwsTxtFooter">系统界面展示</p>
@@ -127,18 +127,18 @@
               为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛(Venlo)式连栋玻璃温室，该类型温室外形美观，结构稳定，保温性能卓越，且雨槽多，跨度大，抗风能力强，土地及空间利用率高，是目前综合性能最好的一种高档温室。
             </p>
             <div class="baseBoxConwsTxtimgbox3">
-              <img src="../../../../static/img/3/planting/nyzsyx.png" alt="" />
+              <img
+                src="../../../../static/img/3/planting/nyzsyx.png"
+                class="wow bounceIn"
+                data-wow-delay="0.7s"
+                alt
+              >
               <!-- <img src="../../../../static/img/3/planting/blwsx2.png" alt="" /> -->
             </div>
             <p class="baseBoxConwsTxtFooter">消费者查询</p>
           </div>
           <div class="baseBoxConwsimgBox2 wow bounceInRight">
-            <img
-              src="../../../../static/img/3/planting/nyzsy.png"
-              alt=""
-              class="wow bounceIn"
-              data-wow-delay="0.7s"
-            />
+            <img src="../../../../static/img/3/planting/nyzsy.png" alt>
           </div>
         </div>
       </div>

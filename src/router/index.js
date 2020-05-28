@@ -3,8 +3,7 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: "/",
       redirect: "/home"
     },
@@ -39,8 +38,7 @@ export default new Router({
             title: "企业文化",
             navIndex: 1
           },
-          children: [
-            {
+          children: [{
               path: "/software",
               redirect: "/software/aboutUs"
             },
@@ -90,8 +88,7 @@ export default new Router({
             title: "新闻动态",
             navIndex: 3
           },
-          children: [
-            {
+          children: [{
               path: "/news",
               redirect: "/news/companynews"
             },
@@ -135,8 +132,7 @@ export default new Router({
             title: "产品中心",
             navIndex: 2
           },
-          children: [
-            {
+          children: [{
               path: "/product/productpack",
               name: "Productpack",
               component: resolve =>
@@ -167,14 +163,13 @@ export default new Router({
             title: "产品中心",
             navIndex: 2
           },
-          children: [
-            {
-              path: "/product/productpack",
-              name: "Productpack",
+          children: [{
+              path: "/base/plantingbase",
+              name: "plantingbase",
               component: resolve =>
-                require(["@/view/product/components/Productpack"], resolve),
+                require(["@/view/base/components/plantingbase"], resolve),
               meta: {
-                title: "产品包装",
+                title: "种植基地",
                 navIndex: 2
               }
             },
