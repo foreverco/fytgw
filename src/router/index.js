@@ -3,7 +3,8 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
-  routes: [{
+  routes: [
+    {
       path: "/",
       redirect: "/home"
     },
@@ -38,7 +39,8 @@ export default new Router({
             title: "企业文化",
             navIndex: 1
           },
-          children: [{
+          children: [
+            {
               path: "/software",
               redirect: "/software/aboutUs"
             },
@@ -88,7 +90,8 @@ export default new Router({
             title: "新闻动态",
             navIndex: 3
           },
-          children: [{
+          children: [
+            {
               path: "/news",
               redirect: "/news/companynews"
             },
@@ -132,7 +135,8 @@ export default new Router({
             title: "产品中心",
             navIndex: 2
           },
-          children: [{
+          children: [
+            {
               path: "/product/productpack",
               name: "Productpack",
               component: resolve =>
@@ -149,6 +153,38 @@ export default new Router({
                 require(["@/view/product/components/Stockshow"], resolve),
               meta: {
                 title: "原料展示",
+                navIndex: 2
+              }
+            }
+          ]
+        },
+        /* 中草药基地 */
+        {
+          path: "/base",
+          name: "Base",
+          component: resolve => require(["@/view/base/index.vue"], resolve),
+          meta: {
+            title: "产品中心",
+            navIndex: 2
+          },
+          children: [
+            {
+              path: "/product/productpack",
+              name: "Productpack",
+              component: resolve =>
+                require(["@/view/product/components/Productpack"], resolve),
+              meta: {
+                title: "产品包装",
+                navIndex: 2
+              }
+            },
+            {
+              path: "/base/inteligentAg",
+              name: "inteligentAg",
+              component: resolve =>
+                require(["@/view/base/components/IntelligentAg"], resolve),
+              meta: {
+                title: "智慧农业",
                 navIndex: 2
               }
             }

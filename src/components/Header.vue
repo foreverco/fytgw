@@ -6,7 +6,7 @@
       <!-- 导航内容 -->
       <div class="navCon row">
         <div id="navshowLogo">
-          <img src="@/assets/img/home/1-head-logo.png" alt>
+          <img src="@/assets/img/home/1-head-logo.png" alt />
         </div>
         <ul class="header-nav-wrapper">
           <li
@@ -40,7 +40,7 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img src="@/assets/img/logo.png" alt="logo">
+        <img src="@/assets/img/logo.png" alt="logo" />
         <span class="logotxt">国草园集团</span>
       </div>
       <!-- 导航栏 -->
@@ -177,7 +177,7 @@ export default {
             },
             {
               name: "智慧农业",
-              path: "/news/videonews"
+              path: "/base/inteligentAg"
             },
             {
               name: "康养小镇",

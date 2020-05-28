@@ -1,11 +1,20 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
+    <div
+      id="swiper"
+      class="container-fuild"
+      @mouseenter="on_top_enter"
+      @mouseleave="on_top_leave"
+    >
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
-            <img class="swiper-lazy" :src="item.img" alt="轮播图">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
+            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -31,8 +40,12 @@
       >
         <div class="swiper-container tecnology-swiper" ref="mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(item, index) in tecnologyList" :key="index">
-              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+            <div
+              class="swiper-slide"
+              v-for="(item, index) in tecnologyList"
+              :key="index"
+            >
+              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
               <div class="swiper-slide-title">{{ item.title }}</div>
             </div>
           </div>
@@ -49,30 +62,38 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >{{ item.name }}</li>
+            >
+              {{ item.name }}
+            </li>
           </ul>
         </div>
 
         <ul class="newsList">
-          <li class="row newschangewow zoomIn" v-for="(item, index) in newsList" :key="index">
+          <li
+            class="row newschangewow zoomIn"
+            v-for="(item, index) in newsList"
+            :key="index"
+          >
             <div class="imgbox">
-              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <div class="wow zoomIn">
-                  <img :src="item.imgUrl" alt>
+                  <img :src="item.imgUrl" alt />
                 </div>
               </router-link>
             </div>
 
             <div class="newsContent">
               <p class="newstitle2">{{ item.title }}</p>
-              <p class="newsdate">{{item.date}}</p>
+              <p class="newsdate">{{ item.date }}</p>
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <!-- <div class="col-md-3 col-sm-12">
@@ -89,7 +110,7 @@
     <div id="product" class="container-fuild">
       <div class="productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -110,10 +131,19 @@
             @mouseenter="on_top_enter"
             @mouseleave="on_top_leave"
           >
-            <div class="swiper-container tecnology-swiper" ref="mySwiper">
+            <div class="swiper-container product-swiper" ref="mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
-                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+                <div
+                  class="swiper-slide"
+                  v-for="(item, index) in productList"
+                  :key="index"
+                >
+                  <img
+                    class="swiper-lazy"
+                    :src="item.imgUrl"
+                    alt="轮播图"
+                    style="width:80%"
+                  />
                   <div class="swiper-slide-title">
                     <p>{{ item.name }}</p>
                     <p>{{ item.title }}</p>
@@ -128,7 +158,7 @@
               <div class="swiper-button-next hidden-xs"></div>-->
             </div>
           </div>
-          <img src="../../static/img/3/home/cpbg.png" alt>
+          <img src="../../static/img/3/home/cpbg.png" alt />
         </ul>
       </div>
     </div>
@@ -141,22 +171,25 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
         <div class="row aboutswiper">
-          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
+          <div
+            class="swiper-container aboutswipercontainer"
+            ref="aboutswipercontainer"
+          >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
+                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt>
+                <img src="static/img/swiper11.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt>
+                <img src="static/img/swiper22.png" alt />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt>
+                <img src="static/img/swiper33.png" alt />
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -184,7 +217,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt>
+          <img src="@/assets/img/home/biaoti-jidi.png" alt />
           <ul class="baseNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -201,7 +234,7 @@
             v-clickoutside="handleClose"
           >
             <div class="closePic" @click="bigPicIndex(activePic)">X</div>
-            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt>
+            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt />
           </div>
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -209,7 +242,7 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)">
+              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
               <div class="hoverBox">{{ item.title }}</div>
             </div>
 
@@ -236,7 +269,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -245,9 +278,9 @@
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p
-              class="con"
-            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+            </p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -256,7 +289,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt>
+            <img src="static/img/7-wenhua-tupian1.png" alt />
           </div>
         </div>
       </div>
@@ -270,7 +303,9 @@
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >联系我们</button>
+        >
+          联系我们
+        </button>
         <!-- <hr />
         <span style="background:black">http://www.guocaoyuan.com</span>
         <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
@@ -793,6 +828,31 @@ export default {
       observer: true, //修改swiper自己或子元素时，自动初始化swiper
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
+    /* product-swiper */
+    new Swiper(".product-swiper", {
+      slidesPerView: 4,
+      loop: true, // 循环模式选项
+      // effect: "coverflow",
+      speed: 2000,
+      //自动播放
+      autoplay: false,
+      // 如果需要分页器
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      // 延迟加载
+      lazy: {
+        loadPrevNext: true
+      },
+      observer: true, //修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true //修改swiper的父元素时，自动初始化swiper
+    });
     /* customer-swiper */
     new Swiper(".aboutswipercontainer", {
       loop: true, // 循环模式选项
@@ -977,10 +1037,6 @@ export default {
         img {
           height: 80%;
           margin-right: 20px;
-          // transition: All 0.4s ease-in-out;
-          // -webkit-transition: All 0.4s ease-in-out;
-          // -moz-transition: All 0.4s ease-in-out;
-          // -o-transition: All 0.4s ease-in-out;
         }
         .swiper-slide-title {
           font-size: 24px;
@@ -1146,10 +1202,10 @@ export default {
         position: relative;
         // border: 1px solid blue;
         .swiper-slide-title {
-          background: 00000010;
+          // background: #00000050;
           position: absolute;
           bottom: 0;
-          width: 87%;
+          width: 80%;
           height: 20%;
           display: flex;
           align-items: center;
