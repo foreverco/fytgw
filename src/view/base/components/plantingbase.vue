@@ -1,7 +1,7 @@
 <template>
   <div id="intelligentag">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt>
+      <img src="../../../../static/img/3/planting/basetop.png" alt />
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -11,19 +11,23 @@
           class="wow bounceInRight"
           data-wow-delay="0"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="/static/img/3/planting/zhny2.png" alt>
+        <img src="/static/img/3/planting/zhny2.png" alt />
       </div>
       <ul class="plantingimgList container">
-        <li v-for="(item, index) in newImgList" :key="index" class="wow bounceIn">
-          <img :src="item.imgUrl" alt>
-          <div class="plantingimgtitle">{{item.title}}</div>
+        <li
+          v-for="(item, index) in newImgList"
+          :key="index"
+          class="wow bounceIn"
+        >
+          <img :src="item.imgUrl" alt />
+          <div class="plantingimgtitle">{{ item.title }}</div>
           <div class="hoverBox"></div>
           <div class="hoverBox1">种植基地</div>
           <!-- <div class="plantingimgtitle">123</div> -->
@@ -202,7 +206,6 @@ export default {
     width: 100%;
     background: url("/static/img/3/home/tecbg.png") no-repeat;
     background-size: 100% 100%;
-    padding: 2vw 0 !important;
     .baseNavList {
       // background: red;
       width: 80%;
@@ -215,15 +218,20 @@ export default {
         align-items: center;
         -ms-flex-item-align: center;
         width: 20%;
+        padding: 3vw 0 !important;
+
         // border: 1px solid red;
         &:hover {
           cursor: pointer;
           img {
-            animation: imgrotate 2s infinite alternate;
-            -webkit-animation: imgrotate 2s infinite alternate;
-            -moz-animation: imgrotate 2s infinite alternate;
-            -o-animation: imgrotate 2s infinite alternate;
-            -ms-animation: imgrotate 2s infinite alternate;
+            box-shadow: 10px 10px 20px 10px #24585250,
+              -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+            // animation: imgrotate 2s infinite alternate;
+            // -webkit-animation: imgrotate 2s infinite alternate;
+            // -moz-animation: imgrotate 2s infinite alternate;
+            // -o-animation: imgrotate 2s infinite alternate;
+            // -ms-animation: imgrotate 2s infinite alternate;
           }
           .baseNavListtitle {
             color: $mainColor;
@@ -233,6 +241,11 @@ export default {
         img {
           width: 40%;
           margin-right: 20px;
+          border-radius: 100%;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
         }
         .baseNavListtitle {
           // width: 50%;

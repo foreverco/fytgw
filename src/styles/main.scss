@@ -1,5 +1,5 @@
-@import './config.scss';
-@import './nomalize.scss';
+@import "./config.scss";
+@import "./nomalize.scss";
 
 @media (min-width: 1400px) {
   .container {
@@ -25,4 +25,7 @@ a:active {
 p {
   margin: 0;
   padding: 0;
+}
+.swiper-container-horizontal > .swiper-scrollbar {
+  height: 0;
 }

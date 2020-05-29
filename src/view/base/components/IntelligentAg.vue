@@ -1,7 +1,7 @@
 <template>
   <div id="intelligentag">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt>
+      <img src="../../../../static/img/3/planting/basetop.png" alt />
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -11,19 +11,19 @@
           class="wow bounceInRight"
           data-wow-delay="0"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="/static/img/3/planting/zhny2.png" alt>
+        <img src="/static/img/3/planting/zhny2.png" alt />
       </div>
       <div class="baseBoxCon">
         <div class="baseBoxConws">
           <div class="baseBoxConwsimgBox wow bounceInLeft">
-            <img src="../../../../static/img/3/planting/blws2.png" alt>
+            <img src="../../../../static/img/3/planting/blws2.png" alt />
           </div>
           <div class="baseBoxConwsTxt wow bounceInRight">
             <p class="baseBoxConwsTxtTitle">智慧玻璃温室</p>
@@ -41,13 +41,13 @@
                 class="wow bounceInUp"
                 data-wow-delay="0.3s"
                 alt
-              >
+              />
               <img
                 src="../../../../static/img/3/planting/blwsx2.png"
                 alt
                 class="wow bounceInUp"
                 data-wow-delay="0.6s"
-              >
+              />
             </div>
             <p class="baseBoxConwsTxtFooter">各种传感节点</p>
           </div>
@@ -71,25 +71,25 @@
                 class="wow bounceInUp"
                 data-wow-delay="0.3s"
                 alt
-              >
+              />
               <img
                 src="../../../../static/img/3/planting/zhnyht1.png"
                 class="wow bounceInUp"
                 data-wow-delay="0.6s"
                 alt
-              >
+              />
             </div>
             <p class="baseBoxConwsTxtFooter">系统界面展示</p>
           </div>
           <div class="baseBoxConwsimgBox2 wow bounceInRight">
-            <img src="../../../../static/img/3/planting/login.png" alt>
+            <img src="../../../../static/img/3/planting/login.png" alt />
           </div>
         </div>
       </div>
       <div class="baseBoxCon">
         <div class="baseBoxConws">
           <div class="baseBoxConwsimgBox wow bounceInLeft">
-            <img src="../../../../static/img/3/planting/nydsj.png" alt>
+            <img src="../../../../static/img/3/planting/nydsj.png" alt />
           </div>
           <div class="baseBoxConwsTxt wow bounceInRight">
             <p class="baseBoxConwsTxtTitle">智慧农业大数据分析系统</p>
@@ -107,7 +107,7 @@
                 alt
                 class="wow bounceIn"
                 data-wow-delay="0.7s"
-              >
+              />
               <!-- <img src="../../../../static/img/3/planting/blwsx2.png" alt="" /> -->
             </div>
             <p class="baseBoxConwsTxtFooter">系统界面展示</p>
@@ -132,13 +132,13 @@
                 class="wow bounceIn"
                 data-wow-delay="0.7s"
                 alt
-              >
+              />
               <!-- <img src="../../../../static/img/3/planting/blwsx2.png" alt="" /> -->
             </div>
             <p class="baseBoxConwsTxtFooter">消费者查询</p>
           </div>
           <div class="baseBoxConwsimgBox2 wow bounceInRight">
-            <img src="../../../../static/img/3/planting/nyzsy.png" alt>
+            <img src="../../../../static/img/3/planting/nyzsy.png" alt />
           </div>
         </div>
       </div>
@@ -212,7 +212,6 @@ export default {
     width: 100%;
     background: url("/static/img/3/home/tecbg.png") no-repeat;
     background-size: 100% 100%;
-    padding: 2vw 0 !important;
     .baseNavList {
       // background: red;
       width: 80%;
@@ -225,15 +224,20 @@ export default {
         align-items: center;
         -ms-flex-item-align: center;
         width: 20%;
+        padding: 3vw 0 !important;
+
         // border: 1px solid red;
         &:hover {
           cursor: pointer;
           img {
-            animation: imgrotate 2s infinite alternate;
-            -webkit-animation: imgrotate 2s infinite alternate;
-            -moz-animation: imgrotate 2s infinite alternate;
-            -o-animation: imgrotate 2s infinite alternate;
-            -ms-animation: imgrotate 2s infinite alternate;
+            box-shadow: 10px 10px 20px 10px #24585250,
+              -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
+              transform: scale(1.05);
+            // animation: imgrotate 2s infinite alternate;
+            // -webkit-animation: imgrotate 2s infinite alternate;
+            // -moz-animation: imgrotate 2s infinite alternate;
+            // -o-animation: imgrotate 2s infinite alternate;
+            // -ms-animation: imgrotate 2s infinite alternate;
           }
           .baseNavListtitle {
             color: $mainColor;
@@ -243,6 +247,11 @@ export default {
         img {
           width: 40%;
           margin-right: 20px;
+          border-radius: 100%;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
         }
         .baseNavListtitle {
           // width: 50%;

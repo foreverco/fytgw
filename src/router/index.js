@@ -3,7 +3,8 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
-  routes: [{
+  routes: [
+    {
       path: "/",
       redirect: "/home"
     },
@@ -38,7 +39,8 @@ export default new Router({
             title: "企业文化",
             navIndex: 1
           },
-          children: [{
+          children: [
+            {
               path: "/software",
               redirect: "/software/aboutUs"
             },
@@ -88,7 +90,8 @@ export default new Router({
             title: "新闻动态",
             navIndex: 3
           },
-          children: [{
+          children: [
+            {
               path: "/news",
               redirect: "/news/companynews"
             },
@@ -132,7 +135,8 @@ export default new Router({
             title: "产品中心",
             navIndex: 2
           },
-          children: [{
+          children: [
+            {
               path: "/product/productpack",
               name: "Productpack",
               component: resolve =>
@@ -161,16 +165,17 @@ export default new Router({
           component: resolve => require(["@/view/base/index.vue"], resolve),
           meta: {
             title: "产品中心",
-            navIndex: 2
+            navIndex: 3
           },
-          children: [{
+          children: [
+            {
               path: "/base/plantingbase",
               name: "plantingbase",
               component: resolve =>
                 require(["@/view/base/components/plantingbase"], resolve),
               meta: {
                 title: "种植基地",
-                navIndex: 2
+                navIndex: 3
               }
             },
             {
@@ -180,7 +185,17 @@ export default new Router({
                 require(["@/view/base/components/IntelligentAg"], resolve),
               meta: {
                 title: "智慧农业",
-                navIndex: 2
+                navIndex: 3
+              }
+            },
+            {
+              path: "/base/kytown",
+              name: "Kytown",
+              component: resolve =>
+                require(["@/view/base/components/Kytown"], resolve),
+              meta: {
+                title: "康养小镇",
+                navIndex: 3
               }
             }
           ]

@@ -1,11 +1,20 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
+    <div
+      id="swiper"
+      class="container-fuild"
+      @mouseenter="on_top_enter"
+      @mouseleave="on_top_leave"
+    >
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
-            <img class="swiper-lazy" :src="item.img" alt="轮播图">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
+            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -31,8 +40,12 @@
       >
         <div class="swiper-container tecnology-swiper" ref="mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(item, index) in tecnologyList" :key="index">
-              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+            <div
+              class="swiper-slide"
+              v-for="(item, index) in tecnologyList"
+              :key="index"
+            >
+              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
               <div class="swiper-slide-title">{{ item.title }}</div>
             </div>
           </div>
@@ -49,23 +62,31 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >{{ item.name }}</li>
+            >
+              {{ item.name }}
+            </li>
           </ul>
         </div>
 
         <ul class="newsList">
-          <li class="row newschangewow zoomIn" v-for="(item, index) in newsList" :key="index">
+          <li
+            class="row newschangewow zoomIn"
+            v-for="(item, index) in newsList"
+            :key="index"
+          >
             <div class="imgbox">
-              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <div class="wow zoomIn">
-                  <img :src="item.imgUrl" alt>
+                  <img :src="item.imgUrl" alt />
                 </div>
               </router-link>
             </div>
@@ -89,7 +110,7 @@
     <div id="product" class="container-fuild">
       <div class="productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -112,8 +133,17 @@
           >
             <div class="swiper-container product-swiper" ref="mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
-                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" style="width:80%">
+                <div
+                  class="swiper-slide"
+                  v-for="(item, index) in productList"
+                  :key="index"
+                >
+                  <img
+                    class="swiper-lazy"
+                    :src="item.imgUrl"
+                    alt="轮播图"
+                    style="width:80%"
+                  />
                   <div class="swiper-slide-title">
                     <p>{{ item.name }}</p>
                     <p>{{ item.title }}</p>
@@ -128,7 +158,7 @@
               <div class="swiper-button-next hidden-xs"></div>-->
             </div>
           </div>
-          <img src="../../static/img/3/home/cpbg.png" alt>
+          <img src="../../static/img/3/home/cpbg.png" alt />
         </ul>
       </div>
     </div>
@@ -141,22 +171,37 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
         <div class="row aboutswiper">
-          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
+          <div
+            class="swiper-container aboutswipercontainer"
+            ref="aboutswipercontainer"
+          >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/6-guanyuguocaoyuan-tupian1.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper11.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper22.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/swiper33.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png"
+                  alt
+                />
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -173,10 +218,15 @@
         <div class="row abouttxt">
           <p class="con col-md-11">
             国草园集团，成立于 2018
-            年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。
-            集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
+            年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。<br />
+            <span style="display:block;width:10px;"></span>
+            目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。<br />
+            <span style="display:block;width:10px;"></span>
+            集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。<br />
+            <span style="display:block;width:10px;"></span
+            >国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
           </p>
-          <p class="title col-md-1">国草园集团:</p>
+          <p class="title col-md-1">国草园集团</p>
         </div>
       </div>
     </div>
@@ -184,12 +234,12 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-jidi.png" alt>
+          <img src="static/img/3/home/zhbt.png" alt />
           <ul class="baseNav">
-            <li>黄芪</li>
-            <li>板蓝根</li>
-            <li>柴胡</li>
-            <li>防风</li>
+            <li>种植基地</li>
+            <li>智慧农业</li>
+            <li>康养小镇</li>
+            <li>加工产业园</li>
           </ul>
         </div>
         <div class="row plantingBox">
@@ -201,7 +251,7 @@
             v-clickoutside="handleClose"
           >
             <div class="closePic" @click="bigPicIndex(activePic)">X</div>
-            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt>
+            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt />
           </div>
           <div
             class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
@@ -209,7 +259,7 @@
             :key="index"
           >
             <div class="basePicBox">
-              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)">
+              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
               <div class="hoverBox">{{ item.title }}</div>
             </div>
 
@@ -236,7 +286,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -245,9 +295,9 @@
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p
-              class="con"
-            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+            </p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -256,13 +306,13 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt>
+            <img src="static/img/7-wenhua-tupian1.png" alt />
           </div>
         </div>
       </div>
     </div>
     <!-- 您身边的IT专家 -->
-    <div id="contactUs" class="container-fuild text-center">
+    <!-- <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
         <h1 style="color:#81b25b">400-8888-456</h1>
         <button
@@ -270,17 +320,11 @@
           @click="$router.push('/contactus')"
           onmouseleave="this.style.borderColor='#81b25b'; this.style.backgroundColor='#81b25b'; this.style.color='#fff';"
           onmouseenter="this.style.backgroundColor='#fff'; this.style.borderColor='#81b25b'; this.style.color='#81b25b';"
-        >联系我们</button>
-        <!-- <hr />
-        <span style="background:black">http://www.guocaoyuan.com</span>
-        <h3 style="color:#81b25b">服务热线: 0471-3900199</h3>-->
-        <!-- <div class="contactUs-contactWay">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>-->
+        >
+          联系我们
+        </button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -345,19 +389,19 @@ export default {
       /* 专业技术列表 */
       tecnologyList: [
         {
-          title: "以人为本",
+          title: "种植基地",
           imgUrl: "static/img/3/home/tac1.png"
         },
         {
-          title: "诚信经营",
+          title: "智慧农业",
           imgUrl: "static/img/3/home/tac2.png"
         },
         {
-          title: "发展蒙药",
+          title: "康养小镇",
           imgUrl: "static/img/3/home/tac3.png"
         },
         {
-          title: " 致力健康",
+          title: " 加工产业园",
           imgUrl: "static/img/3/home/tac4.png"
         }
       ],
@@ -939,6 +983,7 @@ export default {
 /* 整体盒子 */
 #HomePage {
   margin-top: 3px;
+  margin-bottom: 50px;
   /* 轮播图 */
   #swiper .banner-swiper {
     width: 100%;
@@ -972,7 +1017,7 @@ export default {
     background: url("../../static/img/3/home/tecbg.png") no-repeat;
     background-size: 100% 100%;
     // height: 268px;
-    padding: 2vw 0 !important;
+    // padding: 2vw 0 !important;
     margin: 0 auto;
     .tecnologyList {
       height: 100%;
@@ -986,6 +1031,7 @@ export default {
         align-items: center;
         justify-content: center;
         width: 20%;
+        padding: 3vw 0 !important;
         &:hover {
           cursor: pointer;
           .swiper-slide-title {
@@ -993,19 +1039,27 @@ export default {
             transform: translateX(10px) scale(1.2);
           }
           img {
-            animation: imgrotate 2s infinite alternate;
-            -webkit-animation: imgrotate 2s infinite alternate;
-            -moz-animation: imgrotate 2s infinite alternate;
-            -o-animation: imgrotate 2s infinite alternate;
-            -ms-animation: imgrotate 2s infinite alternate;
+            box-shadow: 10px 10px 20px 10px #24585250,
+              -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+            // animation: imgrotate 2s infinite alternate;
+            // -webkit-animation: imgrotate 2s infinite alternate;
+            // -moz-animation: imgrotate 2s infinite alternate;
+            // -o-animation: imgrotate 2s infinite alternate;
+            // -ms-animation: imgrotate 2s infinite alternate;
           }
         }
         img {
-          height: 80%;
+          width: 30%;
+          border-radius: 100%;
           margin-right: 20px;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
         }
         .swiper-slide-title {
-          font-size: 24px;
+          font-size: 20px;
           transition: all 0.4s ease-in-out;
           -webkit-transition: all 0.4s ease-in-out;
           -moz-transition: all 0.4s ease-in-out;
@@ -1218,12 +1272,9 @@ export default {
 }
 /* 关于国草园轮播图 */
 #aboutgcy .swiper-container {
-  /* background:yellow; */
   width: 100%;
 }
 #aboutgcy .swiper-container .swiper-slide {
-  /* width:100%; */
-  /* border:1px solid blue; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1243,9 +1294,13 @@ export default {
   /* width:10%; */
   font-size: 24px;
   /* font-family:'lv1'; */
-  font-weight: bold;
+  // font-weight: bold;
+  color: $mainColor;
+  // line-height: 50px;
+  letter-spacing: 7px;
   display: flex;
   align-items: center;
+  font-family: "lv2";
 }
 .abouttxt .con {
   /* background: blue; */
@@ -1255,6 +1310,7 @@ export default {
   /* font-family:'lv1'; */
   writing-mode: tb-rl;
   overflow: auto;
+  // font-family: "lv2";
 }
 /* #aboutgcy .customer-block img{
   width:100%;
