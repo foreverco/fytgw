@@ -88,7 +88,7 @@ export default new Router({
           component: resolve => require(["@/view/news/News"], resolve),
           meta: {
             title: "新闻动态",
-            navIndex: 3
+            navIndex: 4
           },
           children: [
             {
@@ -102,7 +102,7 @@ export default new Router({
                 require(["@/view/news/components/NewsMsg"], resolve),
               meta: {
                 title: "新闻详情",
-                navIndex: 3
+                navIndex: 4
               },
               children: []
             },
@@ -113,7 +113,7 @@ export default new Router({
                 require(["@/view/news/components/Company"], resolve),
               meta: {
                 title: "公司新闻",
-                navIndex: 3
+                navIndex: 4
               }
             },
             {
@@ -122,7 +122,8 @@ export default new Router({
               component: resolve =>
                 require(["@/view/news/components/VideoNews"], resolve),
               meta: {
-                title: "视频展示"
+                title: "视频展示",
+                navIndex: 4
               }
             }
           ]
@@ -197,6 +198,16 @@ export default new Router({
                 title: "康养小镇",
                 navIndex: 3
               }
+            },
+            {
+              path: "/base/park",
+              name: "Park",
+              component: resolve =>
+                require(["@/view/base/components/Park"], resolve),
+              meta: {
+                title: "加工产业园",
+                navIndex: 3
+              }
             }
           ]
         },
@@ -242,7 +253,7 @@ export default new Router({
           component: resolve => require(["@/view/ContactUs"], resolve),
           meta: {
             title: "联系我们",
-            navIndex: 4
+            navIndex: 5
           }
         },
         {

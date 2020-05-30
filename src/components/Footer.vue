@@ -117,7 +117,7 @@ export default {
             },
             {
               name: "加工产业园",
-              path: "/news/videonews"
+              path: "/base/park"
             }
           ]
         },

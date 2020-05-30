@@ -1,5 +1,5 @@
 <template>
-  <div id="intelligentag">
+  <div id="park">
     <div class="topimgbox">
       <img src="../../../../static/img/3/planting/basetop.png" alt />
     </div>
@@ -18,7 +18,31 @@
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="/static/img/3/planting/zhny2.png" alt />
+        <img src="../../../../static/img/3/ky/jgpark.png" alt />
+      </div>
+      <div class="parkplanbox container wow bounceInUp">
+        <img src="../../../../static/img/3/ky/parkplanimg.png" alt="" />
+        <div>
+          <p>
+            为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛
+          </p>
+        </div>
+      </div>
+      <div class="investmentBox">
+        <img src="../../../../static/img/3/ky/investment.png" alt="" />
+        <ul class="investmentContent container">
+          <li
+            v-for="(item, index) in investmentList"
+            :key="index"
+            class="wow bounceIn"
+          >
+            <img :src="item.imgUrl" alt="" />
+            <p>{{ item.content }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="baseBoxTitle">
+        <img src="../../../../static/img/3/ky/jgsb.png" alt />
       </div>
       <ul class="plantingimgList container">
         <li
@@ -50,7 +74,7 @@
 <script>
 import { WOW } from "wowjs";
 export default {
-  name: "plantingbase",
+  name: "Kytown",
   data() {
     return {
       tecnologyList: [
@@ -71,46 +95,68 @@ export default {
           imgUrl: "static/img/3/home/tac4.png"
         }
       ],
+      investmentList: [
+        {
+          imgUrl: "static/img/3/ky/in1.png",
+          content:
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
+        },
+        {
+          imgUrl: "static/img/3/ky/in2.png",
+          content:
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
+        },
+        {
+          imgUrl: "static/img/3/ky/in3.png",
+          content:
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
+        },
+        {
+          imgUrl: "static/img/3/ky/in4.png",
+          content:
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
+        }
+      ],
       imgList: [
         {
           newsid: 1,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting1.png"
+          title: "敞开式烘箱",
+          imgUrl: "static/img/3/ky/sb1.png"
         },
         {
           newsid: 2,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting2.png"
+          title: "锻药机",
+          imgUrl: "static/img/3/ky/sb2.png"
         },
         {
           newsid: 3,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting3.png"
+          title: "滚筒式炒药机",
+          imgUrl: "static/img/3/ky/sb3.png"
         },
         {
           newsid: 1,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting4.png"
+          title: "滚筒式洗药机",
+          imgUrl: "static/img/3/ky/sb4.png"
         },
         {
           newsid: 2,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting5.png"
+          title: "润药机",
+          imgUrl: "static/img/3/ky/sb5.png"
         },
         {
           newsid: 3,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting6.png"
+          title: "直切式切药机",
+          imgUrl: "static/img/3/ky/sb6.png"
         },
         {
           newsid: 3,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting7.png"
+          title: "直切往复式切药机",
+          imgUrl: "static/img/3/ky/sb7.png"
         },
         {
           newsid: 3,
-          title: "种植基地",
-          imgUrl: "/static/img/3/planting/planting8.png"
+          title: "中药蒸药箱",
+          imgUrl: "static/img/3/ky/sb8.png"
         }
         //   {
         //     newsid: 3,
@@ -196,7 +242,7 @@ export default {
     -ms-transform: rotate(360deg);
   }
 }
-#intelligentag {
+#park {
   .topimgbox {
     img {
       width: 100%;
@@ -269,93 +315,162 @@ export default {
         height: 100%;
       }
     }
-  }
-  .plantingimgList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    li {
-      margin: 2.4%;
-      width: 20%;
+    .parkplanbox {
+      // border: 1px solid red;
+      margin-bottom: 88px;
       position: relative;
-      background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
-      background-size: 100% 100%;
-      padding: 2px;
-      overflow: hidden;
-      &:hover {
-        cursor: pointer;
-        padding: 0px;
-        .hoverBox {
-          opacity: 0.3;
-        }
-        .hoverBox1 {
-          opacity: 1;
-          font-size: 34px;
-        }
-        img {
-          transform: scale(1.2);
-        }
-        .plantingimgtitle {
-        }
-      }
-      .hoverBox {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        border-radius: 2px;
-        opacity: 0;
-        top: 0;
-        left: 0;
-        transition: all 0.8s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 100002;
-        border-radius: 15px;
-        span {
-          color: red;
-          font-size: $titleFontSize;
-          opacity: 1;
-        }
-      }
-      .hoverBox1 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 2px;
-        opacity: 0;
-        top: 0;
-        left: 0;
-        transition: all 1.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 100002;
-        border-radius: 5px;
-        font-size: 0px;
-      }
       img {
         width: 100%;
-        transition: all 0.8s ease;
-        position: relative;
-        z-index: 1;
-        border-radius: 11px 11px 0 0;
       }
-      .plantingimgtitle {
-        height: 4vw;
-        border-radius: 0 0 15px 15px;
-        background: #fff;
-        width: 100.5%;
-        margin-left: -0.25%;
+      > div {
+        position: absolute;
+        width: 42%;
+        height: 70%;
+        // border: 1px solid blue;
+        top: 0;
+        right: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 21px;
-        letter-spacing: 10px;
+      }
+      p {
+        width: 80%;
+        font-size: 13px;
+        line-height: 30px;
+      }
+    }
+    .investmentBox {
+      position: relative;
+      margin-bottom: 40px;
+      > img {
+        width: 100%;
+      }
+      .investmentContent {
+        // border: 1px solid red;
+        // height: 1000px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        li {
+          width: 48%;
+          margin-left: auto;
+          // border: 1px solid blue;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          &:first-child,
+          &:nth-child(3) {
+            margin-left: 0;
+          }
+          &:first-child,
+          &:nth-child(2) {
+            margin-bottom: 20px;
+          }
+          img {
+            width: 30%;
+            margin-bottom: 20px;
+          }
+          p {
+            width: 90%;
+            text-align: center;
+            line-height: 1.5vw;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .plantingimgList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      li {
+        margin: 2.4%;
+        width: 20%;
         position: relative;
-        z-index: 100001;
+        background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
+        background-size: 100% 100%;
+        padding: 2px;
+        overflow: hidden;
+        &:hover {
+          cursor: pointer;
+          .hoverBox {
+            opacity: 0.3;
+          }
+          .hoverBox1 {
+            opacity: 1;
+            font-size: 34px;
+          }
+          img {
+            transform: scale(1.2);
+          }
+        }
+        .hoverBox {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #000;
+          border-radius: 2px;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          transition: all 0.8s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 100002;
+          border-radius: 15px;
+          span {
+            color: red;
+            font-size: $titleFontSize;
+            opacity: 1;
+          }
+        }
+        .hoverBox1 {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          transition: all 1.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 100002;
+          border-radius: 5px;
+          font-size: 0px;
+        }
+        img {
+          width: 100%;
+          transition: all 0.8s ease;
+          position: relative;
+          z-index: 1;
+          border-radius: 11px 11px 0 0;
+        }
+        .plantingimgtitle {
+          height: 4vw;
+          border-radius: 0 0 15px 15px;
+          background: #fff;
+          width: 100.5%;
+          margin-left: -0.25%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: bold;
+          // font-family: "lv2";
+          letter-spacing: 10px;
+          position: relative;
+          z-index: 100001;
+        }
       }
     }
   }
