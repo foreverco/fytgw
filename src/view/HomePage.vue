@@ -1,20 +1,11 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div
-      id="swiper"
-      class="container-fuild"
-      @mouseenter="on_top_enter"
-      @mouseleave="on_top_leave"
-    >
+    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in swiperList"
-            :key="index"
-          >
-            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
+          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
+            <img class="swiper-lazy" :src="item.img" alt="轮播图">
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -40,12 +31,8 @@
       >
         <div class="swiper-container tecnology-swiper" ref="mySwiper">
           <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(item, index) in tecnologyList"
-              :key="index"
-            >
-              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+            <div class="swiper-slide" v-for="(item, index) in tecnologyList" :key="index">
+              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
               <div class="swiper-slide-title">{{ item.title }}</div>
             </div>
           </div>
@@ -62,16 +49,14 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >
-              {{ item.name }}
-            </li>
+            >{{ item.name }}</li>
           </ul>
         </div>
 
@@ -80,13 +65,12 @@
             class="row newschangewow zoomIn"
             v-for="(item, index) in newsList"
             :key="index"
+            @click="$router.replace({name: 'NewsMsg', params: { newsId: item.newsid }})"
           >
             <div class="imgbox">
-              <router-link
-                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-              >
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <div class="wow zoomIn">
-                  <img :src="item.imgUrl" alt />
+                  <img :src="item.imgUrl" alt>
                 </div>
               </router-link>
             </div>
@@ -110,7 +94,7 @@
     <div id="product" class="container-fuild">
       <div class="productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -133,17 +117,8 @@
           >
             <div class="swiper-container product-swiper" ref="mySwiper">
               <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  v-for="(item, index) in productList"
-                  :key="index"
-                >
-                  <img
-                    class="swiper-lazy"
-                    :src="item.imgUrl"
-                    alt="轮播图"
-                    style="width:80%"
-                  />
+                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
+                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" style="width:80%">
                   <div class="swiper-slide-title">
                     <p>{{ item.name }}</p>
                     <p>{{ item.title }}</p>
@@ -158,7 +133,7 @@
               <div class="swiper-button-next hidden-xs"></div>-->
             </div>
           </div>
-          <img src="../../static/img/3/home/cpbg.png" alt />
+          <img src="../../static/img/3/home/cpbg.png" alt>
         </ul>
       </div>
     </div>
@@ -171,37 +146,22 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
         </div>
         <div class="row aboutswiper">
-          <div
-            class="swiper-container aboutswipercontainer"
-            ref="aboutswipercontainer"
-          >
+          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png" alt>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png" alt>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png" alt>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png" alt>
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -217,14 +177,16 @@
         </div>
         <div class="row abouttxt">
           <p class="con col-md-11">
-            国草园集团，成立于 2018
-            年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。<br />
+            国草园集团总部位于北京，是集农业+互联网平台化公司，集团旗下内蒙古公司于内蒙古乌兰察布拥有 50 万亩中草药种植基地及配套的仓储物流园。公司拟定投资 30 亿，以内蒙古 50 万亩种植基地为依托，融合中草药种植、加工、仓储、销售、研发、鉴定于一体化产业链服务为主要运营模式，并充分发挥自治区地域特色，将当地观光旅游资源最大化，打造国家中医药健康文旅示范基地。
+            <br>
             <span style="display:block;width:10px;"></span>
-            目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。<br />
+            目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。
+            <br>
             <span style="display:block;width:10px;"></span>
-            集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。<br />
-            <span style="display:block;width:10px;"></span
-            >国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
+            2020 年与安徽中医药大学签订了合作协议，聘请专业教授、专家学者对中草药在种植过程中所需的技术提供培训与指导支持，大力推动野生蒙中药规模化种植技术研究、人才培养及相关药品研发，实现“产学研用”一体化发展，推动科研成果顺利转化，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。
+            目前集团已与国药集团、步长制药、修正药业、北京同仁堂、康缘药业、天士力制药、扬子江药业集团签订了订单式合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
+            针对我国中草药产业的发展，国家近年陆续出台了一系列优惠政策大力推崇，力度之大更是史无前例！鉴于中草药产业具有较广阔的发展空间以及国草园集团与数家知名药企、中医学府、行业专家及相关行业协会等单位建立了实质性的合作关系，形成了中草药产业链条的完整体系等诸多优势特点，使得国草园集团引起了许多投资机构的密切关注与强烈的合作意愿，希望通过优势互补，强强联合为我国中草药产业发展进程贡献一份微薄力量。
+            现国草园集团正在全国各地寻找优质种植基地资源，计划利用集团资源优势、团队技术优势及管理输出能力优势稳健发展中草药种植产业，主要以“政府+企业”联合投资的方式运作，以合作经济带动产业经济，实现多方共赢。
           </p>
           <p class="title col-md-1">国草园集团</p>
         </div>
@@ -234,26 +196,26 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="static/img/3/home/zhbt.png" alt />
+          <img src="static/img/3/home/zhbt.png" alt>
           <ul class="baseNav">
-            <li>种植基地</li>
-            <li>智慧农业</li>
-            <li>康养小镇</li>
-            <li>加工产业园</li>
+            <li @click="$router.push('/base/plantingbase')">种植基地</li>
+            <li @click="$router.push('/base/inteligentAg')">智慧农业</li>
+            <li @click="$router.push('/base/kytown')">康养小镇</li>
+            <li @click="$router.push('/base/park')">加工产业园</li>
           </ul>
         </div>
         <div class="row plantingBox">
-          <div class="one">
-            <img src="../../static/img/3/home/plantingBox1.png" alt="" />
+          <div class="one" @click="$router.push('/base/plantingbase')">
+            <img src="../../static/img/3/home/plantingBox1.png" alt>
           </div>
-          <div class="two">
-            <img src="../../static/img/3/home/plantingBox4.png" alt="" />
+          <div class="two" @click="$router.push('/base/inteligentAg')">
+            <img src="../../static/img/3/home/plantingBox4.png" alt>
           </div>
-          <div class="three">
-            <img src="../../static/img/3/home/plantingBox3.png" alt="" />
+          <div class="three" @click="$router.push('/base/kytown')">
+            <img src="../../static/img/3/home/plantingBox3.png" alt>
           </div>
-          <div class="four">
-            <img src="../../static/img/3/home/plantingBox2.png" alt="" />
+          <div class="four" @click="$router.push('/base/park')">
+            <img src="../../static/img/3/home/plantingBox2.png" alt>
           </div>
         </div>
       </div>
@@ -262,7 +224,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
           <ul class="scoolingNav">
             <li>技术保障</li>
             <li>跟踪服务</li>
@@ -271,9 +233,9 @@
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p class="con">
-              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
-            </p>
+            <p
+              class="con"
+            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
             <p class="title">-------同修仁德 济世养生------</p>
             <p class="name">
               <span>国草园</span>
@@ -282,7 +244,7 @@
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt />
+            <img src="static/img/7-wenhua-tupian1.png" alt>
           </div>
         </div>
       </div>
@@ -300,7 +262,7 @@
           联系我们
         </button>
       </div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
@@ -383,7 +345,7 @@ export default {
       ],
       /* 新闻类型列表 */
       newsTypeList: [
-        { name: "国草园咨询" },
+        { name: "国草园资讯" },
         { name: "最新公告" },
         { name: "行业动态" }
       ],
@@ -844,8 +806,9 @@ export default {
       effect: "coverflow",
       speed: 2000,
       //自动播放
+      // autoplay: 5000,
       autoplay: {
-        delay: 2000,
+        delay: 20000,
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
@@ -854,9 +817,9 @@ export default {
       initialSlide: 1,
       coverflow: {
         rotate: 0, //设置为0
-        stretch: 10,
-        depth: 160,
-        modifier: 2,
+        stretch: 20,
+        depth: 300,
+        modifier: 3,
         slideShadows: true
       },
       // 如果需要前进后退按钮
@@ -992,6 +955,7 @@ export default {
   #tecnology {
     background: url("../../static/img/3/home/tecbg.png") no-repeat;
     background-size: 100% 100%;
+    margin-top: -13px !important;
     // height: 268px;
     // padding: 2vw 0 !important;
     margin: 0 auto;
@@ -1012,12 +976,12 @@ export default {
           cursor: pointer;
           .swiper-slide-title {
             color: $mainColor;
-            transform: translateX(10px) scale(1.2);
+            transform: translateX(10px);
           }
           img {
-            box-shadow: 10px 10px 20px 10px #24585250,
-              -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
-            transform: scale(1.05);
+            box-shadow: 3px 3px 6px 3px #24585250,
+              -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+            // transform: scale(1.05);
             // animation: imgrotate 2s infinite alternate;
             // -webkit-animation: imgrotate 2s infinite alternate;
             // -moz-animation: imgrotate 2s infinite alternate;
@@ -1096,6 +1060,15 @@ export default {
         background: url("/static/img/3/home/newsBg.png") no-repeat;
         background-size: 100% 100%;
         position: relative;
+        border-radius: 8px;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 3px 3px 6px 3px #24585250,
+            -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+          .newsContent {
+            color: $mainColor;
+          }
+        }
         // display: flex;
         // align-items: center;
         // justify-content: space-around;
@@ -1263,12 +1236,12 @@ export default {
         float: left;
         z-index: 1;
         position: absolute;
-        z-index: 100000001;
       }
       &.one {
         top: 0;
         float: left;
-        outline: 1px solid red;
+        position: absolute;
+        z-index: 100000001;
       }
       img {
         width: 100%;
@@ -1295,16 +1268,21 @@ export default {
   position: relative;
 }
 /* 关于国草园轮播图 */
+#aboutgcy .container {
+  // border: 1px solid red;
+}
 #aboutgcy .swiper-container {
   width: 100%;
+  // border: 1px solid red;
 }
 #aboutgcy .swiper-container .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
+  // border: 1px solid red;
 }
 #aboutgcy .swiper-container .swiper-slide img {
-  width: 100%;
+  width: 140%;
 }
 .abouttxt {
   width: 100%;

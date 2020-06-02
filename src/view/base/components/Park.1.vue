@@ -1,7 +1,7 @@
 <template>
   <div id="park">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt>
+      <img src="../../../../static/img/3/planting/basetop.png" alt />
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -11,44 +11,50 @@
           class="wow bounceInRight"
           data-wow-delay="0"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/jgpark.png" alt>
+        <img src="../../../../static/img/3/ky/jgpark.png" alt />
       </div>
       <div class="parkplanbox container wow bounceInUp">
-        <img src="../../../../static/img/3/ky/parkplanimg.png" alt>
+        <img src="../../../../static/img/3/ky/parkplanimg.png" alt="" />
         <div>
-          <p>在百万亩种植基地带动产业经济的高速发展下，国草园集团考虑到后期产业发展规划，将在当地投资建设中药材加工产业园，做初加工及部分药材深加工，同时配套生产周边延伸产业。预计产业园在5年后年产值达到20亿，带动当地老百姓就业1000余人。</p>
+          <p>
+            为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛
+          </p>
         </div>
       </div>
       <div class="investmentBox">
-        <img src="../../../../static/img/3/ky/investment.png" alt>
+        <img src="../../../../static/img/3/ky/investment.png" alt="" />
         <ul class="investmentContent container">
-          <li v-for="(item, index) in investmentList" :key="index" class="wow bounceIn">
-            <img :src="item.imgUrl" alt>
+          <li
+            v-for="(item, index) in investmentList"
+            :key="index"
+            class="wow bounceIn"
+          >
+            <img :src="item.imgUrl" alt="" />
             <p>{{ item.content }}</p>
           </li>
         </ul>
       </div>
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/jgsb.png" alt>
+        <img src="../../../../static/img/3/ky/jgsb.png" alt />
       </div>
       <ul class="plantingimgList container">
-        <li v-for="(item, index) in newImgList" :key="index" class="wow bounceIn">
-          <div>
-            <div class="box">
-              <img :src="item.imgUrl">
-              <div class="box-content">
-                <h3 class="title">{{item.title}}</h3>
-                <span class="post">加工 产业园</span>
-              </div>
-            </div>
-          </div>
+        <li
+          v-for="(item, index) in newImgList"
+          :key="index"
+          class="wow bounceIn"
+        >
+          <img :src="item.imgUrl" alt />
+          <div class="plantingimgtitle">{{ item.title }}</div>
+          <div class="hoverBox"></div>
+          <div class="hoverBox1">{{ item.title }}</div>
+          <!-- <div class="plantingimgtitle">123</div> -->
         </li>
       </ul>
     </div>
@@ -93,22 +99,22 @@ export default {
         {
           imgUrl: "static/img/3/ky/in1.png",
           content:
-            "国草园集团现正在与大型药企商谈合资成立深加工药厂，以国草园集团产业基地的中药材为主要原材料进行生产颗粒制剂及饮片的深加工及提纯。"
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
         },
         {
           imgUrl: "static/img/3/ky/in2.png",
           content:
-            "国草园集团将在每个种植基地独资成立初加工厂，形成当地药材当地初加工的模式，引进国际先进生产设备及技术，并严格按照标准进行规范化、标准化、规模化生产。利用国草园集团电商平台打通线上销售渠道，将国草园集团产品引入千万家，打造出具有市场竞争力和高质量的道地药材自主品牌产品。"
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
         },
         {
           imgUrl: "static/img/3/ky/in3.png",
           content:
-            "中药材周围产品可衍生出许多其他产业，我们将利用中药材剩余材料生产加工工艺品、日化用品、卫生用品、化妆品等，打造以中药材为原料的特色产业联盟。"
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
         },
         {
           imgUrl: "static/img/3/ky/in4.png",
           content:
-            "产业园区内建造孵化器产业大楼，将扶持当地“互联网+”的特色农业产品，协助中小企业以及返乡大学生创业，配合政府做好人才引进，吸引外出打工人员返乡创业。引进中药材周边配套产业链到我们产业园落地。"
+            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。"
         }
       ],
       imgList: [
@@ -329,7 +335,7 @@ export default {
       }
       p {
         width: 80%;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 30px;
       }
     }
@@ -385,141 +391,85 @@ export default {
       justify-content: flex-start;
       align-items: flex-start;
       li {
-        &:hover {
-          cursor: pointer;
-        }
         margin: 2.4%;
         width: 20%;
         position: relative;
-        // background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
-        // background-size: 100% 100%;
+        background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
+        background-size: 100% 100%;
         padding: 2px;
         overflow: hidden;
-        // border: 1px solid red;
-        .box {
-          background: linear-gradient(#245852, #24585220);
-          font-family: "Merriweather Sans", sans-serif;
-          border-radius: 7px;
-          position: relative;
-          overflow: hidden;
+        &:hover {
+          cursor: pointer;
+          .hoverBox {
+            opacity: 0.3;
+          }
+          .hoverBox1 {
+            opacity: 1;
+            font-size: 34px;
+          }
+          img {
+            transform: scale(1.2);
+          }
         }
-        .box:before {
-          content: "";
-          background: -webkit-repeating-linear-gradient(
-            45deg,
-            rgba(0, 0, 0, 0.1) 10px,
-            transparent 10px,
-            transparent 20px,
-            rgba(0, 0, 0, 0.1) 20px,
-            rgba(0, 0, 0, 0.1) 30px,
-            transparent 30px,
-            transparent 40px,
-            rgba(0, 0, 0, 0.1) 40px,
-            rgba(0, 0, 0, 0.1) 50px,
-            transparent 50px,
-            transparent 60px,
-            rgba(0, 0, 0, 0.1) 60px,
-            rgba(0, 0, 0, 0.1) 70px,
-            transparent 70px,
-            transparent 80px,
-            rgba(0, 0, 0, 0.1) 80px,
-            rgba(0, 0, 0, 0.1) 90px,
-            transparent 90px
-          );
+        .hoverBox {
+          position: absolute;
           width: 100%;
           height: 100%;
+          background: #000;
+          border-radius: 2px;
           opacity: 0;
-          position: absolute;
           top: 0;
           left: 0;
-          z-index: 0;
-          transition: all 0.5s;
+          transition: all 0.8s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 100002;
+          border-radius: 15px;
+          span {
+            color: red;
+            font-size: $titleFontSize;
+            opacity: 1;
+          }
         }
-        .box:hover:before {
-          opacity: 1;
-        }
-        .box img {
-          width: 100%;
-          height: auto;
-          transition: all 0.5s ease;
-          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
-        .box:hover img {
-          opacity: 0.5;
-          -webkit-clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
-          clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
-        }
-        .box .box-content {
-          color: #fff;
-          text-align: center;
-          width: 100%;
-          opacity: 0;
-          transform: translateX(-50%) translateY(-50%) rotate(-55deg);
+        .hoverBox1 {
           position: absolute;
-          top: 50%;
-          left: 50%;
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          transition: all 1.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 100002;
+          border-radius: 5px;
+          font-size: 0px;
+        }
+        img {
+          width: 100%;
+          transition: all 0.8s ease;
+          position: relative;
           z-index: 1;
-          transition: all 0.5s;
+          border-radius: 11px 11px 0 0;
         }
-        .box:hover .box-content {
-          opacity: 1;
-          transform: translateX(-50%) translateY(-50%) rotate(0deg);
-        }
-        .box .title {
-          font-size: 25px;
-          font-weight: 700;
-          text-transform: uppercase;
-          text-shadow: 0 0 5px #000;
-          margin: 0 0 3px 0;
-        }
-        .box .post {
+        .plantingimgtitle {
+          height: 4vw;
+          border-radius: 0 0 15px 15px;
+          background: #fff;
+          width: 100.5%;
+          margin-left: -0.25%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-size: 16px;
-          text-shadow: 0 0 5px #000;
-          text-transform: capitalize;
-          display: block;
-        }
-        .box .icon {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          opacity: 0;
-          transform: rotateX(180deg);
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          transition: all 0.3s;
-        }
-        .box:hover .icon {
-          opacity: 1;
-          transform: rotate(0);
-        }
-        .box .icon li a {
-          color: #24585220;
-          background-color: #fff;
-          font-size: 17px;
-          text-align: center;
-          line-height: 30px;
-          width: 30px;
-          height: 30px;
-          margin: 0 0 7px;
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s;
-        }
-        .box .icon li a:hover {
-          color: #245852;
-          box-shadow: 0 0 15px #fff;
-        }
-        @media only screen and (max-width: 990px) {
-          .box {
-            margin: 0 0 30px;
-          }
-        }
-        @media only screen and (max-width: 479px) {
-          .box .title {
-            font-size: 20px;
-          }
+          font-weight: bold;
+          // font-family: "lv2";
+          letter-spacing: 10px;
+          position: relative;
+          z-index: 100001;
         }
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div id="intelligentag">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt />
+      <img src="../../../../static/img/3/planting/basetop.png" alt>
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -11,14 +11,14 @@
           class="wow bounceInRight"
           data-wow-delay="0"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/kylogo.png" alt />
+        <img src="../../../../static/img/3/ky/kylogo.png" alt>
       </div>
       <div class="baseBoxCon">
         <div class="baseBoxContown container">
@@ -28,81 +28,61 @@
                 src="../../../../static/img/3/ky/townbefore.png"
                 class="wow bounceInLeft"
                 data-wow-delay="0.1s"
-                alt=""
-              />
-              <p>化德縣朝陽鎮選址地規化前</p>
+                alt
+              >
+              <p>化德县朝阳镇选址地规划前</p>
             </div>
             <div class="baseBoxContownimgboxsmall">
               <img
                 src="../../../../static/img/3/ky/townafter.png"
                 class="wow bounceInRight"
                 data-wow-delay="0.1s"
-                alt=""
-              />
-              <p>化德縣朝陽鎮選址地規化后</p>
+                alt
+              >
+              <p>化德县朝阳镇选址地规划后</p>
             </div>
           </div>
-          <p class="baseBoxContowntxtbox">
-            为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛(Venlo)式连栋玻璃温室，该类型温室外形美观，结构稳定，保温性能卓越，且雨槽多，跨度大，抗风能力强，土地及空间利用率高，是目前综合性能最好的一种高档温室。
-          </p>
+          <p
+            class="baseBoxContowntxtbox"
+          >国草园集团计划利用公司自身的资源、团队和产业等优势，充分发挥当地地域特色，打造“旅游+中医药”特色旅游文化产品。蒙中草药康养小镇的选址工作目前已经完成，位于化德县朝阳镇，从化德县到北京的必经之路上，2020年将根据选址的面积将其打造成‘旅游+蒙中医药’特色旅游文化产品。以“寻找铁木真”为主题故事线，将“一乡一品”特色民俗村、中药花海、博物馆、科技大棚、蒙古特色项目、科研院所等融入旅游文化产业发展，将其建设成为具有地域特色的中药材康养小镇。</p>
         </div>
       </div>
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/ztlogo.png" alt />
+        <img src="../../../../static/img/3/ky/ztlogo.png" alt>
       </div>
       <div class="ztbg">
-        <img src="../../../../static/img/3/ky/ztgs.png" alt="" />
+        <img src="../../../../static/img/3/ky/ztgs.png" alt>
       </div>
       <div class="ztcontent container">
         <div class="guijiBox">
-          <img src="../../../../static/img/3/ky/imgline.png" alt="" />
+          <img src="../../../../static/img/3/ky/imgline.png" alt>
         </div>
         <div class="storyBox">
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img
-                class="wow bounceIn"
-                data-wow-delay="0.3s"
-                :src="storyList[0].imgUrl"
-                alt=""
-              />
+              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[0].imgUrl" alt>
               <p>
-                <span>{{ storyList[0].imgTxt1 }}</span
-                ><span>{{ storyList[0].imgTxt2 }}</span>
+                <span>{{ storyList[0].imgTxt1 }}</span>
+                <span>{{ storyList[0].imgTxt2 }}</span>
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[0].title }}</div>
             <div class="storyTxtBot">{{ storyList[0].con }}</div>
           </div>
           <div class="storyimg">
-            <img
-              class="wow bounceIn"
-              data-wow-delay="0.3s"
-              :src="storyList[0].storyImg"
-              alt=""
-            />
+            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[0].storyImg" alt>
           </div>
         </div>
         <div class="storyBox">
           <div class="storyimg">
-            <img
-              class="wow bounceIn"
-              data-wow-delay="0.3s"
-              :src="storyList[1].storyImg"
-              alt=""
-            />
+            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[1].storyImg" alt>
           </div>
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img
-                :src="storyList[1].imgUrl"
-                class="wow bounceIn"
-                data-wow-delay="0.3s"
-                alt=""
-              />
+              <img :src="storyList[1].imgUrl" class="wow bounceIn" data-wow-delay="0.3s" alt>
               <p>
-                <span>{{ storyList[1].imgTxt1 }}</span
-                ><span>{{ storyList[1].imgTxt2 }}</span>
+                <span>{{ storyList[1].imgTxt1 }}</span>
+                <span>{{ storyList[1].imgTxt2 }}</span>
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[1].title }}</div>
@@ -113,49 +93,29 @@
         <div class="storyBox">
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img
-                class="wow bounceIn"
-                data-wow-delay="0.3s"
-                :src="storyList[2].imgUrl"
-                alt=""
-              />
+              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[2].imgUrl" alt>
               <p>
-                <span>{{ storyList[2].imgTxt1 }}</span
-                ><span>{{ storyList[2].imgTxt2 }}</span>
+                <span>{{ storyList[2].imgTxt1 }}</span>
+                <span>{{ storyList[2].imgTxt2 }}</span>
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[2].title }}</div>
             <div class="storyTxtBot">{{ storyList[2].con }}</div>
           </div>
           <div class="storyimg">
-            <img
-              class="wow bounceIn"
-              data-wow-delay="0.3s"
-              :src="storyList[2].storyImg"
-              alt=""
-            />
+            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[2].storyImg" alt>
           </div>
         </div>
         <div class="storyBox">
           <div class="storyimg">
-            <img
-              class="wow bounceIn"
-              data-wow-delay="0.3s"
-              :src="storyList[3].storyImg"
-              alt=""
-            />
+            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[3].storyImg" alt>
           </div>
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img
-                class="wow bounceIn"
-                data-wow-delay="0.3s"
-                :src="storyList[3].imgUrl"
-                alt=""
-              />
+              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[3].imgUrl" alt>
               <p>
-                <span>{{ storyList[3].imgTxt1 }}</span
-                ><span>{{ storyList[3].imgTxt2 }}</span>
+                <span>{{ storyList[3].imgTxt1 }}</span>
+                <span>{{ storyList[3].imgTxt2 }}</span>
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[3].title }}</div>
@@ -166,27 +126,17 @@
         <div class="storyBox">
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img
-                class="wow bounceIn"
-                data-wow-delay="0.3s"
-                :src="storyList[4].imgUrl"
-                alt=""
-              />
+              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[4].imgUrl" alt>
               <p>
-                <span>{{ storyList[4].imgTxt1 }}</span
-                ><span>{{ storyList[4].imgTxt2 }}</span>
+                <span>{{ storyList[4].imgTxt1 }}</span>
+                <span>{{ storyList[4].imgTxt2 }}</span>
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[4].title }}</div>
             <div class="storyTxtBot">{{ storyList[4].con }}</div>
           </div>
           <div class="storyimg">
-            <img
-              class="wow bounceIn"
-              data-wow-delay="0.3s"
-              :src="storyList[4].storyImg"
-              alt=""
-            />
+            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[4].storyImg" alt>
           </div>
         </div>
       </div>
@@ -225,7 +175,7 @@ export default {
           imgTxt2: "寻找",
           title: "推本溯源",
           con:
-            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛"
+            "以大型蒙古包作为整个项目地的核心建筑物，包内建设内蒙古和蒙中草药从古至今文化传承博物馆、产品销售馆、蒙古文化大型演义馆。包外设有大型舞台作为祭拜活动场所。围绕核心建筑打造蒙古包民宿部落，蒙古特色游乐活动及小吃美食街"
         },
         {
           imgUrl: "static/img/3/ky/storybg.png",
@@ -234,7 +184,7 @@ export default {
           imgTxt2: "深入",
           title: "独具匠心",
           con:
-            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛"
+            "打造“一乡一品种”的蒙中药材文化民俗村，游客可以深入到村庄，感受不一样的蒙中药特色的民俗风情"
         },
         {
           imgUrl: "static/img/3/ky/storybg.png",
@@ -243,7 +193,7 @@ export default {
           imgTxt2: "沉浸",
           title: "宛如仙境",
           con:
-            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛"
+            "种植各种中药材花卉，打造花海景观，种植区中间可分散建设蒙古草药命名的蒙古包餐厅；并在山坡上建设彩虹滑道、热气球、滑翔伞等娱乐项目"
         },
         {
           imgUrl: "static/img/3/ky/storybg.png",
@@ -251,8 +201,7 @@ export default {
           imgTxt1: "第四站",
           imgTxt2: "发现",
           title: "遗迹探寻",
-          con:
-            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛"
+          con: "发现成吉思汗边墙遗迹，探索古蒙古帝国辉煌，学习民族英雄精神"
         },
         {
           imgUrl: "static/img/3/ky/storybg.png",
@@ -261,7 +210,7 @@ export default {
           imgTxt2: "回归",
           title: "修身养性",
           con:
-            "为打造全国首屈一指的的中药材产业基地，国草园集团斥资3000余万在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛"
+            "建造药膳精品美食会所，徽派建筑风格的湖景别墅高端酒店，夜晚打造大型烟花、LED灯光演艺活动，围绕水系到208省道之间区域种植观赏性强又能改善土质的柴胡、芍药、红花等中药材花卉"
         }
       ]
     };
@@ -325,9 +274,8 @@ export default {
         &:hover {
           cursor: pointer;
           img {
-            box-shadow: 10px 10px 20px 10px #24585250,
-              -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
-            transform: scale(1.05);
+            box-shadow: 3px 3px 6px 3px #24585250,
+              -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
             // animation: imgrotate 2s infinite alternate;
             // -webkit-animation: imgrotate 2s infinite alternate;
             // -moz-animation: imgrotate 2s infinite alternate;
@@ -336,7 +284,7 @@ export default {
           }
           .baseNavListtitle {
             color: $mainColor;
-            transform: translateX(10px) scale(1.2);
+            transform: translateX(10px);
           }
         }
         img {

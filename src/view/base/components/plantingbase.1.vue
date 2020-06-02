@@ -22,15 +22,11 @@
       </div>
       <ul class="plantingimgList container">
         <li v-for="(item, index) in newImgList" :key="index" class="wow bounceIn">
-          <div>
-            <div class="box">
-              <img :src="item.imgUrl">
-              <div class="box-content">
-                <h3 class="title">{{item.title}}</h3>
-                <span class="post">种植 基地</span>
-              </div>
-            </div>
-          </div>
+          <img :src="item.imgUrl" alt>
+          <div class="plantingimgtitle">{{ item.title }}</div>
+          <div class="hoverBox"></div>
+          <div class="hoverBox1">种植基地</div>
+          <!-- <div class="plantingimgtitle">123</div> -->
         </li>
       </ul>
     </div>
@@ -276,141 +272,86 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
     li {
-      &:hover {
-        cursor: pointer;
-      }
       margin: 2.4%;
       width: 20%;
       position: relative;
-      // background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
-      // background-size: 100% 100%;
+      background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
+      background-size: 100% 100%;
       padding: 2px;
       overflow: hidden;
-      // border: 1px solid red;
-      .box {
-        background: linear-gradient(#245852, #24585220);
-        font-family: "Merriweather Sans", sans-serif;
-        border-radius: 7px;
-        position: relative;
-        overflow: hidden;
+      &:hover {
+        cursor: pointer;
+        padding: 0px;
+        .hoverBox {
+          opacity: 0.3;
+        }
+        .hoverBox1 {
+          opacity: 1;
+          font-size: 34px;
+        }
+        img {
+          transform: scale(1.2);
+        }
+        .plantingimgtitle {
+        }
       }
-      .box:before {
-        content: "";
-        background: -webkit-repeating-linear-gradient(
-          45deg,
-          rgba(0, 0, 0, 0.1) 10px,
-          transparent 10px,
-          transparent 20px,
-          rgba(0, 0, 0, 0.1) 20px,
-          rgba(0, 0, 0, 0.1) 30px,
-          transparent 30px,
-          transparent 40px,
-          rgba(0, 0, 0, 0.1) 40px,
-          rgba(0, 0, 0, 0.1) 50px,
-          transparent 50px,
-          transparent 60px,
-          rgba(0, 0, 0, 0.1) 60px,
-          rgba(0, 0, 0, 0.1) 70px,
-          transparent 70px,
-          transparent 80px,
-          rgba(0, 0, 0, 0.1) 80px,
-          rgba(0, 0, 0, 0.1) 90px,
-          transparent 90px
-        );
+      .hoverBox {
+        position: absolute;
         width: 100%;
         height: 100%;
+        background: #000;
+        border-radius: 2px;
         opacity: 0;
-        position: absolute;
         top: 0;
         left: 0;
-        z-index: 0;
-        transition: all 0.5s;
+        transition: all 0.8s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100002;
+        border-radius: 15px;
+        span {
+          color: red;
+          font-size: $titleFontSize;
+          opacity: 1;
+        }
       }
-      .box:hover:before {
-        opacity: 1;
-      }
-      .box img {
-        width: 100%;
-        height: auto;
-        transition: all 0.5s ease;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
-      .box:hover img {
-        opacity: 0.5;
-        -webkit-clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
-        clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
-      }
-      .box .box-content {
-        color: #fff;
-        text-align: center;
-        width: 100%;
-        opacity: 0;
-        transform: translateX(-50%) translateY(-50%) rotate(-55deg);
+      .hoverBox1 {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        transition: all 1.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100002;
+        border-radius: 5px;
+        font-size: 0px;
+      }
+      img {
+        width: 100%;
+        transition: all 0.8s ease;
+        position: relative;
         z-index: 1;
-        transition: all 0.5s;
+        border-radius: 11px 11px 0 0;
       }
-      .box:hover .box-content {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-50%) rotate(0deg);
-      }
-      .box .title {
-        font-size: 25px;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-shadow: 0 0 5px #000;
-        margin: 0 0 3px 0;
-      }
-      .box .post {
-        font-size: 16px;
-        text-shadow: 0 0 5px #000;
-        text-transform: capitalize;
-        display: block;
-      }
-      .box .icon {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        opacity: 0;
-        transform: rotateX(180deg);
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        transition: all 0.3s;
-      }
-      .box:hover .icon {
-        opacity: 1;
-        transform: rotate(0);
-      }
-      .box .icon li a {
-        color: #24585220;
-        background-color: #fff;
-        font-size: 17px;
-        text-align: center;
-        line-height: 30px;
-        width: 30px;
-        height: 30px;
-        margin: 0 0 7px;
-        border-radius: 50%;
-        display: block;
-        transition: all 0.5s;
-      }
-      .box .icon li a:hover {
-        color: #245852;
-        box-shadow: 0 0 15px #fff;
-      }
-      @media only screen and (max-width: 990px) {
-        .box {
-          margin: 0 0 30px;
-        }
-      }
-      @media only screen and (max-width: 479px) {
-        .box .title {
-          font-size: 20px;
-        }
+      .plantingimgtitle {
+        height: 4vw;
+        border-radius: 0 0 15px 15px;
+        background: #fff;
+        width: 100.5%;
+        margin-left: -0.25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 21px;
+        letter-spacing: 10px;
+        position: relative;
+        z-index: 100001;
       }
     }
   }
