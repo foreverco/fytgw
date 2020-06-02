@@ -53,7 +53,7 @@
           <img :src="item.imgUrl" alt />
           <div class="plantingimgtitle">{{ item.title }}</div>
           <div class="hoverBox"></div>
-          <div class="hoverBox1">种植基地</div>
+          <div class="hoverBox1">{{ item.title }}</div>
           <!-- <div class="plantingimgtitle">123</div> -->
         </li>
       </ul>

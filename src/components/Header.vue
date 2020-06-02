@@ -168,7 +168,7 @@ export default {
         {
           name: "中药材基地",
           name1: "XWZHONGXIN",
-          path: "/news/companynews",
+          path: "/base/plantingbase",
           // path: "/newsinformation",
           children: [
             {

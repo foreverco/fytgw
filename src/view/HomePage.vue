@@ -243,41 +243,17 @@
           </ul>
         </div>
         <div class="row plantingBox">
-          <div
-            class="planting_model hoverwow zoomIn"
-            data-wow-duration="1.5s"
-            v-if="activePic !== -1"
-            @mouseleave.stop="movePicIndex"
-            v-clickoutside="handleClose"
-          >
-            <div class="closePic" @click="bigPicIndex(activePic)">X</div>
-            <img :src="basePicList[activePic].imgUrlHover" ref="bigPic" alt />
+          <div class="one">
+            <img src="../../static/img/3/home/plantingBox1.png" alt="" />
           </div>
-          <div
-            class="col-xs-12 col-sm-6 col-md-3 baseList wow zoomIn"
-            v-for="(item, index) in basePicList"
-            :key="index"
-          >
-            <div class="basePicBox">
-              <img :src="item.imgUrl" alt @click.stop="getBigPic(index)" />
-              <div class="hoverBox">{{ item.title }}</div>
-            </div>
-
-            <!-- <p class="text-center">{{item.title}}</p> -->
-            <!-- <div
-              class="server-block wow slideInUp"
-              onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
-              onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
-            >
-              <img class="center-block" :src="item.logo" alt="logo">
-              <p class="text-center">{{item.title}}</p>
-              <div
-                class="text-center"
-                v-html="item.content"
-                onmouseenter="this.style.color='#28f'"
-                onmouseleave="this.style.color='#ccc'"
-              ></div>
-            </div>-->
+          <div class="two">
+            <img src="../../static/img/3/home/plantingBox4.png" alt="" />
+          </div>
+          <div class="three">
+            <img src="../../static/img/3/home/plantingBox3.png" alt="" />
+          </div>
+          <div class="four">
+            <img src="../../static/img/3/home/plantingBox2.png" alt="" />
           </div>
         </div>
       </div>
@@ -1126,11 +1102,12 @@ export default {
         // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         .imgbox {
           // position: absolute;
-          padding: 5px 0;
+          padding: 1px 0;
           img {
             opacity: 1;
             width: 34%;
-            margin-left: 5px;
+            margin-left: 1px;
+            border-radius: 8px 0 0 8px;
           }
         }
         .newsContent {
@@ -1248,6 +1225,53 @@ export default {
             }
           }
         }
+      }
+    }
+  }
+  /* 中药材基地 */
+  .plantingBox {
+    // outline: 1px solid red;
+    // display: flex;
+    // flex-wrap: wrap;
+    // height: 800px;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    > div {
+      &:hover {
+        cursor: pointer;
+        box-shadow: 3px 3px 6px 3px #24585250,
+          -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+      }
+      // position: absolute;
+      width: 40%;
+      // outline: 1px solid blue;
+      &.two {
+        width: 60%;
+        // right: 0;
+        float: right;
+      }
+      &.four {
+        position: absolute;
+        left: 40%;
+      }
+      &.three {
+        bottom: 0;
+        float: left;
+        z-index: 1;
+        position: absolute;
+        z-index: 100000001;
+      }
+      &.one {
+        top: 0;
+        float: left;
+        outline: 1px solid red;
+      }
+      img {
+        width: 100%;
       }
     }
   }
