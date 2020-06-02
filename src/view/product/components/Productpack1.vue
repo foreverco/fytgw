@@ -12,7 +12,7 @@
       <div class="row listNavRow">
         <ul class="col-xs-12 col-md-8 listNav">
           <li
-            v-for="(item, index) in listType.slice(0,1)"
+            v-for="(item, index) in listType.slice(1,2)"
             :key="index"
             :class="{ navActive: index == navIndex }"
             @click="changeList(index)"
@@ -169,7 +169,7 @@ export default {
           ]
         },
         {
-          type: "传统中药系列",
+          type: " 传统中药系列",
           typeId: "box2",
           imgList: [
             {

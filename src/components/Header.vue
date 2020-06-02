@@ -152,13 +152,21 @@ export default {
             //   path: "/product/bigData"
             // },
             {
-              name: "产品包装",
+              name: "养生茶",
               path: "/product/productpack"
             },
             {
-              name: "种植实力",
-              path: "/product/stockshow"
+              name: "传统中药",
+              path: "/product/productpack1"
+            },
+            {
+              name: "药食同源",
+              path: "/product/productpack2"
             }
+            // {
+            //   name: "种植实力",
+            //   path: "/product/stockshow"
+            // }
             // {
             //   name: "防伪查询",
             //   path: "/software/bigData"

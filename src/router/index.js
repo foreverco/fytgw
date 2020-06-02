@@ -148,6 +148,26 @@ export default new Router({
               }
             },
             {
+              path: "/product/productpack1",
+              name: "Productpack",
+              component: resolve =>
+                require(["@/view/product/components/Productpack1"], resolve),
+              meta: {
+                title: "产品包装",
+                navIndex: 2
+              }
+            },
+            {
+              path: "/product/productpack2",
+              name: "Productpack",
+              component: resolve =>
+                require(["@/view/product/components/Productpack2"], resolve),
+              meta: {
+                title: "产品包装",
+                navIndex: 2
+              }
+            },
+            {
               path: "/product/stockshow",
               name: "Stockshow",
               component: resolve =>

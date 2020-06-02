@@ -6,30 +6,40 @@
             </li>
     </ul>-->
     <div class="row productpackBanner">
-      <img src="@/assets/img/chanpin/4-1chanpin-banner.png" alt>
+      <img src="@/assets/img/chanpin/4-1chanpin-banner.png" alt />
     </div>
     <div class="container">
       <div class="row listNavRow">
         <ul class="col-xs-12 col-md-8 listNav">
           <li
-            v-for="(item, index) in listType.slice(0,1)"
+            v-for="(item, index) in listType.slice(2,3)"
             :key="index"
             :class="{ navActive: index == navIndex }"
             @click="changeList(index)"
-          >{{ item.type }}</li>
+          >
+            {{ item.type }}
+          </li>
         </ul>
       </div>
-      <ul class="row productContainer" v-for="(items, index) in newlistType" :key="index">
+      <ul
+        class="row productContainer"
+        v-for="(items, index) in newlistType"
+        :key="index"
+      >
         <!-- <li
           class="row productTitle col-xs-12 wowProduct bounceInRight"
           :id="items.typeId"
         >
           <span>{{ items.type }}</span>
-        </li>-->
-        <li class="productList col-md-3 col-xs-5" v-for="(item, index) in pagecpList" :key="index">
+        </li> -->
+        <li
+          class="productList col-md-3 col-xs-5"
+          v-for="(item, index) in pagecpList"
+          :key="index"
+        >
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img :src="item.imgUrl" alt>
+              <img :src="item.imgUrl" alt />
             </div>
             <p class="productnameBox">{{ item.name }}</p>
             <p class="productpriceBox">{{ item.price }}</p>
