@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
-      <img src="../../assets/img/news/banner-2.png" alt />
+      <img src="../../assets/img/news/banner-2.png" alt>
     </div>
     <div class="baseNav" v-show="$route.name === 'companynews'">
       <ul class="baseNavList">
@@ -12,10 +12,11 @@
           data-wow-delay="0"
           @click="gotonews(item, index)"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
-          <div class="baseNavListtitle" :style="{ color: red }">
-            {{ item.title }}
-          </div>
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <div
+            class="baseNavListtitle"
+            :style="{ color:newsType===index? '#245852':'' }"
+          >{{ item.title }}</div>
         </li>
       </ul>
     </div>
@@ -128,13 +129,18 @@ export default {
   methods: {
     gotonews(e, index) {
       this.newsType = index;
+      localStorage.setItem("newstype", this.newsType);
       if (e.routerUrl !== "/news/companynews") {
+        this.newsType = 0;
+        localStorage.setItem("newstype", 0);
         this.$router.push(e.routerUrl);
       }
     }
   },
   mounted() {
     console.log(this.$route.path);
+    this.newsType = Number(localStorage.getItem("newstype"));
+    console.log(Number(localStorage.getItem("newstype")));
     var wow = new WOW();
     wow.init();
   }

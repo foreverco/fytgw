@@ -10,22 +10,17 @@
         "
       >
         <div class="newslistimgbox col-md-3 ol-xs-12">
-          <img :src="item.imgUrl" alt />
+          <img :src="item.imgUrl" alt>
           <ul class="dateBox">
             <li>{{ item.dateD }}</li>
             <li>{{ item.dateM }}</li>
           </ul>
         </div>
-        <div
-          class="newslistconbox col-md-9 col-xs-12"
-          style="padding-left:10px"
-        >
+        <div class="newslistconbox col-md-9 col-xs-12" style="padding-left:10px">
           <h4>{{ item.title }}</h4>
           <p class="contentbox">{{ item.con }}</p>
           <div class="btnBox">
-            <router-link
-              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-            >
+            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
               <button>{{ newsType }}查看详情 >></button>
             </router-link>
           </div>
@@ -132,10 +127,10 @@ export default {
   },
   watch: {
     newsType(val) {
-      console.log(val);
+      console.log(Number(val));
       this.newsList = newsListObj.newsList.filter(item => {
-        console.log(item);
-        return item.type == val;
+        // console.log(item);
+        return item.type == Number(val);
       });
       this.getData();
     }
@@ -150,7 +145,7 @@ export default {
         this.PageSize * this.currentPage - this.PageSize,
         this.PageSize * this.currentPage
       );
-      console.log(this.PageSize);
+      // console.log(this.PageSize);
     },
     // 分页
     // 每页显示的条数

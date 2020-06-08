@@ -1,20 +1,16 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div
-      id="swiper"
-      class="container-fuild"
-      @mouseenter="on_top_enter"
-      @mouseleave="on_top_leave"
-    >
+    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
           <div
             class="swiper-slide"
             v-for="(item, index) in swiperList"
             :key="index"
+            @click="swiperGoto(item)"
           >
-            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
+            <img class="swiper-lazy" :src="item.img" alt="轮播图">
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -46,7 +42,7 @@
               :key="index"
               @click="$router.push(item.routerUrl)"
             >
-              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
               <div class="swiper-slide-title">{{ item.title }}</div>
             </div>
           </div>
@@ -63,16 +59,14 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >
-              {{ item.name }}
-            </li>
+            >{{ item.name }}</li>
           </ul>
         </div>
 
@@ -89,18 +83,16 @@
             "
           >
             <div class="imgbox">
-              <router-link
-                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
-              >
+              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
                 <div class="wow zoomIn">
-                  <img :src="item.imgUrl" alt />
+                  <img :src="item.imgUrl" alt>
                 </div>
               </router-link>
             </div>
 
             <div class="newsContent">
               <p class="newstitle2">{{ item.title }}</p>
-              <p class="newsdate">{{ item.date }}</p>
+              <p class="newsdate">{{ item.baseNewsList.date }}</p>
               <p class="newsCon">{{ item.con }}</p>
             </div>
             <!-- <div class="col-md-3 col-sm-12">
@@ -117,7 +109,7 @@
     <div id="product" class="container-fuild">
       <div class="productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -134,17 +126,8 @@
           >
             <div class="swiper-container product-swiper" ref="mySwiper">
               <div class="swiper-wrapper">
-                <div
-                  class="swiper-slide"
-                  v-for="(item, index) in productList"
-                  :key="index"
-                >
-                  <img
-                    class="swiper-lazy"
-                    :src="item.imgUrl"
-                    alt="轮播图"
-                    style="width:80%"
-                  />
+                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
+                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" style="width:80%">
                   <div class="swiper-slide-title">
                     <p>{{ item.name }}</p>
                     <p>{{ item.title }}</p>
@@ -156,10 +139,10 @@
 
               <!-- 如果需要导航按钮 -->
               <!-- <div class="swiper-button-prev hidden-xs"></div>
-              <div class="swiper-button-next hidden-xs"></div> -->
+              <div class="swiper-button-next hidden-xs"></div>-->
             </div>
           </div>
-          <img src="../../static/img/3/home/cpbg.png" alt />
+          <img src="../../static/img/3/home/cpbg.png" alt>
         </ul>
       </div>
     </div>
@@ -172,37 +155,22 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
         </div>
         <div class="row aboutswiper">
-          <div
-            class="swiper-container aboutswipercontainer"
-            ref="aboutswipercontainer"
-          >
+          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png" alt>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png" alt>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png" alt>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png"
-                  alt
-                />
+                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png" alt>
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -218,18 +186,28 @@
         </div>
         <div class="row abouttxt">
           <p class="con">
-            国草园集团是一家农业+互联网平台化于一体的新型企业，旗下成立了四家子公司，分别是：内蒙古国草园实业科技发展有限公司、内蒙古国草园文旅产业发展有限公司、江苏国草园医药科技有限公司、国草园生物科技有限公司。<br />
+            国草园集团是一家农业+互联网平台化于一体的新型企业，旗下成立了四家子公司，分别是：内蒙古国草园实业科技发展有限公司、内蒙古国草园文旅产业发展有限公司、江苏国草园医药科技有限公司、国草园生物科技有限公司。
+            <br>
             <span style="display:block;width:0.3vw;"></span>
-            2018年，国草园集团在四子王旗共投资了千万余元，签订了33万亩的土地合同，并进行了中药材种子采购与1.3万亩土地试种和3000亩育苗试验田，同时在培育、驯化、检测方面也进行大量投入，完成了品种种植试验和土地环评检测，建设完成了种植示范基地，种子仓储库房（现在存储种子几万多斤）及土地规划等。<br />
+            2018年，国草园集团在四子王旗共投资了千万余元，签订了33万亩的土地合同，并进行了中药材种子采购与1.3万亩土地试种和3000亩育苗试验田，同时在培育、驯化、检测方面也进行大量投入，完成了品种种植试验和土地环评检测，建设完成了种植示范基地，种子仓储库房（现在存储种子几万多斤）及土地规划等。
+            <br>
             <span style="display:block;width:0.3vw;"></span>
             2019年，国草园集团进驻化德县，与化德县政府签订百万亩蒙中道地药材产业发展合作协议，国草园集团将投资30个亿，在化德县打造50万亩的道地药材种植基地，以“政府+企业+合作社+农户”模式进行合作，融合中草药种植、加工、仓储、销售、研发、鉴定于一体化产业链服务为主要运营模式，并充分发挥自治区地域特色，将当地观光旅游资源最大化，打造国家中草药种植+加工+中医药健康文旅融合示范基地。
-            <span style="display:block;width:0.3vw;"></span>
+            <span
+              style="display:block;width:0.3vw;"
+            ></span>
             国草园集团已与中国中药协会、中华中医药协会、国家中医药管理局等多家单位达成合作关系，推进蒙中药道地药材行业标准建设；同时还与平安保险、太平洋保险、中国人寿进行战略合作进行中草药种植保险的探索。
-            <span style="display:block;width:0.3vw;"></span>
+            <span
+              style="display:block;width:0.3vw;"
+            ></span>
             国草园集团已与北京同仁堂、康缘药业、天士力制药、扬子江药业集团签订了订单式合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
-            <span style="display:block;width:0.3vw;"></span>
+            <span
+              style="display:block;width:0.3vw;"
+            ></span>
             2020年，国草园集团与安徽中医药大学签订了合作协议，聘请专业教授、专家学者成立有关蒙中药材研究实验室，大力推动野生蒙中药规模化种植技术研究、人才培养及相关药品研发，实现“产学研用”一体化发展，推动科研成果顺利转化，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。
-            <span style="display:block;width:0.3vw;"></span>
+            <span
+              style="display:block;width:0.3vw;"
+            ></span>
             此外，国草园集团计划利用公司自身的资源、团队和技术等优势，充分发挥自治区地域优势，打造‘旅游+中医药’特色旅游文化产品。以中药资源优势，以文化为引领、旅游为支撑、健康为目标、养生为主体，强化优势资源整合和道地中草药规模化种植产业带动，差异化发展，构建文旅康养全产业链，打造以“文旅康养四位一体”的文旅康养小镇。
           </p>
           <p class="title">国草园集团</p>
@@ -240,7 +218,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="static/img/3/home/zhbt.png" alt />
+          <img src="static/img/3/home/zhbt.png" alt>
           <ul class="baseNav">
             <li @click="$router.push('/base/plantingbase')">种植基地</li>
             <li @click="$router.push('/base/inteligentAg')">智慧农业</li>
@@ -250,16 +228,16 @@
         </div>
         <div class="row plantingBox">
           <div class="one" @click="$router.push('/base/plantingbase')">
-            <img src="../../static/img/3/home/plantingBox1.png" alt />
+            <img src="../../static/img/3/home/plantingBox1.png" alt>
           </div>
           <div class="two" @click="$router.push('/base/inteligentAg')">
-            <img src="../../static/img/3/home/plantingBox4.png" alt />
+            <img src="../../static/img/3/home/plantingBox4.png" alt>
           </div>
           <div class="three" @click="$router.push('/base/kytown')">
-            <img src="../../static/img/3/home/plantingBox3.png" alt />
+            <img src="../../static/img/3/home/plantingBox3.png" alt>
           </div>
           <div class="four" @click="$router.push('/base/park')">
-            <img src="../../static/img/3/home/plantingBox2.png" alt />
+            <img src="../../static/img/3/home/plantingBox2.png" alt>
           </div>
         </div>
       </div>
@@ -268,7 +246,7 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
           <ul class="scoolingNav">
             <li>国之仙草</li>
             <li>百年健康</li>
@@ -276,18 +254,18 @@
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p class="con">
-              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
-            </p>
+            <p
+              class="con"
+            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
             <!-- <p class="title">-------同修仁德 济世养生------</p> -->
             <p class="name">
               <span>国草园</span>
-              <span> </span>
+              <span></span>
               <span>企业文化</span>
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt />
+            <img src="static/img/7-wenhua-tupian1.png" alt>
           </div>
         </div>
       </div>
@@ -312,6 +290,8 @@
 import Swiper from "swiper";
 import { WOW } from "wowjs";
 import MainScroll from "../components/scroll/Scroll2";
+import { getNewsList } from "@/util/newsList";
+const newsListObj = getNewsList();
 const clickoutside = {
   // 初始化指令
   bind(el, binding, vnode) {
@@ -337,7 +317,6 @@ const clickoutside = {
     delete el.__vueClickOutside__;
   }
 };
-
 export default {
   name: "HomePage",
   data() {
@@ -348,13 +327,19 @@ export default {
       swiperList: [
         {
           img: "static/img/3/home/banner.png",
-          path: "",
+          path: "/base/kytown",
           title: "",
           content: ""
         },
         {
           img: "static/img/3/home/banner2.jpg",
-          path: "",
+          path: "/base/inteligentAg",
+          title: "",
+          content: ""
+        },
+        {
+          img: "static/img/3/ky/banner.png",
+          path: "/base/plantingbase",
           title: "",
           content: ""
         }
@@ -393,93 +378,6 @@ export default {
       newsTitleActive: 0,
       /* 新闻列表 */
       newsList: [],
-      newsList1: [
-        [
-          {
-            newsid: 1,
-            imgUrl: "static/img/news/news1.png",
-            title:
-              "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
-            con:
-              "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
-            date: "2020-01-15"
-          },
-          {
-            newsid: 2,
-            imgUrl: "static/img/4-xinwenzhongxin-1.png",
-            title:
-              "国草园集团代表与内蒙古化德县种植大户关于中草药种植合作形式举行会议宣讲",
-            con:
-              "2020年3月14日上午，国草园集团与内蒙古化德县当地种植大户就百万亩中草药种植合作模式举行会议宣讲。会上，国草园集团代表就项目进展以及种植收益等方面进行了详细讲解，并就种植户提出的种植、合作问题进行了深入探讨。",
-            date: "2020-03-14"
-          },
-          {
-            newsid: 3,
-            imgUrl: "static/img/3/news/news_fuping3.png",
-            title:
-              "国草园集团代表与化德县领导于近日在林西县扶贫产业园和蒙中草药种植基地进行考察",
-            con:
-              "2020年3月30日，国草园集团董事长慈平凡、总裁唐琳与化德县领导在当地有关部门的陪同下到林西县东山生态扶贫产业园和蒙中草药种植基地设施农业项目进行实地考察调研。",
-            date: "2020-03-30"
-          }
-        ],
-        [
-          {
-            newsid: 4,
-            imgUrl: "static/img/news/news1.png",
-            title:
-              "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
-            con:
-              "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
-            date: "2020-01-15"
-          },
-          {
-            newsid: 5,
-            imgUrl: "static/img/4-xinwenzhongxin-1.png",
-            title:
-              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
-            con:
-              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
-            date: "2020-03-09"
-          },
-          {
-            newsid: 6,
-            imgUrl: "static/img/news2.png",
-            title: "奈曼旗打造现代蒙中药材全产业链",
-            con:
-              "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
-            date: "2020-01-25"
-          }
-        ],
-        [
-          {
-            newsid: 7,
-            imgUrl: "static/img/news/news1.png",
-            title:
-              "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
-            con:
-              "阳春三月，犁牛遍地走。今年春天，在内蒙古中西部农民们种植有了新变化，不种庄稼种药材，黄芪、甘草、红花、防风、柴胡等，进入4月，不少村民已开始忙碌起来。“我们都在种黄芪等中药材，一亩地能增收2000元呢。”村民老刘介绍，他所在的乌兰察布市商都县地黄种植一亩可产7000多斤，比传统作物土豆、向日葵产值高多了！在包头、乌海、巴彦淖尔、乌兰察布、呼和浩特等地掀起了种药材热潮。农民朋友们欢欢喜喜买种子，种药材。",
-            date: "2020-01-15"
-          },
-          {
-            newsid: 8,
-            imgUrl: "static/img/4-xinwenzhongxin-1.png",
-            title:
-              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
-            con:
-              "国草园领导跟化德县王兵书记及相关政府部门领导开会，确定2020年度国草园中药材种植模式及扶持政策",
-            date: "2020-03-09"
-          },
-          {
-            newsid: 9,
-            imgUrl: "static/img/news2.png",
-            title: "奈曼旗打造现代蒙中药材全产业链",
-            con:
-              "奈曼旗提早谋划2018年全产业链发展，围绕通辽市推动“五个结合”打造九个全产业链的战略部署，计划利用三年时间，集中力量打造绿色生态农牧业、蒙中药材、沙产业、镍基合金新材料、民族文化旅游五个全产业链。",
-            date: "2020-01-25"
-          }
-        ]
-      ],
       /* 国草园产品 */
       productList: [
         {
@@ -802,7 +700,12 @@ export default {
     MainScroll
   },
   mounted() {
-    this.newsList = this.newsList1[0];
+    this.newsList = newsListObj.newsList.filter(item => {
+      return item.type == 0;
+    });
+    if (this.newsList.length > 3) {
+      this.newsList = this.newsList.slice(0, 3);
+    }
     /* banner-swiper */
     new Swiper(".banner-swiper", {
       loop: true, // 循环模式选项
@@ -945,11 +848,21 @@ export default {
     on_bot_leave() {
       this.myBotSwiper.startAutoplay();
     },
-
+    /* 轮播图跳转 */
+    swiperGoto(e) {
+      if (e.path) {
+        this.$router.push(e.path);
+      }
+    },
     newsTitleChange(e) {
       this.newsTitleActive = e;
-      this.newsList = this.newsList1[e];
-      console.log(this.newsList);
+      // this.newsList = this.newsList1[e];
+      this.newsList = newsListObj.newsList.filter(item => {
+        return item.type == e;
+      });
+      if (this.newsList.length > 3) {
+        this.newsList = this.newsList.slice(0, 3);
+      }
     },
     changeTacnology(e) {
       this.tecnologyShow = e;
@@ -964,7 +877,6 @@ export default {
       this.$router.push("/product/productpack");
     },
     getBigPic(e) {
-      console.log(e);
       this.activePic = e;
     },
     // moveBigPic() {
