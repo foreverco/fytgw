@@ -2,7 +2,7 @@
   <div id="jiagou">
       <div class='row'>
         <div class='col-xs-12 picBox'>
-            <img src="@/assets/img/qiye/3-2zuzhijiagou-1.png" alt="">
+            <img src="static/img/3/us/zuzhitop.png" alt="">
         </div>
       </div>
     <div class='container'>
@@ -15,7 +15,7 @@
         </div> -->
         <div class='col-xs-12 concTxt'>
           <img
-            src="@/assets/img/qiye/3-2zuzhijiagou-3.png"
+            src="static/img/3/us/zuzhicon.png"
             alt=""
           >
         </div>

@@ -1,36 +1,28 @@
 <template>
   <div class="container-fluid">
     <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
-      <img src="../../assets/img/news/banner-2.png" alt>
+      <img src="../../assets/img/news/banner-2.png" alt />
     </div>
-    <!-- <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
-      <div class="swiper-container banner-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
-            <div class="swiper-lazy-preloader"></div>
-            <div class="swiper-slide-title">
-              <h1>{{ item.title }}</h1>
-              <p>{{ item.content }}</p>
-            </div>
+    <div class="baseNav" v-show="$route.name === 'companynews'">
+      <ul class="baseNavList">
+        <li
+          v-for="(item, index) in tecnologyList"
+          :key="index"
+          class="wow bounceInRight"
+          data-wow-delay="0"
+          @click="gotonews(item, index)"
+        >
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+          <div class="baseNavListtitle" :style="{ color: red }">
+            {{ item.title }}
           </div>
-        </div> -->
-        <!-- 如果需要分页器 -->
-        <!-- <div class="swiper-pagination"></div> -->
-
-        <!-- 如果需要导航按钮 -->
-        <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div> -->
+        </li>
+      </ul>
+    </div>
     <!-- 企业宣传片 -->
     <div id="company" class="container" v-if="$route.name === 'videonews'">
       <div class="row">
         <div class="col-xs-12 videoBox">
-          <!-- <h1>富宇通的快乐生活</h1> -->
-          <!-- <img src="@/assets/img/news/datu-1.png" alt=""> -->
-          <!-- 播放器的方向， landscape横屏，portraint竖屏，默认值为竖屏 -->
-          <!-- <video src="static/video/yyb.mp4"></video> -->
           <video
             id="videoactive"
             autoplay
@@ -51,28 +43,8 @@
     </div>
     <div id="Software" class="container">
       <div class="row">
-        <div id="left" class="col-md-3 col-xs-12">
-          <ul class="left-container wow bounceInLeft">
-            <!-- <p>新闻中心</p> -->
-            <li
-              v-for="(item, index) in softwareList"
-              :key="index"
-              :class="{ pathActive: item.path == $route.path }"
-            >
-              <router-link :to="item.path">
-                <img
-                  v-if="item.path == $route.path"
-                  src="../../assets/img/news/dl.png"
-                  class="activeImg"
-                  alt
-                >
-                {{ item.name }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
-        <div id="right" class="col-md-9 col-xs-12 wow bounceInRight">
-          <router-view></router-view>
+        <div id="right" class="col-md-12 col-xs-12 wow bounceInRight">
+          <router-view :newsType="newsType"></router-view>
         </div>
       </div>
     </div>
@@ -85,6 +57,7 @@ export default {
   name: "Software",
   data() {
     return {
+      newsType: 0,
       videoActive: "",
       softwareList: [
         {
@@ -94,6 +67,28 @@ export default {
         {
           name: "视频展示",
           path: "/news/videonews"
+        }
+      ],
+      tecnologyList: [
+        {
+          title: "国草园资讯",
+          routerUrl: "/news/companynews",
+          imgUrl: "static/img/3/home/tac1.png"
+        },
+        {
+          title: "最新公告",
+          routerUrl: "/news/companynews",
+          imgUrl: "static/img/3/home/tac2.png"
+        },
+        {
+          title: "行业动态",
+          routerUrl: "/news/companynews",
+          imgUrl: "static/img/3/home/tac3.png"
+        },
+        {
+          title: " 视频展示",
+          routerUrl: "/news/videonews",
+          imgUrl: "static/img/3/home/tac4.png"
         }
       ],
       /* 轮播图列表 */
@@ -130,43 +125,86 @@ export default {
       console.log(to);
     }
   },
+  methods: {
+    gotonews(e, index) {
+      this.newsType = index;
+      if (e.routerUrl !== "/news/companynews") {
+        this.$router.push(e.routerUrl);
+      }
+    }
+  },
   mounted() {
     console.log(this.$route.path);
     var wow = new WOW();
     wow.init();
-    /* banner-swiper */
-    new Swiper(".banner-swiper", {
-      loop: true, // 循环模式选项
-      effect: "coverflow",
-      speed: 2000,
-      //自动播放
-      autoplay: {
-        delay: 2000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false
-      },
-      autoplay: false,
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      // 延迟加载
-      lazy: {
-        loadPrevNext: true
-      },
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
-    });
   }
 };
 </script>
 <style lang="scss" scoped>
+@import "@/styles/main.scss";
+#swiper {
+  // height: 600px;
+  // border: 1px solid blue;
+  img {
+    width: 100%;
+  }
+}
+.baseNav {
+  width: 100%;
+  background: url("/static/img/3/home/tecbg.png") no-repeat;
+  background-size: 100% 100%;
+  margin-top: -10px;
+  .baseNavList {
+    // background: red;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -ms-flex-item-align: center;
+      width: 20%;
+      padding: 3vw 0 !important;
+
+      // border: 1px solid red;
+      &:hover {
+        cursor: pointer;
+        img {
+          box-shadow: 3px 3px 6px 3px #24585250,
+            -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+          // animation: imgrotate 2s infinite alternate;
+          // -webkit-animation: imgrotate 2s infinite alternate;
+          // -moz-animation: imgrotate 2s infinite alternate;
+          // -o-animation: imgrotate 2s infinite alternate;
+          // -ms-animation: imgrotate 2s infinite alternate;
+        }
+        .baseNavListtitle {
+          color: $mainColor;
+          transform: translateX(10px);
+        }
+      }
+      img {
+        width: 40%;
+        margin-right: 20px;
+        border-radius: 100%;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+      }
+      .baseNavListtitle {
+        // width: 50%;
+        font-size: 1.3vw;
+        transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+}
 #left {
   margin: 20px 0;
 }
@@ -238,13 +276,10 @@ export default {
   transform: translateY(-50%);
 }
 /* 轮播图 */
-/* #swiper {
-  height: 600px;
-} */
+
 #swiper .banner-swiper {
   width: 100%;
   height: 100%;
-  /* border:1px solid blue; */
 }
 #swiper .banner-swiper .swiper-slide img {
   width: 100%;
@@ -254,8 +289,8 @@ export default {
   // border: 1px solid red;
 
   #videoactive {
-    width: 95%;
-    margin-left: 5%;
+    width: 100%;
+    // margin-left: 5%;
   }
 }
 </style>

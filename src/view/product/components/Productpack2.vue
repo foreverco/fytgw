@@ -5,22 +5,22 @@
                <a :href="'#'+item.typeId">{{item.type}}</a> 
             </li>
     </ul>-->
-    <div class="row productpackBanner">
-      <img src="@/assets/img/chanpin/4-1chanpin-banner.png" alt />
-    </div>
+    <!-- <div class="row productpackBanner">
+      <img src="/static/img/3/home/banner2.jpg" alt />
+    </div> -->
     <div class="container">
-      <div class="row listNavRow">
+      <!-- <div class="row listNavRow">
         <ul class="col-xs-12 col-md-8 listNav">
           <li
-            v-for="(item, index) in listType.slice(2,3)"
+            v-for="(item, index) in listType"
             :key="index"
-            :class="{ navActive: index == navIndex }"
-            @click="changeList(index)"
+            :class="{ navActive: index == 2 }"
+            @click="$router.push(item.routerUrl)"
           >
             {{ item.type }}
           </li>
         </ul>
-      </div>
+      </div> -->
       <ul
         class="row productContainer"
         v-for="(items, index) in newlistType"
@@ -85,6 +85,7 @@ export default {
         {
           type: "养生茶系列",
           typeId: "box1",
+          routerUrl: "/product/productpack",
           imgList: [
             {
               id: "huangzhi11",
@@ -181,6 +182,7 @@ export default {
         {
           type: "传统中药系列",
           typeId: "box2",
+          routerUrl: "/product/productpack1",
           imgList: [
             {
               id: "huangzhi",
@@ -277,6 +279,7 @@ export default {
         {
           type: "药食同源系列",
           typeId: "box3",
+          routerUrl: "/product/productpack2",
           imgList: [
             {
               id: "huangzhi",
@@ -570,7 +573,7 @@ a {
 .listNav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .listNav li {

@@ -26,14 +26,14 @@
             </dl>
           </li>
         </ul>
-        <ul class="loginBox">
+        <!-- <ul class="loginBox">
           <li>
             <span class="glyphicon glyphicon-user"></span>
           </li>
           <li>登录</li>
           <li>/</li>
           <li>注册</li>
-        </ul>
+        </ul> -->
       </div>
     </div>
 
@@ -204,7 +204,7 @@ export default {
           // path: "/newsinformation",
           children: [
             {
-              name: "公司新闻",
+              name: "企业新闻",
               path: "/news/companynews"
             },
             {
@@ -296,10 +296,10 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      if (scrollTop > 500) {
+      if (scrollTop > 400) {
         this.tabNav = true;
         console.log(1111);
-      } else if (scrollTop < 500) {
+      } else if (scrollTop < 400) {
         this.tabNav = false;
         console.log(222);
       }
@@ -311,7 +311,7 @@ export default {
 @import "@/styles/main.scss";
 .navscroll {
   // opacity: 0.3;
-  background: #ffffff70 !important;
+  background: #ffffff !important;
   position: fixed;
 }
 /* 顶部 */
@@ -414,7 +414,7 @@ export default {
             top: 100%;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 10001;
+            z-index: 10000001;
             // box-shadow: 0 0 3px 1px #ccc;
             background: #fff;
             padding: 0 20px;

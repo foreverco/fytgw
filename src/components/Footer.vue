@@ -17,7 +17,7 @@
       <div class="telBox">
         400 168 5665
       </div>
-      <ul class="navBox">
+      <ul class="navBox hidden-xs">
         <li
           v-for="(item, index) in navList"
           :key="index"
@@ -84,13 +84,21 @@ export default {
             //   path: "/product/bigData"
             // },
             {
-              name: "产品包装",
+              name: "养生茶",
               path: "/product/productpack"
             },
             {
-              name: "种植实力",
-              path: "/product/stockshow"
+              name: "传统中药",
+              path: "/product/productpack1"
+            },
+            {
+              name: "药食同源",
+              path: "/product/productpack2"
             }
+            // {
+            //   name: "种植实力",
+            //   path: "/product/stockshow"
+            // }
             // {
             //   name: "防伪查询",
             //   path: "/software/bigData"
@@ -100,7 +108,7 @@ export default {
         {
           name: "中药材基地",
           name1: "XWZHONGXIN",
-          path: "/news/companynews",
+          path: "/base/plantingbase",
           // path: "/newsinformation",
           children: [
             {

@@ -21,34 +21,71 @@
     </div>-->
     <!-- </div> -->
     <div class="row aboutusTitle imgwow zoomIn">
-      <img src="../../assets/img/aboutUs/3-1qiyewenhua-2guanyu-1.png" alt>
-      <div class="container">
+      <img src="static/img/3/us/banner.png" alt />
+      <!-- <div class="container">
         <p class="hidden-xs">{{ company_profile }}</p>
-      </div>
+      </div> -->
     </div>
 
     <div class="container">
+      <div class="qylogoBox">
+        <img src="static/img/3/us/qyjj.png" alt />
+      </div>
+      <div class="qykuangBox">
+        <img src="static/img/3/us/kuang.png" alt="" />
+        <p class="con">
+          国草园集团是一家农业+互联网平台化于一体的新型企业，旗下成立了四家子公司，分别是：内蒙古国草园实业科技发展有限公司、内蒙古国草园文旅产业发展有限公司、江苏国草园医药科技有限公司、国草园生物科技有限公司。<br />
+          <span style="display:block;width:0.3vw;"></span>
+          2018年，国草园集团在四子王旗共投资了千万余元，签订了33万亩的土地合同，并进行了中药材种子采购与1.3万亩土地试种和3000亩育苗试验田，同时在培育、驯化、检测方面也进行大量投入，完成了品种种植试验和土地环评检测，建设完成了种植示范基地，种子仓储库房（现在存储种子几万多斤）及土地规划等。<br />
+          <span style="display:block;width:0.3vw;"></span>
+          2019年，国草园集团进驻化德县，与化德县政府签订百万亩蒙中道地药材产业发展合作协议，国草园集团将投资30个亿，在化德县打造50万亩的道地药材种植基地，以“政府+企业+合作社+农户”模式进行合作，融合中草药种植、加工、仓储、销售、研发、鉴定于一体化产业链服务为主要运营模式，并充分发挥自治区地域特色，将当地观光旅游资源最大化，打造国家中草药种植+加工+中医药健康文旅融合示范基地。
+          <span style="display:block;width:0.3vw;"></span>
+          国草园集团已与中国中药协会、中华中医药协会、国家中医药管理局等多家单位达成合作关系，推进蒙中药道地药材行业标准建设；同时还与平安保险、太平洋保险、中国人寿进行战略合作进行中草药种植保险的探索。
+          <span style="display:block;width:0.3vw;"></span>
+          国草园集团已与北京同仁堂、康缘药业、天士力制药、扬子江药业集团签订了订单式合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
+          <span style="display:block;width:0.3vw;"></span>
+          2020年，国草园集团与安徽中医药大学签订了合作协议，聘请专业教授、专家学者成立有关蒙中药材研究实验室，大力推动野生蒙中药规模化种植技术研究、人才培养及相关药品研发，实现“产学研用”一体化发展，推动科研成果顺利转化，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。
+          <span style="display:block;width:0.3vw;"></span>
+          此外，国草园集团计划利用公司自身的资源、团队和技术等优势，充分发挥自治区地域优势，打造‘旅游+中医药’特色旅游文化产品。以中药资源优势，以文化为引领、旅游为支撑、健康为目标、养生为主体，强化优势资源整合和道地中草药规模化种植产业带动，差异化发展，构建文旅康养全产业链，打造以“文旅康养四位一体”的文旅康养小镇。
+        </p>
+        <div class="gybox">
+          <img src="static/img/3/us/gy.png" alt="" />
+        </div>
+      </div>
+      <div class="qylogoBox">
+        <img src="static/img/3/us/qywh.png" alt />
+      </div>
       <ul class="row txtpicBox1">
-        <li class="col-xs-10 imgwow zoomIn" v-for="(item, index) in txtpicList" :key="index">
-          <img :src="item.imgUrl" alt>
+        <li
+          class="col-xs-10 imgwow zoomIn"
+          v-for="(item, index) in txtpicList"
+          :key="index"
+        >
+          <img :src="item.imgUrl" alt />
         </li>
       </ul>
     </div>
     <div class="tecnolyge container">
       <div class="row">
         <div class="tecnolyge_title col-md-4 imgwow bounceInLeft">
-          <img src="../../assets/img/aboutUs/tecnolegy.png" alt>
+          <img src="../../assets/img/aboutUs/tecnolegy.png" alt />
         </div>
-        <div
-          class="tecnolyge_content col-md-7 imgwow bounceInRight"
-        >国草园集团与安徽药科大学共同成立了中医药产学研合作基地，专家们为合作项目提供人才、技术、信息等方面的支持；并成立专家咨询小组，进行项目咨询、技术指导、技术培训，或开展专项研发等工作。包括土壤分析、蒙中药材选种、育种育苗技术指导、种植布局评估、种植技术指导、加工厂建设指导、蒙中药材加工技术指导、技术人员培训等。</div>
+        <div class="tecnolyge_content col-md-7 imgwow bounceInRight">
+          国草园集团与安徽中医药大学共同成立了中医药产学研合作基地，专家们为合作项目提供人才、技术、信息等方面的支持；并成立专家咨询小组，进行项目咨询、技术指导、技术培训，或开展专项研发等工作。包括土壤分析、蒙中药材选种、育种育苗技术指导、种植布局评估、种植技术指导、加工厂建设指导、蒙中药材加工技术指导、技术人员培训等。
+        </div>
       </div>
       <ul class="leaderList row">
-        <li class="col-md-3 imgwow zoomIn" v-for="(item, index) in leaderList" :key="index">
-          <img :src="item.imgUrl" alt>
+        <li
+          class="col-md-3 imgwow zoomIn"
+          v-for="(item, index) in leaderList"
+          :key="index"
+        >
+          <img :src="item.imgUrl" alt />
           <div class="leader_msg">
             <div class="leader_msg_box">
-              <p v-for="(itemSon, index) in item.msg" :key="index">{{ itemSon }}</p>
+              <p v-for="(itemSon, index) in item.msg" :key="index">
+                {{ itemSon }}
+              </p>
             </div>
           </div>
           <div class="leader_name">
@@ -72,11 +109,15 @@
 
     <div class="container">
       <ul class="row txtpicBox2">
-        <li class="col-xs-10 imgwow zoomIn" v-for="(item, index) in txtpicList2" :key="index">
+        <li
+          class="col-xs-10 imgwow zoomIn"
+          v-for="(item, index) in txtpicList2"
+          :key="index"
+        >
           <p>
-            <img src="item.picUrl" alt>
+            <img src="item.picUrl" alt />
           </p>
-          <img :src="item.imgUrl" alt>
+          <img :src="item.imgUrl" alt />
         </li>
       </ul>
     </div>
@@ -239,6 +280,44 @@ export default {
   width: 100%;
   height: 100%;
 }
+.qylogoBox {
+  // border: 1px solid red;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.qykuangBox {
+  // border: 1px solid red;
+  position: relative;
+  > img {
+    width: 100%;
+  }
+  p {
+    position: absolute;
+    width: 90%;
+    margin: 0 auto;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 3px;
+  }
+  .gybox {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.6s ease;
+    &:hover {
+      cursor: pointer;
+      // transform: scale(1.2) translateX(-50%);
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
 /* 关于国草园 */
 .aboutusTitle {
   position: relative;
@@ -249,7 +328,11 @@ export default {
 .aboutusTitle img {
   width: 100%;
 }
-.aboutusTitle div {
+.aboutusTitle .container {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+
   text-align: center;
   height: 70%;
   position: absolute;
@@ -259,20 +342,22 @@ export default {
 }
 .aboutusTitle p {
   text-align: center;
+  // border: 1px solid blue;
   overflow: auto;
-
-  width: 100%;
+  // width: 100%;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.3vw;
   letter-spacing: 4px;
   -webkit-writing-mode: tb-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: tb-rl;
   padding: 0;
   margin: 0;
-  line-height: 1.65vw;
+  line-height: 1.6vw;
   font-family: "lv1";
-  text-shadow: 2px 2px 3px #000;
+  // background: #00000020;
+
+  // text-shadow: 2px 2px 3px #000;
 }
 ::-webkit-scrollbar {
   width: 10px;

@@ -1,7 +1,7 @@
 <template>
   <div id="fengcai">
     <div class="row qiyebg">
-      <img src="../../assets/img/qiye/bg.png" alt />
+      <img src="static/img/3/us/bannerfc.png" alt />
     </div>
     <div class="container">
       <div class="row">
@@ -203,10 +203,11 @@ export default {
 <style lang="scss" scoped>
 .qiyebg img {
   width: 100%;
+  // height: 700px;
 }
 .imgBox {
   /* border:1px solid blue; */
-  margin-top: -15%;
+  margin-top: -20%;
   margin-bottom: 3vw;
   width: 100%;
   display: flex;

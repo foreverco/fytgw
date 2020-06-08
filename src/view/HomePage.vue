@@ -1,11 +1,20 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
+    <div
+      id="swiper"
+      class="container-fuild"
+      @mouseenter="on_top_enter"
+      @mouseleave="on_top_leave"
+    >
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in swiperList" :key="index">
-            <img class="swiper-lazy" :src="item.img" alt="轮播图">
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in swiperList"
+            :key="index"
+          >
+            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -31,8 +40,13 @@
       >
         <div class="swiper-container tecnology-swiper" ref="mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(item, index) in tecnologyList" :key="index">
-              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+            <div
+              class="swiper-slide"
+              v-for="(item, index) in tecnologyList"
+              :key="index"
+              @click="$router.push(item.routerUrl)"
+            >
+              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
               <div class="swiper-slide-title">{{ item.title }}</div>
             </div>
           </div>
@@ -49,14 +63,16 @@
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >{{ item.name }}</li>
+            >
+              {{ item.name }}
+            </li>
           </ul>
         </div>
 
@@ -65,12 +81,19 @@
             class="row newschangewow zoomIn"
             v-for="(item, index) in newsList"
             :key="index"
-            @click="$router.replace({name: 'NewsMsg', params: { newsId: item.newsid }})"
+            @click="
+              $router.replace({
+                name: 'NewsMsg',
+                params: { newsId: item.newsid }
+              })
+            "
           >
             <div class="imgbox">
-              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <div class="wow zoomIn">
-                  <img :src="item.imgUrl" alt>
+                  <img :src="item.imgUrl" alt />
                 </div>
               </router-link>
             </div>
@@ -94,7 +117,7 @@
     <div id="product" class="container-fuild">
       <div class="productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
           <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
@@ -102,12 +125,6 @@
             <li>防风</li>
           </ul>
         </div>
-        <!-- <ul class="row productNav">
-          <li>黄芪</li>
-          <li>板蓝根</li>
-          <li>柴胡</li>
-          <li>防风</li>
-        </ul>-->
         <ul class="productList row">
           <div
             id="productListswiper"
@@ -117,8 +134,17 @@
           >
             <div class="swiper-container product-swiper" ref="mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
-                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" style="width:80%">
+                <div
+                  class="swiper-slide"
+                  v-for="(item, index) in productList"
+                  :key="index"
+                >
+                  <img
+                    class="swiper-lazy"
+                    :src="item.imgUrl"
+                    alt="轮播图"
+                    style="width:80%"
+                  />
                   <div class="swiper-slide-title">
                     <p>{{ item.name }}</p>
                     <p>{{ item.title }}</p>
@@ -130,10 +156,10 @@
 
               <!-- 如果需要导航按钮 -->
               <!-- <div class="swiper-button-prev hidden-xs"></div>
-              <div class="swiper-button-next hidden-xs"></div>-->
+              <div class="swiper-button-next hidden-xs"></div> -->
             </div>
           </div>
-          <img src="../../static/img/3/home/cpbg.png" alt>
+          <img src="../../static/img/3/home/cpbg.png" alt />
         </ul>
       </div>
     </div>
@@ -146,22 +172,37 @@
     >
       <div class="container aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
         <div class="row aboutswiper">
-          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
+          <div
+            class="swiper-container aboutswipercontainer"
+            ref="aboutswipercontainer"
+          >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png"
+                  alt
+                />
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -176,19 +217,22 @@
           </div>
         </div>
         <div class="row abouttxt">
-          <p class="con col-md-11">
-            国草园集团总部位于北京，是集农业+互联网平台化公司，集团旗下内蒙古公司于内蒙古乌兰察布拥有 50 万亩中草药种植基地及配套的仓储物流园。公司拟定投资 30 亿，以内蒙古 50 万亩种植基地为依托，融合中草药种植、加工、仓储、销售、研发、鉴定于一体化产业链服务为主要运营模式，并充分发挥自治区地域特色，将当地观光旅游资源最大化，打造国家中医药健康文旅示范基地。
-            <br>
-            <span style="display:block;width:10px;"></span>
-            目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。
-            <br>
-            <span style="display:block;width:10px;"></span>
-            2020 年与安徽中医药大学签订了合作协议，聘请专业教授、专家学者对中草药在种植过程中所需的技术提供培训与指导支持，大力推动野生蒙中药规模化种植技术研究、人才培养及相关药品研发，实现“产学研用”一体化发展，推动科研成果顺利转化，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。
-            目前集团已与国药集团、步长制药、修正药业、北京同仁堂、康缘药业、天士力制药、扬子江药业集团签订了订单式合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
-            针对我国中草药产业的发展，国家近年陆续出台了一系列优惠政策大力推崇，力度之大更是史无前例！鉴于中草药产业具有较广阔的发展空间以及国草园集团与数家知名药企、中医学府、行业专家及相关行业协会等单位建立了实质性的合作关系，形成了中草药产业链条的完整体系等诸多优势特点，使得国草园集团引起了许多投资机构的密切关注与强烈的合作意愿，希望通过优势互补，强强联合为我国中草药产业发展进程贡献一份微薄力量。
-            现国草园集团正在全国各地寻找优质种植基地资源，计划利用集团资源优势、团队技术优势及管理输出能力优势稳健发展中草药种植产业，主要以“政府+企业”联合投资的方式运作，以合作经济带动产业经济，实现多方共赢。
+          <p class="con">
+            国草园集团是一家农业+互联网平台化于一体的新型企业，旗下成立了四家子公司，分别是：内蒙古国草园实业科技发展有限公司、内蒙古国草园文旅产业发展有限公司、江苏国草园医药科技有限公司、国草园生物科技有限公司。<br />
+            <span style="display:block;width:0.3vw;"></span>
+            2018年，国草园集团在四子王旗共投资了千万余元，签订了33万亩的土地合同，并进行了中药材种子采购与1.3万亩土地试种和3000亩育苗试验田，同时在培育、驯化、检测方面也进行大量投入，完成了品种种植试验和土地环评检测，建设完成了种植示范基地，种子仓储库房（现在存储种子几万多斤）及土地规划等。<br />
+            <span style="display:block;width:0.3vw;"></span>
+            2019年，国草园集团进驻化德县，与化德县政府签订百万亩蒙中道地药材产业发展合作协议，国草园集团将投资30个亿，在化德县打造50万亩的道地药材种植基地，以“政府+企业+合作社+农户”模式进行合作，融合中草药种植、加工、仓储、销售、研发、鉴定于一体化产业链服务为主要运营模式，并充分发挥自治区地域特色，将当地观光旅游资源最大化，打造国家中草药种植+加工+中医药健康文旅融合示范基地。
+            <span style="display:block;width:0.3vw;"></span>
+            国草园集团已与中国中药协会、中华中医药协会、国家中医药管理局等多家单位达成合作关系，推进蒙中药道地药材行业标准建设；同时还与平安保险、太平洋保险、中国人寿进行战略合作进行中草药种植保险的探索。
+            <span style="display:block;width:0.3vw;"></span>
+            国草园集团已与北京同仁堂、康缘药业、天士力制药、扬子江药业集团签订了订单式合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
+            <span style="display:block;width:0.3vw;"></span>
+            2020年，国草园集团与安徽中医药大学签订了合作协议，聘请专业教授、专家学者成立有关蒙中药材研究实验室，大力推动野生蒙中药规模化种植技术研究、人才培养及相关药品研发，实现“产学研用”一体化发展，推动科研成果顺利转化，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。
+            <span style="display:block;width:0.3vw;"></span>
+            此外，国草园集团计划利用公司自身的资源、团队和技术等优势，充分发挥自治区地域优势，打造‘旅游+中医药’特色旅游文化产品。以中药资源优势，以文化为引领、旅游为支撑、健康为目标、养生为主体，强化优势资源整合和道地中草药规模化种植产业带动，差异化发展，构建文旅康养全产业链，打造以“文旅康养四位一体”的文旅康养小镇。
           </p>
-          <p class="title col-md-1">国草园集团</p>
+          <p class="title">国草园集团</p>
         </div>
       </div>
     </div>
@@ -196,7 +240,7 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="static/img/3/home/zhbt.png" alt>
+          <img src="static/img/3/home/zhbt.png" alt />
           <ul class="baseNav">
             <li @click="$router.push('/base/plantingbase')">种植基地</li>
             <li @click="$router.push('/base/inteligentAg')">智慧农业</li>
@@ -206,16 +250,16 @@
         </div>
         <div class="row plantingBox">
           <div class="one" @click="$router.push('/base/plantingbase')">
-            <img src="../../static/img/3/home/plantingBox1.png" alt>
+            <img src="../../static/img/3/home/plantingBox1.png" alt />
           </div>
           <div class="two" @click="$router.push('/base/inteligentAg')">
-            <img src="../../static/img/3/home/plantingBox4.png" alt>
+            <img src="../../static/img/3/home/plantingBox4.png" alt />
           </div>
           <div class="three" @click="$router.push('/base/kytown')">
-            <img src="../../static/img/3/home/plantingBox3.png" alt>
+            <img src="../../static/img/3/home/plantingBox3.png" alt />
           </div>
           <div class="four" @click="$router.push('/base/park')">
-            <img src="../../static/img/3/home/plantingBox2.png" alt>
+            <img src="../../static/img/3/home/plantingBox2.png" alt />
           </div>
         </div>
       </div>
@@ -224,27 +268,26 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
           <ul class="scoolingNav">
-            <li>技术保障</li>
-            <li>跟踪服务</li>
-            <li>雄厚实力</li>
+            <li>国之仙草</li>
+            <li>百年健康</li>
           </ul>
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p
-              class="con"
-            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
-            <p class="title">-------同修仁德 济世养生------</p>
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+            </p>
+            <!-- <p class="title">-------同修仁德 济世养生------</p> -->
             <p class="name">
               <span>国草园</span>
-              <span>◆</span>
+              <span> </span>
               <span>企业文化</span>
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt>
+            <img src="static/img/7-wenhua-tupian1.png" alt />
           </div>
         </div>
       </div>
@@ -310,13 +353,7 @@ export default {
           content: ""
         },
         {
-          img: "static/img/3/home/banner.png",
-          path: "",
-          title: "",
-          content: ""
-        },
-        {
-          img: "static/img/3/home/banner.png",
+          img: "static/img/3/home/banner2.jpg",
           path: "",
           title: "",
           content: ""
@@ -328,18 +365,22 @@ export default {
       tecnologyList: [
         {
           title: "种植基地",
+          routerUrl: "/base/plantingbase",
           imgUrl: "static/img/3/home/tac1.png"
         },
         {
           title: "智慧农业",
+          routerUrl: "/base/inteligentAg",
           imgUrl: "static/img/3/home/tac2.png"
         },
         {
           title: "康养小镇",
+          routerUrl: "/base/kytown",
           imgUrl: "static/img/3/home/tac3.png"
         },
         {
           title: " 加工产业园",
+          routerUrl: "/base/park",
           imgUrl: "static/img/3/home/tac4.png"
         }
       ],
@@ -374,7 +415,7 @@ export default {
           },
           {
             newsid: 3,
-            imgUrl: "static/img/news2.png",
+            imgUrl: "static/img/3/news/news_fuping3.png",
             title:
               "国草园集团代表与化德县领导于近日在林西县扶贫产业园和蒙中草药种植基地进行考察",
             con:
@@ -460,6 +501,46 @@ export default {
           title: " 祛风解表，胜湿止痛",
           name: "防风",
           imgUrl: "static/img/3/home/pf4.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "产品包装1",
+          imgUrl: "static/img/3/home/bz1.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "产品包装2",
+          imgUrl: "static/img/3/home/bz2.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "产品包装3",
+          imgUrl: "static/img/3/home/bz3.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "产品包装4",
+          imgUrl: "static/img/3/home/bz4.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "桔梗",
+          imgUrl: "static/img/3/home/pj5.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "白芍",
+          imgUrl: "static/img/3/home/pj6.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "赤芍",
+          imgUrl: "static/img/3/home/pj7.png"
+        },
+        {
+          title: "增强免疫，保肝利尿",
+          name: "紫菀",
+          imgUrl: "static/img/3/home/pj8.png"
         }
       ],
       /* 关于国草园轮播图 */
@@ -901,6 +982,14 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.swiper-container-3d .swiper-slide-shadow-left {
+  opacity: 0 !important;
+}
+.swiper-container-3d .swiper-slide-shadow-right {
+  opacity: 0 !important;
+}
+</style>
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
 @keyframes imgrotate {
@@ -919,9 +1008,15 @@ export default {
     -ms-transform: rotate(360deg);
   }
 }
+.swiper-container-3d .swiper-slide-shadow-left {
+  opacity: 0 !important;
+}
+.swiper-container-3d .swiper-slide-shadow-right {
+  opacity: 0 !important;
+}
 /* 整体盒子 */
 #HomePage {
-  margin-top: 3px;
+  // margin-top: 3px;
   margin-bottom: 50px;
   /* 轮播图 */
   #swiper .banner-swiper {
@@ -953,7 +1048,7 @@ export default {
   }
   /* 专业的技术 */
   #tecnology {
-    background: url("../../static/img/3/home/tecbg.png") no-repeat;
+    background: url("../assets/img/3.0/tecbg.png") no-repeat;
     background-size: 100% 100%;
     margin-top: -13px !important;
     // height: 268px;
@@ -971,7 +1066,8 @@ export default {
         align-items: center;
         justify-content: center;
         width: 20%;
-        padding: 3vw 0 !important;
+        // padding: 1vw 0 !important;
+        height: 160px;
         &:hover {
           cursor: pointer;
           .swiper-slide-title {
@@ -990,7 +1086,8 @@ export default {
           }
         }
         img {
-          width: 30%;
+          // width: 30%;
+          height: 55%;
           border-radius: 100%;
           margin-right: 20px;
           transition: all 0.4s ease-in-out;
@@ -1057,10 +1154,11 @@ export default {
       li {
         display: block;
         margin: 30px 0;
-        background: url("/static/img/3/home/newsBg.png") no-repeat;
+        background: url("../assets/img/3.0/newsBg.png") no-repeat;
         background-size: 100% 100%;
         position: relative;
-        border-radius: 8px;
+        // border-radius: 8px;
+        // height: 10vw;
         &:hover {
           cursor: pointer;
           box-shadow: 3px 3px 6px 3px #24585250,
@@ -1075,11 +1173,12 @@ export default {
         // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         .imgbox {
           // position: absolute;
-          padding: 1px 0;
+          // padding: 1px 0;
           img {
             opacity: 1;
             width: 34%;
-            margin-left: 1px;
+            // height: 17vw;
+            // margin-left: 1px;
             border-radius: 8px 0 0 8px;
           }
         }
@@ -1096,7 +1195,7 @@ export default {
             font-weight: bold;
           }
           .newsdate {
-            background: url("/static/img/3/home/newsdate.png") no-repeat;
+            background: url("../../static/img/3/home/newsdate.png") no-repeat;
             background-size: 100% 100%;
             padding: 3px 20px 2px 20px;
             display: flex;
@@ -1241,7 +1340,7 @@ export default {
         top: 0;
         float: left;
         position: absolute;
-        z-index: 100000001;
+        z-index: 101;
       }
       img {
         width: 100%;
@@ -1253,6 +1352,8 @@ export default {
 /* 关于国草园 */
 .aboutcontainer {
   /* border: 1px solid #81b25b; */
+  // width: 1400px;
+  margin: 0 auto;
   margin-top: 14px;
   &:hover {
     cursor: pointer;
@@ -1287,17 +1388,24 @@ export default {
 .abouttxt {
   width: 100%;
   margin-top: 40px;
-  height: 230px;
+  height: 330px;
   display: flex;
+  justify-content: center;
+  // background: blue;
+  // border: 1px solid blue;
+  text-align: center;
 }
 .abouttxt .title {
   /* background: #81b25b; */
   writing-mode: tb-rl;
+  // border: 1px solid red;
+  width: 4%;
   /* width:10%; */
-  font-size: 24px;
+  font-size: 25px;
   /* font-family:'lv1'; */
   // font-weight: bold;
   color: $mainColor;
+  margin-left: 1%;
   // line-height: 50px;
   letter-spacing: 7px;
   display: flex;
@@ -1305,13 +1413,19 @@ export default {
   font-family: "lv2";
 }
 .abouttxt .con {
-  /* background: blue; */
   /* width:90%; */
-  font-size: 13px;
-  letter-spacing: 3px;
+  font-size: 14px;
+  // border: 1px solid red;
+  width: 96%;
+  letter-spacing: 5px;
+  line-height: 19px;
   /* font-family:'lv1'; */
   writing-mode: tb-rl;
   overflow: auto;
+  // border: 1px solid blue;
+  text-align: left;
+  // display: flex;
+  // justify-content: center;
   // font-family: "lv2";
 }
 /* #aboutgcy .customer-block img{
@@ -1430,15 +1544,18 @@ export default {
 /* 国草园文化标题 */
 .scoolingtitle {
   /* background: blue; */
-  margin: 12px 0;
+  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  img {
+    // border: 1px solid red;
+  }
 }
 /* 国草园文化导航 */
 .scoolingNav {
-  /* background: #81b25b; */
+  // background: #81b25b;
   left: 50%;
   transform: translate(-50%);
   -ms-transform: translate(-50%);
@@ -1483,8 +1600,12 @@ export default {
   font-family: "lv1";
 }
 .scoolingBox > div .name {
-  width: 5%;
+  width: 7%;
   writing-mode: tb-rl;
+  span {
+    font-size: 24px;
+    // border: 1px solid red;
+  }
 }
 .scoolingBox > div .name span:first-child {
   font-size: 24px;
@@ -1493,13 +1614,13 @@ export default {
   font-size: 24px;
   color: #81b25b;
 }
-.scoolingBox > div .title {
-  width: 5%;
-  font-size: 18px;
-  writing-mode: tb-rl;
-}
+// .scoolingBox > div .title {
+//   width: 5%;
+//   font-size: 18px;
+//   writing-mode: tb-rl;
+// }
 .scoolingBox > div .con {
-  width: 80%;
+  width: 83%;
   height: 90%;
   font-size: 14px;
   letter-spacing: 3px;

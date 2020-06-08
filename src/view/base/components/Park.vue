@@ -1,7 +1,7 @@
 <template>
   <div id="park">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt>
+      <img src="../../../../static/img/3/planting/basetop.png" alt />
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -10,43 +10,57 @@
           :key="index"
           class="wow bounceInRight"
           data-wow-delay="0"
+          @click="$router.push(item.routerUrl)"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/jgpark.png" alt>
+        <img src="../../../../static/img/3/ky/jgpark.png" alt />
       </div>
       <div class="parkplanbox container wow bounceInUp">
-        <img src="../../../../static/img/3/ky/parkplanimg.png" alt>
+        <img src="../../../../static/img/3/ky/parkplanimg.png" alt />
         <div>
-          <p>在百万亩种植基地带动产业经济的高速发展下，国草园集团考虑到后期产业发展规划，将在当地投资建设中药材加工产业园，做初加工及部分药材深加工，同时配套生产周边延伸产业。预计产业园在5年后年产值达到20亿，带动当地老百姓就业1000余人。</p>
+          <p>
+            在百万亩种植基地带动产业经济的高速发展下，国草园集团考虑到后期产业发展规划，将在当地投资建设中药材加工产业园，做初加工及部分药材深加工，同时配套生产周边延伸产业。预计产业园在5年后年产值达到20亿，带动当地老百姓就业1000余人。
+          </p>
         </div>
       </div>
       <div class="investmentBox">
-        <img src="../../../../static/img/3/ky/investment.png" alt>
+        <img src="../../../../static/img/3/ky/investment.png" alt />
         <ul class="investmentContent container">
-          <li v-for="(item, index) in investmentList" :key="index" class="wow bounceIn">
-            <img :src="item.imgUrl" alt>
+          <li
+            v-for="(item, index) in investmentList"
+            :key="index"
+            class="wow bounceIn"
+          >
+            <img :src="item.imgUrl" alt />
             <p>{{ item.content }}</p>
           </li>
         </ul>
       </div>
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/jgsb.png" alt>
+        <img src="../../../../static/img/3/ky/jgsb.png" alt />
       </div>
       <ul class="plantingimgList container">
-        <li v-for="(item, index) in newImgList" :key="index" class="wow bounceIn">
+        <li
+          v-for="(item, index) in newImgList"
+          :key="index"
+          class="wow bounceIn"
+        >
           <div>
             <div class="box">
-              <img :src="item.imgUrl">
+              <img :src="item.imgUrl" />
               <div class="box-content">
-                <h3 class="title">{{item.title}}</h3>
+                <h3 class="title">{{ item.title }}</h3>
                 <span class="post">加工 产业园</span>
               </div>
+              <p>
+                {{ item.title }}
+              </p>
             </div>
           </div>
         </li>
@@ -74,18 +88,22 @@ export default {
       tecnologyList: [
         {
           title: "种植基地",
+          routerUrl: "/base/plantingbase",
           imgUrl: "static/img/3/home/tac1.png"
         },
         {
           title: "智慧农业",
+          routerUrl: "/base/inteligentAg",
           imgUrl: "static/img/3/home/tac2.png"
         },
         {
           title: "康养小镇",
+          routerUrl: "/base/kytown",
           imgUrl: "static/img/3/home/tac3.png"
         },
         {
           title: " 加工产业园",
+          routerUrl: "/base/park",
           imgUrl: "static/img/3/home/tac4.png"
         }
       ],
@@ -244,7 +262,7 @@ export default {
   }
   .baseNav {
     width: 100%;
-    background: url("/static/img/3/home/tecbg.png") no-repeat;
+    background: url("../../../assets/img/3.0/tecbg.png") no-repeat;
     background-size: 100% 100%;
     .baseNavList {
       // background: red;
@@ -252,6 +270,8 @@ export default {
       margin: 0 auto;
       display: flex;
       justify-content: space-around;
+      margin-top: -12px;
+      height: 160px;
       li {
         display: flex;
         justify-content: center;
@@ -264,9 +284,8 @@ export default {
         &:hover {
           cursor: pointer;
           img {
-            box-shadow: 10px 10px 20px 10px #24585250,
-              -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
-            transform: scale(1.05);
+            box-shadow: 3px 3px 6px 3px #24585250,
+              -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
             // animation: imgrotate 2s infinite alternate;
             // -webkit-animation: imgrotate 2s infinite alternate;
             // -moz-animation: imgrotate 2s infinite alternate;
@@ -275,7 +294,7 @@ export default {
           }
           .baseNavListtitle {
             color: $mainColor;
-            transform: translateX(10px) scale(1.2);
+            transform: translateX(10px);
           }
         }
         img {
@@ -391,17 +410,33 @@ export default {
         margin: 2.4%;
         width: 20%;
         position: relative;
-        // background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
-        // background-size: 100% 100%;
-        padding: 2px;
+        background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
+        background-size: 100% 100%;
+        padding: 1px;
         overflow: hidden;
         // border: 1px solid red;
         .box {
           background: linear-gradient(#245852, #24585220);
           font-family: "Merriweather Sans", sans-serif;
-          border-radius: 7px;
+          border-radius: 10px;
           position: relative;
           overflow: hidden;
+          p {
+            position: absolute;
+            bottom: 0;
+            color: #ffffff80;
+            width: 100%;
+            height: 3vw;
+            line-height: 3vw;
+            text-align: center;
+            letter-spacing: 0.6vw;
+            font-size: 1.5vw;
+          }
+          &:hover {
+            p {
+              font-size: 0;
+            }
+          }
         }
         .box:before {
           content: "";

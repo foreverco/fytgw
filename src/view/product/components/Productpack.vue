@@ -5,34 +5,44 @@
                <a :href="'#'+item.typeId">{{item.type}}</a> 
             </li>
     </ul>-->
-    <div class="row productpackBanner">
-      <img src="@/assets/img/chanpin/4-1chanpin-banner.png" alt>
-    </div>
+    <!-- <div class="row productpackBanner">
+      <img src="/static/img/3/home/banner2.jpg" alt />
+    </div> -->
     <div class="container">
-      <div class="row listNavRow">
+      <!-- <div class="row listNavRow">
         <ul class="col-xs-12 col-md-8 listNav">
           <li
-            v-for="(item, index) in listType.slice(0,1)"
+            v-for="(item, index) in listType"
             :key="index"
-            :class="{ navActive: index == navIndex }"
-            @click="changeList(index)"
-          >{{ item.type }}</li>
+            :class="{ navActive: index == 0 }"
+            @click="$router.push(item.routerUrl)"
+          >
+            {{ item.type }}
+          </li>
         </ul>
-      </div>
-      <ul class="row productContainer" v-for="(items, index) in newlistType" :key="index">
+      </div> -->
+      <ul
+        class="row productContainer"
+        v-for="(items, index) in newlistType"
+        :key="index"
+      >
         <!-- <li
           class="row productTitle col-xs-12 wowProduct bounceInRight"
           :id="items.typeId"
         >
           <span>{{ items.type }}</span>
         </li>-->
-        <li class="productList col-md-3 col-xs-5" v-for="(item, index) in pagecpList" :key="index">
+        <li
+          class="productList col-md-3 col-xs-5"
+          v-for="(item, index) in pagecpList"
+          :key="index"
+        >
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img :src="item.imgUrl" alt>
+              <img :src="item.imgUrl" alt />
             </div>
             <p class="productnameBox">{{ item.name }}</p>
-            <p class="productpriceBox">{{ item.price }}</p>
+            <!-- <p class="productpriceBox">{{ item.price }}</p> -->
             <p class="productBtnBox">
               <button>立即了解</button>
             </p>
@@ -74,6 +84,7 @@ export default {
       listType: [
         {
           type: "养生茶系列",
+          routerUrl: "/product/productpack",
           typeId: "box1",
           imgList: [
             {
@@ -171,6 +182,7 @@ export default {
         {
           type: "传统中药系列",
           typeId: "box2",
+          routerUrl: "/product/productpack1",
           imgList: [
             {
               id: "huangzhi",
@@ -267,6 +279,7 @@ export default {
         {
           type: "药食同源系列",
           typeId: "box3",
+          routerUrl: "/product/productpack2",
           imgList: [
             {
               id: "huangzhi",
@@ -560,7 +573,7 @@ a {
 .listNav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .listNav li {

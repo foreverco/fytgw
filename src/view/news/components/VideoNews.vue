@@ -420,9 +420,9 @@ export default {
       // 总条数，根据接口获取数据长度(注意：这里不能为空)
       totalCount: 1,
       // 个数选择器（可修改）
-      pageSizes: [6, 9, 12, 15],
+      pageSizes: [8, 12, 16, 20],
       // 默认每页显示的条数（可修改）
-      PageSize: 6
+      PageSize: 8
     };
   },
   created() {
@@ -564,7 +564,8 @@ video {
 .videoList li {
   height: 330px;
   overflow: hidden;
-  margin: 35px;
+  margin: 35px 0;
+  // outline: 1px solid red;
   // border: 1px solid #00000030;
   // border-radius: 5px;
   // padding: 6px 0;
@@ -579,7 +580,7 @@ video {
     position: absolute;
     // background: rgb(219, 141, 141);
     top: 0;
-    left: 8%;
+    left: 25%;
     img {
       width: 100%;
     }
@@ -646,35 +647,35 @@ video {
     left: 8%;
   }
   .video_container {
-  // border: 1px solid red;
-  background: #fff;
-  padding-bottom: 10px;
-  .video_type_list {
-    background: #81b25b;
-    padding-top: 3px;
-    padding-left: 3px;
-    margin-bottom: 20px;
-    &::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-    li {
-      float: left;
-      height: 40px;
-      line-height: 40px;
-      // border: 1px solid red;
-      color: #fff;
-      padding: 0 10px;
-      &.video_type_active {
-        background: #fff;
-        color: #81b25b;
+    // border: 1px solid red;
+    background: #fff;
+    padding-bottom: 10px;
+    .video_type_list {
+      background: #81b25b;
+      padding-top: 3px;
+      padding-left: 3px;
+      margin-bottom: 20px;
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
       }
-      &:hover {
-        cursor: pointer;
+      li {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        // border: 1px solid red;
+        color: #fff;
+        padding: 0 10px;
+        &.video_type_active {
+          background: #fff;
+          color: #81b25b;
+        }
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
-}
 }
 </style>

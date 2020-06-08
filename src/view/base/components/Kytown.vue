@@ -1,7 +1,7 @@
 <template>
   <div id="intelligentag">
     <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt>
+      <img src="../../../../static/img/3/planting/basetop.png" alt />
     </div>
     <div class="baseNav">
       <ul class="baseNavList">
@@ -10,15 +10,16 @@
           :key="index"
           class="wow bounceInRight"
           data-wow-delay="0"
+          @click="$router.push(item.routerUrl)"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
           <div class="baseNavListtitle">{{ item.title }}</div>
         </li>
       </ul>
     </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/kylogo.png" alt>
+        <img src="../../../../static/img/3/ky/kylogo.png" alt />
       </div>
       <div class="baseBoxCon">
         <div class="baseBoxContown container">
@@ -29,7 +30,7 @@
                 class="wow bounceInLeft"
                 data-wow-delay="0.1s"
                 alt
-              >
+              />
               <p>化德县朝阳镇选址地规划前</p>
             </div>
             <div class="baseBoxContownimgboxsmall">
@@ -38,29 +39,34 @@
                 class="wow bounceInRight"
                 data-wow-delay="0.1s"
                 alt
-              >
+              />
               <p>化德县朝阳镇选址地规划后</p>
             </div>
           </div>
-          <p
-            class="baseBoxContowntxtbox"
-          >国草园集团计划利用公司自身的资源、团队和产业等优势，充分发挥当地地域特色，打造“旅游+中医药”特色旅游文化产品。蒙中草药康养小镇的选址工作目前已经完成，位于化德县朝阳镇，从化德县到北京的必经之路上，2020年将根据选址的面积将其打造成‘旅游+蒙中医药’特色旅游文化产品。以“寻找铁木真”为主题故事线，将“一乡一品”特色民俗村、中药花海、博物馆、科技大棚、蒙古特色项目、科研院所等融入旅游文化产业发展，将其建设成为具有地域特色的中药材康养小镇。</p>
+          <p class="baseBoxContowntxtbox">
+            国草园集团计划利用公司自身的资源、团队和产业等优势，充分发挥当地地域特色，打造“旅游+中医药”特色旅游文化产品。蒙中草药康养小镇的选址工作目前已经完成，位于化德县朝阳镇，从化德县到北京的必经之路上，2020年将根据选址的面积将其打造成‘旅游+蒙中医药’特色旅游文化产品。以“寻找铁木真”为主题故事线，将“一乡一品”特色民俗村、中药花海、博物馆、科技大棚、蒙古特色项目、科研院所等融入旅游文化产业发展，将其建设成为具有地域特色的中药材康养小镇。
+          </p>
         </div>
       </div>
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/ztlogo.png" alt>
+        <img src="../../../../static/img/3/ky/ztlogo.png" alt />
       </div>
       <div class="ztbg">
-        <img src="../../../../static/img/3/ky/ztgs.png" alt>
+        <img src="../../../../static/img/3/ky/ztgs.png" alt />
       </div>
       <div class="ztcontent container">
         <div class="guijiBox">
-          <img src="../../../../static/img/3/ky/imgline.png" alt>
+          <img src="../../../../static/img/3/ky/imgline.png" alt />
         </div>
         <div class="storyBox">
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[0].imgUrl" alt>
+              <img
+                class="wow bounceIn"
+                data-wow-delay="0.3s"
+                :src="storyList[0].imgUrl"
+                alt
+              />
               <p>
                 <span>{{ storyList[0].imgTxt1 }}</span>
                 <span>{{ storyList[0].imgTxt2 }}</span>
@@ -70,16 +76,31 @@
             <div class="storyTxtBot">{{ storyList[0].con }}</div>
           </div>
           <div class="storyimg">
-            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[0].storyImg" alt>
+            <img
+              class="wow bounceIn"
+              data-wow-delay="0.3s"
+              :src="storyList[0].storyImg"
+              alt
+            />
           </div>
         </div>
         <div class="storyBox">
           <div class="storyimg">
-            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[1].storyImg" alt>
+            <img
+              class="wow bounceIn"
+              data-wow-delay="0.3s"
+              :src="storyList[1].storyImg"
+              alt
+            />
           </div>
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img :src="storyList[1].imgUrl" class="wow bounceIn" data-wow-delay="0.3s" alt>
+              <img
+                :src="storyList[1].imgUrl"
+                class="wow bounceIn"
+                data-wow-delay="0.3s"
+                alt
+              />
               <p>
                 <span>{{ storyList[1].imgTxt1 }}</span>
                 <span>{{ storyList[1].imgTxt2 }}</span>
@@ -93,7 +114,12 @@
         <div class="storyBox">
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[2].imgUrl" alt>
+              <img
+                class="wow bounceIn"
+                data-wow-delay="0.3s"
+                :src="storyList[2].imgUrl"
+                alt
+              />
               <p>
                 <span>{{ storyList[2].imgTxt1 }}</span>
                 <span>{{ storyList[2].imgTxt2 }}</span>
@@ -103,16 +129,31 @@
             <div class="storyTxtBot">{{ storyList[2].con }}</div>
           </div>
           <div class="storyimg">
-            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[2].storyImg" alt>
+            <img
+              class="wow bounceIn"
+              data-wow-delay="0.3s"
+              :src="storyList[2].storyImg"
+              alt
+            />
           </div>
         </div>
         <div class="storyBox">
           <div class="storyimg">
-            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[3].storyImg" alt>
+            <img
+              class="wow bounceIn"
+              data-wow-delay="0.3s"
+              :src="storyList[3].storyImg"
+              alt
+            />
           </div>
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[3].imgUrl" alt>
+              <img
+                class="wow bounceIn"
+                data-wow-delay="0.3s"
+                :src="storyList[3].imgUrl"
+                alt
+              />
               <p>
                 <span>{{ storyList[3].imgTxt1 }}</span>
                 <span>{{ storyList[3].imgTxt2 }}</span>
@@ -126,7 +167,12 @@
         <div class="storyBox">
           <div class="storyTxt">
             <div class="storyTxtTop">
-              <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[4].imgUrl" alt>
+              <img
+                class="wow bounceIn"
+                data-wow-delay="0.3s"
+                :src="storyList[4].imgUrl"
+                alt
+              />
               <p>
                 <span>{{ storyList[4].imgTxt1 }}</span>
                 <span>{{ storyList[4].imgTxt2 }}</span>
@@ -136,7 +182,12 @@
             <div class="storyTxtBot">{{ storyList[4].con }}</div>
           </div>
           <div class="storyimg">
-            <img class="wow bounceIn" data-wow-delay="0.3s" :src="storyList[4].storyImg" alt>
+            <img
+              class="wow bounceIn"
+              data-wow-delay="0.3s"
+              :src="storyList[4].storyImg"
+              alt
+            />
           </div>
         </div>
       </div>
@@ -152,18 +203,22 @@ export default {
       tecnologyList: [
         {
           title: "种植基地",
+          routerUrl: "/base/plantingbase",
           imgUrl: "static/img/3/home/tac1.png"
         },
         {
           title: "智慧农业",
+          routerUrl: "/base/inteligentAg",
           imgUrl: "static/img/3/home/tac2.png"
         },
         {
           title: "康养小镇",
+          routerUrl: "/base/kytown",
           imgUrl: "static/img/3/home/tac3.png"
         },
         {
           title: " 加工产业园",
+          routerUrl: "/base/park",
           imgUrl: "static/img/3/home/tac4.png"
         }
       ],
@@ -254,7 +309,7 @@ export default {
   }
   .baseNav {
     width: 100%;
-    background: url("/static/img/3/home/tecbg.png") no-repeat;
+    background: url("../../../assets/img/3.0/tecbg.png") no-repeat;
     background-size: 100% 100%;
     .baseNavList {
       // background: red;
@@ -262,13 +317,15 @@ export default {
       margin: 0 auto;
       display: flex;
       justify-content: space-around;
+      margin-top: -12px;
+      height: 160px;
       li {
         display: flex;
         justify-content: center;
         align-items: center;
         -ms-flex-item-align: center;
         width: 20%;
-        padding: 3vw 0 !important;
+        // padding: 3vw 0 !important;
 
         // border: 1px solid red;
         &:hover {
