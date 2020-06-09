@@ -1,10 +1,26 @@
 @import "./config.scss";
 @import "./nomalize.scss";
+@import "./home.scss";
 
 @media (min-width: 1400px) {
   .container {
     min-width: 1400px;
     //  border: 1px solid red;
+  }
+}
+@media screen and (max-width: 768px) {
+  .baseBoxTitle,
+  .producttitle,
+  .aboutTitle,
+  .scoolingtitle,
+  .newstitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -ms-flex-item-align: center;
+    img {
+      width: 40%;
+    }
   }
 }
 

@@ -10,18 +10,23 @@
         "
       >
         <div class="newslistimgbox col-md-3 ol-xs-12">
-          <img :src="item.imgUrl" alt>
+          <img :src="item.imgUrl" alt />
           <ul class="dateBox">
             <li>{{ item.dateD }}</li>
             <li>{{ item.dateM }}</li>
           </ul>
         </div>
-        <div class="newslistconbox col-md-9 col-xs-12" style="padding-left:10px">
+        <div
+          class="newslistconbox col-md-9 col-xs-12"
+          style="padding-left:10px"
+        >
           <h4>{{ item.title }}</h4>
           <p class="contentbox">{{ item.con }}</p>
           <div class="btnBox">
-            <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
-              <button>{{ newsType }}查看详情 >></button>
+            <router-link
+              :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+            >
+              <button>查看详情 >></button>
             </router-link>
           </div>
         </div>
@@ -161,6 +166,8 @@ export default {
       // 改变默认的页数
       this.currentPage = val;
       this.getData();
+      // 滚动条自动滚动到顶部
+      window.scrollTo(50, 400);
     }
   },
   created() {

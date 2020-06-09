@@ -227,33 +227,33 @@ export default {
     };
   },
   mounted() {
-    new Swiper(".banner-swiper", {
-      loop: true, // 循环模式选项
-      effect: "coverflow",
-      speed: 2000,
-      //自动播放
-      autoplay: {
-        delay: 2000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false
-      },
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      // 延迟加载
-      lazy: {
-        loadPrevNext: true
-      },
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
-    });
+    // new Swiper(".banner-swiper", {
+    //   loop: true, // 循环模式选项
+    //   effect: "coverflow",
+    //   speed: 2000,
+    //   //自动播放
+    //   autoplay: {
+    //     delay: 2000,
+    //     stopOnLastSlide: false,
+    //     disableOnInteraction: false
+    //   },
+    //   // 如果需要分页器
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true
+    //   },
+    //   // 如果需要前进后退按钮
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev"
+    //   },
+    //   // 延迟加载
+    //   lazy: {
+    //     loadPrevNext: true
+    //   },
+    //   observer: true, //修改swiper自己或子元素时，自动初始化swiper
+    //   observeParents: true //修改swiper的父元素时，自动初始化swiper
+    // });
     /* wowjs动画 */
     var wow = new WOW({
       boxClass: "imgwow",

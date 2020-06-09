@@ -241,15 +241,6 @@ export default new Router({
           },
           children: []
         },
-
-        {
-          path: "/service",
-          name: "service",
-          component: resolve => require(["@/view/Service"], resolve),
-          meta: {
-            title: "相关服务"
-          }
-        },
         {
           path: "/companyintroduction",
           name: "companyintroduction",
@@ -260,28 +251,12 @@ export default new Router({
           }
         },
         {
-          path: "/jobchance",
-          name: "jobchance",
-          component: resolve => require(["@/view/JobChance"], resolve),
-          meta: {
-            title: "工作机会"
-          }
-        },
-        {
           path: "/contactus",
           name: "contactus",
           component: resolve => require(["@/view/ContactUs"], resolve),
           meta: {
             title: "联系我们",
             navIndex: 5
-          }
-        },
-        {
-          path: "/servicedetail",
-          name: "servicedetail",
-          component: resolve => require(["@/view/ServiceDetail"], resolve),
-          meta: {
-            title: "相关服务"
           }
         }
       ]

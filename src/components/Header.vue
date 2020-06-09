@@ -39,10 +39,10 @@
 
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
-      <div class="header-nav-m-logo">
+      <!-- <div class="header-nav-m-logo">
         <img src="@/assets/img/logo.png" alt="logo" />
         <span class="logotxt">国草园集团</span>
-      </div>
+      </div> -->
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
         {{ menuName }}
@@ -65,9 +65,9 @@
             data-toggle="collapse"
             aria-expanded="false"
             :data-target="item.children.length > 0 ? targetId : '#menu'"
-            @click="navClick(index, item.name)"
+            @click="navClick(index, item.name, item)"
           >
-            <router-link :to="item.path">
+            <router-link :to="item.children.length == '0' ? item.path : ''">
               {{ item.name }}
               <span
                 v-if="item.children.length > 0"
@@ -174,7 +174,7 @@ export default {
           ]
         },
         {
-          name: "中药材基地",
+          name: "产业规化",
           name1: "XWZHONGXIN",
           path: "/base/plantingbase",
           // path: "/newsinformation",
@@ -271,8 +271,8 @@ export default {
     console.log(this.$route.path);
   },
   methods: {
-    navClick(index, name) {
-      console.log(index);
+    navClick(index, name, e) {
+      console.log(e);
       this.navIndex = index;
       sessionStorage.setItem("navIndex", index);
       this.sonName = "";
@@ -519,13 +519,15 @@ export default {
   /* 导航栏 菜单图标 */
   #header .header-nav-m .header-nav-m-menu-wrapper {
     position: absolute;
-    top: 50%;
-    right: 20px;
-    margin-top: -20px;
-    width: 50px;
-    height: 40px;
+    top: 0;
+    left: 0;
+    // margin-top: -20px;
+    width: 100%;
+    height: 100%;
     color: #fff;
     z-index: 999999;
+    text-align: right;
+    padding-right: 20px;
     font-size: 12px;
   }
   /* 导航栏 */
@@ -568,8 +570,9 @@ export default {
 #header .header-nav-m .header-nav-m-wrapper1 > li > a {
   color: #fff;
   font-size: 14px;
+  display: inline-block;
   font-weight: bold;
-  padding: 15px 0;
+  width: 100%;
   position: relative;
 }
 .pull-right {

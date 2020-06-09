@@ -1,7 +1,12 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild" @mouseenter="on_top_enter" @mouseleave="on_top_leave">
+    <div
+      id="swiper"
+      class="container-fuild"
+      @mouseenter="on_top_enter"
+      @mouseleave="on_top_leave"
+    >
       <div class="swiper-container banner-swiper" ref="mySwiper">
         <div class="swiper-wrapper">
           <div
@@ -10,7 +15,7 @@
             :key="index"
             @click="swiperGoto(item)"
           >
-            <img class="swiper-lazy" :src="item.img" alt="轮播图">
+            <img class="swiper-lazy" :src="item.img" alt="轮播图" />
             <!-- <div class="swiper-lazy-preloader"></div> -->
             <div class="swiper-slide-title">
               <h1>{{ item.title }}</h1>
@@ -22,51 +27,28 @@
         <div class="swiper-pagination"></div>
 
         <!-- 如果需要导航按钮 -->
-        <!-- <div class="swiper-button-prev hidden-xs"></div>
-        <div class="swiper-button-next hidden-xs"></div>-->
+        <div class="swiper-button-prev hidden-xs"></div>
+        <div class="swiper-button-next hidden-xs"></div>
       </div>
     </div>
     <!-- 专业的技术 -->
     <div id="tecnology" class="container-fluid">
-      <div
-        id="tecnologyswiper"
-        class="tecnologyList container"
-        @mouseenter="on_top_enter"
-        @mouseleave="on_top_leave"
-      >
-        <div class="swiper-container tecnology-swiper" ref="mySwiper">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(item, index) in tecnologyList"
-              :key="index"
-              @click="$router.push(item.routerUrl)"
-            >
-              <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
-              <div class="swiper-slide-title">{{ item.title }}</div>
-            </div>
-          </div>
-          <!-- 如果需要分页器 -->
-          <div class="swiper-pagination"></div>
-
-          <!-- 如果需要导航按钮 -->
-          <!-- <div class="swiper-button-prev hidden-xs"></div>
-          <div class="swiper-button-next hidden-xs"></div>-->
-        </div>
-      </div>
+      <cardVue></cardVue>
     </div>
     <!-- 新闻中心 -->
     <div id="news" class="container-fuild">
       <div class="container newscontainer">
         <div class="row newstitle">
-          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt>
+          <img src="@/assets/img/home/biaoti-xinwenzhongxin.png" alt />
           <ul class="newsNav">
             <li
               v-for="(item, index) in newsTypeList"
               :key="index"
               :class="newsTitleActive === index ? 'newsTitleActive' : ''"
               @click="newsTitleChange(index)"
-            >{{ item.name }}</li>
+            >
+              {{ item.name }}
+            </li>
           </ul>
         </div>
 
@@ -83,9 +65,11 @@
             "
           >
             <div class="imgbox">
-              <router-link :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
                 <div class="wow zoomIn">
-                  <img :src="item.imgUrl" alt>
+                  <img :src="item.imgUrl" alt />
                 </div>
               </router-link>
             </div>
@@ -109,13 +93,13 @@
     <div id="product" class="container-fuild">
       <div class="productcontainer">
         <div class="row producttitle">
-          <img src="@/assets/img/home/biaoti-chanpin.png" alt>
-          <ul class="productNav">
+          <img src="@/assets/img/home/biaoti-chanpin.png" alt />
+          <!-- <ul class="productNav">
             <li>黄芪</li>
             <li>板蓝根</li>
             <li>柴胡</li>
             <li>防风</li>
-          </ul>
+          </ul> -->
         </div>
         <ul class="productList row">
           <div
@@ -126,8 +110,17 @@
           >
             <div class="swiper-container product-swiper" ref="mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in productList" :key="index">
-                  <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" style="width:80%">
+                <div
+                  class="swiper-slide"
+                  v-for="(item, index) in productList"
+                  :key="index"
+                >
+                  <img
+                    class="swiper-lazy"
+                    :src="item.imgUrl"
+                    alt="轮播图"
+                    style="width:80%"
+                  />
                   <div class="swiper-slide-title">
                     <p>{{ item.name }}</p>
                     <p>{{ item.title }}</p>
@@ -142,7 +135,7 @@
               <div class="swiper-button-next hidden-xs"></div>-->
             </div>
           </div>
-          <img src="../../static/img/3/home/cpbg.png" alt>
+          <img src="../../static/img/3/home/cpbg.png" alt />
         </ul>
       </div>
     </div>
@@ -153,24 +146,39 @@
       @mouseenter="on_bot_enter"
       @mouseleave="on_bot_leave"
     >
-      <div class="container aboutcontainer">
+      <div class="aboutcontainer">
         <div class="row aboutTitle">
-          <img src="@/assets/img/home/biaoti-guanyu.png" alt>
+          <img src="@/assets/img/home/biaoti-guanyu.png" alt />
         </div>
         <div class="row aboutswiper">
-          <div class="swiper-container aboutswipercontainer" ref="aboutswipercontainer">
+          <div
+            class="swiper-container aboutswipercontainer"
+            ref="aboutswipercontainer"
+          >
             <div class="swiper-wrapper">
+              <!-- <div class="swiper-slide">
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png"
+                  alt
+                />
+              </div> -->
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian1.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian2.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png"
+                  alt
+                />
               </div>
               <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian3.png" alt>
-              </div>
-              <div class="swiper-slide">
-                <img src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png" alt>
+                <img
+                  src="static/img/3/home/6-guanyuguocaoyuan-tupian4.png"
+                  alt
+                />
               </div>
             </div>
             <!-- 如果需要分页器 -->
@@ -184,30 +192,22 @@
             <div class="swiper-scrollbar"></div>
           </div>
         </div>
-        <div class="row abouttxt">
+        <div class="row abouttxt hidden-xs">
           <p class="con">
             国草园集团是一家农业+互联网平台化于一体的新型企业，旗下成立了四家子公司，分别是：内蒙古国草园实业科技发展有限公司、内蒙古国草园文旅产业发展有限公司、江苏国草园医药科技有限公司、国草园生物科技有限公司。
-            <br>
+            <br />
             <span style="display:block;width:0.3vw;"></span>
             2018年，国草园集团在四子王旗共投资了千万余元，签订了33万亩的土地合同，并进行了中药材种子采购与1.3万亩土地试种和3000亩育苗试验田，同时在培育、驯化、检测方面也进行大量投入，完成了品种种植试验和土地环评检测，建设完成了种植示范基地，种子仓储库房（现在存储种子几万多斤）及土地规划等。
-            <br>
+            <br />
             <span style="display:block;width:0.3vw;"></span>
             2019年，国草园集团进驻化德县，与化德县政府签订百万亩蒙中道地药材产业发展合作协议，国草园集团将投资30个亿，在化德县打造50万亩的道地药材种植基地，以“政府+企业+合作社+农户”模式进行合作，融合中草药种植、加工、仓储、销售、研发、鉴定于一体化产业链服务为主要运营模式，并充分发挥自治区地域特色，将当地观光旅游资源最大化，打造国家中草药种植+加工+中医药健康文旅融合示范基地。
-            <span
-              style="display:block;width:0.3vw;"
-            ></span>
+            <span style="display:block;width:0.3vw;"></span>
             国草园集团已与中国中药协会、中华中医药协会、国家中医药管理局等多家单位达成合作关系，推进蒙中药道地药材行业标准建设；同时还与平安保险、太平洋保险、中国人寿进行战略合作进行中草药种植保险的探索。
-            <span
-              style="display:block;width:0.3vw;"
-            ></span>
+            <span style="display:block;width:0.3vw;"></span>
             国草园集团已与北京同仁堂、康缘药业、天士力制药、扬子江药业集团签订了订单式合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。
-            <span
-              style="display:block;width:0.3vw;"
-            ></span>
+            <span style="display:block;width:0.3vw;"></span>
             2020年，国草园集团与安徽中医药大学签订了合作协议，聘请专业教授、专家学者成立有关蒙中药材研究实验室，大力推动野生蒙中药规模化种植技术研究、人才培养及相关药品研发，实现“产学研用”一体化发展，推动科研成果顺利转化，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。
-            <span
-              style="display:block;width:0.3vw;"
-            ></span>
+            <span style="display:block;width:0.3vw;"></span>
             此外，国草园集团计划利用公司自身的资源、团队和技术等优势，充分发挥自治区地域优势，打造‘旅游+中医药’特色旅游文化产品。以中药资源优势，以文化为引领、旅游为支撑、健康为目标、养生为主体，强化优势资源整合和道地中草药规模化种植产业带动，差异化发展，构建文旅康养全产业链，打造以“文旅康养四位一体”的文旅康养小镇。
           </p>
           <p class="title">国草园集团</p>
@@ -218,26 +218,46 @@
     <div id="base" class="container-fluid">
       <div class="container basecontainer">
         <div class="row aboutTitle">
-          <img src="static/img/3/home/zhbt.png" alt>
-          <ul class="baseNav">
+          <img src="static/img/3/home/zhbt.png" alt />
+          <!-- <ul class="baseNav">
             <li @click="$router.push('/base/plantingbase')">种植基地</li>
             <li @click="$router.push('/base/inteligentAg')">智慧农业</li>
             <li @click="$router.push('/base/kytown')">康养小镇</li>
             <li @click="$router.push('/base/park')">加工产业园</li>
-          </ul>
+          </ul> -->
         </div>
         <div class="row plantingBox">
-          <div class="one" @click="$router.push('/base/plantingbase')">
-            <img src="../../static/img/3/home/plantingBox1.png" alt>
+          <div class="box" @click="$router.push('/base/plantingbase')">
+            <img src="static/img/3/home/planting1.png" />
+            <div class="box-content">
+              <h3 class="title">种植基地</h3>
+              <!-- <span class="post">种植基地</span> -->
+            </div>
+            <p>种植基地</p>
           </div>
-          <div class="two" @click="$router.push('/base/inteligentAg')">
-            <img src="../../static/img/3/home/plantingBox4.png" alt>
+          <div class="box" @click="$router.push('/base/park')">
+            <img src="static/img/3/home/planting2.png" />
+            <div class="box-content">
+              <h3 class="title">加工产业园</h3>
+              <!-- <span class="post">加工产业园</span> -->
+            </div>
+            <p>加工产业园</p>
           </div>
-          <div class="three" @click="$router.push('/base/kytown')">
-            <img src="../../static/img/3/home/plantingBox3.png" alt>
+          <div class="box" @click="$router.push('/base/kytown')">
+            <img src="static/img/3/home/planting3.png" />
+            <div class="box-content">
+              <h3 class="title">康养小镇</h3>
+              <!-- <span class="post">康养小镇</span> -->
+            </div>
+            <p>康养小镇</p>
           </div>
-          <div class="four" @click="$router.push('/base/park')">
-            <img src="../../static/img/3/home/plantingBox2.png" alt>
+          <div class="box" @click="$router.push('/base/inteligentAg')">
+            <img src="static/img/3/home/planting4.png" />
+            <div class="box-content">
+              <h3 class="title">智慧农业</h3>
+              <!-- <span class="post">智慧农业</span> -->
+            </div>
+            <p>智慧农业</p>
           </div>
         </div>
       </div>
@@ -246,26 +266,26 @@
     <div id="scooling" class="container-fluid">
       <div class="container scoolingcontainer">
         <div class="row scoolingtitle">
-          <img src="@/assets/img/home/biaoti-wenhua.png" alt>
-          <ul class="scoolingNav">
+          <img src="@/assets/img/home/biaoti-wenhua.png" alt />
+          <!-- <ul class="scoolingNav">
             <li>国之仙草</li>
             <li>百年健康</li>
-          </ul>
+          </ul> -->
         </div>
         <div class="row scoolingBox">
           <div class="col-md-6 scoolingTxt">
-            <p
-              class="con"
-            >国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣</p>
+            <p class="con">
+              国草园以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展；传承商道弘扬商德，杜绝忘义摒弃唯利；维护市场遵守秩序，构建和谐共享繁荣
+            </p>
             <!-- <p class="title">-------同修仁德 济世养生------</p> -->
             <p class="name">
               <span>国草园</span>
-              <span></span>
+              <span>・</span>
               <span>企业文化</span>
             </p>
           </div>
           <div class="col-md-6 scoolingImg wow zoomIn">
-            <img src="static/img/7-wenhua-tupian1.png" alt>
+            <img src="static/img/7-wenhua-tupian1.png" alt />
           </div>
         </div>
       </div>
@@ -291,6 +311,7 @@ import Swiper from "swiper";
 import { WOW } from "wowjs";
 import MainScroll from "../components/scroll/Scroll2";
 import { getNewsList } from "@/util/newsList";
+import cardVue from "../components/card/cardVue";
 const newsListObj = getNewsList();
 const clickoutside = {
   // 初始化指令
@@ -331,6 +352,12 @@ export default {
           title: "",
           content: ""
         },
+        // {
+        //   img: "static/img/3/home/banner3.jpg",
+        //   path: "/base/kytown",
+        //   title: "",
+        //   content: ""
+        // },
         {
           img: "static/img/3/home/banner2.jpg",
           path: "/base/inteligentAg",
@@ -400,26 +427,26 @@ export default {
           name: "防风",
           imgUrl: "static/img/3/home/pf4.png"
         },
-        {
-          title: "增强免疫，保肝利尿",
-          name: "产品包装1",
-          imgUrl: "static/img/3/home/bz1.png"
-        },
-        {
-          title: "增强免疫，保肝利尿",
-          name: "产品包装2",
-          imgUrl: "static/img/3/home/bz2.png"
-        },
-        {
-          title: "增强免疫，保肝利尿",
-          name: "产品包装3",
-          imgUrl: "static/img/3/home/bz3.png"
-        },
-        {
-          title: "增强免疫，保肝利尿",
-          name: "产品包装4",
-          imgUrl: "static/img/3/home/bz4.png"
-        },
+        // {
+        //   title: "增强免疫，保肝利尿",
+        //   name: "产品包装1",
+        //   imgUrl: "static/img/3/home/bz1.png"
+        // },
+        // {
+        //   title: "增强免疫，保肝利尿",
+        //   name: "产品包装2",
+        //   imgUrl: "static/img/3/home/bz2.png"
+        // },
+        // {
+        //   title: "增强免疫，保肝利尿",
+        //   name: "产品包装3",
+        //   imgUrl: "static/img/3/home/bz3.png"
+        // },
+        // {
+        //   title: "增强免疫，保肝利尿",
+        //   name: "产品包装4",
+        //   imgUrl: "static/img/3/home/bz4.png"
+        // },
         {
           title: "增强免疫，保肝利尿",
           name: "桔梗",
@@ -697,7 +724,8 @@ export default {
     }
   },
   components: {
-    MainScroll
+    MainScroll,
+    cardVue
   },
   mounted() {
     this.newsList = newsListObj.newsList.filter(item => {
@@ -735,30 +763,7 @@ export default {
       observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
     /* 专业技术swiper tecnology-swiper */
-    new Swiper(".tecnology-swiper", {
-      slidesPerView: 4,
-      loop: true, // 循环模式选项
-      // effect: "coverflow",
-      speed: 2000,
-      //自动播放
-      autoplay: false,
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      // 延迟加载
-      lazy: {
-        loadPrevNext: true
-      },
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
-    });
+
     /* product-swiper */
     new Swiper(".product-swiper", {
       slidesPerView: 4,
@@ -954,7 +959,7 @@ export default {
       }
       img {
         width: 100%;
-        height: 100%;
+        // height: 100%;
       }
     }
   }
@@ -962,60 +967,11 @@ export default {
   #tecnology {
     background: url("../assets/img/3.0/tecbg.png") no-repeat;
     background-size: 100% 100%;
-    margin-top: -13px !important;
+    // margin-top: -13px;
+    // border: 1px solid red;
     // height: 268px;
     // padding: 2vw 0 !important;
-    margin: 0 auto;
-    .tecnologyList {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      // border: 1px solid red;
-      .swiper-slide {
-        // border: 1px solid blue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 20%;
-        // padding: 1vw 0 !important;
-        height: 160px;
-        &:hover {
-          cursor: pointer;
-          .swiper-slide-title {
-            color: $mainColor;
-            transform: translateX(10px);
-          }
-          img {
-            box-shadow: 3px 3px 6px 3px #24585250,
-              -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
-            // transform: scale(1.05);
-            // animation: imgrotate 2s infinite alternate;
-            // -webkit-animation: imgrotate 2s infinite alternate;
-            // -moz-animation: imgrotate 2s infinite alternate;
-            // -o-animation: imgrotate 2s infinite alternate;
-            // -ms-animation: imgrotate 2s infinite alternate;
-          }
-        }
-        img {
-          // width: 30%;
-          height: 55%;
-          border-radius: 100%;
-          margin-right: 20px;
-          transition: all 0.4s ease-in-out;
-          -webkit-transition: all 0.4s ease-in-out;
-          -moz-transition: all 0.4s ease-in-out;
-          -o-transition: all 0.4s ease-in-out;
-        }
-        .swiper-slide-title {
-          font-size: 20px;
-          transition: all 0.4s ease-in-out;
-          -webkit-transition: all 0.4s ease-in-out;
-          -moz-transition: all 0.4s ease-in-out;
-          -o-transition: all 0.4s ease-in-out;
-        }
-      }
-    }
+    // margin: 0 auto;
   }
   /* 新闻中心 */
   .newscontainer {
@@ -1068,7 +1024,8 @@ export default {
         margin: 30px 0;
         background: url("../assets/img/3.0/newsBg.png") no-repeat;
         background-size: 100% 100%;
-        position: relative;
+        display: flex;
+        align-items: center;
         // border-radius: 8px;
         // height: 10vw;
         &:hover {
@@ -1086,9 +1043,10 @@ export default {
         .imgbox {
           // position: absolute;
           // padding: 1px 0;
+          width: 34%;
           img {
             opacity: 1;
-            width: 34%;
+            width: 100%;
             // height: 17vw;
             // margin-left: 1px;
             border-radius: 8px 0 0 8px;
@@ -1097,10 +1055,11 @@ export default {
         .newsContent {
           // border: 1px solid red;
           width: 55%;
-          position: absolute;
-          right: 7%;
-          top: 50%;
-          transform: translateY(-50%);
+          margin-left: 50px;
+          // position: absolute;
+          // right: 7%;
+          // top: 50%;
+          // transform: translateY(-50%);
           .newstitle2 {
             font-size: $titleFontSize;
             line-height: 50px;
@@ -1169,7 +1128,7 @@ export default {
     /* 产品列表 */
     .productList {
       // position: relative;
-      margin-bottom: -150px;
+      margin-bottom: -80px;
       // display: flex;
       // justify-content: center;
       // align-items: center;
@@ -1214,59 +1173,167 @@ export default {
   }
   /* 中药材基地 */
   .plantingBox {
-    // outline: 1px solid red;
-    // display: flex;
-    // flex-wrap: wrap;
-    // height: 800px;
-    position: relative;
-    &::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-    > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+    .box {
+      // border: 1px solid blue;
+      // background: linear-gradient(#245852, #24585220);
+      font-family: "Merriweather Sans", sans-serif;
+      border-radius: 7px;
+      position: relative;
+      overflow: hidden;
+      background: url("/static/img/3/home/plantingdk.png") no-repeat;
+      background-size: 100% 100%;
+      padding: 2px;
+      width: 45%;
+      margin: 2%;
+      > p {
+        // border: 1px solid blue;
+        text-align: center;
+        height: 3vw;
+        line-height: 3vw;
+        font-size: 1.2vw;
+        letter-spacing: 13px;
+      }
+      &:first-child {
+        // margin-right: 2%;
+      }
       &:hover {
+        background: linear-gradient(#245852, #24585220);
         cursor: pointer;
-        box-shadow: 3px 3px 6px 3px #24585250,
-          -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
-      }
-      // position: absolute;
-      width: 40%;
-      // outline: 1px solid blue;
-      &.two {
-        width: 60%;
-        // right: 0;
-        float: right;
-      }
-      &.four {
-        position: absolute;
-        left: 40%;
-      }
-      &.three {
-        bottom: 0;
-        float: left;
-        z-index: 1;
-        position: absolute;
-      }
-      &.one {
-        top: 0;
-        float: left;
-        position: absolute;
-        z-index: 101;
-      }
-      img {
-        width: 100%;
+        > p {
+          font-size: 0;
+        }
       }
     }
+    .box:before {
+      content: "";
+      background: -webkit-repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.1) 10px,
+        transparent 10px,
+        transparent 20px,
+        rgba(0, 0, 0, 0.1) 20px,
+        rgba(0, 0, 0, 0.1) 30px,
+        transparent 30px,
+        transparent 40px,
+        rgba(0, 0, 0, 0.1) 40px,
+        rgba(0, 0, 0, 0.1) 50px,
+        transparent 50px,
+        transparent 60px,
+        rgba(0, 0, 0, 0.1) 60px,
+        rgba(0, 0, 0, 0.1) 70px,
+        transparent 70px,
+        transparent 80px,
+        rgba(0, 0, 0, 0.1) 80px,
+        rgba(0, 0, 0, 0.1) 90px,
+        transparent 90px
+      );
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      transition: all 0.5s;
+    }
+    .box:hover:before {
+      opacity: 1;
+    }
+    .box img {
+      width: 100%;
+      // height: auto;
+      transition: all 0.5s ease;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .box:hover img {
+      opacity: 0.5;
+      -webkit-clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
+      clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
+    }
+    .box .box-content {
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50%) rotate(-55deg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      transition: all 0.5s;
+    }
+    .box:hover .box-content {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    .box .title {
+      font-size: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-shadow: 0 0 5px #000;
+      margin: 0 0 3px 0;
+    }
+    .box .post {
+      font-size: 16px;
+      text-shadow: 0 0 5px #000;
+      text-transform: capitalize;
+      display: block;
+    }
+    .box .icon {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      opacity: 0;
+      transform: rotateX(180deg);
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      transition: all 0.3s;
+    }
+    .box:hover .icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+    .box .icon li a {
+      color: #24585220;
+      background-color: #fff;
+      font-size: 17px;
+      text-align: center;
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      margin: 0 0 7px;
+      border-radius: 50%;
+      display: block;
+      transition: all 0.5s;
+    }
+    .box .icon li a:hover {
+      color: #245852;
+      box-shadow: 0 0 15px #fff;
+    }
+    // @media only screen and (max-width: 990px) {
+    //   .box {
+    //     margin: 0 0 30px;
+    //   }
+    // }
+    // @media only screen and (max-width: 479px) {
+    //   .box .title {
+    //     font-size: 20px;
+    //   }
+    // }
   }
 }
 
 /* 关于国草园 */
 .aboutcontainer {
-  /* border: 1px solid #81b25b; */
-  // width: 1400px;
+  width: 90%;
   margin: 0 auto;
-  margin-top: 14px;
   &:hover {
     cursor: pointer;
   }
@@ -1274,7 +1341,7 @@ export default {
 /* 关于国草园标题 */
 .aboutTitle {
   /* background: blue; */
-  margin: 12px 0;
+  // margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1375,78 +1442,6 @@ export default {
   cursor: pointer;
 }
 /* 基地图片 */
-.plantingBox {
-  // border: 1px solid red;
-  position: relative;
-  .planting_model {
-    // height: 100%;
-    // width: 50%;
-    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.5),
-      -10px 10px 10px 10px rgba(255, 255, 255, 0.5);
-    position: absolute;
-    top: -5%;
-    left: 16%;
-    // transform: translateX(-50%);
-    z-index: 3;
-    .closePic {
-      position: absolute;
-      top: 2%;
-      right: 2%;
-      // border: 1px solid red;
-      color: #00000050;
-      box-shadow: 2px 2px 5px 2px rgba(255, 255, 255, 0.3);
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      transition: all 0.6s;
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.2);
-      }
-    }
-    img {
-      width: 100%;
-    }
-  }
-}
-.baseList {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // position: relative;
-}
-.baseList .basePicBox {
-  width: 270px;
-  height: 270px;
-  // width: 100%;
-  // height: 100%;
-  // background: url("/static/img/home/kuang.png");
-  // background-size: 100% 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // border: 1px solid red;
-  /* background: blue; */
-  z-index: 2;
-  .hoverBox {
-    position: absolute;
-    bottom: 2.8%;
-    left: 50%;
-    transform: translate(-45%, 8%);
-    // transform: translateY(5%);
-    letter-spacing: 6px;
-    color: #81b25b;
-    z-index: 1;
-  }
-  img {
-    height: 100%;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
 
 /* 国草园文化 */
 .scoolingcontainer {
@@ -1510,9 +1505,11 @@ export default {
   align-items: center;
   justify-content: space-between;
   font-family: "lv1";
+  // border: 1px solid red;
 }
 .scoolingBox > div .name {
-  width: 7%;
+  width: 8%;
+  // border: 1px solid red;
   writing-mode: tb-rl;
   span {
     font-size: 24px;
@@ -1523,8 +1520,9 @@ export default {
   font-size: 24px;
 }
 .scoolingBox > div .name span:nth-child(2) {
-  font-size: 24px;
+  font-size: 30px;
   color: #81b25b;
+  // border: 1px solid red;
 }
 // .scoolingBox > div .title {
 //   width: 5%;
@@ -1532,7 +1530,8 @@ export default {
 //   writing-mode: tb-rl;
 // }
 .scoolingBox > div .con {
-  width: 83%;
+  // border: 1px solid red;
+  width: 90%;
   height: 90%;
   font-size: 14px;
   letter-spacing: 3px;
@@ -1658,24 +1657,67 @@ export default {
 }
 /* 媒体查询（手机） */
 @media screen and (max-width: 768px) {
-  #tecnology .tecnologyList > ul {
-    width: 100%;
+  #tecnology {
+    background: url("../assets/img/3.0/tecbg.png") no-repeat;
+    background-size: 100% 100%;
+    margin-top: 0 !important;
+    margin: 0 auto;
+    .tecnologyList {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+        height: 50px !important;
+        border: 1px solid red;
+        &:hover {
+          cursor: pointer;
+          .swiper-slide-title {
+            color: $mainColor;
+            transform: translateX(10px);
+          }
+          img {
+            box-shadow: 3px 3px 6px 3px #24585250,
+              -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+          }
+        }
+        img {
+          width: 55%;
+          border-radius: 100%;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+        }
+        .swiper-slide-title {
+          font-size: 12px !important;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          -moz-transition: all 0.4s ease-in-out;
+          -o-transition: all 0.4s ease-in-out;
+        }
+      }
+    }
   }
-  .productList li p:first-child {
-    margin-top: -20px;
-    margin-left: 50px;
-  }
-  .productList li p:nth-child(2) {
-    margin-top: -10px;
-    margin-left: 10px;
-    width: 60%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  // .productList li p:first-child {
+  //   margin-top: -20px;
+  //   margin-left: 50px;
+  // }
+  // .productList li p:nth-child(2) {
+  //   margin-top: -10px;
+  //   margin-left: 10px;
+  //   width: 60%;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   white-space: nowrap;
+  // }
 
   #swiper {
-    height: 200px;
+    // height: 200px;
   }
   #bigData {
     padding: 30px;
@@ -1841,17 +1883,7 @@ export default {
     /* margin: 0 auto;   */
     line-height: 24px;
   }
-  .newsList li {
-    /* border:1px solid #81b25b; */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .newsList li > div:nth-child(2),
-  .newsList li > div:nth-child(3) {
-    height: 60px;
-    width: 70%;
-  }
+
   #tecnology .tecnologyList > ul > li > div[data-v-4eb70d62] {
     margin: 0 4%;
   }

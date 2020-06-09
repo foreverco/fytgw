@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
-      <img src="../../assets/img/news/banner-2.png" alt>
+      <img src="../../assets/img/news/banner-2.png" alt />
     </div>
     <div class="baseNav" v-show="$route.name === 'companynews'">
       <ul class="baseNavList">
@@ -12,11 +12,16 @@
           data-wow-delay="0"
           @click="gotonews(item, index)"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
+          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
           <div
             class="baseNavListtitle"
-            :style="{ color:newsType===index? '#245852':'' }"
-          >{{ item.title }}</div>
+            :style="{
+              color: newsType === index ? '#245852' : '',
+              fontWeight: newsType === index ? 'bold' : ''
+            }"
+          >
+            {{ item.title }}
+          </div>
         </li>
       </ul>
     </div>

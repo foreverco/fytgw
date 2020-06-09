@@ -8,8 +8,12 @@
       <span>来源: {{ newsMsgObj.from }}</span>
       <span>发布日期: {{ newsMsgObj.date }}</span>
     </p>
-    <div class="row newsPicBox" v-for="(item, index) in newsMsgObj.imgList" :key="index">
-      <img :src="item.imrUrl" alt>
+    <div
+      class="row newsPicBox"
+      v-for="(item, index) in newsMsgObj.imgList"
+      :key="index"
+    >
+      <img :src="item.imrUrl" alt />
     </div>
     <div class="row newsmsgCon" v-html="newsMsgObj.con"></div>
   </div>
@@ -161,7 +165,7 @@ export default {
 
 <style lang="scss" scoped>
 #newsmsg {
-  background: #efefef;
+  // background: #efefef;
   //   height: 1000px;
 }
 .breadBox {
@@ -194,12 +198,14 @@ export default {
   width: 100%;
 }
 .newsmsgCon {
-  // border:1px solid red;
   padding: 10px 20px;
   margin: 0 auto;
   margin-bottom: 80px;
   font-size: 17px;
   width: 90%;
+  p {
+    text-indent: 50px;
+  }
 }
 
 @media screen and (max-width: 768px) {

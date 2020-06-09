@@ -1,22 +1,5 @@
 <template>
   <div id="intelligentag">
-    <div class="topimgbox">
-      <img src="../../../../static/img/3/planting/basetop.png" alt />
-    </div>
-    <div class="baseNav">
-      <ul class="baseNavList">
-        <li
-          v-for="(item, index) in tecnologyList"
-          :key="index"
-          class="wow bounceInRight"
-          data-wow-delay="0"
-          @click="$router.push(item.routerUrl)"
-        >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
-          <div class="baseNavListtitle">{{ item.title }}</div>
-        </li>
-      </ul>
-    </div>
     <div class="baseBox">
       <div class="baseBoxTitle">
         <img src="../../../../static/img/3/ky/kylogo.png" alt />
@@ -432,7 +415,7 @@ export default {
         left: 50%;
         transform: translate(-50%, -49%);
         img {
-          width: 100%;
+          width: 93%;
           // border: 1px solid red;
         }
       }
@@ -465,7 +448,7 @@ export default {
               span {
                 margin: 0 8px;
                 color: #fff;
-                font-size: 20px;
+                // font-size: rem(30);
                 font-family: "lv1";
               }
             }

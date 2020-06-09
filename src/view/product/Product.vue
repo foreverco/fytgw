@@ -60,7 +60,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
-#productpack .productpackBanner img {
+.productpackBanner img {
   width: 100%;
 }
 .baseNav {

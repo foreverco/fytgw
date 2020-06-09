@@ -1,23 +1,17 @@
 <template>
-  <div class="container-fluid">
-    <div class="topimgbox">
-      <img src="../../../static/img/3/planting/basetop.png" alt />
-    </div>
-    <div class="baseNav container">
-      <ul class="baseNavList row">
-        <li
-          v-for="(item, index) in tecnologyList"
-          :key="index"
-          class="wow bounceInRight col-md-3 col-xs-6"
-          data-wow-delay="0"
-          @click="baseGoto(item)"
-        >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
-          <div class="baseNavListtitle">{{ item.title }}</div>
-        </li>
-      </ul>
-    </div>
-    <router-view></router-view>
+  <div class="baseNavcard container">
+    <ul class="baseNavList row">
+      <li
+        v-for="(item, index) in tecnologyList"
+        :key="index"
+        class="wow bounceInRight col-md-3 col-xs-6"
+        data-wow-delay="0"
+        @click="baseGoto(item)"
+      >
+        <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+        <div class="baseNavListtitle">{{ item.title }}</div>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -65,13 +59,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
-.topimgbox {
-  width: 100%;
-  img {
-    width: 100%;
-  }
-}
-.baseNav {
+.baseNavcard {
+  // border: 1px solid red;
   width: 100%;
   background: url("../../assets/img/3.0/tecbg.png") no-repeat;
   background-size: 100% 100%;
