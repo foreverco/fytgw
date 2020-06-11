@@ -39,10 +39,10 @@
         >
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <p class="productnameBox">{{ item.name }}</p>
-            <p class="productpriceBox">{{ item.price }}</p>
+            <!-- <p class="productpriceBox">{{ item.price }}</p> -->
             <p class="productBtnBox">
               <button>立即了解</button>
             </p>

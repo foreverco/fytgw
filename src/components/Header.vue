@@ -174,7 +174,7 @@ export default {
           ]
         },
         {
-          name: "产业规化",
+          name: "产业规划",
           name1: "XWZHONGXIN",
           path: "/base/plantingbase",
           // path: "/newsinformation",

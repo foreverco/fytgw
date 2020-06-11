@@ -1,19 +1,25 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid" id="productBox">
     <div class="row productpackBanner">
-      <img src="/static/img/3/home/banner2.jpg" alt />
+      <img src="static/img/3/home/banner2.jpg" alt />
     </div>
-    <div class="baseNav" v-show="$route.name !== 'companynews'">
-      <ul class="baseNavList">
+    <div class="baseNav container" v-show="$route.name !== 'companynews'">
+      <ul class="baseNavList row">
         <li
           v-for="(item, index) in tecnologyList"
           :key="index"
-          class="wow bounceInRight"
+          class="wow bounceInRight col-md-3 col-xs-12"
           data-wow-delay="0"
           @click="gotonews(item, index)"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
-          <div class="baseNavListtitle">
+          <img class="swiper-lazy" v-lazy="item.imgUrl" alt="轮播图" />
+          <div
+            class="baseNavListtitle"
+            :style="{
+              color: productType === index ? '#245852' : '',
+              fontWeight: productType === index ? 'bold' : ''
+            }"
+          >
             {{ item.title }}
           </div>
         </li>
@@ -28,33 +34,40 @@ export default {
   name: "Product",
   data() {
     return {
+      productType: 0,
       tecnologyList: [
         {
-          title: "国草园资讯",
-          routerUrl: "/news/companynews",
-          imgUrl: "static/img/3/home/cp1.png"
+          title: "养生茶系列",
+          routerUrl: "/product/productpack",
+          imgUrl: "static/img/3/home/cp4.png"
         },
         {
-          title: "最新公告",
-          routerUrl: "/news/companynews",
+          title: "传统中药系列",
+          routerUrl: "/product/productpack1",
           imgUrl: "static/img/3/home/cp2.png"
         },
         {
-          title: "行业动态",
-          routerUrl: "/news/companynews",
+          title: "药食同源系列",
+          routerUrl: "/product/productpack2",
           imgUrl: "static/img/3/home/cp3.png"
-        },
-        {
-          title: " 视频展示",
-          routerUrl: "/news/videonews",
-          imgUrl: "static/img/3/home/tac4.png"
         }
+        // {
+        //   title: " 视频展示",
+        //   routerUrl: "/news/videonews",
+        //   imgUrl: "static/img/3/home/cp4.png"
+        // }
       ]
     };
   },
   mounted() {
     var wow = new WOW();
     wow.init();
+  },
+  methods: {
+    gotonews(e, index) {
+      this.productType = index;
+      this.$router.push(e.routerUrl);
+    }
   }
 };
 </script>
@@ -65,21 +78,23 @@ export default {
 }
 .baseNav {
   width: 100%;
-  background: url("/static/img/3/home/tecbg.png") no-repeat;
+  // border: 1px solid red;
+  background: url("../../assets/img/3.0/tecbg.png") no-repeat;
   background-size: 100% 100%;
   margin-top: -10px;
   .baseNavList {
     // background: red;
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     li {
       display: flex;
       justify-content: center;
       align-items: center;
       -ms-flex-item-align: center;
-      width: 20%;
+      // width: 20%;
       padding: 3vw 0 !important;
 
       // border: 1px solid red;
@@ -100,7 +115,7 @@ export default {
         }
       }
       img {
-        width: 40%;
+        width: 25%;
         margin-right: 20px;
         border-radius: 100%;
         transition: all 0.4s ease-in-out;

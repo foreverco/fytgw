@@ -39,7 +39,7 @@
         >
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <p class="productnameBox">{{ item.name }}</p>
             <!-- <p class="productpriceBox">{{ item.price }}</p> -->
@@ -473,7 +473,8 @@ export default {
   letter-spacing: 5px;
 }
 #productpack .productContainer .productList {
-  margin: 10px;
+  margin: 4%;
+  /* border: 1px solid red; */
 }
 #productpack .productContainer .productImgBox {
   height: 100%;

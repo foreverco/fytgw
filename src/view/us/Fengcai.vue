@@ -7,29 +7,18 @@
       <div class="row">
         <ul class="col-md-12 imgBox">
           <li
-            class="imgone imgwow zoomIn pic1wow"
+            class="imgone imgwow"
             v-for="(item, index) in imgBox"
             :key="index"
           >
             <div class="imgSpace1">
-              <img :src="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt />
             </div>
 
-            <p>{{ item.title }}</p>
+            <!-- <p>{{ item.title }}</p> -->
           </li>
         </ul>
       </div>
-      <ul class="row fengeImg">
-        <li
-          class="imgwow bounceInRight"
-          v-for="(item, index) in fengeImgList"
-          :key="index"
-        >
-          <span>
-            {{ item.num }}
-          </span>
-        </li>
-      </ul>
       <ul class="row imgList">
         <li
           class="col-md-3 col-sm-4 imgwow zoomIn"
@@ -38,9 +27,9 @@
           @click="gotoImgMsg(item.imgUrl)"
         >
           <div class="imgSpace">
-            <img :src="item.imgUrl" alt />
+            <img v-lazy="item.imgUrl" alt />
           </div>
-          <div class="txtSpace">{{ item.title }}</div>
+          <!-- <div class="txtSpace">{{ item.title }}</div> -->
         </li>
       </ul>
       <div class="row tabListPage">
@@ -261,7 +250,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 200000;
+  z-index: 102;
   transition: all 400ms ease;
 }
 .imgBox li:hover p {
@@ -358,7 +347,7 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 200000;
+  z-index: 102;
   transition: all 400ms ease;
 }
 .imgList li .txtSpace {
@@ -374,7 +363,7 @@ export default {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000000001;
+  z-index: 103;
 }
 .imgList li .imgSpace img {
   width: 100%;

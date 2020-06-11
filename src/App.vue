@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 @import "./common/fonts/font.css";
+@import "./styles/main.scss";
 
 #app {
   background: url("./assets/img/bg1.png");
@@ -94,7 +95,7 @@ export default {
 .el-pager {
 }
 .el-pager li {
-  border: 1px solid #81b25b !important;
+  border: 1px solid $mainColor !important;
   min-width: 30px;
   height: 30px;
   line-height: 30px;
@@ -104,12 +105,12 @@ export default {
 }
 .el-pager li.active {
   color: #fff;
-  border: 1px solid #81b25b !important;
-  background: #81b25b;
+  border: 1px solid $mainColor !important;
+  background: $mainColor;
   cursor: default;
 }
 a {
-  color: #81b25b;
+  color: $mainColor;
   text-decoration: none;
 }
 .el-pagination .btn-prev {

@@ -11,7 +11,7 @@
           </div>
           <div class="baseBoxConwsTxt wow bounceInRight">
             <p class="baseBoxConwsTxtTitle">智慧玻璃温室</p>
-            <p class="baseBoxConwsTxtCon">
+            <p class="baseBoxConwsTxtCon hidden-xs">
               为打造全国首屈一指的的中药材产业基地，国草园集团斥资在化德县规划建设占地100亩的智慧型玻璃温室，集种苗培育、科技研发、旅游观光为一体，并结合公司自主研发的智慧农业云平台建立智慧生态综合体。温室采用目前应用较为广泛的纹洛(Venlo)式连栋玻璃温室。
             </p>
             <div class="baseBoxConwsTxtimgbox">
@@ -50,7 +50,7 @@
         <div class="baseBoxConws">
           <div class="baseBoxConwsTxt2 wow bounceInLeft">
             <p class="baseBoxConwsTxtTitle">智慧农业监控系统</p>
-            <p class="baseBoxConwsTxtCon">
+            <p class="baseBoxConwsTxtCon hidden-xs">
               利用传感器感知技术、信息融合传输技术和物联网技术,获取土壤、墒情、水文、长势等极为精细的中药材生长环境及资源信息,实时把握中药材的生长情况；打造智慧农业科技温室大棚，可根据不同药材的适宜环境进行远程联动控制大棚内智能设备，实现生产过程的智能化控制和科学化管理,提高资源利用率和劳动生产率。
             </p>
             <div class="baseBoxConwsTxtimgbox">
@@ -95,7 +95,7 @@
           </div>
           <div class="baseBoxConwsTxt wow bounceInRight">
             <p class="baseBoxConwsTxtTitle">智慧农业大数据分析系统</p>
-            <p class="baseBoxConwsTxtCon">
+            <p class="baseBoxConwsTxtCon hidden-xs">
               以中药材种植、生长、采收、加工、存储、流通、销售过程中的数据为支撑，实现视频监控、环境监控、统计分析、自动预警和远程控制、建立相关作物生长数据库等功能，帮助生产管理人员积累种植经验和生产策略，为相关管理部门和企业提供管理手段和决策依据，提高农业信息化水平，为农业规范化管理提供可靠保障，使农民增产增收。
             </p>
             <div class="baseBoxConwsTxtimgbox3">
@@ -122,7 +122,7 @@
         <div class="baseBoxConws">
           <div class="baseBoxConwsTxt2 wow bounceInLeft">
             <p class="baseBoxConwsTxtTitle">智慧农业追溯源系统</p>
-            <p class="baseBoxConwsTxtCon">
+            <p class="baseBoxConwsTxtCon hidden-xs">
               通过对中药材生产、流通、销售过程的全程信息感知、传输、融合和处理,实现蒙中药材“从土地到市场”的全程追溯,为蒙中药材安全保驾护航。
             </p>
             <div class="baseBoxConwsTxtimgbox3">

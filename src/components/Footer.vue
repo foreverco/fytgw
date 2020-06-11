@@ -4,15 +4,15 @@
       <div class="imgbox">
         <div class="imgboxsmall">
           <img src="../../static/img/3/home/dy.png" alt="" />
-          <p>加入抖音了解更多</p>
+          <p>关注抖音了解更多</p>
         </div>
         <div class="imgboxsmall">
-          <img src="../../static/img/3/home/wx.png" alt="" />
-          <p>加入微信了解更多</p>
+          <img src="../../static/img/3/home/wxerweima.png" alt="" />
+          <p>关注微信了解更多</p>
         </div>
       </div>
       <div class="logobox">
-        <img src="../../static/img/3/home/footerlogo.png" alt="" />
+        <img src="../../static/img/3/home/footerlogo1.png" alt="" />
       </div>
       <div class="telBox">
         400 168 5665
@@ -106,7 +106,7 @@ export default {
           ]
         },
         {
-          name: "中药材基地",
+          name: "产业规划",
           name1: "XWZHONGXIN",
           path: "/base/plantingbase",
           // path: "/newsinformation",
@@ -136,7 +136,7 @@ export default {
           // path: "/newsinformation",
           children: [
             {
-              name: "公司新闻",
+              name: "企业新闻",
               path: "/news/companynews"
             },
             {

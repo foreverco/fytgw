@@ -7,8 +7,11 @@
       <div class="parkplanbox container wow bounceInUp">
         <img src="../../../../static/img/3/ky/parkplanimg.png" alt />
         <div>
-          <p>
+          <p class="hidden-xs">
             在百万亩种植基地带动产业经济的高速发展下，国草园集团考虑到后期产业发展规划，将在当地投资建设中药材加工产业园，做初加工及部分药材深加工，同时配套生产周边延伸产业。预计产业园在5年后年产值达到20亿，带动当地老百姓就业1000余人。
+          </p>
+          <p class="visible-xs">
+            国草园集团将在当地投资建设中药材加工产业园
           </p>
         </div>
       </div>
@@ -21,12 +24,12 @@
             class="wow bounceIn"
           >
             <img :src="item.imgUrl" alt />
-            <p>{{ item.content }}</p>
+            <p class="hidden-xs">{{ item.content }}</p>
           </li>
         </ul>
       </div>
       <div class="baseBoxTitle">
-        <img src="../../../../static/img/3/ky/jgsb.png" alt />
+        <img src="/static/img/3/ky/zyjgc.png" alt />
       </div>
       <ul class="plantingimgList container">
         <li
@@ -36,14 +39,14 @@
         >
           <div>
             <div class="box">
-              <img :src="item.imgUrl" />
+              <img v-lazy="item.imgUrl" />
               <div class="box-content">
                 <h3 class="title">{{ item.title }}</h3>
                 <span class="post">加工 产业园</span>
               </div>
-              <p>
+              <!-- <p>
                 {{ item.title }}
-              </p>
+              </p> -->
             </div>
           </div>
         </li>
@@ -115,44 +118,64 @@ export default {
       imgList: [
         {
           newsid: 1,
-          title: "敞开式烘箱",
-          imgUrl: "static/img/3/ky/sb1.png"
+          title: "块状类联动线示意图",
+          imgUrl: "static/img/3/ky/lsx1.png"
         },
         {
           newsid: 2,
-          title: "锻药机",
-          imgUrl: "static/img/3/ky/sb2.png"
+          title: "根茎类联动线示意图",
+          imgUrl: "static/img/3/ky/lsx2.png"
         },
         {
           newsid: 3,
-          title: "滚筒式炒药机",
-          imgUrl: "static/img/3/ky/sb3.png"
+          title: "饮片生产车间",
+          imgUrl: "static/img/3/ky/lsx3.png"
         },
         {
-          newsid: 1,
-          title: "滚筒式洗药机",
-          imgUrl: "static/img/3/ky/sb4.png"
-        },
-        {
-          newsid: 2,
-          title: "润药机",
-          imgUrl: "static/img/3/ky/sb5.png"
-        },
-        {
-          newsid: 3,
-          title: "直切式切药机",
-          imgUrl: "static/img/3/ky/sb6.png"
-        },
-        {
-          newsid: 3,
-          title: "直切往复式切药机",
-          imgUrl: "static/img/3/ky/sb7.png"
-        },
-        {
-          newsid: 3,
-          title: "中药蒸药箱",
-          imgUrl: "static/img/3/ky/sb8.png"
+          newsid: 4,
+          title: "饮片生产车间",
+          imgUrl: "static/img/3/ky/lsx4.png"
         }
+        // {
+        //   newsid: 1,
+        //   title: "敞开式烘箱",
+        //   imgUrl: "static/img/3/planting/blwsx1.png"
+        // },
+        // {
+        //   newsid: 2,
+        //   title: "锻药机",
+        //   imgUrl: "static/img/3/planting/blwsx2.png"
+        // },
+        // {
+        //   newsid: 3,
+        //   title: "滚筒式炒药机",
+        //   imgUrl: "static/img/3/planting/blwsx1.png"
+        // },
+        // {
+        //   newsid: 1,
+        //   title: "滚筒式洗药机",
+        //   imgUrl: "static/img/3/planting/blwsx2.png"
+        // },
+        // {
+        //   newsid: 2,
+        //   title: "润药机",
+        //   imgUrl: "static/img/3/planting/blwsx1.png"
+        // },
+        // {
+        //   newsid: 3,
+        //   title: "直切式切药机",
+        //   imgUrl: "static/img/3/planting/blwsx2.png"
+        // },
+        // {
+        //   newsid: 3,
+        //   title: "直切往复式切药机",
+        //   imgUrl: "static/img/3/planting/blwsx1.png"
+        // },
+        // {
+        //   newsid: 3,
+        //   title: "中药蒸药箱",
+        //   imgUrl: "static/img/3/planting/blwsx2.png"
+        // }
         //   {
         //     newsid: 3,
         //     title: "种植基地",
@@ -167,7 +190,7 @@ export default {
       // 个数选择器（可修改）
       pageSizes: [4, 8, 12, 16],
       // 默认每页显示的条数（可修改）
-      PageSize: 8
+      PageSize: 4
     };
   },
   mounted() {
@@ -391,15 +414,15 @@ export default {
           cursor: pointer;
         }
         margin: 2.4%;
-        width: 20%;
+        width: 45%;
         position: relative;
-        background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
-        background-size: 100% 100%;
+        // background: url("/static/img/3/planting/plantingkuang.png") no-repeat;
+        // background-size: 100% 100%;
         padding: 1px;
         overflow: hidden;
         // border: 1px solid red;
         .box {
-          background: linear-gradient(#245852, #24585220);
+          // background: linear-gradient(#245852, #24585220);
           font-family: "Merriweather Sans", sans-serif;
           border-radius: 10px;
           position: relative;
@@ -416,6 +439,7 @@ export default {
             font-size: 1.5vw;
           }
           &:hover {
+            background: linear-gradient(#245852, #24585220);
             p {
               font-size: 0;
             }

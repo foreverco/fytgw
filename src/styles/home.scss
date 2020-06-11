@@ -1,51 +1,741 @@
 @media screen and (max-width: 768px) {
-  .newsNav {
-    left: 50%;
-    transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    text-align: center;
-    font-size: 14px;
-    position: absolute;
-    width: 100%;
-    bottom: 0 !important;
-    > li {
-      /* float:left; */
-      display: inline-block;
-      border-right: 1px solid #333;
-      padding: 0 15px;
-      font-size: 12px;
-      &:last-child {
-        border: 0;
+  /* 首页 */
+  #HomePage {
+    .newsNav {
+      left: 50%;
+      transform: translate(-50%);
+      -ms-transform: translate(-50%);
+      text-align: center;
+      font-size: 14px;
+      position: absolute;
+      width: 100%;
+      bottom: 0 !important;
+      > li {
+        /* float:left; */
+        display: inline-block;
+        border-right: 1px solid #333;
+        padding: 0 15px;
+        font-size: 12px;
+        &:last-child {
+          border: 0;
+        }
+        &:hover {
+          color: #81b25b;
+          cursor: pointer;
+        }
+        /* 新闻列表 */
+        &.newsTitleActive {
+          color: #81b25b;
+          font-size: 16px !important;
+        }
       }
-      &:hover {
-        color: #81b25b;
-        cursor: pointer;
+    }
+    /* 新闻列表 */
+    .newsList {
+      .nonelistBox {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        background: #ffffff10 !important;
+        box-shadow: 3px 3px 6px 3px #24585250;
+        border-radius: 5px;
+        padding: 10px;
+        // &:nth-child(even) {
+        //   float: right;
+        // }
+        // &:nth-child(odd) {
+        //   float: left;
+        // }
+        .imgbox {
+          // position: absolute;
+          // padding: 1px 0;
+          width: 50%;
+          img {
+            opacity: 1;
+            width: 100%;
+            // height: 17vw;
+            // margin-left: 1px;
+            border-radius: 8px 0 0 8px;
+          }
+        }
+        .newsContent {
+          // border: 1px solid red;
+          width: 46%;
+          margin-left: 10px;
+          // position: absolute;
+          // right: 7%;
+          // top: 50%;
+          // transform: translateY(-50%);
+          .newstitle2 {
+            font-size: $titleFontSize;
+            line-height: 30px;
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .newsdate {
+            padding: 3px 20px 2px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+            margin: 0 !important;
+          }
+        }
       }
-      /* 新闻列表 */
-      &.newsTitleActive {
-        color: #81b25b;
-        font-size: 16px !important;
+      a {
+        color: #000;
+      }
+      .listItem {
+        display: block;
+        margin: 30px 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        background: #ffffff10 !important;
+        box-shadow: 3px 3px 6px 3px #24585250;
+        border-radius: 5px;
+        padding: 10px;
+        // border: 1px solid red;
+        // height: 80px;
+        // background: url("../assets/img/3.0/newsBg.png") no-repeat;
+        // background-size: 100% 100%;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 3px 3px 6px 3px #24585250,
+            -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+          .newsContent {
+            color: $mainColor;
+          }
+        }
+        .imgbox {
+          width: 100% !important;
+          img {
+            opacity: 1;
+            border-radius: 8px 0 0 8px;
+          }
+        }
+        .newsContent {
+          // border: 1px solid red;
+          margin-top: 5px;
+          width: 100% !important;
+          margin-left: 0 !important;
+          .newstitle2 {
+            font-size: $titleFontSize;
+            line-height: 20px !important;
+            font-weight: normal !important;
+          }
+          .newsdate {
+            // background: url("../../static/img/3/home/newsdate.png") no-repeat;
+            // background-size: 100% 100%;
+            padding: 3px 20px 2px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+          }
+          .newsCon {
+            width: 100%;
+            line-height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+          }
+        }
+      }
+    }
+    .swiper-slide-title {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -ms-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 105;
+      width: 80%;
+      height: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      p {
+        width: 100%;
+        text-align: center;
+        color: #888;
+        &:first-child {
+          font-size: 13px !important;
+          color: $mainColor;
+          margin-top: 0px !important;
+        }
+        &:last-child {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .plantingBox {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid red;
+      .box {
+        // border: 1px solid blue;
+        // background: linear-gradient(#245852, #24585220);
+        font-family: "Merriweather Sans", sans-serif;
+        border-radius: 7px;
+        position: relative;
+        overflow: hidden;
+        background: url("/static/img/3/home/plantingdk.png") no-repeat;
+        background-size: 100% 100%;
+        padding: 2px;
+        width: 45%;
+        margin: 2%;
+        > p {
+          // border: 1px solid blue;
+          text-align: center;
+          height: 5vw !important;
+          line-height: 5vw !important;
+          font-size: 1.2vw;
+          letter-spacing: 13px;
+        }
+        &:first-child {
+          // margin-right: 2%;
+        }
+        &:hover {
+          background: linear-gradient(#245852, #24585220);
+          cursor: pointer;
+          > p {
+            font-size: 0;
+          }
+        }
+      }
+      .box:before {
+        content: "";
+        background: -webkit-repeating-linear-gradient(
+          45deg,
+          rgba(0, 0, 0, 0.1) 10px,
+          transparent 10px,
+          transparent 20px,
+          rgba(0, 0, 0, 0.1) 20px,
+          rgba(0, 0, 0, 0.1) 30px,
+          transparent 30px,
+          transparent 40px,
+          rgba(0, 0, 0, 0.1) 40px,
+          rgba(0, 0, 0, 0.1) 50px,
+          transparent 50px,
+          transparent 60px,
+          rgba(0, 0, 0, 0.1) 60px,
+          rgba(0, 0, 0, 0.1) 70px,
+          transparent 70px,
+          transparent 80px,
+          rgba(0, 0, 0, 0.1) 80px,
+          rgba(0, 0, 0, 0.1) 90px,
+          transparent 90px
+        );
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        transition: all 0.5s;
+      }
+      .box:hover:before {
+        opacity: 1;
+      }
+      .box img {
+        width: 100%;
+        // height: auto;
+        transition: all 0.5s ease;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .box:hover img {
+        opacity: 0.5;
+        -webkit-clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
+        clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
+      }
+      .box .box-content {
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) rotate(-55deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        transition: all 0.5s;
+      }
+      .box:hover .box-content {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      }
+      .box .title {
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px #000;
+        margin: 0 0 3px 0;
+      }
+      .box .post {
+        font-size: 16px;
+        text-shadow: 0 0 5px #000;
+        text-transform: capitalize;
+        display: block;
+      }
+      .box .icon {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        opacity: 0;
+        transform: rotateX(180deg);
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        transition: all 0.3s;
+      }
+      .box:hover .icon {
+        opacity: 1;
+        transform: rotate(0);
+      }
+      .box .icon li a {
+        color: #24585220;
+        background-color: #fff;
+        font-size: 17px;
+        text-align: center;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        margin: 0 0 7px;
+        border-radius: 50%;
+        display: block;
+        transition: all 0.5s;
+      }
+      .box .icon li a:hover {
+        color: #245852;
+        box-shadow: 0 0 15px #fff;
+      }
+      // @media only screen and (max-width: 990px) {
+      //   .box {
+      //     margin: 0 0 30px;
+      //   }
+      // }
+      // @media only screen and (max-width: 479px) {
+      //   .box .title {
+      //     font-size: 20px;
+      //   }
+      // }
+    }
+    .productList {
+      margin-bottom: 0 !important;
+    }
+    .scoolingBox {
+      .scoolingImg {
+        img {
+          width: 90%;
+        }
+      }
+    }
+    .scoolingBox > div {
+      height: 200px !important;
+    }
+    .scoolingTxt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: "lv1";
+      // border: 1px solid red;
+    }
+    .scoolingBox > div .name {
+      width: 7% !important;
+      // border: 1px solid red;
+      writing-mode: tb-rl;
+      span {
+        font-size: 15px !important;
+        // border: 1px solid red;
+      }
+    }
+    .scoolingBox > div .name span:first-child {
+      font-size: 24px;
+    }
+    .scoolingBox > div .name span:nth-child(2) {
+      font-size: 30px;
+      color: #81b25b;
+    }
+
+    .scoolingBox > div .con {
+      // border: 1px solid red;
+      width: 93% !important;
+      height: 90%;
+      font-size: 12px !important;
+      letter-spacing: 3px;
+      overflow: hidden !important;
+      writing-mode: tb-rl;
+      padding: 10px 0;
+      line-height: 20px !important;
+      font-family: "微软雅黑";
+    }
+    #aboutgcy {
+      .aboutcontainer {
+        width: 100% !important;
       }
     }
   }
-  /* 新闻列表 */
-  .newsList {
-    a {
-      color: #000;
+  /* 企业文化 */
+  #aboutUs {
+    .qylogoBox {
+      // border: 1px solid red;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      > img {
+        width: 40% !important;
+      }
     }
+  }
+  // #productBox {
+  .baseNavList {
+    padding: 10px 0;
     li {
+      // border: 1px solid red;
+      align-items: center;
+      justify-content: start !important;
+      border-bottom: 1px solid #00000010;
+      &:last-child {
+        border: 0;
+      }
+      > img {
+        width: 15% !important;
+        // margin: 10px 0 !important;
+      }
+    }
+  }
+  // }
+
+  /* 种植基地 */
+  #intelligentag {
+    .plantingimgList {
+      justify-content: center !important;
+      align-items: center;
+      li {
+        margin: 3%;
+        .plantingimgtitle {
+          height: 20px !important;
+          border-radius: 0 0 5px 5px !important;
+          background: #fff;
+          width: 100.5%;
+          margin-left: -0.25%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px !important;
+          letter-spacing: 10px;
+          position: relative;
+          z-index: 101;
+        }
+      }
+    }
+  }
+  #park {
+    .parkplanbox {
+      // border: 1px solid red;
+      margin-bottom: 88px;
+      position: relative;
+      img {
+        width: 100%;
+      }
+      > div {
+        position: absolute;
+        width: 42%;
+        height: 70%;
+        // border: 1px solid blue;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      p {
+        width: 80%;
+        font-size: 12px !important;
+        line-height: 15px !important;
+      }
+    }
+    .investmentBox {
+      position: relative;
+      margin-bottom: 40px;
+      > img {
+        width: 100%;
+      }
+      .investmentContent {
+        // border: 1px solid red;
+        // height: 1000px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        li {
+          width: 48%;
+          margin-left: auto;
+          // border: 1px solid blue;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          &:first-child,
+          &:nth-child(3) {
+            margin-left: 0;
+          }
+          &:first-child,
+          &:nth-child(2) {
+            margin-bottom: 20px;
+          }
+          img {
+            width: 80% !important;
+            margin-bottom: 0px !important;
+          }
+          p {
+            width: 90%;
+            text-align: center;
+            line-height: 1.5vw;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  /* 康养小镇 */
+  #kytown {
+    .topimgbox {
+      img {
+        width: 100%;
+      }
+    }
+    .baseNav {
+      width: 100%;
+      .baseNavList {
+        // background: red;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        margin-top: -12px;
+        height: 160px;
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          -ms-flex-item-align: center;
+          width: 20%;
+          // padding: 3vw 0 !important;
+
+          // border: 1px solid red;
+          &:hover {
+            cursor: pointer;
+            img {
+              box-shadow: 3px 3px 6px 3px #24585250,
+                -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+              // animation: imgrotate 2s infinite alternate;
+              // -webkit-animation: imgrotate 2s infinite alternate;
+              // -moz-animation: imgrotate 2s infinite alternate;
+              // -o-animation: imgrotate 2s infinite alternate;
+              // -ms-animation: imgrotate 2s infinite alternate;
+            }
+            .baseNavListtitle {
+              color: $mainColor;
+              transform: translateX(10px);
+            }
+          }
+          img {
+            width: 40%;
+            margin-right: 20px;
+            border-radius: 100%;
+            transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+          }
+          .baseNavListtitle {
+            // width: 50%;
+            font-size: 1.3vw;
+            transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+    .baseBox {
+      .baseBoxTitle {
+        // border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -ms-flex-item-align: center;
+        img {
+          height: 100%;
+        }
+      }
+      .baseBoxCon {
+        // border: 1px solid red;
+        margin-bottom: 1vw;
+        height: 100%;
+        .baseBoxContown {
+          // border: 1px solid blue;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          .baseBoxContownimgbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .baseBoxContownimgboxsmall {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+              img {
+                width: 90%;
+              }
+              p {
+                // border: 1px solid red;
+                text-align: center;
+                // font-family: "lv2";
+                letter-spacing: 7px;
+                font-size: 12px !important;
+              }
+            }
+          }
+          .baseBoxContowntxtbox {
+            // border: 1px solid red;
+            text-align: center;
+            font-size: 14px;
+            width: 90%;
+            margin-top: 2vw;
+            letter-spacing: 4px;
+            line-height: 20px;
+          }
+        }
+      }
+      .ztbg {
+        margin-bottom: 50px;
+        img {
+          width: 100%;
+        }
+      }
+      .ztcontent {
+        // border: 1px solid red;
+        position: relative;
+        margin-bottom: 50px;
+        .guijiBox {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -49%);
+          img {
+            width: 93%;
+            // border: 1px solid red;
+          }
+        }
+        .storyBox {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          // margin: 20px 0;
+          .storyTxt {
+            width: 45%;
+            // border: 1px solid blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            > div {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .storyTxtTop {
+              // border: 1px solid red;
+              position: relative;
+              p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                span {
+                  margin: 0px !important;
+                  color: #fff;
+                  font-size: 12px;
+                  // font-size: rem(30);
+                  font-family: "lv1";
+                }
+              }
+              img {
+                width: 100%;
+                // border: 1px solid red;
+              }
+            }
+            .storyTxtMid {
+              height: 4vw;
+              font-size: 20px;
+              font-family: "lv1";
+              letter-spacing: 0.3vw;
+              margin-top: 20px;
+            }
+            .storyTxtBot {
+              line-height: 1.5vw;
+              text-align: center;
+              letter-spacing: 0.3vw;
+              font-size: 14px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+            }
+          }
+          .storyimg {
+            width: 45%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* 新闻列表页 */
+  .newsList {
+    .nonelistBox {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      letter-spacing: 5px;
+    }
+    width: 100%;
+    margin-top: 10px !important;
+    > .listBox {
       display: block;
-      margin: 30px 0;
+      margin: 10px 0 !important;
       justify-content: center;
       flex-wrap: wrap;
       background: #ffffff10 !important;
       box-shadow: 3px 3px 6px 3px #24585250;
       border-radius: 5px;
-      padding: 10px;
-      // border: 1px solid red;
-      // height: 80px;
-      // background: url("../assets/img/3.0/newsBg.png") no-repeat;
-      // background-size: 100% 100%;
+      padding: 10px 0 !important;
       &:hover {
         cursor: pointer;
         box-shadow: 3px 3px 6px 3px #24585250,
@@ -54,252 +744,77 @@
           color: $mainColor;
         }
       }
-      .imgbox {
+      .newslistimgbox {
+        border-right: 0 !important;
+        margin: 0 1%;
+        padding: 0.5vw;
         width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img {
-          opacity: 1;
-          border-radius: 8px 0 0 8px;
+          width: 100%;
+        }
+        .dateBox {
+          // border: 1px solid blue;
+          width: 20%;
+          height: 6vw;
+          margin-left: 0.5vw;
+          // position: relative;
+          > li {
+            // border: 1px solid red;
+            text-align: center;
+            width: 90%;
+            margin: 0 auto;
+            height: 3vw;
+            line-height: 3vw;
+            &:last-child {
+              border-top: 1px solid #ccc;
+              font-size: 1.8vw;
+            }
+          }
         }
       }
-      .newsContent {
-        // border: 1px solid red;
-        margin-top: 5px;
-        width: 100% !important;
-        margin-left: 0 !important;
-        .newstitle2 {
-          font-size: $titleFontSize;
-          line-height: 20px !important;
-          font-weight: normal !important;
-        }
-        .newsdate {
-          // background: url("../../static/img/3/home/newsdate.png") no-repeat;
-          // background-size: 100% 100%;
-          padding: 3px 20px 2px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          display: inline-block;
-        }
-        .newsCon {
-          width: 100%;
-          line-height: 40px;
+      .newslistconbox {
+        width: 90% !important;
+        height: 100%;
+        margin-left: 0% !important;
+        h4 {
+          font-size: 14px;
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
+          // border: 1px solid red;
+        }
+        .contentbox {
+          height: 60%;
+          width: 100%;
+          font-size: 13px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3 !important;
+          -webkit-box-orient: vertical;
+          margin: 1.5vw 0;
+        }
+        .btnBox {
+          width: 100%;
+          height: 10%;
+          text-align: center !important;
+          // align-self: flex-end;
+          button {
+            background: $mainColor;
+            border: 0;
+            outline: 0;
+            border: 1px solid #81b25b;
+            color: #fff;
+            font-size: 12px !important;
+            padding: 2px 4px !important;
+          }
         }
       }
-    }
-  }
-  .plantingBox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid red;
-    .box {
-      // border: 1px solid blue;
-      // background: linear-gradient(#245852, #24585220);
-      font-family: "Merriweather Sans", sans-serif;
-      border-radius: 7px;
-      position: relative;
-      overflow: hidden;
-      background: url("/static/img/3/home/plantingdk.png") no-repeat;
-      background-size: 100% 100%;
-      padding: 2px;
-      width: 45%;
-      margin: 2%;
-      > p {
-        // border: 1px solid blue;
-        text-align: center;
-        height: 5vw !important;
-        line-height: 5vw !important;
-        font-size: 1.2vw;
-        letter-spacing: 13px;
-      }
-      &:first-child {
-        // margin-right: 2%;
-      }
-      &:hover {
-        background: linear-gradient(#245852, #24585220);
-        cursor: pointer;
-        > p {
-          font-size: 0;
-        }
-      }
-    }
-    .box:before {
-      content: "";
-      background: -webkit-repeating-linear-gradient(
-        45deg,
-        rgba(0, 0, 0, 0.1) 10px,
-        transparent 10px,
-        transparent 20px,
-        rgba(0, 0, 0, 0.1) 20px,
-        rgba(0, 0, 0, 0.1) 30px,
-        transparent 30px,
-        transparent 40px,
-        rgba(0, 0, 0, 0.1) 40px,
-        rgba(0, 0, 0, 0.1) 50px,
-        transparent 50px,
-        transparent 60px,
-        rgba(0, 0, 0, 0.1) 60px,
-        rgba(0, 0, 0, 0.1) 70px,
-        transparent 70px,
-        transparent 80px,
-        rgba(0, 0, 0, 0.1) 80px,
-        rgba(0, 0, 0, 0.1) 90px,
-        transparent 90px
-      );
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      transition: all 0.5s;
-    }
-    .box:hover:before {
-      opacity: 1;
-    }
-    .box img {
-      width: 100%;
-      // height: auto;
-      transition: all 0.5s ease;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    .box:hover img {
-      opacity: 0.5;
-      -webkit-clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
-      clip-path: polygon(50% 0, 99% 50%, 50% 99%, 0 50%);
-    }
-    .box .box-content {
-      color: #fff;
-      text-align: center;
-      width: 100%;
-      opacity: 0;
-      transform: translateX(-50%) translateY(-50%) rotate(-55deg);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      z-index: 1;
-      transition: all 0.5s;
-    }
-    .box:hover .box-content {
-      opacity: 1;
-      transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    }
-    .box .title {
-      font-size: 25px;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-shadow: 0 0 5px #000;
-      margin: 0 0 3px 0;
-    }
-    .box .post {
-      font-size: 16px;
-      text-shadow: 0 0 5px #000;
-      text-transform: capitalize;
-      display: block;
-    }
-    .box .icon {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      opacity: 0;
-      transform: rotateX(180deg);
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      transition: all 0.3s;
-    }
-    .box:hover .icon {
-      opacity: 1;
-      transform: rotate(0);
-    }
-    .box .icon li a {
-      color: #24585220;
-      background-color: #fff;
-      font-size: 17px;
-      text-align: center;
-      line-height: 30px;
-      width: 30px;
-      height: 30px;
-      margin: 0 0 7px;
-      border-radius: 50%;
-      display: block;
-      transition: all 0.5s;
-    }
-    .box .icon li a:hover {
-      color: #245852;
-      box-shadow: 0 0 15px #fff;
-    }
-    // @media only screen and (max-width: 990px) {
-    //   .box {
-    //     margin: 0 0 30px;
-    //   }
-    // }
-    // @media only screen and (max-width: 479px) {
-    //   .box .title {
-    //     font-size: 20px;
-    //   }
-    // }
-  }
-  .productList {
-    margin-bottom: 0 !important;
-  }
-  .scoolingBox {
-    .scoolingImg {
-      img {
-        width: 90%;
-      }
-    }
-  }
-  .scoolingBox > div {
-    height: 200px !important;
-  }
-  .scoolingTxt {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: "lv1";
-    // border: 1px solid red;
-  }
-  .scoolingBox > div .name {
-    width: 7% !important;
-    // border: 1px solid red;
-    writing-mode: tb-rl;
-    span {
-      font-size: 15px !important;
-      // border: 1px solid red;
-    }
-  }
-  .scoolingBox > div .name span:first-child {
-    font-size: 24px;
-  }
-  .scoolingBox > div .name span:nth-child(2) {
-    font-size: 30px;
-    color: #81b25b;
-  }
-
-  .scoolingBox > div .con {
-    // border: 1px solid red;
-    width: 93% !important;
-    height: 90%;
-    font-size: 12px !important;
-    letter-spacing: 3px;
-    overflow: hidden !important;
-    writing-mode: tb-rl;
-    padding: 10px 0;
-    line-height: 20px !important;
-    font-family: "微软雅黑";
-  }
-  #aboutgcy {
-    .aboutcontainer {
-      width: 100% !important;
     }
   }
 }

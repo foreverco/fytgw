@@ -1,18 +1,18 @@
 <template>
   <div class="container-fluid">
     <div id="swiper" class="newsswiper" v-show="$route.name === 'companynews'">
-      <img src="../../assets/img/news/banner-2.png" alt />
+      <img src="static/img/3/news/newsbanner.jpg" alt />
     </div>
-    <div class="baseNav" v-show="$route.name === 'companynews'">
-      <ul class="baseNavList">
+    <div class="baseNav container" v-show="$route.name === 'companynews'">
+      <ul class="baseNavList row">
         <li
           v-for="(item, index) in tecnologyList"
           :key="index"
-          class="wow bounceInRight"
+          class="wow bounceInRight col-md-3 col-xs-12"
           data-wow-delay="0"
           @click="gotonews(item, index)"
         >
-          <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+          <img class="swiper-lazy" v-lazy="item.imgUrl" alt="轮播图" />
           <div
             class="baseNavListtitle"
             :style="{
@@ -79,22 +79,22 @@ export default {
         {
           title: "国草园资讯",
           routerUrl: "/news/companynews",
-          imgUrl: "static/img/3/home/tac1.png"
+          imgUrl: "static/img/3/news/newslogo1.png"
         },
         {
-          title: "最新公告",
+          title: "企业动态",
           routerUrl: "/news/companynews",
-          imgUrl: "static/img/3/home/tac2.png"
+          imgUrl: "static/img/3/news/newslogo2.png"
         },
         {
           title: "行业动态",
           routerUrl: "/news/companynews",
-          imgUrl: "static/img/3/home/tac3.png"
+          imgUrl: "static/img/3/news/newslogo3.png"
         },
         {
           title: " 视频展示",
           routerUrl: "/news/videonews",
-          imgUrl: "static/img/3/home/tac4.png"
+          imgUrl: "static/img/3/news/newslogo4.png"
         }
       ],
       /* 轮播图列表 */
@@ -144,7 +144,7 @@ export default {
   },
   mounted() {
     console.log(this.$route.path);
-    this.newsType = Number(localStorage.getItem("newstype"));
+    // this.newsType = Number(localStorage.getItem("newstype"));
     console.log(Number(localStorage.getItem("newstype")));
     var wow = new WOW();
     wow.init();
@@ -162,22 +162,23 @@ export default {
 }
 .baseNav {
   width: 100%;
-  background: url("/static/img/3/home/tecbg.png") no-repeat;
+  background: url("../../assets/img/3.0/tecbg.png") no-repeat;
   background-size: 100% 100%;
   margin-top: -10px;
   .baseNavList {
     // background: red;
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     li {
       display: flex;
       justify-content: center;
       align-items: center;
       -ms-flex-item-align: center;
-      width: 20%;
-      padding: 3vw 0 !important;
+      // width: 20%;
+      padding: 1vw 0 !important;
 
       // border: 1px solid red;
       &:hover {
@@ -197,7 +198,7 @@ export default {
         }
       }
       img {
-        width: 40%;
+        width: 25%;
         margin-right: 20px;
         border-radius: 100%;
         transition: all 0.4s ease-in-out;

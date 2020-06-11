@@ -15,7 +15,7 @@
         </div> -->
         <div class='col-xs-12 concTxt'>
           <img
-            src="static/img/3/us/zuzhicon.png"
+            src="static/img/3/us/zuzhicon1.png"
             alt=""
           >
         </div>

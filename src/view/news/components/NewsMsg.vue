@@ -13,7 +13,7 @@
       v-for="(item, index) in newsMsgObj.imgList"
       :key="index"
     >
-      <img :src="item.imrUrl" alt />
+      <img v-lazy="item.imrUrl" alt />
     </div>
     <div class="row newsmsgCon" v-html="newsMsgObj.con"></div>
   </div>
@@ -203,9 +203,6 @@ export default {
   margin-bottom: 80px;
   font-size: 17px;
   width: 90%;
-  p {
-    text-indent: 50px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -213,5 +210,9 @@ export default {
     width: 100%;
     display: inline-block;
   }
+}
+p {
+  text-indent: 50px;
+  // color: red !important;
 }
 </style>

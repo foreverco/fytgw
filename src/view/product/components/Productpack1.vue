@@ -19,20 +19,28 @@
           >{{ item.type }}</li>
         </ul>
       </div> -->
-      <ul class="row productContainer" v-for="(items, index) in newlistType" :key="index">
+      <ul
+        class="row productContainer"
+        v-for="(items, index) in newlistType"
+        :key="index"
+      >
         <!-- <li
           class="row productTitle col-xs-12 wowProduct bounceInRight"
           :id="items.typeId"
         >
           <span>{{ items.type }}</span>
         </li>-->
-        <li class="productList col-md-3 col-xs-5" v-for="(item, index) in pagecpList" :key="index">
+        <li
+          class="productList col-md-3 col-xs-5"
+          v-for="(item, index) in pagecpList"
+          :key="index"
+        >
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img :src="item.imgUrl" alt>
+              <img v-lazy="item.imgUrl" alt />
             </div>
             <p class="productnameBox">{{ item.name }}</p>
-            <p class="productpriceBox">{{ item.price }}</p>
+            <!-- <p class="productpriceBox">{{ item.price }}</p> -->
             <p class="productBtnBox">
               <button>立即了解</button>
             </p>

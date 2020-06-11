@@ -4,7 +4,7 @@
       <li
         v-for="(item, index) in tecnologyList"
         :key="index"
-        class="wow bounceInRight col-md-3 col-xs-6"
+        class="wow bounceInRight col-md-3 col-xs-12"
         data-wow-delay="0"
         @click="baseGoto(item)"
       >
@@ -76,6 +76,7 @@ export default {
     // height: 160px;
     padding: 20px;
     li {
+      padding: 1vw 0 !important;
       display: flex;
       justify-content: center;
       align-items: center;

@@ -1,5 +1,5 @@
 <template>
-  <div id="intelligentag">
+  <div id="kytown">
     <div class="baseBox">
       <div class="baseBoxTitle">
         <img src="../../../../static/img/3/ky/kylogo.png" alt />
@@ -26,7 +26,7 @@
               <p>化德县朝阳镇选址地规划后</p>
             </div>
           </div>
-          <p class="baseBoxContowntxtbox">
+          <p class="baseBoxContowntxtbox hidden-xs">
             国草园集团计划利用公司自身的资源、团队和产业等优势，充分发挥当地地域特色，打造“旅游+中医药”特色旅游文化产品。蒙中草药康养小镇的选址工作目前已经完成，位于化德县朝阳镇，从化德县到北京的必经之路上，2020年将根据选址的面积将其打造成‘旅游+蒙中医药’特色旅游文化产品。以“寻找铁木真”为主题故事线，将“一乡一品”特色民俗村、中药花海、博物馆、科技大棚、蒙古特色项目、科研院所等融入旅游文化产业发展，将其建设成为具有地域特色的中药材康养小镇。
           </p>
         </div>
@@ -47,7 +47,7 @@
               <img
                 class="wow bounceIn"
                 data-wow-delay="0.3s"
-                :src="storyList[0].imgUrl"
+                v-lazy="storyList[0].imgUrl"
                 alt
               />
               <p>
@@ -56,13 +56,13 @@
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[0].title }}</div>
-            <div class="storyTxtBot">{{ storyList[0].con }}</div>
+            <div class="storyTxtBot hidden-xs">{{ storyList[0].con }}</div>
           </div>
           <div class="storyimg">
             <img
               class="wow bounceIn"
               data-wow-delay="0.3s"
-              :src="storyList[0].storyImg"
+              v-lazy="storyList[0].storyImg"
               alt
             />
           </div>
@@ -72,14 +72,14 @@
             <img
               class="wow bounceIn"
               data-wow-delay="0.3s"
-              :src="storyList[1].storyImg"
+              v-lazy="storyList[1].storyImg"
               alt
             />
           </div>
           <div class="storyTxt">
             <div class="storyTxtTop">
               <img
-                :src="storyList[1].imgUrl"
+                v-lazy="storyList[1].imgUrl"
                 class="wow bounceIn"
                 data-wow-delay="0.3s"
                 alt
@@ -90,7 +90,7 @@
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[1].title }}</div>
-            <div class="storyTxtBot">{{ storyList[1].con }}</div>
+            <div class="storyTxtBot hidden-xs">{{ storyList[1].con }}</div>
           </div>
         </div>
 
@@ -100,7 +100,7 @@
               <img
                 class="wow bounceIn"
                 data-wow-delay="0.3s"
-                :src="storyList[2].imgUrl"
+                v-lazy="storyList[2].imgUrl"
                 alt
               />
               <p>
@@ -109,13 +109,13 @@
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[2].title }}</div>
-            <div class="storyTxtBot">{{ storyList[2].con }}</div>
+            <div class="storyTxtBot hidden-xs">{{ storyList[2].con }}</div>
           </div>
           <div class="storyimg">
             <img
               class="wow bounceIn"
               data-wow-delay="0.3s"
-              :src="storyList[2].storyImg"
+              v-lazy="storyList[2].storyImg"
               alt
             />
           </div>
@@ -125,7 +125,7 @@
             <img
               class="wow bounceIn"
               data-wow-delay="0.3s"
-              :src="storyList[3].storyImg"
+              v-lazy="storyList[3].storyImg"
               alt
             />
           </div>
@@ -134,7 +134,7 @@
               <img
                 class="wow bounceIn"
                 data-wow-delay="0.3s"
-                :src="storyList[3].imgUrl"
+                v-lazy="storyList[3].imgUrl"
                 alt
               />
               <p>
@@ -143,7 +143,7 @@
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[3].title }}</div>
-            <div class="storyTxtBot">{{ storyList[3].con }}</div>
+            <div class="storyTxtBot hidden-xs">{{ storyList[3].con }}</div>
           </div>
         </div>
 
@@ -153,7 +153,7 @@
               <img
                 class="wow bounceIn"
                 data-wow-delay="0.3s"
-                :src="storyList[4].imgUrl"
+                v-lazy="storyList[4].imgUrl"
                 alt
               />
               <p>
@@ -162,13 +162,13 @@
               </p>
             </div>
             <div class="storyTxtMid">{{ storyList[4].title }}</div>
-            <div class="storyTxtBot">{{ storyList[4].con }}</div>
+            <div class="storyTxtBot hidden-xs">{{ storyList[4].con }}</div>
           </div>
           <div class="storyimg">
             <img
               class="wow bounceIn"
               data-wow-delay="0.3s"
-              :src="storyList[4].storyImg"
+              v-lazy="storyList[4].storyImg"
               alt
             />
           </div>
@@ -284,7 +284,7 @@ export default {
     -ms-transform: rotate(360deg);
   }
 }
-#intelligentag {
+#kytown {
   .topimgbox {
     img {
       width: 100%;

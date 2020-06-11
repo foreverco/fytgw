@@ -107,6 +107,17 @@ export default new Router({
               children: []
             },
             {
+              path: "/news/qynow/:newsId",
+              name: "Qynow",
+              component: resolve =>
+                require(["@/view/news/components/qynow"], resolve),
+              meta: {
+                title: "企业动态",
+                navIndex: 4
+              },
+              children: []
+            },
+            {
               path: "/news/companynews",
               name: "companynews",
               component: resolve =>

@@ -8,7 +8,7 @@
         <li
           v-for="(item, index) in tecnologyList"
           :key="index"
-          class="wow bounceInRight col-md-3 col-xs-6"
+          class="wow bounceInRight col-md-3 col-xs-12"
           data-wow-delay="0"
           @click="baseGoto(item)"
         >
@@ -87,6 +87,7 @@ export default {
     // height: 160px;
     padding: 20px;
     li {
+      padding: 1vw 0 !important;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -105,7 +106,7 @@ export default {
         }
       }
       img {
-        width: 30%;
+        width: 25%;
         margin-right: 20px;
         border-radius: 100%;
         transition: all 0.4s ease-in-out;

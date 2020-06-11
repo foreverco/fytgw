@@ -2,16 +2,26 @@
   <div id="company">
     <ul class="newsList">
       <li
-        class="row listBox"
+        class="listBox nonelistBox newschangewow zoomIn"
+        v-if="pageNewsList == 0"
+        @click="
+          $router.push({ name: 'Qynow', params: { newsId: item.newsid } })
+        "
+      >
+        暂无{{ newsTypeNmae }}信息
+      </li>
+      <li
+        class="row listBox  newschangewow zoomIn"
         v-for="(item, index) in pageNewsList"
+        v-else
         :key="index"
         @click="
           $router.push({ name: 'NewsMsg', params: { newsId: item.newsid } })
         "
       >
         <div class="newslistimgbox col-md-3 ol-xs-12">
-          <img :src="item.imgUrl" alt />
-          <ul class="dateBox">
+          <img v-lazy="item.imgUrl" alt />
+          <ul class="dateBox hidden-xs">
             <li>{{ item.dateD }}</li>
             <li>{{ item.dateM }}</li>
           </ul>
@@ -48,6 +58,7 @@
 </template>
 <script>
 import { getNewsList } from "../../../util/newsList";
+import { WOW } from "wowjs";
 const newsListObj = getNewsList();
 export default {
   name: "aboutUs",
@@ -59,6 +70,7 @@ export default {
   },
   data() {
     return {
+      newsTypeNmae: "",
       newsList: [
         // {
         //   newsid: 1,
@@ -132,6 +144,24 @@ export default {
   },
   watch: {
     newsType(val) {
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "newschangewow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+      if (val == 0) {
+        this.newsTypeNmae = "国草园资讯";
+      } else if (val == 1) {
+        this.newsTypeNmae = "最新公告";
+      } else if (val == 2) {
+        this.newsTypeNmae = "行业动态";
+      }
       console.log(Number(val));
       this.newsList = newsListObj.newsList.filter(item => {
         // console.log(item);
@@ -244,6 +274,14 @@ export default {
   color: #81b25b;
 }
 .newsList {
+  .nonelistBox {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    letter-spacing: 5px;
+  }
   width: 100%;
   margin-top: 30px;
   > .listBox {

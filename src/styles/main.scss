@@ -42,6 +42,20 @@ p {
   margin: 0;
   padding: 0;
 }
-.swiper-container-horizontal > .swiper-scrollbar {
-  height: 0;
+
+#swiper {
+  .swiper-pagination {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3%;
+  }
+}
+#productListswiper{
+  .swiper-pagination1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -23%;
+  }
 }

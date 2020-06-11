@@ -2,21 +2,24 @@
   <div id="intelligentag">
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="static/img/3/planting/zhny2.png" alt />
+        <img src="static/img/3/planting/plantinglogo.png" alt />
       </div>
-      <ul class="plantingimgList container">
-        <li
-          v-for="(item, index) in newImgList"
-          :key="index"
-          class="wow bounceIn"
-        >
-          <img :src="item.imgUrl" alt />
-          <div class="plantingimgtitle">{{ item.title }}</div>
-          <div class="hoverBox"></div>
-          <div class="hoverBox1">种植基地</div>
-          <!-- <div class="plantingimgtitle">123</div> -->
-        </li>
-      </ul>
+      <div class="container">
+        <ul class="plantingimgList row">
+          <li
+            v-for="(item, index) in newImgList"
+            :key="index"
+            class="wow bounceIn col-md-3 col-xs-5"
+          >
+            <img v-lazy="item.imgUrl" alt />
+            <!-- <img :src="item.imgUrl" alt /> -->
+            <div class="plantingimgtitle">{{ item.title }}</div>
+            <div class="hoverBox"></div>
+            <div class="hoverBox1">种植基地</div>
+            <!-- <div class="plantingimgtitle">123</div> -->
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="tabListPage">
       <el-pagination
@@ -60,46 +63,76 @@ export default {
         }
       ],
       imgList: [
+        // {
+        //   newsid: 1,
+        //   title: "种植基地",
+        //   imgUrl: "static/img/3/planting/planting1.png"
+        // },
+        // {
+        //   newsid: 2,
+        //   title: "种植基地",
+        //   imgUrl: "static/img/3/planting/planting2.png"
+        // },
+        // {
+        //   newsid: 3,
+        //   title: "种植基地",
+        //   imgUrl: "static/img/3/planting/planting3.png"
+        // },
+        // {
+        //   newsid: 1,
+        //   title: "种植基地",
+        //   imgUrl: "static/img/3/planting/planting4.png"
+        // },
         {
-          newsid: 1,
-          title: "种植基地",
-          imgUrl: "static/img/3/planting/planting1.png"
+          newsid: 2,
+          title: "人工播种",
+          imgUrl: "static/img/3/planting/01.jpg"
         },
         {
           newsid: 2,
-          title: "种植基地",
-          imgUrl: "static/img/3/planting/planting2.png"
-        },
-        {
-          newsid: 3,
-          title: "种植基地",
-          imgUrl: "static/img/3/planting/planting3.png"
-        },
-        {
-          newsid: 1,
-          title: "种植基地",
-          imgUrl: "static/img/3/planting/planting4.png"
+          title: "板蓝根苗",
+          imgUrl: "static/img/3/planting/02.jpg"
         },
         {
           newsid: 2,
-          title: "种植基地",
+          title: "犁地抽查",
+          imgUrl: "static/img/3/planting/03.jpg"
+        },
+        {
+          newsid: 2,
+          title: "玻璃温室",
+          imgUrl: "static/img/3/planting/04.jpg"
+        },
+        {
+          newsid: 2,
+          title: "犁地抽查",
+          imgUrl: "static/img/3/planting/05.jpg"
+        },
+        {
+          newsid: 2,
+          title: "清理地块",
+          imgUrl: "static/img/3/planting/06.jpg"
+        },
+        {
+          newsid: 2,
+          title: "玻璃温室",
           imgUrl: "static/img/3/planting/planting5.png"
         },
         {
           newsid: 3,
-          title: "种植基地",
+          title: "温室内景",
           imgUrl: "static/img/3/planting/planting6.png"
-        },
-        {
-          newsid: 3,
-          title: "种植基地",
-          imgUrl: "static/img/3/planting/planting7.png"
-        },
-        {
-          newsid: 3,
-          title: "种植基地",
-          imgUrl: "static/img/3/planting/planting8.png"
         }
+        // {
+        //   newsid: 3,
+        //   title: "种植基地",
+        //   imgUrl: "static/img/3/planting/planting7.png"
+        // },
+        // {
+        //   newsid: 3,
+        //   title: "种植基地",
+        //   imgUrl: "static/img/3/planting/planting8.png"
+        // }
         //   {
         //     newsid: 3,
         //     title: "种植基地",
@@ -159,6 +192,7 @@ export default {
       // 改变默认的页数
       this.currentPage = val;
       this.getData();
+      window.scrollTo(50, 400);
     }
   },
   created() {
@@ -263,8 +297,8 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
     li {
-      margin: 2.4%;
-      width: 20%;
+      // margin: 2.4%;
+      // width: 20%;
       position: relative;
       background: url("../../../assets/img/3.0/plantingkuang.png") no-repeat;
       background-size: 100% 100%;
@@ -299,7 +333,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 100002;
+        z-index: 102;
         border-radius: 15px;
         span {
           color: red;
@@ -319,7 +353,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 100002;
+        z-index: 105;
         border-radius: 5px;
         font-size: 0px;
       }
@@ -342,7 +376,7 @@ export default {
         font-size: 21px;
         letter-spacing: 10px;
         position: relative;
-        z-index: 100001;
+        z-index: 101;
       }
     }
   }

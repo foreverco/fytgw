@@ -1,33 +1,9 @@
 <template>
   <div id="aboutUs">
-    <!-- <div id="swiper" class="newsswiper">
-      <div class="swiper-container banner-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
-            <img class="swiper-lazy" :data-src="item.img" alt="轮播图" />
-            <div class="swiper-lazy-preloader"></div>
-            <div class="swiper-slide-title">
-              <h1>{{item.title}}</h1>
-              <p>{{item.content}}</p>
-            </div>
-          </div>
-    </div>-->
-    <!-- 如果需要分页器 -->
-    <!-- <div class="swiper-pagination"></div> -->
-
-    <!-- 如果需要导航按钮 -->
-    <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>-->
-    <!-- </div> -->
     <div class="row aboutusTitle imgwow zoomIn">
       <img src="static/img/3/us/banner.png" alt />
-      <!-- <div class="container">
-        <p class="hidden-xs">{{ company_profile }}</p>
-      </div> -->
     </div>
-
-    <div class="container">
+    <div class="container hidden-xs">
       <div class="qylogoBox">
         <img src="static/img/3/us/qyjj.png" alt />
       </div>
@@ -49,30 +25,16 @@
           此外，国草园集团计划利用公司自身的资源、团队和技术等优势，充分发挥自治区地域优势，打造‘旅游+中医药’特色旅游文化产品。以中药资源优势，以文化为引领、旅游为支撑、健康为目标、养生为主体，强化优势资源整合和道地中草药规模化种植产业带动，差异化发展，构建文旅康养全产业链，打造以“文旅康养四位一体”的文旅康养小镇。
         </p>
         <div class="gybox">
-          <img src="static/img/3/us/gy.png" alt="" />
+          <img src="static/img/3/us/dfgy.png" alt="" />
+          <p>
+            <span>以道地药材立足根本</span>
+          </p>
         </div>
       </div>
-      <div class="qylogoBox">
-        <img src="static/img/3/us/qywh.png" alt />
-      </div>
-      <ul class="row txtpicBox1">
-        <li
-          class="col-xs-10 imgwow zoomIn"
-          v-for="(item, index) in txtpicList"
-          :key="index"
-        >
-          <img :src="item.imgUrl" alt />
-        </li>
-      </ul>
     </div>
     <div class="tecnolyge container">
-      <div class="row">
-        <div class="tecnolyge_title col-md-4 imgwow bounceInLeft">
-          <img src="../../assets/img/aboutUs/tecnolegy.png" alt />
-        </div>
-        <div class="tecnolyge_content col-md-7 imgwow bounceInRight">
-          国草园集团与安徽中医药大学共同成立了中医药产学研合作基地，专家们为合作项目提供人才、技术、信息等方面的支持；并成立专家咨询小组，进行项目咨询、技术指导、技术培训，或开展专项研发等工作。包括土壤分析、蒙中药材选种、育种育苗技术指导、种植布局评估、种植技术指导、加工厂建设指导、蒙中药材加工技术指导、技术人员培训等。
-        </div>
+      <div class="qylogoBox">
+        <img src="static/img/3/us/zjgw.png" alt />
       </div>
       <ul class="leaderList row">
         <li
@@ -80,7 +42,7 @@
           v-for="(item, index) in leaderList"
           :key="index"
         >
-          <img :src="item.imgUrl" alt />
+          <img v-lazy="item.imgUrl" alt />
           <div class="leader_msg">
             <div class="leader_msg_box">
               <p v-for="(itemSon, index) in item.msg" :key="index">
@@ -94,7 +56,36 @@
           </div>
         </li>
       </ul>
+
+      <!-- <div class="row">
+        <div class="tecnolyge_title col-md-4 imgwow bounceInLeft">
+          <img src="../../assets/img/aboutUs/tecnolegy.png" alt />
+        </div>
+        <div class="tecnolyge_content col-md-7 imgwow bounceInRight">
+          国草园集团与安徽中医药大学共同成立了中医药产学研合作基地，专家们为合作项目提供人才、技术、信息等方面的支持；并成立专家咨询小组，进行项目咨询、技术指导、技术培训，或开展专项研发等工作。包括土壤分析、蒙中药材选种、育种育苗技术指导、种植布局评估、种植技术指导、加工厂建设指导、蒙中药材加工技术指导、技术人员培训等。
+        </div>
+      </div> -->
     </div>
+
+    <div class="tecteamBox">
+      <img src="static/img/3/us/tecteam2.png" alt="" />
+    </div>
+
+    <div class="container">
+      <div class="qylogoBox">
+        <img src="static/img/3/us/qywh.png" alt />
+      </div>
+      <ul class="row txtpicBox1">
+        <li
+          class="col-xs-10 imgwow zoomIn"
+          v-for="(item, index) in txtpicList"
+          :key="index"
+        >
+          <img v-lazy="item.imgUrl" alt />
+        </li>
+      </ul>
+    </div>
+
     <!-- <ul class="row aboutUsList">
       <li>
         企业发展理念
@@ -107,7 +98,7 @@
       </li>
     </ul>-->
 
-    <div class="container">
+    <!-- <div class="container">
       <ul class="row txtpicBox2">
         <li
           class="col-xs-10 imgwow zoomIn"
@@ -120,7 +111,7 @@
           <img :src="item.imgUrl" alt />
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -161,32 +152,28 @@ export default {
       company_profile:
         "国草园集团，成立于 2018 年，总部位于北京，注册资本10118万元，主营：中药材种植、育种；中医药技术研发、技术咨询、技术服务；仓储服务；中药饮片、中成药、生物制品销售；中医药科技产业园投资、运营和中医药科技企业孵化等。同时在江苏和内蒙古成立了子公司，分别是国草园智慧医疗技术有限公司和内蒙古国草园实业科技发展有限公司；集团下设总裁办、生产事业部、科研中心部、系统集成部部、经营部、行政人事中心、市场部、财务部等。目前公司已建立起一个集中草药规范种植、加工、研发、销售、鉴定、生态农业观光为一体的产业化体系，成为了国内生态农业产业发展中具有代表性的企业之一。 集团已与步长制药、修正药业、国药集团、江中集团、扬子江药业集团、猪八戒网、太平洋保险、中国人寿、中国中药协会、中华中医药协会、国家中医药管理局等多家单位建立了友好的合作关系，同时还与安徽中医药大学签订了合作协议，聘请各领域教授、专家学者成立有关蒙中药材方面的工作站或实验室，大力推动中医药人才培养、科技创新和药品研发，实现产学研紧密结合和推动科研成果顺利转化，研究分析药理药性及中草药成长实验，为优质的中药材良种繁育和新品种的研发试验提供可靠的保障，为集团稳定、健康、持续发展奠定了坚实的基础。目前国草园已与国药、步长、修正、北京同仁堂、康缘、天士力、扬子江签订订单式了合作协议，打通了中草药的销售渠道。国草园集团将在国家振兴中医药事业战略的指引下，不忘初心，一直秉承“以道地药材立足根本，以优质产品健康大众，以科技创新引领行业”的企业宗旨，以世界前沿的科技创造能力为手段，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团。",
       txtpicList: [
-        { imgUrl: "static/img/qiye/company_spirit.png" },
-        { imgUrl: "static/img/qiye/company_spirit2.png" },
-        { imgUrl: "static/img/qiye/company_spirit3.png" },
-        { imgUrl: "static/img/qiye/company_spirit4.png" }
+        { imgUrl: "static/img/3/us/company_spirit.png" },
+        { imgUrl: "static/img/3/us/company_spirit2.png" },
+        { imgUrl: "static/img/3/us/company_spirit3.png" },
+        { imgUrl: "static/img/3/us/company_spirit4.png" },
+        { imgUrl: "static/img/3/us/company_spirit5.png" },
+        { imgUrl: "static/img/3/us/company_spirit6.png" }
       ],
       /* 专家介绍 */
       leaderList: [
         {
-          imgUrl: "static/img/qiye/leader1.png",
-          name: "洪虎",
-          job: "原吉林省省长",
+          imgUrl: "static/img/3/us/hlq.png",
+          name: "黄璐琦",
+          job: "中国工程院院士",
           msg: [
-            "原吉林省省长",
-            "中共第十五届、十六届中央委员",
-            "国家中医药管理局委员会顾问",
-            "全国人大法律委员会第十届、第十一届 副主任委员"
+            "中国工程院院士",
+            "中国中医科学院院长",
+            "中国中医科学院研究生院院长",
+            "中药资源中心主任"
           ]
         },
         {
-          imgUrl: "static/img/qiye/leader2.png",
-          name: "朱庆生",
-          job: "原卫生部副部长",
-          msg: ["原卫生部副部长", "国家中医药管理局局长"]
-        },
-        {
-          imgUrl: "static/img/qiye/leader3.png",
+          imgUrl: "static/img/3/us/zbl.png",
           name: "张伯礼",
           job: "中国工程院院士",
           msg: [
@@ -199,14 +186,26 @@ export default {
           ]
         },
         {
-          imgUrl: "static/img/qiye/leader4.png",
-          name: "黄璐琦",
-          job: "中国工程院院士",
+          imgUrl: "static/img/3/us/lzg.png",
+          name: "李泽庚",
+          job: "安徽中医药大学副校长",
           msg: [
-            "中国工程院院士",
-            "中国中医科学院院长",
-            "中国中医科学院研究生院院长",
-            "中药资源中心主任"
+            "安徽中医药大学副校长",
+            "国家中医药管理局重点学科中医肺病学学科带头人",
+            "国家中医临床研究基地重点病种慢性阻塞性肺疾病学术带头人",
+            "安徽省省级学术和技术带头人",
+            "安徽省杰出青年中医"
+          ]
+        },
+        {
+          imgUrl: "static/img/3/us/csp.png",
+          name: "慈书平",
+          job: "江苏大学医学院教授",
+          msg: [
+            "江苏大学医学院教授",
+            "世界中医联合会睡眠委员会常务理事",
+            "解放军第359医院老年科主任南京军区老年医学专业委员会副主任委员",
+            "《实用老年医学》等多家杂志常委、编委"
           ]
         }
       ],
@@ -280,11 +279,22 @@ export default {
   width: 100%;
   height: 100%;
 }
+.tecteamBox {
+  width: 100%;
+  // border: 1px solid red;
+  margin: 20px 0;
+  img {
+    width: 100%;
+  }
+}
 .qylogoBox {
   // border: 1px solid red;
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  img {
+    // width: 100%;
+  }
 }
 .qykuangBox {
   // border: 1px solid red;
@@ -312,6 +322,24 @@ export default {
     &:hover {
       cursor: pointer;
       // transform: scale(1.2) translateX(-50%);
+    }
+    p {
+      // border: 1px solid red;
+
+      width: 100%;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        display: inline-block;
+        color: #fff;
+        font-family: "lv1";
+        font-size: 23px;
+        margin-top: -6px;
+        letter-spacing: 5px;
+      }
     }
     img {
       width: 100%;
@@ -372,7 +400,7 @@ export default {
 .tecnolyge > div {
   /* border: 1px solid red; */
   /* height: 200px; */
-  margin: 30px 0;
+  margin-top: 30px;
 }
 .tecnolyge > div::after {
   content: "";
@@ -410,7 +438,7 @@ export default {
   position: absolute;
   /* width: 50%; */
   width: calc(100% - 20px);
-  height: calc(81% - 20px);
+  height: calc(76% - 20px);
   left: 10px;
   top: 10px;
   opacity: 0;
@@ -426,7 +454,7 @@ export default {
     cursor: pointer;
   }
   .leader_msg_box {
-    width: 80%;
+    width: 85%;
     line-height: 30px;
     // height:70%;
     // background: red;
@@ -434,10 +462,11 @@ export default {
   }
 }
 .leader_name {
+  // border: 1px solid red;
   position: absolute;
   /* width: 50%; */
   width: calc(100% - 20px);
-  height: 19%;
+  height: 24%;
   left: 10px;
   bottom: 10px;
   // background: #00000050;
@@ -447,11 +476,12 @@ export default {
   justify-content: center;
   padding: 15px 0;
   p {
-    color: #fff;
+    color: #000;
     width: 100%;
     margin: 0px;
     &:first-child {
       font-size: 20px;
+      font-weight: bold;
     }
   }
 }
@@ -482,7 +512,7 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 .txtpicBox1 li {
   /* border:1px solid red; */
