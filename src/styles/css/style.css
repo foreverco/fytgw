@@ -36,7 +36,7 @@ body {
   background: var(--background);
   /* height: 100vh;
   overflow: hidden; */
-  font-family: 'Sree Krushnadevaraya', serif;
+  /* font-family: 'Sree Krushnadevaraya', serif; */
 }
 body .logo {
   font-size: 20px;

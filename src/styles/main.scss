@@ -23,7 +23,9 @@
     }
   }
 }
-
+html {
+  font-size: 14px;
+}
 ul,
 li {
   margin: 0;
@@ -51,7 +53,7 @@ p {
     bottom: 3%;
   }
 }
-#productListswiper{
+#productListswiper {
   .swiper-pagination1 {
     position: absolute;
     left: 50%;

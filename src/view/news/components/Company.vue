@@ -1,15 +1,39 @@
 <template>
   <div id="company">
     <ul class="newsList">
-      <li
-        class="listBox nonelistBox newschangewow zoomIn"
-        v-if="pageNewsList == 0"
-        @click="
-          $router.push({ name: 'Qynow', params: { newsId: item.newsid } })
-        "
-      >
-        暂无{{ newsTypeNmae }}信息
-      </li>
+      <template v-if="newsTypeNmae == '最新公告'">
+        <li
+          class="nonelistBox newschangewow zoomIn"
+          v-for="(item, index) in pageNewsList"
+          :key="index"
+          @click="
+            $router.push({ name: 'Qynow', params: { newsId: item.newsid } })
+          "
+        >
+          <div class="newslistimgbox col-md-6 ol-xs-12">
+            <img v-lazy="item.imgUrl" alt />
+            <ul class="dateBox hidden-xs">
+              <li>{{ item.dateD }}</li>
+              <li>{{ item.dateM }}</li>
+            </ul>
+          </div>
+          <div
+            class="newslistconbox col-md-6 col-xs-12"
+            style="padding-left:10px"
+          >
+            <h4>{{ item.title }}</h4>
+            <p class="contentbox">{{ item.con }}</p>
+            <div class="btnBox">
+              <router-link
+                :to="{ name: 'NewsMsg', params: { newsId: item.newsid } }"
+              >
+                <button>查看详情 >></button>
+              </router-link>
+            </div>
+          </div>
+        </li>
+      </template>
+
       <li
         class="row listBox  newschangewow zoomIn"
         v-for="(item, index) in pageNewsList"
@@ -274,13 +298,104 @@ export default {
   color: #81b25b;
 }
 .newsList {
+  // border: 1px solid red;
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
   .nonelistBox {
-    height: 200px;
+    padding: 30px 0;
+    // border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
     display: flex;
+    background: url("../../../assets/img/3.0/newsBg.png") no-repeat;
+    background-size: 100% 100%;
+    width: 49%;
+    margin-bottom: 2vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    letter-spacing: 5px;
+    &:nth-child(even) {
+      float: right;
+    }
+    &:nth-child(odd) {
+      float: left;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 3px 3px 6px 3px #24585250,
+        -0px 0px 0px 0px rgba(255, 255, 255, 0.5);
+      .newsContent {
+        color: $mainColor;
+      }
+    }
+    .newslistimgbox {
+      border-right: 1px solid #ccc;
+      margin: 0 1%;
+      padding: 0.5vw;
+      width: 45%;
+      overflow: hidden;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 80%;
+      }
+      .dateBox {
+        // border: 1px solid blue;
+        width: 20%;
+        height: 6vw;
+        margin-left: 0.5vw;
+        // position: relative;
+        > li {
+          // border: 1px solid red;
+          text-align: center;
+          width: 80%;
+          margin: 0 auto;
+          height: 3vw;
+          line-height: 3vw;
+          &:last-child {
+            border-top: 1px solid #ccc;
+            font-size: 1.8vw;
+          }
+        }
+      }
+    }
+    .newslistconbox {
+      // outline: 1px solid red;
+      width: 45%;
+      // height: 100%;
+      margin-left: 3% !important;
+      h4 {
+        // border: 1px solid red;
+      }
+      .contentbox {
+        // border: 1px solid red;
+        height: 60%;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin: 1.5vw 0;
+      }
+      .btnBox {
+        width: 100%;
+        height: 10%;
+        text-align: right;
+        align-self: flex-end;
+        button {
+          background: $mainColor;
+          border: 0;
+          outline: 0;
+          color: #fff;
+          padding: 8px 10px;
+        }
+      }
+    }
   }
   width: 100%;
   margin-top: 30px;
@@ -308,6 +423,8 @@ export default {
       margin: 0 1%;
       padding: 0.5vw;
       width: 25%;
+      overflow: hidden;
+      height: 150px;
       display: flex;
       justify-content: center;
       align-items: center;

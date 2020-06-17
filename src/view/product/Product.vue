@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid" id="productBox">
     <div class="row productpackBanner">
-      <img src="static/img/3/home/banner2.jpg" alt />
+      <img src="static/img/3/home/banner22.png" alt />
     </div>
     <div class="baseNav container" v-show="$route.name !== 'companynews'">
       <ul class="baseNavList row">
@@ -125,7 +125,7 @@ export default {
       }
       .baseNavListtitle {
         // width: 50%;
-        font-size: 1.3vw;
+        // font-size: 1.3vw;
         transition: all 0.4s ease-in-out;
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;

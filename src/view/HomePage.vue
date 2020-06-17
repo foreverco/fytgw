@@ -898,9 +898,15 @@ export default {
         return item.type == e;
       });
       this.newsTitleActive = e;
-      if (this.newsList.length > 4) {
-        this.newsList = this.newsList.slice(0, 4);
+      if (this.newsList.length > 3 && this.newsTitleActive !== 1) {
+        this.newsList = this.newsList.slice(0, 3);
+      } else if (
+        this.newsList.length > 3 &&
+        this.newsTitleActive === 1
+      ) {
+        this.newsList = this.newsList.slice(0, 6);
       }
+      console.log(this.newsTitleActive);
     },
     changeTacnology(e) {
       this.tecnologyShow = e;
@@ -950,7 +956,7 @@ export default {
   // opacity: 0.2;
 }
 .swiper-pagination-bullet-active {
-  background: $mainColor;
+  background: #ffffff;
   width: 15px;
   border-radius: 5px;
 }
@@ -1082,6 +1088,11 @@ export default {
           float: left;
         }
         .imgbox {
+          // border: 1px solid red;
+          overflow: hidden;
+          height: 150px;
+          display: flex;
+          align-items: center;
           // position: absolute;
           // padding: 1px 0;
           width: 50%;
@@ -1163,6 +1174,9 @@ export default {
             font-size: $titleFontSize;
             line-height: 50px;
             font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
           .newsdate {
             background: url("../../static/img/3/home/newsdate.png") no-repeat;
@@ -1179,7 +1193,7 @@ export default {
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
           }
         }
@@ -1193,7 +1207,7 @@ export default {
     /* 产品标题 */
     .producttitle {
       /* background: blue; */
-      margin: 12px 0;
+      // margin: 12px 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1255,7 +1269,7 @@ export default {
           flex-wrap: wrap;
           position: relative;
           img {
-            width: 100%;
+            height: 100%;
           }
           .swiper-slide-title {
             position: absolute;

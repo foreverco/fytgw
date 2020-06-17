@@ -35,6 +35,7 @@
       .nonelistBox {
         width: 100% !important;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         margin: 10px 0;
         background: #ffffff10 !important;
@@ -50,7 +51,7 @@
         .imgbox {
           // position: absolute;
           // padding: 1px 0;
-          width: 50%;
+          width: 90% !important;
           img {
             opacity: 1;
             width: 100%;
@@ -60,16 +61,22 @@
           }
         }
         .newsContent {
-          // border: 1px solid red;
-          width: 46%;
-          margin-left: 10px;
+          width: 90% !important;
+          margin-left: 0 !important;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
           // position: absolute;
           // right: 7%;
           // top: 50%;
           // transform: translateY(-50%);
           .newstitle2 {
+            // border: 1px solid red;
             font-size: $titleFontSize;
-            line-height: 30px;
+            // line-height: 20px !important;
+            text-align: center;
+            width: 100%;
             font-weight: bold;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -423,7 +430,7 @@
       justify-content: center !important;
       align-items: center;
       li {
-        margin: 3%;
+        margin: 3% !important;
         .plantingimgtitle {
           height: 20px !important;
           border-radius: 0 0 5px 5px !important;
@@ -718,12 +725,46 @@
   /* 新闻列表页 */
   .newsList {
     .nonelistBox {
-      height: 200px;
+      height: 270px !important;
+      width: 100% !important;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      font-size: 25px;
+      flex-wrap: wrap;
+      background: #ffffff10 !important;
+      box-shadow: 3px 3px 6px 3px #24585250;
+      border-radius: 5px;
+      padding: 10px;
       letter-spacing: 5px;
+      .newslistimgbox {
+        // border: 1px solid red;
+        overflow: hidden;
+        width: 100% !important;
+        img {
+          opacity: 1;
+          width: 100%;
+          border-radius: 8px 0 0 8px;
+        }
+      }
+      .newslistconbox {
+        width: 90% !important;
+        // margin-left: 10px;
+        .btnBox {
+          width: 100%;
+          height: 10%;
+          text-align: center !important;
+          // align-self: flex-end;
+          button {
+            background: $mainColor;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            padding: 8px 10px;
+            font-size: 12px;
+          }
+        }
+      }
     }
     width: 100%;
     margin-top: 10px !important;
@@ -780,6 +821,7 @@
         height: 100%;
         margin-left: 0% !important;
         h4 {
+          text-align: center;
           font-size: 14px;
           overflow: hidden;
           text-overflow: ellipsis;

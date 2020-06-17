@@ -3,10 +3,9 @@
     <div class="row goodsTitle">
       甘草片泡水500克g瓶装干草粉野生茶叶食用中药材搭黄芪当归党参茶
     </div>
-    <div class="row goodsBox">
+    <!-- <div class="row goodsBox">
       <div class="col-md-7 goodspic wow bounceInLeft">
         <div class="swiper-box">
-          <!-- swiper1 -->
           <swiper
             :options="swiperOptionTop"
             class="gallery-top"
@@ -33,7 +32,6 @@
               slot="button-prev"
             ></div>
           </swiper>
-          <!-- swiper2 Thumbs -->
           <swiper
             :options="swiperOptionThumbs"
             class="gallery-thumbs"
@@ -105,7 +103,7 @@
           <p>立即购买</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <ul class="row navTitle">
       <li
@@ -148,21 +146,21 @@ export default {
           title: "pic1"
         }
       ],
-      swiperOptionTop: {
-        autoplay: true,
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      },
-      swiperOptionThumbs: {
-        spaceBetween: 30,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        touchRatio: 0.2,
-        slideToClickedSlide: true
-      },
+      // swiperOptionTop: {
+      //   autoplay: true,
+      //   spaceBetween: 10,
+      //   navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev"
+      //   }
+      // },
+      // swiperOptionThumbs: {
+      //   spaceBetween: 30,
+      //   centeredSlides: true,
+      //   slidesPerView: "auto",
+      //   touchRatio: 0.2,
+      //   slideToClickedSlide: true
+      // },
       /* 推荐详情 */
       navLists: [
         { name: "相关推荐" },
@@ -175,12 +173,12 @@ export default {
   },
   mounted() {
     // console.log(this.$refs.swiperTop.$swiper.controller)
-    this.$nextTick(() => {
-      const swiperTop = this.$refs.swiperTop.$swiper;
-      const swiperThumbs = this.$refs.swiperThumbs.$swiper;
-      swiperTop.controller.control = swiperThumbs;
-      swiperThumbs.controller.control = swiperTop;
-    });
+    // this.$nextTick(() => {
+    //   const swiperTop = this.$refs.swiperTop.$swiper;
+    //   const swiperThumbs = this.$refs.swiperThumbs.$swiper;
+    //   swiperTop.controller.control = swiperThumbs;
+    //   swiperThumbs.controller.control = swiperTop;
+    // });
     /* wowjs动画 */
     var wow = new WOW({
       boxClass: "wow",

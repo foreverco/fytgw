@@ -12,7 +12,7 @@
             :key="index"
           >
             <div class="imgSpace1">
-              <img v-lazy="item.imgUrl" alt />
+              <img :src="item.imgUrl" alt />
             </div>
 
             <!-- <p>{{ item.title }}</p> -->
@@ -238,7 +238,7 @@ export default {
   }
 }
 .imgBox li:hover .imgSpace1::after {
-  content: "奠基仪式 点击了解更多";
+  content: "";
   display: flex;
   color: white;
   align-items: center;

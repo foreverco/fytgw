@@ -9,7 +9,7 @@
           <li
             v-for="(item, index) in newImgList"
             :key="index"
-            class="wow bounceIn col-md-3 col-xs-5"
+            class="wow bounceIn col-md-2 col-xs-5"
           >
             <img v-lazy="item.imgUrl" alt />
             <!-- <img :src="item.imgUrl" alt /> -->
@@ -294,12 +294,15 @@ export default {
   .plantingimgList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
+    // border: 1px solid red;
     li {
+      // border: 1px solid red;
       // margin: 2.4%;
       // width: 20%;
       position: relative;
+      margin: 30px;
       background: url("../../../assets/img/3.0/plantingkuang.png") no-repeat;
       background-size: 100% 100%;
       padding: 1.5px;

@@ -172,6 +172,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 20px;
     li {
       display: flex;
       justify-content: center;
@@ -208,7 +209,7 @@ export default {
       }
       .baseNavListtitle {
         // width: 50%;
-        font-size: 1.3vw;
+        // font-size: 1.3vw;
         transition: all 0.4s ease-in-out;
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;

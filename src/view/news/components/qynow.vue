@@ -1,82 +1,92 @@
 <template>
-  <div class="htmleaf-container">
+  <div>
     <div class="visible-xs">
-      123
+      <h3 class="xsTitle">
+        {{ newsMsgObj.title }}
+      </h3>
+      <ul class="xsBox">
+        <li v-for="(item, index) in newsMsgObj.imgList" :key="index">
+          <!-- {{ item.imrUrl }} -->
+          <img v-lazy="item.imrUrl" alt="" />
+        </li>
+      </ul>
     </div>
-    <div class="pages hidden-xs">
-      <input id="one" name="trigger" type="radio" />
-      <input id="two" name="trigger" type="radio" />
-      <input id="three" name="trigger" type="radio" />
-      <input id="four" name="trigger" type="radio" />
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="logo">企业动态</div>
-          <div class="pagenumber">1 2</div>
-          <div class="content">
-            <div class="content_center">
-              <h4>国草园集团 &amp; 企业动态</h4>
-              <!-- <h4>The latest in fashion &amp; fashion design</h4> -->
+    <div class="htmleaf-container hidden-xs">
+      <div class="pages">
+        <!-- {{ newsMsgObj.imgList[0].imrUrl }} -->
+        <input id="one" name="trigger" type="radio" />
+        <input id="two" name="trigger" type="radio" />
+        <input id="three" name="trigger" type="radio" />
+        <input id="four" name="trigger" type="radio" />
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="logo">{{ newsMsgObj.title }}</div>
+            <div class="pagenumber">1 2</div>
+            <div class="content">
+              <div class="content_center">
+                <h4>国草园集团 &amp; 企业动态</h4>
+                <!-- <h4>The latest in fashion &amp; fashion design</h4> -->
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="content">
-            <div class="content_center right">
-              <h4>国草园集团 &amp; 企业动态</h4>
-              <!-- <h4>The latest in fashion &amp; fashion design</h4> -->
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="content">
+              <div class="content_center right">
+                <h4>国草园集团 &amp; 企业动态</h4>
+                <!-- <h4>The latest in fashion &amp; fashion design</h4> -->
+              </div>
+              <div class="overlay"></div>
             </div>
-            <div class="overlay"></div>
-          </div>
-          <div class="control next">
-            <label for="two"></label>
+            <div class="control next">
+              <label for="two"></label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="logo">企业动态</div>
-          <div class="pagenumber">2 3</div>
-          <div class="control">
-            <label for="one"></label>
-          </div>
-          <div class="content">
-            <div class="content_picture">
-              <img src="/static/img/3/news/1/林西县考察1.jpg" />
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="logo">{{ newsMsgObj.title }}</div>
+            <div class="pagenumber">2 3</div>
+            <div class="control">
+              <label for="one"></label>
             </div>
-            <div class="content_offset">
-              <h2>体系</h2>
-              <p>
-                以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展
-              </p>
-            </div>
-            <h1>
-              <span>以</span>
-              <span>世</span>
-              <span>界</span>
-              <span>前</span>
-              <span>&nbsp;</span>
-              <span>沿</span>
-              <span>科</span>
-              <span>&nbsp;</span>
-              <span>技</span>
-              <span>为</span>
-              <span>依</span>
-              <span>托</span>
-              <br />
-              <span>缔</span>
-              <span>造</span>
-              <span>蒙</span>
-              <span>中</span>
-              <span>草</span>
-              <span>药</span>
-              <span>第</span>
-              <span>一</span>
-              <span>品</span>
-              <span>牌</span>
-            </h1>
-            <!-- <h1>
+            <div class="content">
+              <div class="content_picture">
+                <img v-lazy="newsMsgObj.imgList[0].imrUrl" />
+              </div>
+              <div class="content_offset">
+                <h2>体系</h2>
+                <p>
+                  以世界前沿科技创造能力为依托，培育核心竞争力，全面打造“大健康、大数据、大服务”体系，成为中国一流的大健康产业集团，成为中国制药行业迈向国际化的典范;以诚为本守法经营，用信取人善待客宾；尊重合同友好合作，公平竞争规范发展
+                </p>
+              </div>
+              <h1>
+                <span>以</span>
+                <span>世</span>
+                <span>界</span>
+                <span>前</span>
+                <span>&nbsp;</span>
+                <span>沿</span>
+                <span>科</span>
+                <span>&nbsp;</span>
+                <span>技</span>
+                <span>为</span>
+                <span>依</span>
+                <span>托</span>
+                <br />
+                <span>缔</span>
+                <span>造</span>
+                <span>蒙</span>
+                <span>中</span>
+                <span>草</span>
+                <span>药</span>
+                <span>第</span>
+                <span>一</span>
+                <span>品</span>
+                <span>牌</span>
+              </h1>
+              <!-- <h1>
               <span>L</span>
               <span>o</span>
               <span>o</span>
@@ -118,68 +128,68 @@
               <span>r</span>
               <span>e</span>
             </h1> -->
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="hamburger">
-            <div class="hamburger_part"></div>
-            <div class="hamburger_part"></div>
-            <div class="hamburger_part"></div>
-          </div>
-          <div class="control next">
-            <label for="three"></label>
-          </div>
-          <div class="bg"></div>
-          <div class="footer">
-            <i class="fab fa-google-plus-g"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-            <i class="far fa-share-square"></i>
-          </div>
-          <div class="content">
-            <div class="content_quote">
-              <h5>
-                <span class="quo">
-                  <i>"</i>
-                </span>
-                <span>国之仙草</span>
-                <span>百年健康</span>
-                <span class="name">董事长</span>
-                <span class="auth">- 慈平凡</span>
-                <span class="quo">"</span>
-              </h5>
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="hamburger">
+              <div class="hamburger_part"></div>
+              <div class="hamburger_part"></div>
+              <div class="hamburger_part"></div>
             </div>
-            <div class="content_picture">
-              <img src="/static/img/3/news/1/林西县考察1.jpg" />
+            <div class="control next">
+              <label for="three"></label>
             </div>
-            <h1>
-              <span>以</span>
-              <span>世</span>
-              <span>界</span>
-              <span>前</span>
-              <span>&nbsp;</span>
-              <span>沿</span>
-              <span>科</span>
-              <span>&nbsp;</span>
-              <span>技</span>
-              <span>为</span>
-              <span>依</span>
-              <span>托</span>
-              <br />
-              <span>缔</span>
-              <span>造</span>
-              <span>蒙</span>
-              <span>中</span>
-              <span>草</span>
-              <span>药</span>
-              <span>第</span>
-              <span>一</span>
-              <span>品</span>
-              <span>牌</span>
-            </h1>
-            <!-- <h1>
+            <div class="bg"></div>
+            <div class="footer">
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="far fa-share-square"></i>
+            </div>
+            <div class="content">
+              <div class="content_quote">
+                <h5>
+                  <span class="quo">
+                    <i>"</i>
+                  </span>
+                  <span>国之仙草</span>
+                  <span>百年健康</span>
+                  <span class="name">董事长</span>
+                  <span class="auth">- 慈平凡</span>
+                  <span class="quo">"</span>
+                </h5>
+              </div>
+              <div class="content_picture">
+                <img v-lazy="newsMsgObj.imgList[0].imrUrl" />
+              </div>
+              <h1>
+                <span>以</span>
+                <span>世</span>
+                <span>界</span>
+                <span>前</span>
+                <span>&nbsp;</span>
+                <span>沿</span>
+                <span>科</span>
+                <span>&nbsp;</span>
+                <span>技</span>
+                <span>为</span>
+                <span>依</span>
+                <span>托</span>
+                <br />
+                <span>缔</span>
+                <span>造</span>
+                <span>蒙</span>
+                <span>中</span>
+                <span>草</span>
+                <span>药</span>
+                <span>第</span>
+                <span>一</span>
+                <span>品</span>
+                <span>牌</span>
+              </h1>
+              <!-- <h1>
               <span>L</span>
               <span>o</span>
               <span>o</span>
@@ -221,70 +231,70 @@
               <span>r</span>
               <span>e</span>
             </h1> -->
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="logo">企业动态</div>
-          <div class="pagenumber">4 5</div>
-          <div class="content">
-            <div class="content_center">
-              <h4>科技种植道地药材</h4>
-              <h6>创新名族文化品牌</h6>
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="logo">{{ newsMsgObj.title }}</div>
+            <div class="pagenumber">4 5</div>
+            <div class="content">
+              <div class="content_center">
+                <h4>科技种植道地药材</h4>
+                <h6>创新名族文化品牌</h6>
+              </div>
             </div>
-          </div>
-          <div class="control">
-            <label for="two"></label>
+            <div class="control">
+              <label for="two"></label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="hamburger">
-            <div class="hamburger_part"></div>
-            <div class="hamburger_part"></div>
-            <div class="hamburger_part"></div>
-          </div>
-          <div class="control next">
-            <label for="four"></label>
-          </div>
-          <div class="bg"></div>
-          <div class="content_centerimage">
-            <img src="/static/img/3/news/1/林西县考察1.jpg" />
-          </div>
-          <div class="content">
-            <div class="content_center right">
-              <h4>科技种植道地药材</h4>
-              <h6>创新名族文化品牌</h6>
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="hamburger">
+              <div class="hamburger_part"></div>
+              <div class="hamburger_part"></div>
+              <div class="hamburger_part"></div>
             </div>
-          </div>
-          <div class="footer">
-            <i class="fab fa-google-plus-g"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-            <i class="far fa-share-square"></i>
+            <div class="control next">
+              <label for="four"></label>
+            </div>
+            <div class="bg"></div>
+            <div class="content_centerimage">
+              <img v-lazy="newsMsgObj.imgList[2].imrUrl" />
+            </div>
+            <div class="content">
+              <div class="content_center right">
+                <h4>科技种植道地药材</h4>
+                <h6>创新名族文化品牌</h6>
+              </div>
+            </div>
+            <div class="footer">
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="far fa-share-square"></i>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="logo">企业动态</div>
-          <div class="pagenumber">6 7</div>
-          <div class="content">
-            <div class="content_section">
-              <h2>价值理念</h2>
-              <p>
-                做厚道企业，制道地好药
-              </p>
-            </div>
-            <div class="content_section">
-              <h2>诚信理念</h2>
-              <p>
-                以质为本，诚信立足
-              </p>
-            </div>
-            <!-- <div class="content_section">
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="logo">{{ newsMsgObj.title }}</div>
+            <div class="pagenumber">6 7</div>
+            <div class="content">
+              <div class="content_section">
+                <h2>价值理念</h2>
+                <p>
+                  做厚道企业，制道地好药
+                </p>
+              </div>
+              <div class="content_section">
+                <h2>诚信理念</h2>
+                <p>
+                  以质为本，诚信立足
+                </p>
+              </div>
+              <!-- <div class="content_section">
               <h2>Great</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a
@@ -292,26 +302,27 @@
                 posuere ut. Nunc eget ullamcorper turpis. Sed in vehicula magna.
               </p>
             </div> -->
-          </div>
-          <div class="control">
-            <label for="three"></label>
+            </div>
+            <div class="control">
+              <label for="three"></label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pages_page">
-        <div class="pages_page__inner">
-          <div class="hamburger">
-            <div class="hamburger_part"></div>
-            <div class="hamburger_part"></div>
-            <div class="hamburger_part"></div>
-          </div>
-          <div class="bg"></div>
-          <div class="content"></div>
-          <div class="footer">
-            <i class="fab fa-google-plus-g"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-            <i class="far fa-share-square"></i>
+        <div class="pages_page">
+          <div class="pages_page__inner">
+            <div class="hamburger">
+              <div class="hamburger_part"></div>
+              <div class="hamburger_part"></div>
+              <div class="hamburger_part"></div>
+            </div>
+            <div class="bg"></div>
+            <div class="content"></div>
+            <div class="footer">
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>
+              <i class="far fa-share-square"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -404,8 +415,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/main.scss";
 .htmleaf-container {
   // border: 1px solid red;
   height: 80vh;
+}
+.xsTitle {
+  width: 100%;
+  text-align: center;
+  font-family: 'lv1';
+}
+.xsBox {
+  // border: 1px solid red;
+  width: 100%;
+  li {
+    width: 100%;
+    img {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
 }
 </style>
