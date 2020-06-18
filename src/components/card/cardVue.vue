@@ -8,7 +8,7 @@
         data-wow-delay="0"
         @click="baseGoto(item)"
       >
-        <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图" />
+        <img class="swiper-lazy" :src="item.imgUrl" alt="轮播图">
         <div class="baseNavListtitle">{{ item.title }}</div>
       </li>
     </ul>
@@ -37,7 +37,7 @@ export default {
           imgUrl: "static/img/3/home/tac3.png"
         },
         {
-          title: " 加工产业",
+          title: " 加工产业园",
           routerUrl: "/base/park",
           imgUrl: "static/img/3/home/tac4.png"
         }

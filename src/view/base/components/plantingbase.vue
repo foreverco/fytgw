@@ -2,7 +2,7 @@
   <div id="intelligentag">
     <div class="baseBox">
       <div class="baseBoxTitle">
-        <img src="static/img/3/planting/plantinglogo.png" alt />
+        <img src="static/img/3/planting/plantinglogo.png" alt>
       </div>
       <div class="container">
         <ul class="plantingimgList row">
@@ -11,7 +11,7 @@
             :key="index"
             class="wow bounceIn col-md-2 col-xs-5"
           >
-            <img v-lazy="item.imgUrl" alt />
+            <img v-lazy="item.imgUrl" alt>
             <!-- <img :src="item.imgUrl" alt /> -->
             <div class="plantingimgtitle">{{ item.title }}</div>
             <div class="hoverBox"></div>
@@ -100,12 +100,12 @@ export default {
         },
         {
           newsid: 2,
-          title: "玻璃温室",
+          title: "基地实景",
           imgUrl: "static/img/3/planting/04.jpg"
         },
         {
           newsid: 2,
-          title: "犁地抽查",
+          title: "大型机械",
           imgUrl: "static/img/3/planting/05.jpg"
         },
         {

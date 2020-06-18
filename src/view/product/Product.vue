@@ -42,7 +42,7 @@ export default {
           imgUrl: "static/img/3/home/cp4.png"
         },
         {
-          title: "传统中药系列",
+          title: "道地药材系列",
           routerUrl: "/product/productpack1",
           imgUrl: "static/img/3/home/cp2.png"
         },

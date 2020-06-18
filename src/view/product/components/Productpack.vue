@@ -7,7 +7,7 @@
     </ul>-->
     <!-- <div class="row productpackBanner">
       <img src="/static/img/3/home/banner2.jpg" alt />
-    </div> -->
+    </div>-->
     <div class="container">
       <!-- <div class="row listNavRow">
         <ul class="col-xs-12 col-md-8 listNav">
@@ -20,26 +20,18 @@
             {{ item.type }}
           </li>
         </ul>
-      </div> -->
-      <ul
-        class="row productContainer"
-        v-for="(items, index) in newlistType"
-        :key="index"
-      >
+      </div>-->
+      <ul class="row productContainer" v-for="(items, index) in newlistType" :key="index">
         <!-- <li
           class="row productTitle col-xs-12 wowProduct bounceInRight"
           :id="items.typeId"
         >
           <span>{{ items.type }}</span>
         </li>-->
-        <li
-          class="productList col-md-3 col-xs-5"
-          v-for="(item, index) in pagecpList"
-          :key="index"
-        >
+        <li class="productList col-md-3 col-xs-5" v-for="(item, index) in pagecpList" :key="index">
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img v-lazy="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt>
             </div>
             <p class="productnameBox">{{ item.name }}</p>
             <!-- <p class="productpriceBox">{{ item.price }}</p> -->
@@ -90,67 +82,49 @@ export default {
             {
               id: "huangzhi11",
               imgUrl: "static/img/3/product/cp1.png",
-              name: "黄芪饮片",
+              name: "冬瓜荷叶茶",
               price: "￥67.00"
             },
             {
               id: "huangzhi22",
               imgUrl: "static/img/3/product/cp2.png",
-              name: "黄芪饮片",
+              name: "桂圆红枣枸杞茶",
               price: "￥67.00"
             },
             {
               id: "huangzhi33",
               imgUrl: "static/img/3/product/cp3.png",
-              name: "黄芪饮片",
+              name: "红豆薏米茶",
               price: "￥67.00"
             },
             {
               id: "huangzhi44",
               imgUrl: "static/img/3/product/cp4.png",
-              name: "黄芪饮片",
+              name: "红糖姜茶",
               price: "￥67.00"
             },
             {
               id: "huangzhi55",
               imgUrl: "static/img/3/product/cp5.png",
-              name: "黄芪饮片",
+              name: "菊花决明子",
               price: "￥67.00"
             },
             {
-              id: "huangzhi66",
-              imgUrl: "static/img/3/product/cp6.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi77",
-              imgUrl: "static/img/3/product/cp7.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi88",
+              id: "huangzhi11",
               imgUrl: "static/img/3/product/cp1.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi99",
-              imgUrl: "static/img/3/product/cp1.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi00",
-              imgUrl: "static/img/3/product/cp1.png",
-              name: "黄芪饮片",
+              name: "冬瓜荷叶茶",
               price: "￥67.00"
             }
+            // {
+            //   id: "huangzhi66",
+            //   imgUrl: "static/img/3/product/cp6.png",
+            //   name: "菊花决明子",
+            //   price: "￥67.00"
+            // }
           ]
         },
         {
-          type: "传统中药系列",
+          type: "道地药材系列",
           typeId: "box2",
           routerUrl: "/product/productpack1",
           imgList: [
@@ -503,7 +477,9 @@ export default {
   color: #f3870b;
 }
 #productpack .productContainer .productnameBox {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  letter-spacing: 0.2rem;
   font-weight: bold;
   color: #000;
 }

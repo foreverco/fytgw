@@ -133,7 +133,7 @@
           <img v-lazy="titlelogoList.productsrc" alt />
           <ul class="productNav hidden-xs">
             <li>养生茶</li>
-            <li>传统中药</li>
+            <li>道地药材</li>
             <li>药食同源</li>
             <!-- <li>防风</li> -->
           </ul>

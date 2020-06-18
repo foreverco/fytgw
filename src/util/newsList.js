@@ -1,6 +1,5 @@
 export function getNewsList() {
-  const newsList1 = [
-    {
+  const newsList1 = [{
       newsid: 1,
       type: 0,
       sortid: 20200115,
@@ -9,17 +8,14 @@ export function getNewsList() {
       con: `1月15号上午，我县举行农业项目合作签约仪式，与国草园集团正式签订百万亩蒙中道地药材产业发展合作项目合作协议，
             并就全县农牧业产业化发展规划编制召开座谈会。县委书记王兵，县委副书记、政法委书记白俊伟，县委常委、县委办主任郝晓光，
             政府副县长张国荣与内蒙古国草园实业科技发展有限公司副董事长兼执行董事慈平凡共同出席签约仪式。`,
-      title:
-        "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+      title: "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
       imgUrl: "static/img/news/news1.png",
       baseNewsList: {
         newsid: 1,
-        title:
-          "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
+        title: "内蒙古化德县和国草园集团举行百万亩蒙中道地药材产业发展合作项目签约仪式",
         from: "国草园集团",
         date: "2020-01-15",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/news/qy.png"
           },
           {
@@ -55,17 +51,14 @@ export function getNewsList() {
       dateM: "03",
       dateD: "14",
       con: `2020年3月14日上午，国草园集团与内蒙古化德县当地种植大户就百万亩中草药种植合作模式举行会议洽谈。会上，国草园集团总裁唐琳就项目进展以及种植收益等方面进行了详细讲解，并就种植户提出的种植、合作问题进行了深入探讨。最终达成了“政府+企业+合作社+农户”的种植模式。`,
-      title:
-        "国草园集团与内蒙古化德县种植大户关于中草药种植合作形式举行会议洽谈",
+      title: "国草园集团与内蒙古化德县种植大户关于中草药种植合作形式举行会议洽谈",
       imgUrl: "static/img/3/news/0/newstitleimg2.png",
       baseNewsList: {
         newsid: 2,
-        title:
-          "国草园集团与内蒙古化德县种植大户关于中草药种植合作形式举行会议洽谈",
+        title: "国草园集团与内蒙古化德县种植大户关于中草药种植合作形式举行会议洽谈",
         from: "国草园集团",
         date: "2020-03-14",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/news/news2-1.png"
           },
           {
@@ -84,13 +77,11 @@ export function getNewsList() {
       dateM: "03",
       dateD: "30",
       con: `2020年3月30日，国草园集团董事长慈平凡、总裁唐琳与化德县领导在当地有关部门的陪同下到林西县东山生态扶贫产业园和蒙中草药种植基地设施农业项目进行实地考察调研。`,
-      title:
-        "国草园集团一行人与化德县领导于近期在林西县扶贫产业园和蒙中草药种植基地进行考察",
+      title: "国草园集团一行人与化德县领导于近期在林西县扶贫产业园和蒙中草药种植基地进行考察",
       imgUrl: "static/img/3/news/news_fuping3.png",
       baseNewsList: {
         newsid: 3,
-        title:
-          "国草园集团一行人与化德县领导于近期在林西县扶贫产业园和蒙中草药种植基地进行考察",
+        title: "国草园集团一行人与化德县领导于近期在林西县扶贫产业园和蒙中草药种植基地进行考察",
         from: "国草园集团",
         date: "2020-03-30",
         imgList: [
@@ -115,13 +106,11 @@ export function getNewsList() {
       dateM: "03",
       dateD: "19",
       con: `2020年3月19日上午，自治区人大常委会副主任和彦苓一行人专程来到国草园集团加工产业园进行视察，由化德县县委书记王兵、化德县副县长张国荣、国草园集团董事长慈平凡、总裁唐琳等陪同参观。期间，总裁唐琳向各位领导详细讲述了集团的项目规划及发展方向，得到了自治区人大常委会副主任和彦苓女士的高度重视。`,
-      title:
-        "内蒙古自治区人大常委会副主任和彦苓莅临国草园集团产业园进行实地视察",
+      title: "内蒙古自治区人大常委会副主任和彦苓莅临国草园集团产业园进行实地视察",
       imgUrl: "static/img/3/news/0/newstitleimg1.png",
       baseNewsList: {
         newsid: 5,
-        title:
-          "内蒙古自治区人大常委会副主任和彦苓莅临国草园集团产业园进行实地视察",
+        title: "内蒙古自治区人大常委会副主任和彦苓莅临国草园集团产业园进行实地视察",
         from: "国草园集团",
         date: "2020-03-19",
         imgList: [
@@ -156,8 +145,7 @@ export function getNewsList() {
         title: "四子王旗领导莅临国草园种植基地参观并指导工作",
         from: "国草园集团",
         date: "2018-05-13",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/0/0-5-1.png"
           },
           {
@@ -185,8 +173,7 @@ export function getNewsList() {
         title: "悠悠药草香——扎鲁特旗蒙中药材产业发展走笔",
         from: "国草园集团",
         date: "2019-11-21",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/2/2-1-1.jpg"
           },
           {
@@ -241,8 +228,7 @@ export function getNewsList() {
         title: "国草园集团与富宇通集团达成战略合作协议",
         from: "国草园集团",
         date: "2020-01-13",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/0/0-6-1.png"
           },
           {
@@ -271,8 +257,7 @@ export function getNewsList() {
         title: "自治区党委书记李纪恒莅临国草园种植基地实地调研",
         from: "国草园集团",
         date: "2018-05-15",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/0/0-7-1.png"
           },
           {
@@ -303,8 +288,7 @@ export function getNewsList() {
         title: "国草园野生草药种植基地奠基仪式剪彩",
         from: "国草园集团",
         date: "2018-05-19",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/0/0-jc-1.png"
           },
           {
@@ -328,12 +312,10 @@ export function getNewsList() {
       imgUrl: "static/img/3/news/0/0-xy-1.png",
       baseNewsList: {
         newsid: 11,
-        title:
-          "内蒙古四子王旗人民政府与国草园集团签订33万亩道地药材种植合作协议",
+        title: "内蒙古四子王旗人民政府与国草园集团签订33万亩道地药材种植合作协议",
         from: "国草园集团",
         date: "2018-04-20",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/0/0-xy-1.png"
           },
           {
@@ -575,8 +557,7 @@ export function getNewsList() {
         title: "林西县考察",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/1/林西县考察1.jpg"
           },
           {
@@ -600,28 +581,27 @@ export function getNewsList() {
       sortid: 20200609,
       dateM: "06",
       dateD: "09",
-      title: "内蒙办公地",
-      imgUrl: "static/img/3/news/1/内蒙办公地1.jpg",
+      title: "种苗专家下地视察",
+      imgUrl: "static/img/3/news/1/种苗专家下地视察1.png",
       baseNewsList: {
         newsid: 14,
-        title: "内蒙办公地",
+        title: "种苗专家下地视察",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
-            imrUrl: "static/img/3/news/1/内蒙办公地1.jpg"
+        imgList: [{
+            imrUrl: "static/img/3/news/1/种苗专家下地视察1.png"
           },
           {
-            imrUrl: "static/img/3/news/1/内蒙办公地2.jpg"
+            imrUrl: "static/img/3/news/1/种苗专家下地视察2.png"
           },
           {
-            imrUrl: "static/img/3/news/1/内蒙办公地3.jpg"
+            imrUrl: "static/img/3/news/1/种苗专家下地视察3.png"
           },
           {
-            imrUrl: "static/img/3/news/1/内蒙办公地4.jpg"
+            imrUrl: "static/img/3/news/1/种苗专家下地视察4.png"
           },
           {
-            imrUrl: "static/img/3/news/1/内蒙办公地5.jpg"
+            imrUrl: "static/img/3/news/1/种苗专家下地视察5.png"
           }
         ]
       }
@@ -632,15 +612,14 @@ export function getNewsList() {
       sortid: 20200609,
       dateM: "06",
       dateD: "09",
-      title: "首批种子到位",
+      title: "首批板蓝根种子播种",
       imgUrl: "static/img/3/news/1/首批种子到位1.jpg",
       baseNewsList: {
         newsid: 15,
-        title: "首批种子到位",
+        title: "首批板蓝根种子播种",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/1/首批种子到位1.jpg"
           },
           {
@@ -654,6 +633,9 @@ export function getNewsList() {
           },
           {
             imrUrl: "static/img/3/news/1/首批种子到位5.jpg"
+          },
+          {
+            imrUrl: "static/img/3/news/1/首批种子到位6.png"
           }
         ]
       }
@@ -671,8 +653,7 @@ export function getNewsList() {
         title: "温室大棚考察",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/1/温室大棚考察1.jpg"
           },
           {
@@ -703,8 +684,7 @@ export function getNewsList() {
         title: "项目地考察",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/1/项目地考察1.jpg"
           },
           {
@@ -728,28 +708,27 @@ export function getNewsList() {
       sortid: 20200609,
       dateM: "06",
       dateD: "09",
-      title: "中药材干品",
-      imgUrl: "static/img/3/news/1/中药材干品1.jpg",
+      title: "农机具厂商考察",
+      imgUrl: "static/img/3/news/1/农机具厂商考察1.png",
       baseNewsList: {
         newsid: 18,
-        title: "中药材干品",
+        title: "农机具厂商考察",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
-            imrUrl: "static/img/3/news/1/中药材干品1.jpg"
+        imgList: [{
+            imrUrl: "static/img/3/news/1/农机具厂商考察1.png"
           },
           {
-            imrUrl: "static/img/3/news/1/中药材干品2.jpg"
+            imrUrl: "static/img/3/news/1/农机具厂商考察2.png"
           },
           {
-            imrUrl: "static/img/3/news/1/中药材干品3.jpg"
+            imrUrl: "static/img/3/news/1/农机具厂商考察3.png"
           },
           {
-            imrUrl: "static/img/3/news/1/中药材干品4.jpg"
+            imrUrl: "static/img/3/news/1/农机具厂商考察4.png"
           },
           {
-            imrUrl: "static/img/3/news/1/中药材干品5.jpg"
+            imrUrl: "static/img/3/news/1/农机具厂商考察5.png"
           }
         ]
       }
@@ -767,8 +746,7 @@ export function getNewsList() {
         title: "种植户洽谈会议",
         from: "富于通集团",
         date: "2020-06-09",
-        imgList: [
-          {
+        imgList: [{
             imrUrl: "static/img/3/news/1/种植户洽谈会议1.jpg"
           },
           {
@@ -830,7 +808,7 @@ export function getNewsList() {
       }
     }
   ];
-  const newsList = newsList1.sort(function(a, b) {
+  const newsList = newsList1.sort(function (a, b) {
     return b.sortid - a.sortid;
   });
   return {

@@ -7,7 +7,7 @@
     </ul>-->
     <!-- <div class="row productpackBanner">
       <img src="/static/img/3/home/banner2.jpg" alt />
-    </div> -->
+    </div>-->
     <div class="container">
       <!-- <div class="row listNavRow">
         <ul class="col-xs-12 col-md-8 listNav">
@@ -20,26 +20,18 @@
             {{ item.type }}
           </li>
         </ul>
-      </div> -->
-      <ul
-        class="row productContainer"
-        v-for="(items, index) in newlistType"
-        :key="index"
-      >
+      </div>-->
+      <ul class="row productContainer" v-for="(items, index) in newlistType" :key="index">
         <!-- <li
           class="row productTitle col-xs-12 wowProduct bounceInRight"
           :id="items.typeId"
         >
           <span>{{ items.type }}</span>
-        </li> -->
-        <li
-          class="productList col-md-3 col-xs-5"
-          v-for="(item, index) in pagecpList"
-          :key="index"
-        >
+        </li>-->
+        <li class="productList col-md-3 col-xs-5" v-for="(item, index) in pagecpList" :key="index">
           <router-link :to="{ name: 'Goods', params: { goodsId: item.id } }">
             <div class="productImgBox wowProduct zoomIn">
-              <img v-lazy="item.imgUrl" alt />
+              <img v-lazy="item.imgUrl" alt>
             </div>
             <p class="productnameBox">{{ item.name }}</p>
             <!-- <p class="productpriceBox">{{ item.price }}</p> -->
@@ -89,98 +81,44 @@ export default {
           imgList: [
             {
               id: "huangzhi11",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "黄芪饮片",
+              imgUrl: "static/img/3/product/ys1.png",
+              name: "药食同源",
               price: "￥67.00"
             },
             {
               id: "huangzhi22",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
-              name: "黄芪饮片",
+              imgUrl: "static/img/3/product/ys2.png",
+              name: "药食同源",
               price: "￥67.00"
             },
             {
               id: "huangzhi33",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
-              name: "黄芪饮片",
+              imgUrl: "static/img/3/product/ys3.png",
+              name: "药食同源",
               price: "￥67.00"
             },
             {
               id: "huangzhi44",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
-              name: "黄芪饮片",
+              imgUrl: "static/img/3/product/ys4.png",
+              name: "药食同源",
               price: "￥67.00"
             },
             {
               id: "huangzhi55",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
-              name: "黄芪饮片",
+              imgUrl: "static/img/3/product/ys5.png",
+              name: "药食同源",
               price: "￥67.00"
             },
             {
               id: "huangzhi66",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu6.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi77",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu7.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi88",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu8.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi99",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu9.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi00",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu10.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi001",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu1.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi002",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu2.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi003",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu3.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi004",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu4.png",
-              name: "黄芪饮片",
-              price: "￥67.00"
-            },
-            {
-              id: "huangzhi005",
-              imgUrl: "static/img/chanpin/4-1chanpin-tu5.png",
-              name: "黄芪饮片",
+              imgUrl: "static/img/3/product/ys6.png",
+              name: "药食同源",
               price: "￥67.00"
             }
           ]
         },
         {
-          type: "传统中药系列",
+          type: "道地药材系列",
           typeId: "box2",
           routerUrl: "/product/productpack1",
           imgList: [
@@ -474,7 +412,7 @@ export default {
   letter-spacing: 5px;
 }
 #productpack .productContainer .productList {
-  margin: 10px;
+  margin: 4%;
 }
 #productpack .productContainer .productImgBox {
   height: 100%;
@@ -528,7 +466,9 @@ export default {
 }
 
 #productpack .productContainer .productnameBox {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  letter-spacing: 0.6rem;
   font-weight: bold;
   color: #000;
 }
