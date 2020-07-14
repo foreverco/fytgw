@@ -156,7 +156,7 @@ export default {
               path: "/product/productpack"
             },
             {
-              name: "传统中药",
+              name: "道地药材",
               path: "/product/productpack1"
             },
             {

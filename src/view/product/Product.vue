@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid" id="productBox">
-    <div class="row productpackBanner">
+    <div class="row productpackBanner prodectwow zoomIn">
       <img src="static/img/3/home/banner22.png" alt />
     </div>
     <div class="baseNav container" v-show="$route.name !== 'companynews'">
@@ -62,6 +62,21 @@ export default {
   mounted() {
     var wow = new WOW();
     wow.init();
+  },
+  watch: {
+    productType() {
+      this.$nextTick(() => {
+        // 在dom渲染完后,再执行动画
+        var wow = new WOW({
+          boxClass: "prodectwow",
+          animateClass: "animated",
+          offset: 0,
+          mobile: true,
+          live: false
+        });
+        wow.init();
+      });
+    }
   },
   methods: {
     gotonews(e, index) {

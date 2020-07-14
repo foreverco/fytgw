@@ -73,7 +73,7 @@ export default {
       initialSlide: 1,
       coverflow: {
         rotate: 10, //设置为0
-        stretch: 20,
+        stretch: 10,
         depth: 200,
         modifier: 3,
         slideShadows: true
@@ -110,7 +110,7 @@ export default {
   opacity: 0 !important;
 }
 .qydt_container {
-  height: 85vh;
+  height:100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -128,7 +128,7 @@ export default {
     align-items: center;
     justify-content: center;
     img {
-      width: 100%;
+      width: 50%;
       border-radius: 10px;
     }
   }
